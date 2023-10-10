@@ -261,7 +261,7 @@ class="math inline">\(t\)</span>为超级源点汇点 <figure class="highlight c
   <entry>
     <title>拓扑学笔记</title>
     <url>/2023/09/21/%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/v6BGFW8RzW/</p>
+    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/fd3sbJP4RV/</p>
 <h2 id="lecture-info">00. Lecture Info</h2>
 <h3 id="考核">1. 考核</h3>
 <p>作业 20%、期中 30%、期末 50%</p>
@@ -1719,7 +1719,7 @@ class="math inline">\(U_\alpha\)</span> 里。（直径 (Diameter)：<span
 class="math inline">\(A\)</span> 的直径被定义为 <span
 class="math inline">\(\sup_{x_1,x_2\in A} d(x_1,x_2)\)</span>）</p>
 <p>证明：</p>
-<p>反证法，假设 <span class="math inline">\(\exist
+<p>反证法，假设 <span class="math inline">\(\exists
 A_1,A_2,\cdots\)</span>，<span class="math inline">\(A_i\subseteq
 X\)</span>，使得 <span class="math inline">\(A_i\)</span> 的直径 <span
 class="math inline">\(\xrightarrow{i\to\infty} 0\)</span>，且 <span
