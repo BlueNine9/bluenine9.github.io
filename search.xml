@@ -261,7 +261,8 @@ class="math inline">\(t\)</span>为超级源点汇点 <figure class="highlight c
   <entry>
     <title>拓扑学笔记</title>
     <url>/2023/09/21/%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/KQbfdPCfCX/</p>
+    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/86CNx2G3zG/</p>
+<p>分节次的笔记（清华云盘）：https://cloud.tsinghua.edu.cn/d/2c4efaca588a4326958d/</p>
 <h2 id="lecture-info">00. Lecture Info</h2>
 <h3 id="考核">1. 考核</h3>
 <p>作业 20%、期中 30%、期末 50%</p>
@@ -278,7 +279,7 @@ class="math inline">\(t\)</span>为超级源点汇点 <figure class="highlight c
 <h3 id="一点牢骚">一点牢骚</h3>
 <p>很好，又是用 md
 追赶手写板书的一门课程，竟然也是英文板书。希望不要像复分析一样上到一半就没兴趣追了（</p>
-<h2 id="神启动">01. ⚪神，启动</h2>
+<h2 id="引入范畴与连续映射入门">01. 引入：范畴与连续映射入门</h2>
 <h3 id="拓扑学研究的范畴">拓扑学研究的范畴</h3>
 <ul>
 <li><h4
@@ -606,7 +607,7 @@ class="math inline">\(||a||_p=p-v_p(a)\)</span></p>
 <span class="math inline">\(p\text{-adic}\)</span> 度量（p-adic
 metric），这会诱导 <span class="math inline">\(p\text{-adic}\)</span>
 拓扑。</p>
-<h2 id="神关闭">02. ⚪神，关闭</h2>
+<h2 id="闭集与连续映射">02. 闭集与连续映射</h2>
 <h3 id="对闭集的研究">对闭集的研究</h3>
 <ul>
 <li><p><strong>回忆：闭集的定义</strong></p>
@@ -909,7 +910,7 @@ class="math inline">\(f^{-1}(B)=\overline{f^{-1}(B)}\)</span>，因此
 <p><span
 class="math inline">\((5)\Rightarrow(1)\)</span>：显然。</p></li>
 </ul>
-<h2 id="胚">03. ⚪胚</h2>
+<h2 id="同胚距离与度量空间">03. 同胚、距离与度量空间</h2>
 <h3 id="对连续映射的进一步研究">对连续映射的进一步研究</h3>
 <ul>
 <li><p><strong>同胚 (Homeomorphism) 的定义</strong></p>
@@ -1200,8 +1201,8 @@ x\in X\)</span>. 于是 <span class="math inline">\(h^{-1}\circ
 g(x)\)</span> 是 <span class="math inline">\(f\)</span>
 的一个延拓。</p></li>
 </ul>
-<h2 id="section">04. ⚪2⚪</h2>
-<h3 id="度量空间的完备化">度量空间的完备化</h3>
+<h2 id="度量空间的完备化">04. 度量空间的完备化</h2>
+<h3 id="度量空间的完备化-1">度量空间的完备化</h3>
 <ul>
 <li><p><strong>完备的度量空间 (Complete metric space)</strong></p>
 <ul>
@@ -1459,7 +1460,7 @@ class="math inline">\(d(s,s_n)=\lim_{m\to\infty}(\xi_m,s_n)&lt;\lim_{m\to\infty}
 d(s,s_n)=0\)</span>，于是 <span class="math inline">\((S,d)\)</span>
 完备。</p></li>
 </ul>
-<h2 id="path-of-pilgrim">05. Path of Pilgrim</h2>
+<h2 id="紧空间与hausdorff空间">05. 紧空间与Hausdorff空间</h2>
 <h3 id="紧空间-compactness">紧空间 (Compactness)</h3>
 <ul>
 <li><h4 id="数学分析时的紧空间">数学分析时的紧空间</h4>
@@ -1827,7 +1828,7 @@ class="math inline">\(U\subset X,V\subset Y\)</span> 是开集。</p>
 <p>于是在这个拓扑一定包含了乘积拓扑中的所有基础开集。根据定义，它包含了乘积拓扑中的所有开集，于是乘积拓扑满足这个“最小性”。</p></li>
 </ul></li>
 </ul>
-<h2 id="inks-of-revelation">06. Inks of Revelation</h2>
+<h2 id="乘积拓扑与连通性入门">06. 乘积拓扑与连通性入门</h2>
 <h3 id="乘积拓扑-product-topology-1">乘积拓扑 (Product Topology)</h3>
 <ul>
 <li><h4 id="定义">定义</h4>
@@ -2190,6 +2191,405 @@ class="math inline">\(Z\subset A\)</span>.</p>
 <p>于是 <span class="math inline">\(X=\bar X\subset \bar
 A=A\)</span>，于是 <span class="math inline">\(X=A\)</span>，于是 <span
 class="math inline">\(X\)</span> 连通。</p></li>
+</ul>
+<h2 id="连通性与道路连通性">07. 连通性与道路连通性</h2>
+<h3 id="连通性-connectedness-1">连通性 (Connectedness)</h3>
+<ul>
+<li><h4 id="回顾闭包维持连通性">回顾：闭包维持连通性</h4>
+<p>若 <span class="math inline">\(Z\subseteq X\)</span> 是稠密的且 <span
+class="math inline">\(Z\)</span> 是连通的，则 <span
+class="math inline">\(X\)</span> 是连通的</p></li>
+<li><h4
+id="介于连通集合与其闭包间的集合也连通">介于连通集合与其闭包间的集合也连通</h4>
+<p>若 <span class="math inline">\(Z\subseteq X\)</span>，<span
+class="math inline">\(Z\)</span> 是连通的且 <span
+class="math inline">\(Z\subseteq Y\subseteq \overline Z\)</span>，则
+<span class="math inline">\(Y\)</span> 是连通的。特别地，若取 <span
+class="math inline">\(Y=\overline Z\)</span>，即有 <span
+class="math inline">\(\overline{Z}\)</span> 连通。</p>
+<p>证明：在 <span class="math inline">\(Y\)</span> 中取 <span
+class="math inline">\(Z\)</span> 的闭包即为 <span
+class="math inline">\(Y\)</span>，由闭包维持连通性立得。</p></li>
+<li><h4 id="mathbbr-中的连通集合为区间"><span
+class="math inline">\(\mathbb{R}\)</span> 中的连通集合为区间</h4>
+<p><span class="math inline">\(\varnothing\neq
+X\subseteq\mathbb{R}\)</span>，则 <span class="math inline">\(X\)</span>
+是连通的当且仅当 <span class="math inline">\(X\)</span> 是区间。</p>
+<p>证明：<span class="math inline">\((\Rightarrow):\)</span> 假设 <span
+class="math inline">\(X\)</span> 不是一个区间，则 <span
+class="math inline">\(\exists p\in \mathbb{R}\setminus X\)</span>，使得
+<span class="math inline">\(\exists a,b\in X\)</span>，有 <span
+class="math inline">\(a&lt;p&lt;b\)</span>.</p>
+<p>令 <span class="math inline">\(A=\set{x\in X\mid x &lt;
+p}\)</span>，令 <span class="math inline">\(B=\set{x\in X\mid
+x&gt;p}\)</span>，由刚刚的性质，我们知道这两个集合非空，并且 <span
+class="math inline">\(X=A\sqcup B\)</span> （<span
+class="math inline">\(X=A\cup B, A\cap B=\varnothing\)</span>）。</p>
+<p>我们接下来证明 <span class="math inline">\(A,B\)</span>
+均为开集。<span class="math inline">\(\forall x\in A\)</span>，<span
+class="math inline">\(\exists \varepsilon&gt;0\)</span>，使得 <span
+class="math inline">\(x+\varepsilon&lt;p\)</span>，于是 <span
+class="math inline">\((-\infty, x+\varepsilon)\cap X\)</span> 就是 <span
+class="math inline">\(x\)</span> 在 <span
+class="math inline">\(X\)</span> 中邻域，且这个邻域位于 <span
+class="math inline">\(A\)</span> 中，于是 <span
+class="math inline">\(A\)</span> 在 <span
+class="math inline">\(X\)</span> 中为开集。</p>
+<p>类似地，我们可以说明 <span class="math inline">\(B\)</span> 在 <span
+class="math inline">\(X\)</span> 中也为开集，如此我们得到矛盾，<span
+class="math inline">\(X\)</span> 不是连通。</p>
+<p><span class="math inline">\((\Leftarrow):\)</span> 考虑开区间 <span
+class="math inline">\((a,b)\)</span>，其中 <span
+class="math inline">\(a&lt;b\)</span>. 开区间同胚于 <span
+class="math inline">\(\mathbb{R}\)</span>，由于 <span
+class="math inline">\(\mathbb{R}\)</span> 连通，因此 <span
+class="math inline">\((a,b)\)</span> 自然为连通集。</p>
+<p>考虑闭区间 <span class="math inline">\([a,b]\)</span>，有 <span
+class="math inline">\([a,b]=\overline{(a,b)}\)</span>，由上面定理有
+<span class="math inline">\([a,b]\)</span> 连通。</p>
+<p>考虑半开半闭区间 <span class="math inline">\((a,b]\)</span>，有 <span
+class="math inline">\((a,b)\subseteq (a,b]\subseteq
+\overline{(a,b)}\)</span>，因此 <span
+class="math inline">\((a,b]\)</span> 连通。</p>
+<p>同理 <span class="math inline">\([a,b)\)</span> 也连通。</p>
+<p>因此区间为连通的。</p></li>
+<li><h4 id="并集与连通性">并集与连通性</h4>
+<p>Q：考虑两个连通集合 <span class="math inline">\(A,B\)</span> 的并集
+<span class="math inline">\(A\cup B\)</span>，问 <span
+class="math inline">\(A\cup B\)</span> 是否连通？</p>
+<p>如果不加限制，显然答案是否定的。例如两个不交的圆盘。如何加以限制使得并集也是连通的？</p>
+<ul>
+<li><h5 id="相互分离的定义-separated">相互分离的定义 (Separated)</h5>
+<p>考虑 <span class="math inline">\(A,B\subseteq X\)</span>，我们称
+<span class="math inline">\(A,B\)</span> 是<strong>相互分离
+(separated)</strong>的，若 <span
+class="math inline">\(\overline{A}\cap\overline{B}=\varnothing\)</span>.</p></li>
+<li><h5 id="不相互分离集合的并连通">不相互分离集合的并连通</h5>
+<p>考虑空间 <span class="math inline">\(X=\bigcup_{\alpha}
+A_\alpha\)</span>，其中 <span class="math inline">\(\forall
+\alpha,A_\alpha\)</span> 是连通的。假设 <span
+class="math inline">\(\not\exists \alpha_1,\alpha_2\)</span>，使得 <span
+class="math inline">\(A_{\alpha_1}\)</span> 与 <span
+class="math inline">\(A_{\alpha_2}\)</span>
+是分离的（即任意两个成员都不是相互分离的），则 <span
+class="math inline">\(X\)</span> 是连通的。</p>
+<p>证明：</p>
+<p>令 <span class="math inline">\(B\subseteq X\)</span>
+是既开又闭的集合。由于 <span class="math inline">\(A_\alpha\)</span>
+是连通的，<span class="math inline">\(B\cap
+A_\alpha=\varnothing\)</span> 或 <span
+class="math inline">\(A_\alpha\)</span>. （这是因为 <span
+class="math inline">\(B\cap A_\alpha\)</span> 是 <span
+class="math inline">\(A_\alpha\)</span> 中既开又闭的集合）</p>
+<p>若 <span class="math inline">\(B\cap A_\alpha=\varnothing,\forall
+\alpha\)</span>，则 <span
+class="math inline">\(B=\varnothing\)</span>.</p>
+<p>若 <span class="math inline">\(\exists
+A_{\alpha_0}\in\set{A_\alpha}\)</span>，使得 <span
+class="math inline">\(B\cap A_{\alpha_0}=A_{\alpha_0}\)</span>，于是
+<span class="math inline">\(A_{\alpha_0}\subseteq B\)</span>.</p>
+<p>如果 <span class="math inline">\(\exists
+A_{\alpha_1}\in\set{A_\alpha}\)</span>，使得 <span
+class="math inline">\(B\cap A_{\alpha_1}=\varnothing\)</span>：则由于
+<span class="math inline">\(B\)</span> 是一个闭集，有 <span
+class="math inline">\(\overline{A_{\alpha_0}}\subseteq
+B\)</span>；另一方面，<span class="math inline">\(X\setminus B\)</span>
+也是闭集，有 <span
+class="math inline">\(\overline{A_{\alpha_1}}\subseteq X\setminus
+B\)</span>。于是 <span class="math inline">\(\overline{A_{\alpha_0}}\cap
+\overline{A_{\alpha_1}}=\varnothing\)</span>，矛盾！</p>
+<p>因此，<span class="math inline">\(\forall \alpha\)</span>，有 <span
+class="math inline">\(B\cap A_\alpha=A_\alpha\)</span>，于是 <span
+class="math inline">\(B=X\)</span>.</p>
+<p>进而，<span class="math inline">\(X\)</span> 中既开又闭的集合只有
+<span class="math inline">\(X\)</span> 与 <span
+class="math inline">\(\varnothing\)</span>，<span
+class="math inline">\(X\)</span> 为连通。</p></li>
+<li><h5
+id="交集不为空的连通集合族的并连通">交集不为空的连通集合族的并连通</h5>
+<p>如果 <span
+class="math inline">\(X=\bigcup_{\alpha}A_\alpha\)</span>，其中 <span
+class="math inline">\(\forall \alpha, A_\alpha\)</span> 连通。如果 <span
+class="math inline">\(\bigcap_{\alpha}
+A_\alpha\neq\varnothing\)</span>，则 <span
+class="math inline">\(X\)</span> 是连通的。</p>
+<p>证明：由上面定理立得。</p></li>
+<li><h5 id="注取交操作的连通性">注：取交操作的连通性</h5>
+<p>若 <span class="math inline">\(A,B\subseteq X\)</span>，其中 <span
+class="math inline">\(A,B\)</span> 都是连通集。问：<span
+class="math inline">\(A\cap B\)</span> 是否是连通集？</p>
+<p>事实上，<span class="math inline">\(A\cap B\)</span>
+一般也不是连通集。</p>
+<p>如下图：</p>
+<figure>
+<img src="\07-1.png" alt="image-20231017154543684" />
+<figcaption aria-hidden="true">image-20231017154543684</figcaption>
+</figure></li>
+</ul></li>
+<li><h4 id="乘积集合保持连通性">乘积集合保持连通性</h4>
+<p>令 <span class="math inline">\(X,Y\)</span> 是非空空间，则 <span
+class="math inline">\(X\times Y\)</span> 是连通的当且仅当 <span
+class="math inline">\(X,Y\)</span> 都是连通的。</p>
+<p>证明：</p>
+<p><span class="math inline">\((\Rightarrow):\)</span> 令 <span
+class="math inline">\(p_1,p_2\)</span> 是两个投影映射，则 <span
+class="math inline">\(X=p_1(X\times
+Y)\)</span>，根据连续映射保持连通性，有 <span
+class="math inline">\(X\)</span> 连通；类似有 <span
+class="math inline">\(Y\)</span> 连通。</p>
+<p>$(): $ <span class="math inline">\(\forall x\in X\)</span>，根据
+<span class="math inline">\(\set{x}\times Y\)</span> 与 <span
+class="math inline">\(Y\)</span> 同胚，<span
+class="math inline">\(Y\)</span> 是连通的，故有 <span
+class="math inline">\(\set{x}\times Y\)</span> 是连通的。</p>
+<p>类似地，<span class="math inline">\(\forall y\in Y\)</span>，<span
+class="math inline">\(X\times \set{y}\)</span> 是连通的。</p>
+<p><span class="math inline">\((x,y)\in (\set{x}\times Y)\cap (X\times
+\set{y})\)</span>，如果我们定义 <span
+class="math inline">\(A(x,y):=(\set{x}\times Y)\cup(X\times
+\set{y})\)</span>，有 <span class="math inline">\(A(x,y)\)</span>
+是连通的。</p>
+<figure>
+<img src="07-2.png" alt="image-20231017155232888" />
+<figcaption aria-hidden="true">image-20231017155232888</figcaption>
+</figure>
+<p>我们考虑 <span class="math inline">\((x&#39;,y&#39;)\in X\times
+Y\)</span>，考虑 <span
+class="math inline">\(A(x&#39;,y&#39;)\)</span>，有 <span
+class="math inline">\(A(x&#39;,y&#39;)\cap
+A(x,y)\neq\varnothing\)</span>.</p>
+<figure>
+<img src="\07-3.png" alt="image-20231017155341235" />
+<figcaption aria-hidden="true">image-20231017155341235</figcaption>
+</figure>
+<p>因为 <span class="math inline">\(X\times Y=\bigcup_{x\in X,y\in
+Y}A(x,y)\)</span>，这些集合两两不分离。由于先前的定理，有 <span
+class="math inline">\(X\times Y\)</span> 也是连通的。</p></li>
+<li><h4 id="mathbbrnmathbbrtimes-rtimescdotstimes-r-是连通的"><span
+class="math inline">\(\mathbb{R}^n=\mathbb{R\times R\times\cdots\times
+R}\)</span> 是连通的</h4>
+<p>由上面立得。</p></li>
+<li><h4 id="连通分支的定义-connected-components">连通分支的定义
+(Connected Components)</h4>
+<p>对于 <span class="math inline">\(\forall x,y\in
+X\)</span>，定义等价关系 <span class="math inline">\(x\sim
+y\)</span>：<span class="math inline">\(x\sim y\)</span> 如果 <span
+class="math inline">\(\exists A\subseteq X\)</span>，<span
+class="math inline">\(A\)</span> 是连通的且 <span
+class="math inline">\(x,y\in A\)</span>.</p>
+<p>这样定义的等价关系将诱导 <span class="math inline">\(X\)</span>
+上的一个等价类，等价类就被称作是 <span class="math inline">\(X\)</span>
+的<strong>连通分支 (Connected Components)</strong>。</p>
+<ul>
+<li><h5 id="注连通分支具有极大性">注：连通分支具有极大性</h5>
+<p>一个连通分支一定是一个极大的连通子集。</p>
+<p>”极大性“是易于理解的，我们来简单看看连通分支为什么是连通集：令 <span
+class="math inline">\(A\)</span> 是一个连通分支，我们选择任意的 <span
+class="math inline">\(x_0\in A\)</span>，则 <span
+class="math inline">\(\forall x\in X\)</span>，<span
+class="math inline">\(\exists B_x\)</span> 连通集合，使得 <span
+class="math inline">\(x,x_0\in B_x\)</span>.</p>
+<p>于是 <span class="math inline">\(A=\bigcup_{x\in A}
+B_x\)</span>，因此它是连通的。</p></li>
+<li><h5 id="注上述关系确实是等价关系">注：上述关系确实是等价关系</h5>
+<p>自反性、对称性：这是自然的；</p>
+<p>传递性：若 <span class="math inline">\(x\sim y,y\sim z\)</span>，则
+<span class="math inline">\(\exists A,B\)</span> 连通集，使得 <span
+class="math inline">\(x,y\in A,y,z\in B\)</span>，从而由于 <span
+class="math inline">\(A\cap B\supset\set{y}\neq \varnothing\)</span>，故
+<span class="math inline">\(A\cup B\)</span> 连通，故 <span
+class="math inline">\(x\sim z\)</span>.</p></li>
+</ul></li>
+<li><h4 id="连通分支是分离的闭集">连通分支是分离的闭集</h4>
+<p>连通分支是闭集且任意两个不同的连通分支一定是相互分离的。</p>
+<p>证明：</p>
+<p>闭集：如果 <span class="math inline">\(A\subset X\)</span>
+是一个连通分支，有 <span class="math inline">\(A\)</span> 是连通的。于是
+<span class="math inline">\(\overline{A}\)</span> 也是连通的。又因为
+<span class="math inline">\(A\)</span> 是极大的连通集合，有 <span
+class="math inline">\(A=\overline{A}\)</span>，换言之 <span
+class="math inline">\(A\)</span> 是闭集。</p>
+<p>相互分离：假设 <span class="math inline">\(\exists B\)</span>，<span
+class="math inline">\(B\)</span> 是另一个连通分支，假设 <span
+class="math inline">\(A,B\)</span> 不是相互分离的。由于 <span
+class="math inline">\(\overline{A}\cap\overline{B}\neq\varnothing\)</span>，有
+<span class="math inline">\(A\cup B\)</span>
+也是连通集合，这与极大性矛盾。</p></li>
+<li><h4 id="举例连通分支">举例：连通分支</h4>
+<p><span class="math inline">\(\mathbb{R}\setminus \set{0}\)</span>
+有两个连通分支 <span class="math inline">\((-\infty,0)\)</span> 与 <span
+class="math inline">\((0,+\infty)\)</span>。这两个连通分支在 <span
+class="math inline">\(\mathbb{R}\setminus \set{0}\)</span>
+都是既开又闭的。</p>
+<p>若 <span class="math inline">\(X\)</span>
+只有有限多个连通分支，则这些连通分支均是既开又闭的集合。</p>
+<p>考虑有理数集 <span class="math inline">\(\mathbb{Q}\)</span>，<span
+class="math inline">\(\forall x\in \mathbb{Q}\)</span>，有 <span
+class="math inline">\(\set{x}\)</span> 是 <span
+class="math inline">\(\mathbb{Q}\)</span> 的连通分支。与此同时，<span
+class="math inline">\(\set{x}\)</span> 在 <span
+class="math inline">\(\mathbb{Q}\)</span> 中是闭集而不是开集。</p>
+<p>令 <span class="math inline">\(X=\set{\cfrac{1}{n}\mid n\geq 1}\cup
+\set{0}\)</span>，则 <span class="math inline">\(\forall x\in
+X\)</span>，有 <span class="math inline">\(\set{x}\)</span>
+是连通分支，则 <span class="math inline">\(\set{\cfrac{1}{n}}\)</span>
+是既开又闭的，但 <span class="math inline">\(\set{0}\)</span>
+只是闭集不是开集。</p></li>
+</ul>
+<h3 id="道路连通-path-connectedness">道路连通 (Path-Connectedness)</h3>
+<ul>
+<li><h4 id="道路的定义-path">道路的定义 (Path)</h4>
+<p>拓扑空间 <span class="math inline">\(X\)</span> 中的<strong>道路
+(Path)</strong>为一个连续映射 <span
+class="math inline">\(\gamma:[0,1]\to X\)</span>. 将 <span
+class="math inline">\(\gamma(0)\)</span> 与 <span
+class="math inline">\(\gamma(1)\)</span> 分别叫做道路的<strong>起点
+(Beginning Point)</strong>以及<strong>终点(End Point)</strong>。</p>
+<p>我们也称 <span class="math inline">\(\gamma\)</span> 是一个连接(join)
+<span class="math inline">\(\gamma(0)\)</span> 和 <span
+class="math inline">\(\gamma(1)\)</span> 的道路。</p></li>
+<li><h4 id="道路连通空间-path-connected-space">道路连通空间
+(Path-Connected Space)</h4>
+<p>我们称一个空间 <span class="math inline">\(X\)</span>
+是<strong>道路连通
+(Path-Connected)</strong>的，如果任意两个点都可以被一个道路连接。</p></li>
+<li><h4 id="道路连通蕴含连通性">道路连通蕴含连通性</h4>
+<p>一个道路连通空间 <span class="math inline">\(X\)</span>
+一定是连通的。</p>
+<p>证明：假设 <span class="math inline">\(X\)</span> 是道路连通的，令
+<span class="math inline">\(\varnothing\neq A\subset X\)</span> 使得
+<span class="math inline">\(A\)</span> 既开又闭；假设 <span
+class="math inline">\(A\neq X\)</span>.</p>
+<p>选取 <span class="math inline">\(x\in A,y\in X\setminus
+A\)</span>，我们可以找到道路 <span class="math inline">\(\gamma\)</span>
+连接 <span class="math inline">\(x\)</span> 与 <span
+class="math inline">\(y\)</span>.</p>
+<p>考虑 <span class="math inline">\(\gamma^{-1}(A)\)</span>，它一定是
+<span class="math inline">\([0,1]\)</span> 中既开又闭的集合，且 <span
+class="math inline">\(\gamma^{-1}(A)\neq\varnothing,\gamma^{-1}(A)\neq
+[0,1]\)</span>，这与 <span class="math inline">\([0,1]\)</span>
+区间连通矛盾。</p>
+<p>因此 <span class="math inline">\(X\)</span> 中既开又闭的集合只有
+<span class="math inline">\(X\)</span> 与 <span
+class="math inline">\(\varnothing\)</span>，于是 <span
+class="math inline">\(X\)</span> 是连通的。</p></li>
+<li><h4 id="道路连通分支-path-connected-components">道路连通分支
+(Path-Connected Components)</h4>
+<p>我们可以定义等价关系 <span class="math inline">\(\forall x,y\in
+X\)</span>，定义 <span class="math inline">\(x\sim y\)</span> 若 <span
+class="math inline">\(\exists\)</span> 道路 <span
+class="math inline">\(\gamma\)</span> 使得 <span
+class="math inline">\(\gamma\)</span> 连接了 <span
+class="math inline">\(x\)</span> 和 <span
+class="math inline">\(y\)</span>.</p>
+<p>我们把对应的等价类称作是 <span class="math inline">\(X\)</span>
+的<strong>道路连通分支 (Path-Connected Components)</strong>.</p>
+<ul>
+<li><h5 id="注该关系确实是等价关系">注：该关系确实是等价关系</h5>
+<p>自反性：令 <span class="math inline">\(\gamma:[0,1]\to
+X\)</span>，使得 <span class="math inline">\(\gamma(t)=x,\forall t\in
+[0,1]\)</span>，故 <span class="math inline">\(x\sim x\)</span>.</p>
+<p>对称性：若 <span class="math inline">\(x\sim y\)</span>，有 <span
+class="math inline">\(\exists \gamma\)</span> 道路，使得 <span
+class="math inline">\(\gamma(0)=x,\gamma(1)=y\)</span>，则令 <span
+class="math inline">\(\alpha:[0,1]\to
+X,\alpha(t)=\gamma(1-t)\)</span>，有 <span
+class="math inline">\(\alpha\)</span> 连接了 <span
+class="math inline">\(y,x\)</span>，故 <span class="math inline">\(y\sim
+x\)</span>.</p>
+<p>传递性：若 <span class="math inline">\(x\sim y,y\sim
+z\)</span>，<span class="math inline">\(\exists
+\gamma_1,\gamma_2\)</span> 道路，使得 <span
+class="math inline">\(\gamma_1(0)=x,\gamma_1(1)=y,\gamma_2(0)=y,\gamma_2(1)=z\)</span>.</p>
+<p>令 <span class="math inline">\(\gamma_3:[0,1]\to X\)</span>，<span
+class="math inline">\(\gamma_3(t)=\begin{cases}\gamma_1(2t)&amp;0\leq
+t\leq \cfrac{1}{2}\\\gamma_2(2t-1)&amp;\cfrac{1}{2}\leq t\leq
+1\end{cases}\)</span>.</p>
+<p>容易验证 <span class="math inline">\(\gamma_3\)</span>
+是连续的（<span
+class="math inline">\([0,\cfrac{1}{2}],[\cfrac{1}{2},1]\)</span> 组成了
+<span class="math inline">\([0,1]\)</span>
+的闭覆盖，由连续映射的局部性，整体也是连续的）且连接了 <span
+class="math inline">\(x,z\)</span>，故 <span class="math inline">\(x\sim
+z\)</span>.</p>
+<p>注：连续映射的局部性：<span class="math inline">\(f:X\to Y\)</span>
+是一个连续映射，如果 <span class="math inline">\(X\)</span>
+可以表示成一些闭集 <span class="math inline">\(F_i\)</span> 的并，即
+<span class="math inline">\(X=\bigcup_{i=1}^n F_i\)</span>，且 <span
+class="math inline">\(f|_{F_i}\)</span> 是连续的。</p></li>
+</ul></li>
+<li><h4 id="欧氏空间-mathbbrn-中连通开集为道路连通">欧氏空间 <span
+class="math inline">\(\mathbb{R}^n\)</span> 中连通开集为道路连通</h4>
+<p>考虑欧氏空间 <span class="math inline">\(\mathbb{R}^n\)</span>
+中的一个连通开集，该开集一定是道路连通的。</p>
+<p>证明：</p>
+<p>令 <span class="math inline">\(X\subset \mathbb{R}^n\)</span>
+是一个连通开集。我们固定 <span class="math inline">\(x\in X\)</span>，令
+<span class="math inline">\(A=\set{y\in X\mid y\text{ 与 }x\text{
+间可以被连接道路}}\)</span>；<span class="math inline">\(B=\set{y\in
+X\mid y\text{ 与 }x\text{ 间不能被连接道路}}\)</span>。</p>
+<p>因此 <span class="math inline">\(A\cup B=\varnothing\)</span>，且
+<span class="math inline">\(X=A\cup B\)</span>，且 <span
+class="math inline">\(A\neq\varnothing\)</span>。</p>
+<p>我们接下来证明 <span class="math inline">\(A,B\)</span> 是开集。<span
+class="math inline">\(\forall y\in A\)</span>，我们总可以选取小球 <span
+class="math inline">\(B(y,\varepsilon)\)</span>，使得 <span
+class="math inline">\(B(y,\varepsilon)\subseteq X\)</span>.</p>
+<p>因此 <span class="math inline">\(\forall z\in
+B(y,\varepsilon)\)</span>，总可以将 <span
+class="math inline">\(z,y\)</span> 间连接一条直线，从而 <span
+class="math inline">\(z\)</span> 与 <span
+class="math inline">\(y\)</span> 道路连通。</p>
+<p>从而 <span class="math inline">\(z\)</span> 可以与 <span
+class="math inline">\(x\)</span> 连接道路，于是 <span
+class="math inline">\(z\in A\)</span>.</p>
+<p>于是 <span class="math inline">\(A\)</span> 是开集。</p>
+<p>类似地，<span class="math inline">\(\forall y\in
+B\)</span>，我们选取小球 <span
+class="math inline">\(B(y,\varepsilon)\subseteq X\)</span>. <span
+class="math inline">\(\forall z\in B(y,\varepsilon)\)</span>，则 <span
+class="math inline">\(z\)</span> 可以与 <span
+class="math inline">\(y\)</span> 之间连接一条线段。</p>
+<p>于是 <span class="math inline">\(z\)</span> 与 <span
+class="math inline">\(x\)</span> 之间一定不存在道路，否则 <span
+class="math inline">\(y\)</span> 与 <span
+class="math inline">\(x\)</span> 道路连通。于是 <span
+class="math inline">\(z\in B\)</span>.</p>
+<p>于是 <span class="math inline">\(B\)</span> 是开集。</p>
+<p>于是 <span class="math inline">\(X\)</span> 可以被写成开集 <span
+class="math inline">\(A,B\)</span> 的不交并，由于 <span
+class="math inline">\(A\)</span> 不为空，<span
+class="math inline">\(X\)</span> 连通，有 <span
+class="math inline">\(B\)</span> 为空。于是 <span
+class="math inline">\(X\)</span> 道路连通。</p></li>
+<li><h4
+id="反例连通但不道路连通的集合拓扑学家的正弦曲线topologists-sine-curve">反例：连通但不道路连通的集合（拓扑学家的正弦曲线，Topologist's
+Sine Curve）</h4>
+<p>令 <span class="math inline">\(Y=\set{(0,y)\in \mathbb{R}^2\mid
+-1\leq y\leq 1}\)</span>，<span
+class="math inline">\(Z=\set{(x,\sin\cfrac{\pi}{x})\in \mathbb{R}^2\mid
+0&lt;x\leq 1}\)</span></p>
+<p>我们考察 <span class="math inline">\(X=Y\cup Z\)</span>.</p>
+<figure>
+<img src="\07-4.png" alt="image-20231017165027589" />
+<figcaption aria-hidden="true">image-20231017165027589</figcaption>
+</figure>
+<p>注意到 <span class="math inline">\(Z\)</span> 是连通的，由于 <span
+class="math inline">\(Z=f((0,1])\)</span>. <span
+class="math inline">\(f(x)=(x,\sin \cfrac{\pi}{x})\)</span>
+是一个连续函数，因此 <span class="math inline">\(Z\)</span>
+也是连通的，并且 <span class="math inline">\(Z\)</span>
+是道路连通的；</p>
+<p>与此同时，不难注意到 <span class="math inline">\(Y\)</span>
+也是道路连通的，然而 <span class="math inline">\(X=Y\cup Z\)</span>
+并非道路连通。</p>
+<p>进一步地，考察集合 <span class="math inline">\(Z\)</span>，有 <span
+class="math inline">\(X=\overline{Z}\)</span>，有 <span
+class="math inline">\(X\)</span> 也是连通，如此我们给出了一个反例。</p>
+<p>注意到 <span class="math inline">\(Z\)</span> 和 <span
+class="math inline">\(Y\)</span> 即为 <span
+class="math inline">\(X\)</span>
+的道路连通分支，这也告诉我们道路连通分支未必是闭集。</p></li>
 </ul>
 ]]></content>
       <categories>
