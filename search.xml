@@ -261,7 +261,7 @@ class="math inline">\(t\)</span>为超级源点汇点 <figure class="highlight c
   <entry>
     <title>拓扑学笔记</title>
     <url>/2023/09/21/%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/86CNx2G3zG/</p>
+    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/RT5hhsmpfM/</p>
 <p>分节次的笔记（清华云盘）：https://cloud.tsinghua.edu.cn/d/2c4efaca588a4326958d/</p>
 <h2 id="lecture-info">00. Lecture Info</h2>
 <h3 id="考核">1. 考核</h3>
@@ -352,7 +352,7 @@ Invariant），拓扑不变量也将是这门课程研究的重点。</p>
 </ul></li>
 <li><h4 id="连续映射">连续映射</h4>
 <ul>
-<li><p><strong>数学分析对连续映射的定义</strong></p>
+<li><h5 id="数学分析对连续映射的定义">数学分析对连续映射的定义</h5>
 <p><span class="math inline">\(f:\mathbb R^m\to \mathbb R^n\)</span></p>
 <p>定义：映射 <span class="math inline">\(f\)</span> 被称为是在 <span
 class="math inline">\(x\in \mathbb{R}^m\)</span> 连续的，如果有 <span
@@ -363,10 +363,10 @@ class="math inline">\(|f(x&#39;)-f(x)|&lt;\varepsilon\)</span>。</p>
 <p>如果 <span class="math inline">\(f\)</span> 在 <span
 class="math inline">\(\mathbb R^m\)</span> 处处连续，则称 <span
 class="math inline">\(f\)</span> 是连续函数。</p></li>
-<li><p><strong>度量 (Metric)</strong></p>
+<li><h5 id="度量-metric">度量 (Metric)</h5>
 <p>回顾欧氏空间中在 $R^n $ 上的 <span class="math inline">\(|\cdot
 |\)</span>，它诱导了连续性。</p></li>
-<li><p><strong>度量空间 (Metric Space)</strong></p>
+<li><h5 id="度量空间-metric-space">度量空间 (Metric Space)</h5>
 <p>定义：集合 <span class="math inline">\(X\)</span>
 被称为是一个度量空间，如果存在映射 <span class="math inline">\(d:X\times
 X\to \mathbb R\)</span>，满足下面几个公理</p>
@@ -385,7 +385,7 @@ class="math inline">\((X,d)\)</span> 是一个度量空间。</p>
 class="math inline">\(x_1=x_3\)</span>，有 <span
 class="math inline">\(d(x_1,x_3)\leq 2 d(x_1,x_2)\)</span>，从而 <span
 class="math inline">\(d(x_1,x_2)\geq 0\)</span>.</p></li>
-<li><p><strong>基础的度量空间例子</strong></p>
+<li><h5 id="基础的度量空间例子">基础的度量空间例子</h5>
 <ul>
 <li><span class="math inline">\(\forall
 x_1=(x_1^1,\cdots,x_1^n),x_2=(x_2^1,\cdots,x_2^n)\in \mathbb
@@ -402,7 +402,7 @@ class="math inline">\(d_p(x_1,x_2)=(\sum_{i=1}^n|x_1^i-x_2^i|^p)^{1/p}\)</span>�
 <span class="math inline">\(Y\subset X\)</span>，则 <span
 class="math inline">\((Y,d|_{Y})\)</span> 是一个度量空间</li>
 </ul></li>
-<li><p><strong>度量空间连续性的定义</strong></p>
+<li><h5 id="度量空间连续性的定义">度量空间连续性的定义</h5>
 <p>令 <span class="math inline">\(f:X\to Y\)</span>
 度量空间间的映射，定义：</p>
 <p>称 <span class="math inline">\(f\)</span> 在点 <span
@@ -414,7 +414,7 @@ class="math inline">\(d(x,x&#39;)&lt;\delta\)</span>.</p>
 <p>称 <span class="math inline">\(f\)</span> 是连续的如果 <span
 class="math inline">\(f\)</span> 对于每一个 <span
 class="math inline">\(x\in X\)</span> 都是连续的。</p></li>
-<li><p><strong>引入：球的概念</strong></p>
+<li><h5 id="引入球的概念">引入：球的概念</h5>
 <p>对于 <span class="math inline">\(\varepsilon&gt;0\)</span> 以及任意的
 <span class="math inline">\(x\in X\)</span>，记 <span
 class="math inline">\(B(x,\varepsilon):=\{y\in X\mid
@@ -427,7 +427,7 @@ class="math inline">\(\forall\varepsilon&gt;0,\exists
 \delta&gt;0\)</span>，使得 <span
 class="math inline">\(f(B(x,\delta))\subset
 B(f(x),\varepsilon)\)</span>.</p></li>
-<li><p><strong>定义：开集 (Open Set)</strong></p>
+<li><h5 id="定义开集-open-set">定义：开集 (Open Set)</h5>
 <p>定义 <span class="math inline">\(X\)</span>
 是一个度量空间（今后度量空间略去 <span
 class="math inline">\(d\)</span>），一个集合 <span
@@ -442,7 +442,7 @@ class="math inline">\(x\)</span> 的一个<strong>邻域
 <p>事实：<span class="math inline">\(\forall x\in
 X,\varepsilon&gt;0\)</span>，则 <span
 class="math inline">\(B(x,\varepsilon)\)</span> 一定是开集。</p></li>
-<li><p><strong>定理</strong></p>
+<li><h5 id="定理-开集">定理 (开集)</h5>
 <ul>
 <li><ol type="1">
 <li>任取一个指标集 <span
@@ -493,11 +493,11 @@ class="math inline">\(\bigcap_{i=1}^\infty U_i=\mathbb R\setminus
 \{1,\cfrac{1}{2},\cdots\}\)</span>，该集合不再是 <span
 class="math inline">\(\mathbb R\)</span> 里的开集。（对于 <span
 class="math inline">\(0\)</span>，不存在一个球使其包含在该集合中）</p></li>
-<li><p><strong>定义：闭集 (Close Set)</strong></p>
+<li><h5 id="定义闭集-close-set">定义：闭集 (Close Set)</h5>
 <p>一个集合 <span class="math inline">\(F\subset X\)</span>
 被称为是<strong>闭 (Close)</strong>的，若 <span
 class="math inline">\(X\setminus F\)</span> 是开集。</p></li>
-<li><p><strong>关键定理 (连续性)</strong></p>
+<li><h5 id="关键定理-连续性">关键定理 (连续性)</h5>
 <p>令 <span class="math inline">\(f:X\to Y\)</span> 其中 <span
 class="math inline">\(X,Y\)</span> 是度量空间，则 <span
 class="math inline">\(f\)</span> 是连续映射当且仅当 <span
@@ -526,7 +526,8 @@ f^{-1}(B(f(x),\varepsilon))\)</span>，于是 <span
 class="math inline">\(f(B(x,\delta))\subset
 B(f(x),\varepsilon)\)</span>，于是 <span
 class="math inline">\(f\)</span> 是连续函数。</p></li>
-<li><p><strong>定义：拓扑空间 (Topological Space)</strong></p>
+<li><h5 id="定义拓扑空间-topological-space">定义：拓扑空间 (Topological
+Space)</h5>
 <p>一个集合 <span class="math inline">\(X\)</span>
 被称为是<strong>拓扑空间</strong>，若存在 <span
 class="math inline">\(X\)</span> 的子集族 <span
@@ -545,7 +546,7 @@ U_i\in \tau\)</span></li>
 class="math inline">\(\tau\)</span> 为 <span
 class="math inline">\(X\)</span>
 上的一个<strong>拓扑</strong>。</p></li>
-<li><p><strong>例子</strong></p>
+<li><h5 id="例子">例子</h5>
 <ul>
 <li><p>度量空间是特殊的拓扑空间：若 <span
 class="math inline">\((X,d)\)</span> 是一个度量空间，则 <span
@@ -568,7 +569,7 @@ class="math inline">\(U\in \tau\)</span>.</p>
 是一个拓扑空间。将这个拓扑空间称为 <span
 class="math inline">\((X,\tau)\)</span> 的子空间。</p></li>
 </ul></li>
-<li><p><strong>定义：连续映射</strong></p>
+<li><h5 id="定义连续映射">定义：连续映射</h5>
 <p>令 <span class="math inline">\(f:X\to Y\)</span>
 是一个拓扑空间间的映射，<span class="math inline">\(f\)</span>
 被称为连续映射，如果 <span class="math inline">\(\forall U\subset
@@ -610,10 +611,10 @@ metric），这会诱导 <span class="math inline">\(p\text{-adic}\)</span>
 <h2 id="闭集与连续映射">02. 闭集与连续映射</h2>
 <h3 id="对闭集的研究">对闭集的研究</h3>
 <ul>
-<li><p><strong>回忆：闭集的定义</strong></p>
+<li><h4 id="回忆闭集的定义">回忆：闭集的定义</h4>
 <p>一个集合 <span class="math inline">\(A\subset X\)</span> 是闭集当
 <span class="math inline">\(X\setminus A\)</span> 是开集。</p></li>
-<li><p><strong>一些例子</strong></p>
+<li><h4 id="一些例子">一些例子</h4>
 <p><span class="math inline">\(A=\{(x,y)\mid x^2+y^2=1\}\subseteq
 \mathbb R^2\)</span> （此后，若不加特殊说明，空间皆使用欧氏拓扑）</p>
 <p>它是一个闭集。</p>
@@ -623,7 +624,7 @@ metric），这会诱导 <span class="math inline">\(p\text{-adic}\)</span>
 <p><span class="math inline">\(A=\{(x,y)\mid x^2+y^2=1,y&gt;0\}\subseteq
 \mathbb R^2\)</span></p>
 <p>它不是开集，也不是闭集。</p></li>
-<li><p><strong>极限点 (limit point) 的定义</strong></p>
+<li><h4 id="极限点-limit-point-的定义">极限点 (limit point) 的定义</h4>
 <p>定义：令 <span class="math inline">\(A\subset X\)</span>，<span
 class="math inline">\(p\in X\)</span>，<span
 class="math inline">\(p\)</span> 是集合 <span
@@ -675,7 +676,7 @@ class="math inline">\(\mathbb C^n\)</span> 时的情形。</p>
 <span class="math inline">\(f_1,f_2,\cdots,f_m\in \mathbb
 C[t_1,\cdots,t_n]\)</span>.</p></li>
 </ul></li>
-<li><p><strong>闭集一般性的定义</strong></p>
+<li><h4 id="闭集一般性的定义">闭集一般性的定义</h4>
 <p>定理：一个集合是闭集，当且仅当它包含了自己的所有极限点。</p>
 <p>证明：</p>
 <p><span class="math inline">\((\Rightarrow)\)</span>：令 <span
@@ -696,7 +697,7 @@ class="math inline">\(U_p\subset X\setminus A\)</span>，因而 <span
 class="math inline">\(X\setminus A=\bigcup_{p\in X\setminus A}
 U_p\)</span> 是开集，因此 <span class="math inline">\(A\)</span>
 是一个闭集。</p></li>
-<li><p><strong>闭包 (closure) 的定义</strong></p>
+<li><h4 id="闭包-closure-的定义">闭包 (closure) 的定义</h4>
 <p>定义：从集合 <span class="math inline">\(A\)</span> 出发，将 <span
 class="math inline">\(A\)</span>
 本身与它所有的极限点并起来，将这称作集合 <span
@@ -748,13 +749,14 @@ class="math inline">\(\bar A\subset B\)</span>.</p>
 <p>推论：若 <span class="math inline">\(A\subset X\)</span>，则 <span
 class="math inline">\(A\)</span> 是闭集当且仅当 <span
 class="math inline">\(A=\bar A\)</span>.</p></li>
-<li><p><strong>稠密 (dense) 的定义</strong></p>
+<li><h4 id="稠密-dense-的定义">稠密 (dense) 的定义</h4>
 <p>定义：<span class="math inline">\(A\subset X\)</span>
 被称为是稠密的，如果 <span class="math inline">\(\bar A=X\)</span>.</p>
 <p>例子：<span
 class="math inline">\(\mathbb{Q}\subseteq\mathbb{R}\)</span>
 是稠密的。</p></li>
-<li><p><strong>内部点 (interior point) 的定义</strong></p>
+<li><h4 id="内部点-interior-point-的定义">内部点 (interior point)
+的定义</h4>
 <p>定义：<span class="math inline">\(x\subset A\)</span>
 被称作一个内部点当 <span class="math inline">\(\exists\)</span> <span
 class="math inline">\(x\)</span> 的邻域 <span
@@ -766,8 +768,8 @@ class="math inline">\(U\subseteq A\)</span>.</p>
 <p>令 <span class="math inline">\(A=\{(x,y)\mid x^2+y^2\leq 1\}\subseteq
 \mathbb R^2\)</span>，则 <span class="math inline">\(\mathring
 A=\{(x,y)\mid x^2+y^2&lt;1\}\subseteq \mathbb R^2\)</span></p></li>
-<li><p><strong>边界点 (frontier point / boundary point)
-的定义</strong></p>
+<li><h4 id="边界点-frontier-point-boundary-point-的定义">边界点
+(frontier point / boundary point) 的定义</h4>
 <p>定义：<span class="math inline">\(x\in X\)</span> 被称为 <span
 class="math inline">\(A\)</span> 的边界点（请注意定义域），如果 <span
 class="math inline">\(x\)</span> 既不是 <span
@@ -787,7 +789,7 @@ class="math inline">\(A_2\)</span> 边界点的集合。</p>
 class="math inline">\(A\)</span> 中）</p>
 <p><span class="math inline">\(0,1\)</span> 都是下面集合的边界点：<span
 class="math inline">\([0,1)\subseteq \mathbb{R}\)</span>.</p></li>
-<li><p><strong>拓扑基 (basis / base) 的定义</strong></p>
+<li><h4 id="拓扑基-basis-base-的定义">拓扑基 (basis / base) 的定义</h4>
 <p>定义：令 <span class="math inline">\(\beta\)</span> 是一个由某一些
 <span class="math inline">\(X\)</span> 中开集构成的集族，假设 <span
 class="math inline">\(X\)</span> 中的每一个开集都可以表示为 <span
@@ -835,10 +837,10 @@ B_2} B_{3}^x=B_1\cap B\)</span> 是开集.</p>
 </ul>
 <h3 id="对连续映射的研究">对连续映射的研究</h3>
 <ul>
-<li><p><strong>回忆：连续映射</strong></p>
+<li><h4 id="回忆连续映射">回忆：连续映射</h4>
 <p><span class="math inline">\(f:X\to Y\)</span>
 是连续映射，当且仅当开集的原像也是开集。</p></li>
-<li><p><strong>连续映射的复合</strong></p>
+<li><h4 id="连续映射的复合">连续映射的复合</h4>
 <p>定理：若有映射 <span class="math inline">\(f:X\to Y\)</span> 与映射
 <span class="math inline">\(g:Y\to
 Z\)</span>，若两个映射都是连续映射，则 <span
@@ -848,7 +850,7 @@ class="math inline">\(g\circ f\)</span> 仍然是连续映射。</p>
 <span class="math inline">\(Y\)</span> 中是开集，进一步其在 <span
 class="math inline">\(f^{-1}(g^{-1}(U))\)</span> 在 <span
 class="math inline">\(X\)</span> 中是开集。因此得出结论。</p></li>
-<li><p><strong>限制到子空间的连续性</strong></p>
+<li><h4 id="限制到子空间的连续性">限制到子空间的连续性</h4>
 <p>定理：令 <span class="math inline">\(f:X\to Y\)</span>
 是连续映射，取子空间 <span class="math inline">\(A\subseteq X\)</span>
 采用子空间拓扑，则 <span class="math inline">\(f|_A:A\to Y\)</span>
@@ -858,7 +860,7 @@ class="math inline">\(X\)</span> 中是开集。因此得出结论。</p></li>
 class="math inline">\(X\)</span> 中开集，则 <span
 class="math inline">\((f|_A)^{-1}(U)=A\cap f^{-1}(U)\)</span>，其为
 <span class="math inline">\(A\)</span> 中开集。因此得出结论</p></li>
-<li><p><strong>连续性的等价叙述</strong></p>
+<li><h4 id="连续性的等价叙述">连续性的等价叙述</h4>
 <p>定理：下面的叙述是等价的：</p>
 <ol type="1">
 <li><p><span class="math inline">\(f:X\to Y\)</span>
@@ -913,7 +915,7 @@ class="math inline">\((5)\Rightarrow(1)\)</span>：显然。</p></li>
 <h2 id="同胚距离与度量空间">03. 同胚、距离与度量空间</h2>
 <h3 id="对连续映射的进一步研究">对连续映射的进一步研究</h3>
 <ul>
-<li><p><strong>同胚 (Homeomorphism) 的定义</strong></p>
+<li><h4 id="同胚-homeomorphism-的定义">同胚 (Homeomorphism) 的定义</h4>
 <p>称 <span class="math inline">\(f:X\to Y\)</span> 是同胚，如果 <span
 class="math inline">\(f\)</span> 是连续，且存在逆映射：<span
 class="math inline">\(g:Y\to X\)</span> 使得 <span
@@ -931,8 +933,9 @@ class="math inline">\(f\)</span>
 </figure>
 <p><span class="math inline">\([0,1)\to S&#39;=\{(x,y)\mid x^2+y^2=1\},
 x\to (\cos 2\pi x,\sin 2\pi x)\)</span></p></li>
-<li><p><strong>连续映射的局部性质 (Local formulation of
-continuity)</strong></p>
+<li><h4
+id="连续映射的局部性质-local-formulation-of-continuity">连续映射的局部性质
+(Local formulation of continuity)</h4>
 <ol type="1">
 <li><p><span class="math inline">\(f:X\to Y\)</span>
 是一个连续映射，如果 <span class="math inline">\(X\)</span>
@@ -977,7 +980,7 @@ class="math inline">\(f(x)=\begin{cases}x-1&amp;x&lt;0\\x+1&amp;x\geq0\end{cases
 f|_{(-\infty,0)}\)</span> 都是连续的，并且 <span
 class="math inline">\(\mathbb
 R=[0,+\infty)\cup(-\infty,0)\)</span>，因为该覆盖既并非全是开集，又并非全是闭集，故无法套用上述定理。（上述定理的“开”、“闭”是必要的）</p></li>
-<li><p><strong>拓扑学中的极限 (Limit)</strong></p>
+<li><h4 id="拓扑学中的极限-limit">拓扑学中的极限 (Limit)</h4>
 <p>令 <span class="math inline">\(X\)</span> 是一个集合，令 <span
 class="math inline">\(\beta\)</span> 是一个子集族，使得其满足：</p>
 <ul>
@@ -1067,7 +1070,8 @@ f(x)\text{d}x\)</span>.</p></li>
 </ul>
 <h3 id="对度量空间的研究">对度量空间的研究</h3>
 <ul>
-<li><p><strong>度量空间的扩张/延拓 (Extension Problem)</strong></p>
+<li><h4 id="度量空间的扩张延拓-extension-problem">度量空间的扩张/延拓
+(Extension Problem)</h4>
 <p><span class="math inline">\(X\)</span> 是一个度量空间，<span
 class="math inline">\(A\subset X\)</span>，考虑映射 <span
 class="math inline">\(f:A\to \mathbb R\)</span>，使得 <span
@@ -1079,7 +1083,7 @@ class="math inline">\(X=[-\cfrac{\pi}{2},\cfrac{\pi}{2}],A=(-\cfrac{\pi}{2},\cfr
 class="math inline">\(f(x):\tan(x)\)</span>.</p>
 <p>此时无法将 <span class="math inline">\(f\)</span> 连续地延拓至 <span
 class="math inline">\(X\)</span> 上。</p></li>
-<li><p><strong>点到集合距离的定义</strong></p>
+<li><h4 id="点到集合距离的定义">点到集合距离的定义</h4>
 <p>令 <span class="math inline">\(d\)</span> 是一个 <span
 class="math inline">\(X\)</span> 上的度量，令 <span
 class="math inline">\(A\subset X\)</span>，<span
@@ -1140,7 +1144,8 @@ class="math inline">\(f(x)=\cfrac{1}{d(x,A)+1}\)</span>；</p>
 class="math inline">\(f(x)=\cfrac{-1}{d(x,B)+1}\)</span>；</p>
 <p>如果 <span class="math inline">\(A=B=\varnothing\)</span>，则令 <span
 class="math inline">\(f(x)=0\)</span>.</p></li>
-<li><p><strong>扩张定理 (Tietze extension theorem)</strong></p>
+<li><h4 id="扩张定理-tietze-extension-theorem">扩张定理 (Tietze
+extension theorem)</h4>
 <p>令 <span class="math inline">\(X\)</span> 是度量空间，<span
 class="math inline">\(C\subset X\)</span> 是闭集。若 <span
 class="math inline">\(f:C\to \mathbb R\)</span> 连续，则 <span
@@ -1204,9 +1209,10 @@ g(x)\)</span> 是 <span class="math inline">\(f\)</span>
 <h2 id="度量空间的完备化">04. 度量空间的完备化</h2>
 <h3 id="度量空间的完备化-1">度量空间的完备化</h3>
 <ul>
-<li><p><strong>完备的度量空间 (Complete metric space)</strong></p>
+<li><h4 id="完备的度量空间-complete-metric-space">完备的度量空间
+(Complete metric space)</h4>
 <ul>
-<li><p><strong>柯西序列 (Cauchy Sequence)</strong></p>
+<li><h5 id="柯西序列-cauchy-sequence">柯西序列 (Cauchy Sequence)</h5>
 <p>令 <span class="math inline">\((X,d)\)</span>
 是一个度量空间，定义序列 <span class="math inline">\(\set{x_n\mid n\geq
 1}\)</span> 被称为<strong>柯西序列 (Cauchy sequence)</strong>，如果
@@ -1214,7 +1220,7 @@ g(x)\)</span> 是 <span class="math inline">\(f\)</span>
 class="math inline">\(\exists N\in \mathbb N\)</span>，使得 <span
 class="math inline">\(d(x_m,x_n)&lt;\varepsilon,\forall
 n,m&gt;N\)</span>.</p></li>
-<li><p><strong>点列的极限</strong></p>
+<li><h5 id="点列的极限">点列的极限</h5>
 <p>对点列 <span class="math inline">\(\set{x_n}\in
 X\)</span>，称其<strong>收敛</strong>于 <span
 class="math inline">\(a\)</span>，如果 <span
@@ -1222,12 +1228,12 @@ class="math inline">\(\lim_{n\to\infty}d(x_n,a)=0\)</span>，把点 <span
 class="math inline">\(a\)</span> 称作点列 <span
 class="math inline">\(\set{x_n}\)</span>
 的<strong>极限</strong>。</p></li>
-<li><p><strong>完备度量空间的概念</strong></p>
+<li><h5 id="完备度量空间的概念">完备度量空间的概念</h5>
 <p>一个度量空间 <span
 class="math inline">\((X,d)\)</span>，称其是完备的如果 <span
 class="math inline">\(\forall\)</span> 柯西序列 <span
 class="math inline">\(\set{x_n}\)</span> 都有极限。</p></li>
-<li><p><strong>例子</strong></p>
+<li><h5 id="例子-1">例子</h5>
 <p><span class="math inline">\(\mathbb R\)</span>
 赋予欧氏度量后是完备的度量空间。</p>
 <p><span class="math inline">\(\mathbb Q\subseteq \mathbb R\)</span>
@@ -1285,8 +1291,9 @@ b\end{cases}\)</span></p>
 <p>这不可能是一个连续函数（即使由于度量定义导致 <span
 class="math inline">\(x=\cfrac{a+b}{2}\)</span> 时取值可变）。</p></li>
 </ul></li>
-<li><p><strong>度量空间的完备化 (Completion of a metric
-space)</strong></p>
+<li><h4
+id="度量空间的完备化-completion-of-a-metric-space">度量空间的完备化
+(Completion of a metric space)</h4>
 <p>令 <span class="math inline">\((X,d)\)</span>
 是一个度量空间，我们想要找到一个最小的完备空间，称之为 <span
 class="math inline">\((Y,d)\)</span>，使得 <span
@@ -1304,7 +1311,7 @@ class="math inline">\(\bar X=Y\)</span>），则把 <span
 class="math inline">\((Y,d)\)</span> 称作 <span
 class="math inline">\((X,d)\)</span>
 的<strong>完备化</strong>。更进一步地，这种完备化在下面的意义下是唯一的。</p></li>
-<li><p><strong>度量空间间的 Isometry</strong></p>
+<li><h4 id="度量空间间的-isometry">度量空间间的 Isometry</h4>
 <p>称两个度量空间 <span class="math inline">\((X_1,d_1)\)</span>, <span
 class="math inline">\((X_2,d_2)\)</span> 是 <strong>Isometric</strong>
 的，当 $$ 双射 <span class="math inline">\(f:X_1\to
@@ -1319,8 +1326,9 @@ class="math inline">\(\exists g:X_2\to X_1\)</span>，使得 <span
 class="math inline">\(d_1(g(a),g(b))=d_2(a,b),\forall a,b\in
 X_2\)</span>，其中 <span class="math inline">\(f\circ g=id_{X_2},g\circ
 f=id_{X_1}\)</span>.</p></li>
-<li><p><strong>度量空间完备化的唯一性 (Uniqueness of
-Completion)</strong></p>
+<li><h4
+id="度量空间完备化的唯一性-uniqueness-of-completion">度量空间完备化的唯一性
+(Uniqueness of Completion)</h4>
 <p><strong>引理</strong>：令 <span class="math inline">\((X,d)\)</span>
 是一个度量空间且 <span class="math inline">\(a,b,u,v\in X\)</span>，则
 <span class="math inline">\(|d(a,b)-d(u,v)|\leq
@@ -1398,8 +1406,9 @@ class="math inline">\(d_2(f(y_1&#39;),f(y_1&#39;&#39;))=d_1(y_1&#39;,y_1&#39;&#3
 class="math inline">\(f\)</span> 双射且保度量，因此 <span
 class="math inline">\((Y_1,d_1),(Y_2,d_2)\)</span> 是 Isometric
 的。</p></li>
-<li><p><strong>度量空间完备化的存在性 (Existence of
-Completion)</strong></p>
+<li><h4
+id="度量空间完备化的存在性-existence-of-completion">度量空间完备化的存在性
+(Existence of Completion)</h4>
 <p><strong>定理</strong>：如果我们将两个 Isometric
 的空间等同起来（看成是同一个空间），则所有的度量空间都有完备化。</p>
 <p><strong>证明</strong>：令 <span
@@ -1551,7 +1560,7 @@ class="math inline">\(U_1,U_2\)</span>，有 <span
 class="math inline">\(x_1\in U_1,x_2\in U_2\)</span>，使得 <span
 class="math inline">\(U_1\cap U_2=\varnothing\)</span>.</p>
 <ul>
-<li><h5 id="例子">例子</h5>
+<li><h5 id="例子-2">例子</h5>
 <p>若 <span class="math inline">\((X,d)\)</span>
 是一个度量空间，则它是一个 Hausdorff 空间。</p>
 <p><span class="math inline">\(\forall x_1\neq x_2\in X\)</span>，有
