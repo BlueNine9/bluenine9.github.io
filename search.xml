@@ -261,7 +261,7 @@ class="math inline">\(t\)</span>为超级源点汇点 <figure class="highlight c
   <entry>
     <title>拓扑学笔记</title>
     <url>/2023/09/21/%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/RT5hhsmpfM/</p>
+    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/GB6d2SVhYJ/</p>
 <p>分节次的笔记（清华云盘）：https://cloud.tsinghua.edu.cn/d/2c4efaca588a4326958d/</p>
 <h2 id="lecture-info">00. Lecture Info</h2>
 <h3 id="考核">1. 考核</h3>
@@ -2599,6 +2599,345 @@ class="math inline">\(X\)</span> 也是连通，如此我们给出了一个反�
 class="math inline">\(Y\)</span> 即为 <span
 class="math inline">\(X\)</span>
 的道路连通分支，这也告诉我们道路连通分支未必是闭集。</p></li>
+</ul>
+<h2 id="粘合空间">08. 粘合空间</h2>
+<h3 id="粘合空间-identification-spaces">粘合空间 (Identification
+Spaces)</h3>
+<ul>
+<li><h4 id="一些简单的例子">一些简单的例子</h4>
+<p>考虑一个圆柱面。<span class="math inline">\(x^2+y^2=1,0\leq z\leq
+1,(x,y,z)\in\mathbb{R}^3\)</span></p>
+<figure>
+<img src="\08-1.png" alt="image-20231019095324060" />
+<figcaption aria-hidden="true">image-20231019095324060</figcaption>
+</figure>
+<p>这是圆柱面嵌入到欧氏空间的定义。</p>
+<figure>
+<img src="\08-2.png" alt="image-20231019095424999" />
+<figcaption aria-hidden="true">image-20231019095424999</figcaption>
+</figure>
+<p>考虑将矩形粘合到一起，这也形成了一个圆柱面。</p>
+<p>两个圆柱面呈现出什么样的关系呢？我们来研究它们的拓扑结构。不妨来考察圆柱面里的开集，在拉回矩形后就是矩形中的一个小圆形。这意味着圆柱面里的开集在拉回到矩形后仍然是一个开集。</p>
+<figure>
+<img src="\08-3.png" alt="image-20231019095619549" />
+<figcaption aria-hidden="true">image-20231019095619549</figcaption>
+</figure>
+<p>接下来我们考察另一个例子：<strong>环面 (Torus)</strong>。<span
+class="math inline">\(X\subseteq \mathbb{R}^3\)</span></p>
+<figure>
+<img src="\08-4.png" alt="image-20231019095744764" />
+<figcaption aria-hidden="true">image-20231019095744764</figcaption>
+</figure>
+<p>能从矩形中构造出环面吗？当然可以。</p>
+<figure>
+<img src="\08-5.png" alt="image-20231019095852987" />
+<figcaption aria-hidden="true">image-20231019095852987</figcaption>
+</figure>
+<p>像是把圆柱面的两头粘在了一起，确实得出了环面。</p>
+<p>我们还是来考虑拓扑结构，如下图所示。</p>
+<figure>
+<img src="\08-6.png" alt="image-20231019100024280" />
+<figcaption aria-hidden="true">image-20231019100024280</figcaption>
+</figure>
+<p>此图给出了特殊点的对应关系。（对不起！红绿色盲）</p>
+<figure>
+<img src="\08-7.png" alt="image-20231019100139410" />
+<figcaption aria-hidden="true">image-20231019100139410</figcaption>
+</figure>
+<p>跟圆柱的情形类似，环面的开集拉回矩形后也是开集。</p>
+<p>我们将会看到越来越复杂的例子，这会逐渐体现粘合观点的优越性。</p>
+<p>我们来看下一个例子：</p>
+<figure>
+<img src="\08-8.png" alt="image-20231019100338726" />
+<figcaption aria-hidden="true">image-20231019100338726</figcaption>
+</figure>
+<p>图中是一根<strong>莫比乌斯带 (Mobius Strip)</strong>。<span
+class="math inline">\(X\subseteq \mathbb{R}^3\)</span>.</p>
+<p>这个图形也可以从矩形粘合得来：</p>
+<figure>
+<img src="\08-9.png" alt="image-20231019100510774" />
+<figcaption aria-hidden="true">image-20231019100510774</figcaption>
+</figure>
+<figure>
+<img src="\08-10.png" alt="image-20231019100533762" />
+<figcaption aria-hidden="true">image-20231019100533762</figcaption>
+</figure>
+<p>下图给出了它们拓扑结构的关系：</p>
+<figure>
+<img src="\08-11.png" alt="image-20231019100649318" />
+<figcaption aria-hidden="true">image-20231019100649318</figcaption>
+</figure>
+<p>需要注意粘合方法导致两侧半圆不“水平”。</p>
+<p>接着来看一个更复杂的例子：</p>
+<figure>
+<img src="\08-12.png" alt="image-20231019100755532" />
+<figcaption aria-hidden="true">image-20231019100755532</figcaption>
+</figure>
+<p>可以考虑先粘上下两边，这得到了一个圆柱面。</p>
+<p>粘合左右两边变得没有那么好想象了，下面有一个示意图：</p>
+<figure>
+<img src="\08-13.png" alt="image-20231019101107322" />
+<figcaption aria-hidden="true">image-20231019101107322</figcaption>
+</figure>
+<p>这被称作<strong>克莱因瓶 (Klein
+Bottle)</strong>，这个物体不能嵌入欧氏空间。（这个物体事实上可以嵌入四维空间）</p>
+<p>最后我们再来看一个例子：</p>
+<figure>
+<img src="\08-14.png" alt="image-20231019101249560" />
+<figcaption aria-hidden="true">image-20231019101249560</figcaption>
+</figure>
+<p>这个物体的示意图变得不那么好画了，但该空间非常重要，我们将它称为
+<span class="math inline">\(\mathbb{R}P^2\)</span>
+拓扑，<strong>实射影平面 (Real Projective Plane)</strong>.</p>
+<p>应该怎么更好地理解它呢？不妨把矩形看作圆盘。</p>
+<figure>
+<img src="\08-15.png" alt="image-20231019101513763" />
+<figcaption aria-hidden="true">image-20231019101513763</figcaption>
+</figure>
+<p>考察圆盘 <span class="math inline">\(B=\set{(x,y)\mid x^2+y^2\leq
+1}\)</span></p>
+<p>圆周 <span class="math inline">\(S^1=\partial B=\set{(x,y)\mid
+x^2+y^2=1}\)</span></p>
+<p>如何理解上述定义呢？上面的粘合操作等价于，我们将所有的对径点 <span
+class="math inline">\(P\)</span> 与 <span
+class="math inline">\(-P\)</span> 粘合起来 <span
+class="math inline">\(\forall P\in S^1\)</span>.</p>
+<figure>
+<img src="\08-16.png" alt="image-20231019101648081" />
+<figcaption aria-hidden="true">image-20231019101648081</figcaption>
+</figure>
+<p>从代数几何视角上看，前两个空间（圆柱、圆环）是可定向曲面，而最后三个空间（莫比乌斯带、克莱因瓶、实射影平面）都是不可定向的。</p>
+<p>直观上看，一个可定向的空间可以分出“里面”与“外面”的概念。</p></li>
+<li><h4
+id="粘合拓扑与粘合空间的定义-identification-topology-space">粘合拓扑与粘合空间的定义
+(Identification Topology / Space)</h4>
+<p>令 <span class="math inline">\(X\)</span> 是一个拓扑空间，且 <span
+class="math inline">\(X=\bigsqcup_{i\in I}P_i\)</span> 给出了 <span
+class="math inline">\(X\)</span> 的一个分划（集合的不交并）。令 <span
+class="math inline">\(Y=\set{P_i\mid i\in I}\)</span>，令 <span
+class="math inline">\(\pi:X\to Y\)</span>，其中 <span
+class="math inline">\(\pi(x)=P_i\text{ if } x\in P_i\)</span> .</p>
+<p>我们在 <span class="math inline">\(Y\)</span> 上装备拓扑，使得 <span
+class="math inline">\(U\subseteq Y\)</span> 是开集当且仅当 <span
+class="math inline">\(\pi^{-1}(U)\)</span> 在 <span
+class="math inline">\(X\)</span> 中是开集。我们将 <span
+class="math inline">\(Y\)</span> 上的拓扑称为是<strong>粘合拓扑
+(Identification Topology)</strong>，将 <span
+class="math inline">\(Y\)</span> 称为对应于分划 <span
+class="math inline">\(\bigsqcup_{i\in I}P_i\)</span> 的<strong>粘合空间
+(Identification Space)</strong>。</p></li>
+<li><h4 id="以粘合空间重述上面例子">以粘合空间重述上面例子</h4>
+<p>例：考察将矩形粘合成为圆柱面。</p>
+<p>将矩形参数化：<span class="math inline">\(X=\set{(x,y)\mid 0\leq
+x\leq 1,0\leq y\leq 1}\)</span>, <span
+class="math inline">\(Y=\text{圆柱}\)</span>.</p>
+<p>则 <span class="math inline">\(Y\)</span> 中的点对应 <span
+class="math inline">\(\set{(x,y)}\)</span> 单点 <span
+class="math inline">\((0&lt;x&lt;1)\)</span> 或 <span
+class="math inline">\(\set{(0,y),(1,y)}\)</span> 这一子集 <span
+class="math inline">\((0\leq y\leq
+1)\)</span>（直观上看，此时点落在“粘合线”上。</p></li>
+<li><h4
+id="粘合空间的泛型-universal-property-of-identification-space">粘合空间的泛型
+(Universal Property of Identification Space)</h4>
+<p>令 <span class="math inline">\(Y\)</span> 是一个粘合空间，<span
+class="math inline">\(\pi:X\to Y\)</span> 是一个粘合映射。令 <span
+class="math inline">\(Z\)</span> 是另一个拓扑空间。则映射 <span
+class="math inline">\(f:Y\to Z\)</span> 是连续的，当且仅当 <span
+class="math inline">\(f\circ \pi:X\to Z\)</span> 是连续的。</p>
+<figure>
+<img src="\08-17.png" alt="image-20231019103216401" />
+<figcaption aria-hidden="true">image-20231019103216401</figcaption>
+</figure>
+<p>如图所示，中间的圆圈形箭头意味着这是一张“交换图表”。</p>
+<p>证明：</p>
+<p>根据粘合空间的定义，<span class="math inline">\(U\subseteq Z\)</span>
+是开集，考虑 <span class="math inline">\(f^{-1}(U)\subseteq
+Y\)</span>，这个集合是开集当且仅当 <span
+class="math inline">\(\pi^{-1}\circ f^{-1}(U)=(f\circ
+\pi)^{-1}(U)\)</span> 在 <span class="math inline">\(X\)</span>
+中是开集，故定理成立。</p>
+<p>这个定理意味着，尽管 <span class="math inline">\(Y\)</span>
+经过粘合后往往是个相当复杂的空间，为了判断连续性，我们可以将点“拉回”
+<span class="math inline">\(X\)</span> 中再去判断。</p></li>
+<li><h4 id="粘合映射-identification-map">粘合映射 (Identification
+Map)</h4>
+<p>令 <span class="math inline">\(f:X\to Y\)</span> 是一个连续满射。假设
+<span class="math inline">\(U\subseteq Y\)</span> 是开的当且仅当 <span
+class="math inline">\(f^{-1}(U)\subset X\)</span> 是开的，则我们称 <span
+class="math inline">\(f\)</span> 是一个<strong>粘合映射 (Identification
+Map)</strong>。</p>
+<ul>
+<li><h5 id="注由粘合映射导出粘合空间">注：由粘合映射导出粘合空间</h5>
+<p>考虑 <span class="math inline">\(X=\bigsqcup_{y\in
+Y}f^{-1}(y)\)</span>，令 <span class="math inline">\(Y_\star\)</span>
+是一个对应于这个分划的粘合空间。于是考虑映射 <span
+class="math inline">\(h:Y_\star\to Y\)</span>，<span
+class="math inline">\(h(\set{f^{-1}(y)})=y\)</span>.</p>
+<p>有 <span class="math inline">\(h\)</span>
+是一个双射，根据先前粘合映射的定义，我们有 <span
+class="math inline">\(h\)</span>
+是一个同胚。并且我们有一个交换图表：</p>
+<figure>
+<img src="\08-18.png" alt="image-20231019104700052" />
+<figcaption aria-hidden="true">image-20231019104700052</figcaption>
+</figure></li>
+</ul></li>
+<li><h4 id="粘合映射的刻画">粘合映射的刻画</h4>
+<p>令 <span class="math inline">\(f:X\to Y\)</span> 是连续满射，若 <span
+class="math inline">\(f\)</span> 把 <span
+class="math inline">\(X\)</span> 中开集映射为 <span
+class="math inline">\(Y\)</span> 中开集 (开映射，Open Map)，或者 <span
+class="math inline">\(f\)</span> 把 <span
+class="math inline">\(X\)</span> 中闭集映射为 <span
+class="math inline">\(Y\)</span> 中闭集 (闭映射，Close Map)，则 <span
+class="math inline">\(f\)</span> 是一个粘合映射。</p>
+<p>证明：</p>
+<p>若 <span class="math inline">\(f\)</span> 是开映射，令 <span
+class="math inline">\(U\)</span> 是 <span
+class="math inline">\(Y\)</span> 中集合使得 <span
+class="math inline">\(f^{-1}(U)\subseteq X\)</span> 是开集。由于 <span
+class="math inline">\(f\)</span> 是一个满射，于是 <span
+class="math inline">\(f(f^{-1}(U))=U\)</span>，于是 <span
+class="math inline">\(U\)</span> 是 <span
+class="math inline">\(Y\)</span> 中开集。于是 <span
+class="math inline">\(U\)</span> 在 <span
+class="math inline">\(Y\)</span> 中是开集当且仅当 <span
+class="math inline">\(f^{-1}(U)\)</span> 在 <span
+class="math inline">\(X\)</span> 中是开集。故 <span
+class="math inline">\(f\)</span> 确实是粘合映射。</p>
+<p>若 <span class="math inline">\(f\)</span>
+是闭映射，证明是类似的。</p>
+<ul>
+<li><h5 id="定理的推论">定理的推论</h5>
+<p>考虑映射 <span class="math inline">\(f:X\to Y\)</span>
+是连续满射，假设 <span class="math inline">\(X\)</span> 是紧空间，假设
+<span class="math inline">\(Y\)</span> 是 Hausdorff 空间，则 <span
+class="math inline">\(f\)</span> 是一个粘合映射。</p>
+<p>证明：</p>
+<p>令 <span class="math inline">\(A \subseteq X\)</span> 是闭集，有
+<span class="math inline">\(A\)</span> 是一个紧集。于是 <span
+class="math inline">\(f(A)\)</span> 在 <span
+class="math inline">\(Y\)</span> 中也是紧集，由于 <span
+class="math inline">\(Y\)</span> 是 Hausdorff 空间，因此 <span
+class="math inline">\(f(A)\)</span> 在 <span
+class="math inline">\(Y\)</span> 中是闭集，因此 <span
+class="math inline">\(f\)</span> 是一个闭映射。</p>
+<p>于是 <span class="math inline">\(f\)</span> 是粘合映射。</p></li>
+</ul></li>
+<li><h4
+id="连续映射局部性质的推广-generalizatio-of-local-formulation-of-continuity">连续映射局部性质的推广
+(Generalizatio of local formulation of continuity)</h4>
+<p>回忆：连续映射的局部刻画：</p>
+<ol type="1">
+<li><p><span class="math inline">\(f:X\to Y\)</span>
+是一个连续映射，如果 <span class="math inline">\(X\)</span>
+可以被一些开集 <span class="math inline">\(U_\alpha\)</span> 覆盖，即
+<span class="math inline">\(X=\bigcup_\alpha U_\alpha\)</span>，使得
+<span class="math inline">\(f|_{U_\alpha}\)</span> 是连续的。</p></li>
+<li><p><span class="math inline">\(f:X\to Y\)</span>
+是一个连续映射，如果 <span class="math inline">\(X\)</span>
+可以表示成一些闭集 <span class="math inline">\(F_i\)</span> 的并，即
+<span class="math inline">\(X=\bigcup_{i=1}^n F_i\)</span>，且 <span
+class="math inline">\(f|_{F_i}\)</span> 是连续的。</p></li>
+</ol>
+<p>有了粘合映射的概念后，我们可以如下推广此定理：</p>
+<p>令 <span class="math inline">\(X=\bigcup_{\alpha\in I}
+X_\alpha\)</span>，令 <span class="math inline">\(\tilde
+X=\bigsqcup_{\alpha\in I}X_\alpha\)</span></p>
+<figure>
+<img src="\08-19.png" alt="image-20231019110123256" />
+<figcaption aria-hidden="true">image-20231019110123256</figcaption>
+</figure>
+<figure>
+<img src="\08-20.png" alt="image-20231019111152490" />
+<figcaption aria-hidden="true">image-20231019111152490</figcaption>
+</figure>
+<p>这事实上是将重复元素”复制”了一份，或者可以记作 <span
+class="math inline">\(\tilde X=\set{(x,\alpha)\mid \alpha\in I,x\in
+X_\alpha}\)</span>.</p>
+<p>在 <span class="math inline">\(\tilde X\)</span> 中装备拓扑：<span
+class="math inline">\(U\subseteq \tilde X\)</span> 是开集，当且仅当
+<span class="math inline">\(U\cap X_{\alpha}\)</span> 是开的，<span
+class="math inline">\(\forall \alpha\)</span>。在这里定义的后半段，<span
+class="math inline">\(U\)</span>
+中的“被复制出的”点又被视为相同点了，或者可以把 <span
+class="math inline">\(X_\alpha\)</span> 视为 <span
+class="math inline">\(\set{(x,\alpha)\mid x\in X_\alpha}\)</span>。</p>
+<p>从而我们定义出了一个新的拓扑空间。</p>
+<p>我们令 <span class="math inline">\(j:\tilde X\to X\)</span> 是一个
+Canonical Map（<span
+class="math inline">\(j|_{X_\alpha}:X_{\alpha}\text{ 嵌入映射
+}X\)</span>），则有如下定理：</p>
+<p>考虑映射 <span class="math inline">\(f:X\to Y\)</span> 使得 <span
+class="math inline">\(f|_{X_\alpha}\)</span> 是连续的，假设 <span
+class="math inline">\(j:\tilde X\to X\)</span> 是一个粘合映射，则 <span
+class="math inline">\(f\)</span> 是一个连续映射。</p>
+<p>证明：</p>
+<p>由于 <span class="math inline">\(j\)</span> 是粘合映射，<span
+class="math inline">\(f\)</span> 是连续的当且仅当 <span
+class="math inline">\(f\circ j\)</span> 是连续的。这当且仅当 <span
+class="math inline">\(f\circ j|_{X_\alpha}\)</span>
+是连续的，由上述拓扑空间开集的定义易知其成立。</p>
+<ul>
+<li><h5 id="注定理推广的方式">注：定理推广的方式</h5>
+考虑 <span class="math inline">\(X=\bigcup_{\alpha} U_\alpha\)</span>
+开或 <span class="math inline">\(X=\bigcup_{i=1}^n F_i\)</span> 闭，则
+<span class="math inline">\(j:\tilde X\to X\)</span> 都是粘合映射（<span
+class="math inline">\(j\)</span> 是开映射或闭映射）</li>
+</ul></li>
+<li><h4 id="粘合映射的例子">粘合映射的例子</h4>
+<ul>
+<li><p><strong>闭圆盘的粘合</strong></p>
+<p>考虑<strong>圆盘 Disk</strong> <span
+class="math inline">\(B^2=\set{(x,y)\mid x^2+y^2\leq 1}\)</span>，<span
+class="math inline">\(S^1=\set{(x,y)\mid x^2+y^2=1}\)</span>.</p>
+<p>考虑粘合映射 <span class="math inline">\(B^2\to X\)</span>
+使得该映射把边界圆周 <span class="math inline">\(S^1\)</span>
+粘合成了一个点。<span class="math inline">\(X=\set{(x,y)\mid
+x^2+y^2&lt;1}\cup\set{S^1}\)</span>.</p>
+<p>我们将 <span class="math inline">\(X\)</span> 记作 <span
+class="math inline">\(B^2/S^1\)</span>（商空间），则 <span
+class="math inline">\(X\)</span> 同胚于球面 <span
+class="math inline">\(S^2=\set{(x,y,z)\mid x^2+y^2+z^2=1}\)</span>.</p>
+<p>更一般地，考虑 <span
+class="math inline">\(B^n/S^{n-1}\)</span>，这是一个粘合空间使得它将边界球面粘合成了一个点（<span
+class="math inline">\(B^n=\set{x\in \mathbb{R}^n\mid |x|\leq
+1},B^n\supseteq S^{n-1}=\set{x\in \mathbb{R}^{n}\mid
+|x|=1}\)</span>），则该空间同胚于 <span
+class="math inline">\(S^n\)</span>.</p>
+<p>提示：考虑集合 <span class="math inline">\(B^n\setminus
+S^{n-1}\)</span>，该集合同胚于 <span
+class="math inline">\(\mathbb{R}^n\)</span>. 又考虑 <span
+class="math inline">\(S^n\setminus \set{p_t}\)</span>，其中 <span
+class="math inline">\(p_t\)</span> 是 <span
+class="math inline">\(S^n\)</span> 中任意一点，那么这个集合也同胚于
+<span class="math inline">\(\mathbb{R}^n\)</span>. （球极投影）也就是
+<span class="math inline">\(B^n\setminus S^{n-1}\cong \mathbb{R}^n\cong
+S^n\setminus \set{p_t}\)</span>.</p></li>
+<li><h5 id="射影空间-projective-space">射影空间 (Projective Space)</h5>
+<p>我们给出三种构造来构造 <span class="math inline">\(n\)</span>
+维的实射影空间 <span class="math inline">\(\mathbb R
+P^n\)</span>，今天我们现在只介绍其中两种：</p>
+<p>令 <span class="math inline">\(S^n=\set{x\in \mathbb R^{n+1}\mid
+|x|=1}\subseteq \mathbb{R}^{n+1}\)</span> 是单位球面，将 <span
+class="math inline">\(\mathbb{R}P^n\)</span>
+定义为粘合空间，它粘合了球面上所有的对径点（也就是把所有 <span
+class="math inline">\(x,-x,\forall x\in S^n\)</span> 进行粘合）。</p>
+<p>以这种方法构造的粘合空间称作 <span
+class="math inline">\(\mathbb{R}P^n\)</span>（<span
+class="math inline">\(\mathbb{R}P^n=\set{S^n \text{
+中对径点点对构成的集合}}\)</span>）。</p>
+<p>将 <span class="math inline">\(\mathbb RP^n\)</span>
+定义为粘合空间，定义 <span
+class="math inline">\(\mathbb{R}^{n+1}\setminus\set{0}\)</span>
+的一个粘合，我们将所有在同一条通过原点直线上的点粘合在一起，将这个空间称作实射影空间。</p>
+<p>如图所示：</p>
+<figure>
+<img src="\08-21.png" alt="image-20231019112622930" />
+<figcaption aria-hidden="true">image-20231019112622930</figcaption>
+</figure></li>
+</ul></li>
 </ul>
 ]]></content>
       <categories>
