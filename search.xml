@@ -3197,17 +3197,19 @@ class="math inline">\(K=G=&lt;U&gt;\)</span>.</p></li>
 <h3 id="矩阵群-matrix-groups">矩阵群 (Matrix Groups)</h3>
 <ul>
 <li><h4 id="常见的矩阵集合">常见的矩阵集合</h4>
+<ul>
+<li><h5 id="mat_ntimes-nmathbbr-性质研究"><span
+class="math inline">\(Mat_{n\times n}(\mathbb{R})\)</span> 性质研究</h5>
 <p><span class="math inline">\(Mat_{n\times n}(\mathbb{R})=\set{n\times
 n \text{实矩阵}}\cong
-\mathbb{R}^{n^2}\)</span>，其在加法下构成群而在乘法下不是群。</p>
+\mathbb{R}^{n^2}\)</span>，其在加法下构成群而在乘法下不是群。</p></li>
+<li><h5 id="glnmathbbr-一般线性群性质的研究"><span
+class="math inline">\(GL(n,\mathbb{R})\)</span>
+（一般线性群）性质的研究</h5>
 <p><span class="math inline">\(GL(n,\mathbb{R})=\set{M\in Mat_{n\times
 n}(\mathbb{R})\mid \det M\neq 0}\subseteq
 \mathbb{R}^{n^2}\)</span>，且是一个开集。</p>
 <p>我们来研究一下它的性质。</p>
-<ul>
-<li><h5 id="glnmathbbr-一般线性群性质的研究"><span
-class="math inline">\(GL(n,\mathbb{R})\)</span>
-（一般线性群）性质的研究</h5>
 <p>首先看乘法：</p>
 <p><span class="math inline">\(Mat_{n\times n}(\mathbb{R})\times
 Mat_{n\times n}(\mathbb{R})\xrightarrow{m} Mat_{n\times
@@ -3258,14 +3260,12 @@ class="math inline">\(\begin{pmatrix}\cos\theta&amp;\sin\theta\\-\sin\theta&amp;
 class="math inline">\(\text{diag}(1,1)\to\text{diag}(-1,-1)\)</span>
 的连续变换。</p></li>
 </ul></li>
-</ul>
+<li><h5 id="slnmathbbr-性质研究"><span
+class="math inline">\(SL(n,\mathbb{R})\)</span> 性质研究</h5>
 <p>特殊线性群 <span class="math inline">\(SL(n,\mathbb{R})=\set{M\in
 GL(n,\mathbb{R})\mid \det M=1}\)</span>. 这是一个 <span
 class="math inline">\(GL(n,\mathbb{R})\)</span>
 的子群，故也是一个拓扑群。</p>
-<ul>
-<li><h5 id="slnmathbbr-性质研究"><span
-class="math inline">\(SL(n,\mathbb{R})\)</span> 性质研究</h5>
 <p>上面我们已经说明了它自然是一个拓扑群。</p>
 <ul>
 <li>该拓扑群是否是紧的？
@@ -3279,15 +3279,13 @@ class="math inline">\(f(M)=\cfrac{M}{(\det M)^{1/n}}\)</span>，于是
 class="math inline">\(A\)</span> 是连通的，因此 <span
 class="math inline">\(f(A)=SL(n,\mathbb{R})\)</span> 是连通的。</li>
 </ul></li>
-</ul>
+<li><h5 id="正交矩阵群性质研究">正交矩阵群性质研究</h5>
 <p>正交矩阵群 <span class="math inline">\(O(n)=\set{M\in
 GL(n,\mathbb{R})\mid M^TM=I}\)</span>，特殊正交矩阵群 <span
 class="math inline">\(SO(n)=\set{M\in O(n)\mid \det M=1}\)</span>.
 它们自然也是拓扑群（分别为 <span
 class="math inline">\(GL(n,\mathbb{R})\)</span> 与 <span
 class="math inline">\(SL(n,\mathbb{R})\)</span> 的子群）。</p>
-<ul>
-<li><h5 id="正交矩阵群性质研究">正交矩阵群性质研究</h5>
 <ul>
 <li><h6 id="正交矩阵群-on-与特殊正交矩阵群-son-是紧的">正交矩阵群 <span
 class="math inline">\(O(n)\)</span> 与特殊正交矩阵群 <span
