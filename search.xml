@@ -261,7 +261,7 @@ class="math inline">\(t\)</span>为超级源点汇点 <figure class="highlight c
   <entry>
     <title>拓扑学笔记</title>
     <url>/2023/09/21/%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/GB6d2SVhYJ/</p>
+    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/XWqGzX3Ks6/</p>
 <p>分节次的笔记（清华云盘）：https://cloud.tsinghua.edu.cn/d/2c4efaca588a4326958d/</p>
 <h2 id="lecture-info">00. Lecture Info</h2>
 <h3 id="考核">1. 考核</h3>
@@ -2937,6 +2937,383 @@ class="math inline">\(\mathbb{R}^{n+1}\setminus\set{0}\)</span>
 <img src="\08-21.png" alt="image-20231019112622930" />
 <figcaption aria-hidden="true">image-20231019112622930</figcaption>
 </figure></li>
+</ul></li>
+</ul>
+<h2 id="拓扑群与矩阵拓扑群">09. 拓扑群与矩阵拓扑群</h2>
+<h3 id="实射影空间-real-project-space">实射影空间 (Real Project
+Space)</h3>
+<ul>
+<li><h4 id="三种构造方法">三种构造方法</h4>
+<ol type="1">
+<li>通过将 <span class="math inline">\(x\)</span> 与 <span
+class="math inline">\(-x\)</span> 粘在一起构造一个粘合空间，<span
+class="math inline">\(\forall x\in S^n\)</span>；</li>
+<li><span
+class="math inline">\(\mathbb{R}^{n+1}\setminus\set{0}\)</span>
+中所有在过原点的同一直线上的点粘合在一起构造一个粘合空间；</li>
+<li>令 <span class="math inline">\(B^n\)</span> 是 <span
+class="math inline">\(n\)</span>
+维的单位球，考虑其边界球面，将其对径点粘合在一起，也能构造出实射影空间。（上节课一开始介绍的构造方法）</li>
+</ol>
+<figure>
+<img src="\09-1.png" alt="image-20231024152635956" />
+<figcaption aria-hidden="true">image-20231024152635956</figcaption>
+</figure>
+<p>方法 3 的解释：图中图形同胚于一个 <span
+class="math inline">\(n+1\)</span>
+维半球面，黄色区域可以看成是半球的赤道。</p>
+<figure>
+<img src="\09-2.png" alt="image-20231024152831378" />
+<figcaption aria-hidden="true">image-20231024152831378</figcaption>
+</figure>
+<p>可以看成是上下半球面先粘合，再粘合赤道的对径点。因此方法 3
+从直观上看是与方法 1 等价的。</p></li>
+<li><h4
+id="第二种构造方法的推广复射影平面">第二种构造方法的推广：复射影平面</h4>
+<p>注意到第二种构造方法事实上在 <span
+class="math inline">\(\mathbb{C}^n\)</span> 中也适用，我们将其称之为
+<span class="math inline">\(\mathbb{C}P^n\)</span>.</p>
+<p>考虑粘合空间：<span
+class="math inline">\(\mathbb{C}^{n+1}\setminus\set{0}\)</span>
+中将所有落在同一一维包含原点的线性子空间中的点粘合在一起，则这构成了一个粘合空间，这就构造出了
+<span class="math inline">\(\mathbb{C}P^n\)</span>.</p></li>
+</ul>
+<h3 id="粘合空间的构造">粘合空间的构造</h3>
+<ul>
+<li><h4 id="锥的构造-cone">锥的构造 (Cone)</h4>
+<p>令 <span class="math inline">\(X\)</span> 是一个拓扑空间，令 <span
+class="math inline">\(I=[0,1]\)</span>. 令 <span
+class="math inline">\(CX=(X\times I) / (X\times \set{1})\)</span>
+是粘合空间，在这个空间中将子空间 <span class="math inline">\(X\times
+\set{1}\)</span> 粘合成一点，我们将 <span
+class="math inline">\(CX\)</span> 称作一个<strong>锥
+(Cone)</strong>.</p>
+<figure>
+<img src="\09-3.png" alt="image-20231024153604990" />
+<figcaption aria-hidden="true">image-20231024153604990</figcaption>
+</figure></li>
+<li><h4 id="suspension">Suspension</h4>
+<p>令 <span class="math inline">\(X\)</span> 是一个拓扑空间，<span
+class="math inline">\(I=[0,1]\)</span>. <span
+class="math inline">\(SX\)</span> 是将 <span
+class="math inline">\(X\times I\)</span> 中 <span
+class="math inline">\(X\times \set{0}\)</span> 与 <span
+class="math inline">\(X\times \set{1}\)</span>
+分别粘合后形成的粘合空间。这被称之为 <strong>Suspension</strong>.</p>
+<figure>
+<img src="\09-4.png" alt="image-20231024153816133" />
+<figcaption aria-hidden="true">image-20231024153816133</figcaption>
+</figure></li>
+<li><h4 id="wedge-sum">Wedge Sum</h4>
+<p>令 <span class="math inline">\(X\)</span> 和 <span
+class="math inline">\(Y\)</span> 是两个拓扑空间。令 <span
+class="math inline">\(x_0\in X,y_0\in Y\)</span>，在 <span
+class="math inline">\(X\sqcup Y\)</span> 中进行粘合，将 <span
+class="math inline">\(x_0\)</span> 与 <span
+class="math inline">\(y_0\)</span> 粘合成一个单点，所得到的空间称之为
+<span class="math inline">\(X\)</span> 与 <span
+class="math inline">\(Y\)</span> 的 <strong>Wedge Sum</strong>，记作
+<span class="math inline">\(X\vee Y\)</span>.</p>
+<figure>
+<img src="\09-5.png" alt="image-20231024154148153" />
+<figcaption aria-hidden="true">image-20231024154148153</figcaption>
+</figure></li>
+<li><h4 id="attaching-maps">Attaching Maps</h4>
+<p>令 <span class="math inline">\(A\subset Y\)</span>
+是一个子空间，<span class="math inline">\(f:A\to X\)</span>
+是一个连续映射。我们如此构造一个粘合空间：考虑粘合空间，在 <span
+class="math inline">\(X\sqcup Y\)</span> 中进行粘合，粘合的方式为将
+<span class="math inline">\(a\)</span> 与 <span
+class="math inline">\(f(a)\)</span> 粘合起来，<span
+class="math inline">\(\forall a\in A\)</span>.</p>
+<p>这样得出的空间记作 <span class="math inline">\(X\cup_{f}
+Y\)</span>，将 <span class="math inline">\(f\)</span> 称作
+<strong>Attaching Map</strong>.</p>
+<figure>
+<img src="\09-6.png" alt="image-20231024154634245" />
+<figcaption aria-hidden="true">image-20231024154634245</figcaption>
+</figure></li>
+<li><h4 id="映射锥-mapping-cones">映射锥 (Mapping Cones)</h4>
+<p>令 <span class="math inline">\(f:X\to Y\)</span>
+是一个映射，<strong>映射锥 (Mapping Cone)</strong> 即为 <span
+class="math inline">\(C_f=Y\cup_f CX\)</span>. 具体来说，我们将 <span
+class="math inline">\(X\times \set{0}\subseteq (X\times I) / (X\times
+\set{1})=CX\)</span> 看作一个子空间并用 <span
+class="math inline">\(f\)</span> 将其映射至 <span
+class="math inline">\(Y\)</span>. 接着应用 Attaching Map
+将两个空间粘合在一起。</p>
+<figure>
+<img src="\09-7.png" alt="image-20231024155021747" />
+<figcaption aria-hidden="true">image-20231024155021747</figcaption>
+</figure></li>
+</ul>
+<h3 id="拓扑群-topological-group">拓扑群 (Topological Group)</h3>
+<ul>
+<li><h4 id="回忆群">回忆：群</h4>
+<p>令 <span class="math inline">\(G\)</span>
+是一个群，则我们可以给出两个结构映射：乘法：<span
+class="math inline">\(m:G\times G\to G\)</span>（有时记为 <span
+class="math inline">\((g_1,g_2)\to g_1\cdot g_2\)</span>）；取逆：<span
+class="math inline">\(i:G\to G\)</span>（记作 <span
+class="math inline">\(g^{-1}\)</span>）.</p>
+<p>该两种运算满足一些性质。</p></li>
+<li><h4 id="定义拓扑群-topological-group">定义：拓扑群 (Topological
+Group)</h4>
+<p>定义：一个拓扑群 <span class="math inline">\(G\)</span> 既是一个
+Hausdorff 的拓扑空间，也是一个群结构，使得两个结构映射 <span
+class="math inline">\(m\)</span> 与 <span
+class="math inline">\(i\)</span>
+均为连续映射，则我们称其为一个<strong>拓扑群 (Topological
+Group)</strong></p></li>
+<li><h4 id="拓扑群的基本概念">拓扑群的基本概念</h4>
+<ul>
+<li><h5 id="拓扑群的同构-isomorphism">拓扑群的同构 (Isomorphism)</h5>
+<p>令 <span class="math inline">\(G_1,G_2\)</span>
+是两个拓扑群，一个映射 <span class="math inline">\(f:G_1\to G_2\)</span>
+被称为是一个<strong>同构 (Isomorphism)</strong>若 <span
+class="math inline">\(f\)</span> 是一个同胚且 <span
+class="math inline">\(f\)</span> 是群之间的同构。</p></li>
+<li><h5 id="子群-subgroup">子群 (Subgroup)</h5>
+<p>令 <span class="math inline">\(G\)</span> 是一个拓扑群，考虑 <span
+class="math inline">\(H\subseteq G\)</span> 是一个子群，我们将 <span
+class="math inline">\(H\)</span> 装备上 <span
+class="math inline">\(G\)</span> 的子空间拓扑后，<span
+class="math inline">\(H\)</span> 也是一个拓扑群，称为 <span
+class="math inline">\(G\)</span> 的一个<strong>子群
+(Subgroup)</strong>.</p></li>
+</ul></li>
+<li><h4 id="常见的拓扑群">常见的拓扑群</h4>
+<p>向量空间 <span class="math inline">\((\mathbb{R}^n,+)\)</span>
+在欧氏拓扑下构成一个拓扑群。</p>
+<p>考虑 <span class="math inline">\(S^1=\set{e^{2\pi i\theta}\mid 0\leq
+\theta&lt;1}\)</span>，则 <span class="math inline">\(S^1\)</span>
+在乘法下形成一个拓扑群。</p>
+<p>令 <span class="math inline">\(T\)</span> 是环面，则若将环面理解为
+<span class="math inline">\(T=S^1\times S^1\)</span>，则 <span
+class="math inline">\(T\)</span> 也是拓扑群。</p>
+<figure>
+<img src="\09-8.png" alt="image-20231024160310152" />
+<figcaption aria-hidden="true">image-20231024160310152</figcaption>
+</figure>
+<p><span class="math inline">\(GL(n,\mathbb{R})\)</span>
+(可逆矩阵群)、<span class="math inline">\(SL(n,\mathbb{R})\)</span>
+(行列式为 <span class="math inline">\(1\)</span> 矩阵群)、<span
+class="math inline">\(O(n)\)</span> (正交矩阵群)、 <span
+class="math inline">\(SO(n)\)</span> (行列式为 1 的正交矩阵群)
+都构成拓扑群（这将在之后展开研究）。</p></li>
+<li><h4
+id="拓扑群的对称性左平移映射与右平移映射">拓扑群的对称性：左平移映射与右平移映射</h4>
+<p>令 <span class="math inline">\(G\)</span> 是一个拓扑群，选取任意
+<span class="math inline">\(x\in G\)</span>，定义左平移映射 <span
+class="math inline">\(L_x:G\to G\)</span> 为 <span
+class="math inline">\(L_x(g)=x\cdot g\)</span>.
+我们将这个映射定义为左平移映射。</p>
+<p>我们容易发现 <span class="math inline">\(L_x\)</span> 是一个双射，且
+<span class="math inline">\(L_x\)</span>
+需要是一个连续映射（这是连续映射的复合：<span class="math inline">\(G\to
+G\times G\xrightarrow{m} G:g\to (x,g)\to x\cdot g\)</span>）。</p>
+<p>并且我们会发现 <span class="math inline">\(L_{x^{-1}}\)</span>
+也是连续的并且 <span
+class="math inline">\(L_x^{-1}=L_{x^{-1}}\)</span>，因此 <span
+class="math inline">\(L_x\)</span> 是一个同胚。（事实上，<span
+class="math inline">\(L_{x_1x_2}=L_{x_1}\circ L_{x_2}\)</span>，<span
+class="math inline">\(L_e=id_G\)</span>）</p>
+<p>这告诉我们拓扑群具有高度对称性，我们可以通过同胚映射将任意一个点映射到任意另一个点。</p>
+<p>我们也可以定义出右平移映射：<span class="math inline">\(R_x:G\to
+G,\)</span> <span class="math inline">\(R_x(g)=g\cdot x\)</span>.
+类似地也有右平移也是一个同胚映射，且有 <span
+class="math inline">\(R_{x_1x_2}=R_{x_2}\circ R_{x_1}\)</span>，<span
+class="math inline">\(R_e=id_G\)</span>.</p></li>
+<li><h4
+id="拓扑群中包含单位元的连通分支是正规子群">拓扑群中包含单位元的连通分支是正规子群</h4>
+<p>令 <span class="math inline">\(G\)</span> 是一个拓扑群，令 <span
+class="math inline">\(K\)</span> 是 <span
+class="math inline">\(G\)</span> 中一个连通分支，使得恒等元 <span
+class="math inline">\(e\in K\)</span>。则 <span
+class="math inline">\(K\)</span> 是 <span
+class="math inline">\(G\)</span> 中一个闭的正规子群。</p>
+<p>回忆：正规子群的定义：若 <span class="math inline">\(H\leq
+G\)</span>，有 <span class="math inline">\(\forall g\in G\)</span>,
+<span class="math inline">\(gH=Hg\)</span>，则称 <span
+class="math inline">\(H\)</span> 是 <span
+class="math inline">\(G\)</span> 的一个<strong>正规子群</strong>，记作
+<span class="math inline">\(H\vartriangleleft G\)</span>.</p>
+<p>正规子群的判别：<span class="math inline">\(\forall g\in
+G,g^{-1}Hg\subset H\Rightarrow H\vartriangleleft G\)</span>.</p>
+<p>证明：</p>
+<p>因为 <span class="math inline">\(K\)</span> 是连通分支，因此 <span
+class="math inline">\(K\)</span> 是闭集。</p>
+<p><span class="math inline">\(\forall x\in K\)</span>，考察 <span
+class="math inline">\(Kx^{-1}=R_{x^{-1}}(K)\)</span>，这是一个连通集合，并且该集合一定会包含恒等元
+<span class="math inline">\(e\)</span>（这是因为 <span
+class="math inline">\(x\in K\)</span>）. 因此 <span
+class="math inline">\(Kx^{-1}\subseteq K\)</span> （由于 <span
+class="math inline">\(K\)</span> 的极大性）.因此 <span
+class="math inline">\(K\)</span> 确实是 <span
+class="math inline">\(G\)</span> 的子群。</p>
+<p>来验证正规性：<span class="math inline">\(\forall g\in
+G\)</span>，考察 <span class="math inline">\(gKg^{-1}\)</span>，这即是
+<span class="math inline">\(R_{g^{-1}}\circ L_{g}(K)\)</span>.
+不难发现这个集合连通且包含了单元元 <span
+class="math inline">\(e\)</span>，因此 <span
+class="math inline">\(gKg^{-1}\subseteq K\)</span>，因此 <span
+class="math inline">\(K\)</span> 是 <span
+class="math inline">\(G\)</span> 的正规子群。</p></li>
+<li><h4
+id="连通拓扑群中包含单位元的邻域形成生成元">连通拓扑群中包含单位元的邻域形成生成元</h4>
+<p>考虑一个连通的拓扑群 <span class="math inline">\(G\)</span>
+与任意一个恒等元 <span class="math inline">\(e\)</span>
+的邻域，则该邻域包含的元素形成了一个 <span
+class="math inline">\(G\)</span> 的生成元。</p>
+<p>证明：</p>
+<p>令 <span class="math inline">\(e\in U\subseteq G\)</span>，其中 <span
+class="math inline">\(U\)</span> 为开。令 <span
+class="math inline">\(K=&lt;U&gt;\)</span>.</p>
+<p><span class="math inline">\(\forall g\in K\)</span>，<span
+class="math inline">\(gU=L_g(U)\subseteq K\)</span>. 由于 <span
+class="math inline">\(L_g\)</span> 是一个同胚，有 <span
+class="math inline">\(L_g(U)\)</span> 是一个 <span
+class="math inline">\(g\)</span> 的邻域。因此 <span
+class="math inline">\(K\)</span> 是一个开集。</p>
+<p>考察 <span class="math inline">\(\forall g\in G\setminus
+K\)</span>，考虑 <span class="math inline">\(gU\)</span>，假设 <span
+class="math inline">\(gU\cap K\neq \varnothing\)</span>，则令 <span
+class="math inline">\(h\in gU\cap K\)</span>，<span
+class="math inline">\(\exists g&#39;\in U\)</span>，有 <span
+class="math inline">\(gg&#39;=h\)</span>. 于是 <span
+class="math inline">\(g=hg&#39;^{-1}\in K\)</span>，矛盾。</p>
+<p>因而 <span class="math inline">\(gU\)</span> 是 <span
+class="math inline">\(g\)</span> 的邻域且 <span
+class="math inline">\(gU\subseteq G\setminus K\)</span>，因此 <span
+class="math inline">\(G\setminus K\)</span> 是开集。</p>
+<p>由于 <span class="math inline">\(K\)</span> 是非空集合，<span
+class="math inline">\(K\)</span> 与 <span
+class="math inline">\(G\setminus K\)</span> 均为开集，<span
+class="math inline">\(G\)</span> 为连通而 <span
+class="math inline">\(G=K\sqcup (G\setminus K)\)</span>，有 <span
+class="math inline">\(G\setminus K=\varnothing\)</span>. 因此 <span
+class="math inline">\(K=G=&lt;U&gt;\)</span>.</p></li>
+</ul>
+<h3 id="矩阵群-matrix-groups">矩阵群 (Matrix Groups)</h3>
+<ul>
+<li><h4 id="常见的矩阵集合">常见的矩阵集合</h4>
+<p><span class="math inline">\(Mat_{n\times n}(\mathbb{R})=\set{n\times
+n \text{实矩阵}}\cong
+\mathbb{R}^{n^2}\)</span>，其在加法下构成群而在乘法下不是群。</p>
+<p><span class="math inline">\(GL(n,\mathbb{R})=\set{M\in Mat_{n\times
+n}(\mathbb{R})\mid \det M\neq 0}\subseteq
+\mathbb{R}^{n^2}\)</span>，且是一个开集。</p>
+<p>我们来研究一下它的性质。</p>
+<ul>
+<li><h5 id="glnmathbbr-一般线性群性质的研究"><span
+class="math inline">\(GL(n,\mathbb{R})\)</span>
+（一般线性群）性质的研究</h5>
+<p>首先看乘法：</p>
+<p><span class="math inline">\(Mat_{n\times n}(\mathbb{R})\times
+Mat_{n\times n}(\mathbb{R})\xrightarrow{m} Mat_{n\times
+n}(\mathbb{R})\)</span> 定义为矩阵乘法，则 <span
+class="math inline">\(m\)</span> 是连续映射。</p>
+<p>因此我们将该乘法限制在开子集 <span
+class="math inline">\(GL(n,\mathbb{R})\)</span>
+上所得到的限制映射也是连续映射。</p>
+<p>接着看取逆：</p>
+<p><span class="math inline">\(GL(n,\mathbb{R})\xrightarrow{i}
+GL(n,\mathbb{R})\)</span> 是取逆映射，由于 <span
+class="math inline">\(M^{-1}=\cfrac{M^{\star}}{\det M}\)</span>，其中
+<span class="math inline">\(M^\star\)</span>
+是伴随矩阵，伴随是一个连续映射；行列式也是一个连续映射，因此 <span
+class="math inline">\(i\)</span> 也是一个连续映射。</p>
+<p>综上，一般线性群 <span
+class="math inline">\(GL(n,\mathbb{R})\)</span> 确实是一个拓扑群。</p>
+<p>在我们得到一个拓扑群之后，我们通常会研究如下问题：</p>
+<ul>
+<li><p>该拓扑群是否是紧的？ 答案是否定的，因为 <span
+class="math inline">\(GL(n,\mathbb{R})\)</span>
+是一个欧氏空间的子集，它既不是闭集也不是有界的，故自然不是紧集。</p></li>
+<li><p>该拓扑群是否是连通的？ 答案也是否定的，行列式的正负显然至少将
+<span class="math inline">\(GL(n,\mathbb{R})\)</span>
+切分为了两部分，因此不是连通集合。（<span
+class="math inline">\(\det:Mat_{n\times n}(\mathbb{R})\to
+\mathbb{R}\)</span> 是一个连续映射，但 <span
+class="math inline">\(\det(GL(n,\mathbb{R}))=\mathbb{R}\setminus
+\set{0}\)</span>，该集合不连通，因此 <span
+class="math inline">\(GL(n,\mathbb{R})\)</span> 也不是连通）</p></li>
+<li><p>该拓扑群的连通分支是什么？ 事实上，令 <span
+class="math inline">\(A=\set{M\in GL(n,\mathbb{R})\mid \det
+A&gt;0},B=\set{M\in GL(n,\mathbb{R})\mid \det B&lt;0}\)</span>，则有
+<span class="math inline">\(A,B\)</span> 就是 <span
+class="math inline">\(GL(n,\mathbb{R})\)</span> 的连通分支。</p>
+<p>证明留作练习。提示：由于 <span class="math inline">\(A,B\)</span>
+都是欧氏空间中开子集，我们不妨证明 <span
+class="math inline">\(A,B\)</span> 是道路连通。</p>
+<p>我们对矩阵做 <span class="math inline">\(LU\)</span> 分解，其中 <span
+class="math inline">\(L\)</span> 是下三角阵，<span
+class="math inline">\(U\)</span> 是上三角阵，我们对 <span
+class="math inline">\(L\)</span> 与 <span
+class="math inline">\(U\)</span>
+分别移动为对角矩阵，就可以构造一条任意矩阵到对角阵的道路。</p>
+<p>对于对角阵，不失一般性地，我们可以通过 <span
+class="math inline">\(\begin{pmatrix}\cos\theta&amp;\sin\theta\\-\sin\theta&amp;\cos\theta\end{pmatrix}\)</span>
+构造一个 <span
+class="math inline">\(\text{diag}(1,1)\to\text{diag}(-1,-1)\)</span>
+的连续变换。</p></li>
+</ul></li>
+</ul>
+<p>特殊线性群 <span class="math inline">\(SL(n,\mathbb{R})=\set{M\in
+GL(n,\mathbb{R})\mid \det M=1}\)</span>. 这是一个 <span
+class="math inline">\(GL(n,\mathbb{R})\)</span>
+的子群，故也是一个拓扑群。</p>
+<ul>
+<li><h5 id="slnmathbbr-性质研究"><span
+class="math inline">\(SL(n,\mathbb{R})\)</span> 性质研究</h5>
+<p>上面我们已经说明了它自然是一个拓扑群。</p>
+<ul>
+<li>该拓扑群是否是紧的？
+答案是否定的，尽管它是闭集，但它不是一个有界集合。</li>
+<li>该拓扑群是否是连通的？
+答案是肯定的，它确实是一个连通空间。证明方法：考虑映射 <span
+class="math inline">\(f:A=\set{M\in GL(n,\mathbb{R})\mid \det M&gt;0}\to
+SL(n,\mathbb{R})\)</span>，<span
+class="math inline">\(f(M)=\cfrac{M}{(\det M)^{1/n}}\)</span>，于是
+<span class="math inline">\(f\)</span> 是连续的，由于 <span
+class="math inline">\(A\)</span> 是连通的，因此 <span
+class="math inline">\(f(A)=SL(n,\mathbb{R})\)</span> 是连通的。</li>
+</ul></li>
+</ul>
+<p>正交矩阵群 <span class="math inline">\(O(n)=\set{M\in
+GL(n,\mathbb{R})\mid M^TM=I}\)</span>，特殊正交矩阵群 <span
+class="math inline">\(SO(n)=\set{M\in O(n)\mid \det M=1}\)</span>.
+它们自然也是拓扑群（分别为 <span
+class="math inline">\(GL(n,\mathbb{R})\)</span> 与 <span
+class="math inline">\(SL(n,\mathbb{R})\)</span> 的子群）。</p>
+<ul>
+<li><h5 id="正交矩阵群性质研究">正交矩阵群性质研究</h5>
+<ul>
+<li><h6 id="正交矩阵群-on-与特殊正交矩阵群-son-是紧的">正交矩阵群 <span
+class="math inline">\(O(n)\)</span> 与特殊正交矩阵群 <span
+class="math inline">\(SO(n)\)</span> 是紧的</h6>
+<p>正交矩阵群 <span class="math inline">\(O(n)\)</span> 与特殊正交矩阵群
+<span class="math inline">\(SO(n)\)</span> 是紧的。</p>
+<p>证明：令 <span class="math inline">\(A=(a_{ij})\in O(n)\)</span>，则
+<span class="math inline">\(A^T A=I\)</span>.</p>
+<p>于是 <span class="math inline">\(\sum_{j=1}^n
+a_{ij}a_{kj}=\begin{cases}1&amp;i=k\\0&amp;i\neq
+k\end{cases}\)</span>，令 <span
+class="math inline">\(f_{ik}:Mat_{n\times n}(\mathbb{R})\to
+\mathbb{R}\)</span>，其中 <span
+class="math inline">\(f_{ik}(A)=\sum_{j=1}^n a_{ij}a_{jk}\)</span>，则
+<span class="math inline">\(f\)</span> 是连续映射，且 <span
+class="math inline">\(f_{ik}^{-1}(0)\)</span> 与 <span
+class="math inline">\(f^{-1}_{ik}(1)\)</span> 是闭集，因此 <span
+class="math inline">\(O(n)=\bigcap_{i,k=1,i\neq k}^{n} f_{ik}^{-1}(0)
+\cap \bigcap_{i=1}^n f_{ii}^{-1}(1)\)</span> 为闭集。</p>
+<p>由于<span class="math inline">\(\sum_{j=1}^n |a_{ij}|^2=1,\forall
+i\)</span>，因此 <span class="math inline">\(|a_{ij}|\leq
+1\)</span>，因此 <span class="math inline">\(O(n)\)</span> 有界。</p>
+<p>因此 <span class="math inline">\(O(n)\)</span> 是紧集，类似地有 <span
+class="math inline">\(SO(n)=O(n)\cap \det^{-1}(1)\)</span>
+是紧集。</p></li>
+</ul></li>
 </ul></li>
 </ul>
 ]]></content>
