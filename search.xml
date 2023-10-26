@@ -261,7 +261,7 @@ class="math inline">\(t\)</span>为超级源点汇点 <figure class="highlight c
   <entry>
     <title>拓扑学笔记</title>
     <url>/2023/09/21/%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/XWqGzX3Ks6/</p>
+    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/SyKszCF4fB/</p>
 <p>分节次的笔记（清华云盘）：https://cloud.tsinghua.edu.cn/d/2c4efaca588a4326958d/</p>
 <h2 id="lecture-info">00. Lecture Info</h2>
 <h3 id="考核">1. 考核</h3>
@@ -3313,6 +3313,342 @@ class="math inline">\(SO(n)=O(n)\cap \det^{-1}(1)\)</span>
 是紧集。</p></li>
 </ul></li>
 </ul></li>
+</ul>
+<h2 id="群作用与商空间">10. 群作用与商空间</h2>
+<h3 id="群作用与商空间-1">群作用与商空间</h3>
+<ul>
+<li><h4 id="抽象代数中的群作用与商空间">抽象代数中的群作用与商空间</h4>
+<p><strong>群作用</strong></p>
+<p>设 <span class="math inline">\(G\)</span> 是一个群，<span
+class="math inline">\(X\)</span> 是一个集合，我们定义 <span
+class="math inline">\(G\)</span>-作用（记作 <span
+class="math inline">\(G\curvearrowright X\)</span>）：<span
+class="math inline">\(G\times X\to X\)</span>，<span
+class="math inline">\((g,x)\to g\cdot x\)</span>.</p>
+<p>这个作用需要满足 <span class="math inline">\((hg)\cdot x=h\cdot
+(g\cdot x)\)</span>，且 <span class="math inline">\(e\cdot x=x,\forall
+x\in G,\forall g,h\in G\)</span>.</p>
+<p><strong>商群</strong></p>
+<p><span class="math inline">\(X/G=\set{\text{所有 }G\text{
+轨道}}\)</span>，轨道的定义为 <span class="math inline">\(x,y\in
+X\)</span>，若 <span class="math inline">\(x,y\)</span> 落在同一轨道上若
+<span class="math inline">\(\exists g\in G\)</span> 使得 <span
+class="math inline">\(x=gy\)</span>.</p></li>
+<li><h4 id="拓扑群的群作用-group-action">拓扑群的群作用 (Group
+Action)</h4>
+<p>令 <span class="math inline">\(G\)</span> 是一个拓扑群，令 <span
+class="math inline">\(X\)</span> 是一个拓扑空间。一个 <span
+class="math inline">\(G\)</span>-作用是一个映射 <span
+class="math inline">\(G\times X\xrightarrow{f} X,(g,x)\to g\cdot
+x\)</span>.</p>
+<p>该映射 <span class="math inline">\(f\)</span> 需要满足下述性质：</p>
+<ul>
+<li><span class="math inline">\(f\)</span> 需要是一个连续映射；</li>
+<li><span class="math inline">\((hg)\cdot x=h(g\cdot x)\)</span>，<span
+class="math inline">\(\forall x\in X,\forall g,h\in G\)</span></li>
+<li><span class="math inline">\(e\cdot x=x\)</span>，<span
+class="math inline">\(\forall x\in X\)</span>.</li>
+</ul></li>
+<li><h4 id="拓扑群的商空间-quotient-space">拓扑群的商空间 (Quotient
+Space)</h4>
+<p><span class="math inline">\(\forall x,y\in
+X\)</span>，定义一个等价关系：<span class="math inline">\(x\sim
+y\)</span> 若 <span class="math inline">\(\exists g\in G\)</span> 使得
+<span class="math inline">\(x=gy\)</span>.</p>
+<p>我们首先验证等价关系：</p>
+<p>自反性：<span class="math inline">\(x=e\cdot x\)</span>；</p>
+<p>对称性：<span class="math inline">\(x\sim y\)</span>，于是 <span
+class="math inline">\(\exists g\in G\)</span>，使得 <span
+class="math inline">\(x=gy\)</span>，一定有 <span
+class="math inline">\(y=g^{-1}x\)</span>，因此 <span
+class="math inline">\(y\sim x\)</span>；</p>
+<p>传递性：<span class="math inline">\(x\sim y,y\sim z\)</span>，则
+<span class="math inline">\(\exists gh\in G\)</span>，使得 <span
+class="math inline">\(x=gy,y=hz\)</span>，于是 <span
+class="math inline">\(x=g(hz)=(gh)z\)</span>，因此 <span
+class="math inline">\(x\sim z\)</span>.</p>
+<p>因此这确实是一个等价关系</p>
+<p>如此有 <span class="math inline">\(\sim\)</span> 给出了 <span
+class="math inline">\(X\)</span> 的一个划分
+(Partition)，我们将划分中的每一个子集称之为 <span
+class="math inline">\(G\)</span>-轨道 (<span
+class="math inline">\(G\)</span>-orbit).</p>
+<p>令 <span class="math inline">\(X/G\)</span> 是对应于 <span
+class="math inline">\(\sim\)</span> 给出分划的粘合空间，我们将 <span
+class="math inline">\(X/G\)</span> 称作是<strong>商空间 (Quotient
+Space)</strong>，有时我们也称其为<strong>轨道空间 (Orbit
+Space)</strong>.</p></li>
+<li><h4 id="商空间的例子">商空间的例子</h4>
+<ul>
+<li><h5 id="环面-torus">环面 Torus</h5>
+<p>回忆：曾经我们通过矩形对边粘合构成了环面。</p>
+<p>现在我们来看如何用商空间观点构造环面。我们固定 <span
+class="math inline">\(v_1,v_2\in \mathbb{R}^2\)</span>，使得 <span
+class="math inline">\(v1\not\parallel v_2\)</span>.</p>
+<p>令 <span class="math inline">\(\Lambda=\mathbb{Z}\cdot v_1 \oplus
+\mathbb{Z}\cdot v_2\cong \mathbb{Z}^2\)</span>，<span
+class="math inline">\(\Lambda\subseteq
+\mathbb{R}^2\)</span>，这被称作一个<strong>格点 (Lattice)</strong>.</p>
+<figure>
+<img src="\10-1.png" alt="image-20231026100731447" />
+<figcaption aria-hidden="true">image-20231026100731447</figcaption>
+</figure>
+<p>如图是一个 Lattice 的例子，其中 <span
+class="math inline">\(v_1\)</span> 位于 <span
+class="math inline">\(x\)</span> 轴。</p>
+<p>我们在 <span class="math inline">\(\mathbb{R}^2\)</span> 上定义一个
+<span class="math inline">\(\Lambda\)</span>-作用，作用的方式为：<span
+class="math inline">\((mv_1,nv_2)\cdot(x,y)=(x,y)+mv_1+nv_2\)</span>.
+这有时也被称为平移作用。</p>
+<p>我们考虑商空间 <span
+class="math inline">\(\mathbb{R^2}/\Lambda\)</span>，则该商空间同胚于一个环面。</p>
+<figure>
+<img src="\10-2.png" alt="image-20231026101101349" />
+<figcaption aria-hidden="true">image-20231026101101349</figcaption>
+</figure>
+<p>注意如图中平行四边形，其对边按照相同方向粘合到了一起。</p>
+<ul>
+<li><h6 id="additional-topic-黎曼曲面-riemann-surface">*Additional
+Topic: 黎曼曲面 (Riemann Surface)</h6>
+<p>我们将 <span class="math inline">\(\Lambda\)</span> 看作 <span
+class="math inline">\(\mathbb{C}\)</span> 中的一个子集，<span
+class="math inline">\(\Lambda=\mathbb{Z}\cdot 1\oplus \mathbb{Z}\cdot
+\tau\)</span>，<span class="math inline">\(\tau\in H=\set{z\in
+\mathbb{C}\mid \text{Im} z&gt;0}\)</span>.</p>
+<p>那么 <span class="math inline">\(\mathbb{C}/\Lambda\)</span>
+还有一个从 <span class="math inline">\(\mathbb{C}\)</span>
+诱导的复结构，这个曲面被称作是一个<strong>黎曼曲面 (Riemann
+Surface)</strong>。</p>
+<p>此外，该曲面<strong>亏格 (Genus)</strong>是 <span
+class="math inline">\(1\)</span>，这还是一个<strong>椭圆曲线</strong>。（回忆：复分析讲到的
+<span class="math inline">\(\wp\)</span> 函数）</p>
+<p><span class="math inline">\(\text{d}z\)</span> 在 <span
+class="math inline">\(\mathbb{C}/\Lambda\)</span> 上是一个全纯微分，有
+<span class="math inline">\(\int_A \text{d}z=1,\int_B
+\text{d}z=\tau\)</span>.</p>
+<p>这意味着，对于不同的 <span
+class="math inline">\(\tau\)</span>，我们可以得到不同的复结构，这与先前环面的拓扑结构于
+<span class="math inline">\(\tau\)</span> 无关不同。</p>
+<figure>
+<img src="\10-3.png" alt="image-20231026101842695" />
+<figcaption aria-hidden="true">image-20231026101842695</figcaption>
+</figure>
+<p>事实上，令 <span
+class="math inline">\(SL(2,\mathbb{Z})\curvearrowright
+H\)</span>，我们定义 <span
+class="math inline">\(\begin{pmatrix}a&amp;b\\c&amp;d\end{pmatrix}
+\tau=\cfrac{a\tau+b}{c\tau+d}\)</span>，这被称作莫比乌斯变换。那么 <span
+class="math inline">\(H/SL(2,\mathbb{Z})\)</span>
+给出了环面上所有复结构可能的参数空间（模空间 Modulus Space），<span
+class="math inline">\(\tau\in H/SL(2,\mathbb{Z})\)</span>
+一一对应于环面上所有的复结构。</p>
+<p>这个参数空间长成什么样呢？</p>
+<figure>
+<img src="\10-4.png" alt="image-20231026102252939" />
+<figcaption aria-hidden="true">image-20231026102252939</figcaption>
+</figure></li>
+</ul></li>
+<li><h5 id="射影空间-projective-space-1">射影空间 (Projective
+Space)</h5>
+<p>令 <span class="math inline">\(S^n\subseteq \mathbb{R}^{n+1}\)</span>
+是单位球面，考虑二元群 <span
+class="math inline">\(\mathbb{Z}/2\mathbb{Z}=\set{-1,1}\)</span>，其中
+<span class="math inline">\(-1\)</span> 是生成元，<span
+class="math inline">\(1\)</span>
+是恒等元，群运算定义为恒等运算。定义二元群作用在 <span
+class="math inline">\(S^n\)</span> 上，其中 <span
+class="math inline">\((-1)\cdot x:=-1\)</span>.</p>
+<p>则 <span
+class="math inline">\(S^n/(\mathbb{Z}/2\mathbb{Z})=\mathbb{R}P^n\)</span>
+得到了实射影空间。</p>
+<p>考虑另一种构造：</p>
+<p>令 <span class="math inline">\(\mathbb{R}^\star=\mathbb{R}\setminus
+\set{0}\)</span>，我们有 <span
+class="math inline">\(\mathbb{R}^\star\)</span>
+在乘法下成群。我们定义一个群作用 <span
+class="math inline">\(\mathbb{R}^\star\curvearrowright
+\mathbb{R}^{n+1}\setminus \set{0}\)</span>：<span
+class="math inline">\(\lambda \cdot(x_1,\cdots,x_{n+1}):=(\lambda
+x_1,\cdots,\lambda x_{n+1})\)</span>，其中 <span
+class="math inline">\((x_1,\cdots,x_{n+1})\in \mathbb{R}^{n+1}\setminus
+\set{0}\)</span>.</p>
+<p>则 <span class="math inline">\((\mathbb{R}^{n+1}\setminus
+\set{0})/\mathbb{R}^{\star}=\mathbb{R}P^n\)</span> 就是实射影空间。</p>
+<p>这引出了射影空间上<strong>齐次坐标 (Homogeneous
+Coordinate)</strong>的概念：<span
+class="math inline">\(\mathbb{R}P^n=\set{[x_1:\cdots:x_{n+1}]\mid
+(x_1,\cdots,x_{n+1})\in \mathbb{R}^{n+1}\setminus\set{0}}\)</span></p>
+<p>其中 <span class="math inline">\([x_1:\cdots:x_{n+1}]=[\lambda
+x_1:\cdots :\lambda x_{n+1}],\forall \lambda\neq 0\)</span>.</p>
+<p>在有了齐次坐标之后，我们还能引入如下概念：</p>
+<ul>
+<li><h6 id="典范图册-canonical-chart">典范图册 Canonical Chart</h6>
+<p><span class="math inline">\(\mathbb{R}P^n\)</span> 中存在有 <span
+class="math inline">\(n+1\)</span> 个元素的<strong>典范图册 (Canonical
+Charts)</strong>，令 <span class="math inline">\(U_i\subseteq
+\mathbb{R}P^n\)</span>，其中 <span
+class="math inline">\(U_i=\set{[x_1:\cdots:x_{n+1}]\in \mathbb{R}P^n
+\mid x_i\neq 0}\subseteq^{\text{open}}
+\mathbb{R}P^n\)</span>，则我们可以将这中坐标写成 <span
+class="math inline">\([x_1,\cdots,x_i,\cdots,x_{n+1}]=[\cfrac{x_1}{x_i}:\cdots:1:\cdots:\cfrac{x_{n+1}}{x_i}]\)</span>.</p>
+<p>此时有 <span class="math inline">\(U_i\)</span> 同胚于 <span
+class="math inline">\(\mathbb{R}^n\)</span>，这是由于在固定 <span
+class="math inline">\(x_i\)</span> 为 <span
+class="math inline">\(1\)</span>
+后，其余元素已经没有所谓的“自由度”了。与此同时，<span
+class="math inline">\(\set{U_i}_{i=1}^{n+1}\)</span> 是一个射影空间
+<span class="math inline">\(\mathbb{R}P^n\)</span>
+的开覆盖。（因此，<span class="math inline">\(\mathbb{R}P^n\)</span>
+是一个流形）</p></li>
+</ul>
+<p>对于复射影空间，<span
+class="math inline">\(\mathbb{C}^\star:=\mathbb{C}\setminus\set{0}\)</span>，我们定义群作用
+<span class="math inline">\(\mathbb{C}^\star \curvearrowright
+\mathbb{C}^{n+1}\setminus\set{0}:\lambda(x_1,\cdots,x_{n+1})=(\lambda
+x_1,\cdots,\lambda x_{n+1})\)</span>.</p>
+<p>在这个群作用下我们得到了复射影空间 <span
+class="math inline">\(\mathbb{C}P^n\)</span>，也能定义齐次坐标和典范图册：<span
+class="math inline">\(U_i=\set{[x_1:\cdots:x_{n+1}]\in\mathbb{C}P^n\mid
+x_i\neq 0}\subseteq^{\text{open}} \mathbb{C}P^n\)</span>.</p>
+<p>也有 <span class="math inline">\(U_i\)</span> 同胚于 <span
+class="math inline">\(\mathbb{C}^n\)</span>，且 <span
+class="math inline">\(U_i\)</span> 形成了 <span
+class="math inline">\(\mathbb{C}P^n\)</span> 的开覆盖。（因此，<span
+class="math inline">\(\mathbb{C}P^n\)</span> 是一个复流形）</p>
+<ul>
+<li><h6
+id="additional-topic-mathbbcpn-上的-zariski-topology">*Additional Topic:
+<span class="math inline">\(\mathbb{C}P^n\)</span> 上的 Zariski
+Topology</h6>
+<p>定义 <span class="math inline">\(\mathbb{C}P^n\)</span>
+上的另一种拓扑，称作 Zariski Topology。</p>
+<p>一个多项式 <span class="math inline">\(f(x_1,\cdots,x_{n+1})\)</span>
+被称作是一个<strong>齐次多项式 (Homogeneous)</strong>，如果 <span
+class="math inline">\(f(\lambda x_1,\cdots,\lambda x_{n+1})=\lambda^d
+f(x_1,\cdots,x_{n+1})\)</span>，其中 <span class="math inline">\(d\in
+\mathbb{Z}_{\geq 0}\)</span>，被称为是齐次多项式的<strong>次数
+(Degree)</strong>。</p>
+<p>我们如此定义 Zariski Topology：一个子集 <span
+class="math inline">\(F\subset \mathbb{C}P^n\)</span> 是闭集，若 <span
+class="math inline">\(F\)</span> 是某一些 <span
+class="math inline">\(\mathbb{C}[x_1,\cdots,x_{n+1}]\)</span>
+中齐次多项式的公共零点。这被称为是射影空间的 Zariski Topology.</p>
+<p>小练习：事实上，我们定义 <span
+class="math inline">\(U_i=\set{[x_1:\cdots:x_{n+1}]\in \mathbb{C}P^n\mid
+x_i\neq 0}\subset \mathbb{C}P^n\)</span>，我们在 <span
+class="math inline">\(\mathbb{C}P^n\)</span> 上装备 Zariski
+Topology，考虑 <span class="math inline">\(U_i\)</span>
+上的子空间拓扑，则有 <span class="math inline">\(U_i\)</span>
+同胚于装备了 Zariski Topology 的 <span
+class="math inline">\(\mathbb{C}^n\)</span>。</p>
+<p>提示：<span class="math inline">\(\set{[x_1,\cdots,x_{n+1}]\in
+\mathbb{C}P^n\mid f(x_1,\cdots,x_{n+1})=0}\cap U_{n+1}\)</span>，<span
+class="math inline">\(f\)</span> 齐次可以被写成 <span
+class="math inline">\(\set{(x_1,\cdots,x_n)\in \mathbb{C}^n\mid
+g(x_1,\cdots,x_n)=f(x_1,\cdots,x_n,1)=0}\)</span>.</p></li>
+</ul></li>
+<li><h5 id="子群作用">子群作用</h5>
+<p>令 <span class="math inline">\(G\)</span> 是一个拓扑群，<span
+class="math inline">\(H\)</span> 是 <span
+class="math inline">\(G\)</span> 的子群。那么存在作用 <span
+class="math inline">\(H\curvearrowright G\)</span>：<span
+class="math inline">\(h\cdot g=h\cdot g\)</span>（其中右边是群 <span
+class="math inline">\(G\)</span> 中乘法，左边是作用的符号），<span
+class="math inline">\(h\in H,g\in G\)</span>.</p>
+<p>可以验证 <span class="math inline">\(G/H\)</span>
+是所有右陪集组成的集合 <span class="math inline">\(=\set{Hg\mid g\in
+G}\)</span>。</p></li>
+<li><h5 id="矩阵群的作用">矩阵群的作用</h5>
+<p>考虑矩阵群 <span
+class="math inline">\(O(n)\)</span>（正交矩阵群）的作用，<span
+class="math inline">\(O(n)\curvearrowright S^{n-1}\subseteq
+\mathbb{R}^n\)</span>. 这个群作用是<strong>传递的
+(Transitive)</strong>（回忆：传递指的是 <span
+class="math inline">\(\forall x\in
+S^{n-1}\)</span>，这个点所在的轨道是全空间），或者说 <span
+class="math inline">\(\forall x,y\in S^{n-1}\)</span>，<span
+class="math inline">\(x,y\)</span> 在同一个 <span
+class="math inline">\(O(n)\)</span>-轨道中，也就是 <span
+class="math inline">\(\exists A\in O(n)\)</span>，使得 <span
+class="math inline">\(Ax=y\)</span>.</p>
+<p>证明：</p>
+<p><span class="math inline">\(\forall x_1\in
+S^{n-1}\)</span>，将其延拓为一组 <span
+class="math inline">\(\mathbb{R}^n\)</span> 的标准正交基 <span
+class="math inline">\(x_1,\cdots, x_{n}\)</span>.</p>
+<p>类似地 <span class="math inline">\(\forall y_1\in
+S^{n-1}\)</span>，也可以将其延拓为一组 <span
+class="math inline">\(\mathbb{R}^n\)</span> 的标准正交基 <span
+class="math inline">\(y_1,\cdots,y_n\)</span>.</p>
+<p>那么存在正交矩阵 <span class="math inline">\(A\in O(n)\)</span>，使得
+<span
+class="math inline">\((Ax_1,\cdots,Ax_n)=(y_1,\cdots,y_n)\)</span>.</p>
+<p>于是 <span class="math inline">\(Ax_1=y_1\)</span>.</p>
+<p>考虑一个嵌入映射：<span class="math inline">\(O(n-1)\to
+O(n)\)</span>：<span
+class="math inline">\(B\to\begin{pmatrix}1&amp;0\\0&amp;B\end{pmatrix}\)</span>，并且在这个嵌入下，<span
+class="math inline">\(O(n-1)\)</span> 可以看作是 <span
+class="math inline">\(O(n)\)</span> 的一个子群。</p>
+<p>现在令 <span
+class="math inline">\(e_1=\begin{pmatrix}1\\0\\\vdots\\0\end{pmatrix},\cdots,e_n=\begin{pmatrix}0\\0\\\vdots\\1\end{pmatrix}\)</span>
+是一组 <span class="math inline">\(\mathbb{R}^n\)</span> 的标准基，</p>
+<p>我们有 <span class="math inline">\(Ae_1=e_1\)</span> <span
+class="math inline">\(\Leftrightarrow\)</span> <span
+class="math inline">\(A=\begin{pmatrix}1&amp;0\\0&amp;B\end{pmatrix},B\in
+O(n-1)\)</span>.</p>
+<p>于是我们把 <span class="math inline">\(O(n-1)\subseteq O(n)\)</span>
+称作 <span class="math inline">\(e_1\)</span> 的<strong>稳定化子
+(Stabilizer)</strong>。</p>
+<p>我们令 <span class="math inline">\(\pi:O(n)\to S^{n-1}:A\to
+Ae_1\)</span>，我们有 <span class="math inline">\(\pi\)</span>
+是连续的且是满射（因为 <span class="math inline">\(O(n)\curvearrowright
+S^{n-1}\)</span> 是传递的）。</p>
+<p>由于 <span class="math inline">\(O(n)\)</span> 是紧的，<span
+class="math inline">\(S^{n-1}\)</span> 是 Hausdorff，因此 <span
+class="math inline">\(\pi\)</span> 是粘合映射。</p>
+<p>我们考虑这个粘合映射对应的分划：这个分划即为所有的左陪集 <span
+class="math inline">\(\set{AO(n-1)\mid A\in O(n)}\)</span>.</p>
+<p>因此如果我们取商群 <span
+class="math inline">\(O(n)/O(n-1)\)</span>，这个群同胚于 <span
+class="math inline">\(S^{n-1}\)</span>.</p>
+<p>类似地，可以考虑嵌入 <span class="math inline">\(SO(n-1)\to
+SO(n)\)</span>，我们可以得到 <span
+class="math inline">\(SO(n)/SO(n-1)\)</span> 同胚于 <span
+class="math inline">\(S^{n-1}\)</span>.</p></li>
+</ul></li>
+<li><h4
+id="构造商空间的粘合映射一定是开映射">构造商空间的粘合映射一定是开映射</h4>
+<p>令 <span class="math inline">\(G\)</span> 作用于 <span
+class="math inline">\(X\)</span> 上，若考虑粘合映射 <span
+class="math inline">\(\pi:X\to
+X/G\)</span>，则该粘合映射一定是开映射，也就是说，<span
+class="math inline">\(\forall\)</span> 开集 <span
+class="math inline">\(U\subseteq X\)</span>，有 <span
+class="math inline">\(\pi(U)\)</span> 是 <span
+class="math inline">\(X/G\)</span> 中开集。</p>
+<p>证明：取开集 <span class="math inline">\(U\)</span>， <span
+class="math inline">\(\pi(U)\subseteq X/G\)</span>，它是开集当且仅当
+<span class="math inline">\(\pi^{-1}(\pi(U))\)</span> 是开集。</p>
+<p>我们考虑证明如下事实：<span
+class="math inline">\(\pi^{-1}(\pi(U))\)</span> 总可以写成 <span
+class="math inline">\(\bigcup_{g\in G}g\cdot U\)</span>.</p>
+<p><span class="math inline">\(\forall x\in \bigcup_{g\in G}g\cdot
+U\)</span>，<span class="math inline">\(\exists g\in G,y\in
+U\)</span>，使得 <span class="math inline">\(x=gy\)</span>，于是 <span
+class="math inline">\(\pi(x)=\pi(y)\in \pi(U)\)</span>；</p>
+<p>令 <span class="math inline">\(x\in \pi^{-1}\pi(U)\)</span>，<span
+class="math inline">\(\pi(x)\in \pi(U)\)</span>，也就是 <span
+class="math inline">\(\exists y\in U\)</span>，使得 <span
+class="math inline">\(\pi(x)=\pi(y)\)</span>，也就是 <span
+class="math inline">\(\exists g\in G\)</span>，使得 <span
+class="math inline">\(x=gy\)</span>.</p>
+<p>因此事实得到证明。由于 <span class="math inline">\(U\)</span>
+是开集，由于平移映射 <span class="math inline">\(g:X\to X,x\to g\cdot
+x\)</span> 是一个同胚，有 <span class="math inline">\(gU\)</span>
+是一个开集，因此 <span
+class="math inline">\(\pi^{-1}(\pi(U))=\bigcup_{g\in G}gU\)</span>
+是开集。</p>
+<p>因此这是一个开映射。</p></li>
 </ul>
 ]]></content>
       <categories>
