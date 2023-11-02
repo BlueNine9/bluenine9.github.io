@@ -261,7 +261,7 @@ class="math inline">\(t\)</span>为超级源点汇点 <figure class="highlight c
   <entry>
     <title>拓扑学笔记</title>
     <url>/2023/09/21/%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/hch72HqSkt/</p>
+    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/jPH4y2GbQW/</p>
 <p>分节次的笔记（清华云盘）：https://cloud.tsinghua.edu.cn/d/2c4efaca588a4326958d/</p>
 <h2 id="lecture-info">00. Lecture Info</h2>
 <h3 id="考核">1. 考核</h3>
@@ -3983,6 +3983,383 @@ class="math inline">\(S^n\xrightarrow{\gamma}X,\gamma(s_0)=p\)</span>）也可�
 <span class="math inline">\(\pi_n\)</span>，<span
 class="math inline">\(n\)</span> 维同伦群。（本课只研究 <span
 class="math inline">\(n=1\)</span> 情形）</p></li>
+</ul>
+<h2 id="基本群">12. 基本群</h2>
+<h3 id="基本群-1">基本群</h3>
+<ul>
+<li><h4 id="回忆基本群的定义">回忆：基本群的定义</h4>
+<p><span class="math inline">\(\pi_1(X,p)=\set{&lt;\gamma&gt;\mid
+\gamma\text{ loop at } p}\)</span>，其中 <span
+class="math inline">\(\gamma\)</span> 是一个基础点为 <span
+class="math inline">\(p\)</span> 的环路。</p>
+<ul>
+<li><h5 id="注基本群定义的推广">注：基本群定义的推广</h5>
+<p>对基本群的定义我们有如下的推广：令 <span
+class="math inline">\(\gamma_1,\gamma_2\in X\)</span> 是两个道路，使得
+<span
+class="math inline">\(\gamma_1(1)=\gamma_2(0)\)</span>，我们还可以令
+<span class="math inline">\(\gamma_1\cdot
+\gamma_2(s)=\begin{cases}\gamma_1(2s)&amp;0\leq s\leq
+1/2\\\gamma_2(2s-1)&amp;1/2\leq s\leq 1\end{cases}\)</span>，这是 <span
+class="math inline">\(\gamma_1\)</span> 与 <span
+class="math inline">\(\gamma_2\)</span> 的拼接。</p>
+<p>如果我们如此操作则可以得到下述性质：</p>
+<ul>
+<li>若 <span class="math inline">\(\gamma_1\simeq \gamma_1&#39;\text{
+rel }\set{0,1},\gamma_2\simeq\gamma_2&#39;\text{ rel
+}\set{0,1}\)</span>，则 <span class="math inline">\(\gamma_1\cdot
+\gamma_2\simeq \gamma_1&#39;\cdot\gamma_2&#39;\text{ rel
+}\set{0,1}\)</span>.</li>
+<li>若 <span class="math inline">\(\gamma_1(1)=\gamma_2(0),
+\gamma_2(1)=\gamma_3(0)\)</span>，则 <span
+class="math inline">\(\gamma_1\cdot(\gamma_2\cdot\gamma_3)\simeq
+(\gamma_1\cdot\gamma_2)\cdot\gamma_3\text{ rel }\set{0,1}\)</span>.</li>
+<li>令 <span
+class="math inline">\(\gamma^{-1}(s)=\gamma(1-s)\)</span>，则 <span
+class="math inline">\(\gamma\cdot\gamma^{-1}\simeq \text{constant path
+at } \gamma(0)\text{ rel }\set{0,1}\)</span>，且 <span
+class="math inline">\(\gamma^{-1}\cdot\gamma\simeq \text{constant path
+at }\gamma(1)\text{ rel }\set{0,1}\)</span>.</li>
+</ul>
+<p>不难注意到这些性质与我们定义基本群时类似。</p></li>
+</ul>
+<p>问：令 <span class="math inline">\(X\)</span> 是道路连通空间，问
+<span class="math inline">\(\pi_1(X,p)\)</span> 是否依赖于 <span
+class="math inline">\(p\)</span> 的选取？</p></li>
+<li><h4 id="pi_1-群的结构与-p-的选取无关"><span
+class="math inline">\(\pi_1\)</span> 群的结构与 <span
+class="math inline">\(p\)</span> 的选取无关</h4>
+<p>令 <span class="math inline">\(X\)</span> 是道路连通，则任取两个点
+<span class="math inline">\(p,q\in X\)</span>，<span
+class="math inline">\(\pi_1(X,p)\)</span> 与 <span
+class="math inline">\(\pi_1(X,q)\)</span> 是同构的。我们将同构类记作
+<span class="math inline">\(\pi_1(X)\)</span>.</p>
+<p>证明：</p>
+<p>选取道路 <span class="math inline">\(\gamma\)</span> 连接 <span
+class="math inline">\(p\)</span> 与 <span
+class="math inline">\(q\)</span>，定义一个映射 <span
+class="math inline">\(\gamma_\star:\pi_1(X,p)\to\pi_1(X,q)\)</span>, 有
+<span class="math inline">\(&lt;\alpha&gt;\to
+&lt;\gamma^{-1}\cdot\alpha\cdot\gamma&gt;\)</span></p>
+<figure>
+<img src="\12-1.png" alt="image-20231102100352405" />
+<figcaption aria-hidden="true">image-20231102100352405</figcaption>
+</figure>
+<p>由注的第一条，我们有 <span
+class="math inline">\(\gamma_\star\)</span> 是良定义的；</p>
+<p>由注的第二、第三条，有 <span
+class="math inline">\(\begin{aligned}\gamma_\star(&lt;\alpha&gt;\cdot&lt;\beta&gt;)&amp;=&lt;\gamma^{-1}\cdot
+\alpha\cdot\beta\cdot\gamma&gt;=&lt;\gamma^{-1}\alpha\gamma
+\gamma^{-1}\beta\gamma&gt;\\&amp;=&lt;\gamma^{-1}\alpha\gamma&gt;&lt;\gamma^{-1}\beta\gamma&gt;=\gamma_\star(\alpha)\cdot\gamma_\star(\beta)\end{aligned}\)</span>（式中省略了一些乘号）</p>
+<p>因此 <span class="math inline">\(\gamma_\star\)</span>
+是一个群同态；</p>
+<p>那么 <span class="math inline">\(\gamma_\star\)</span>
+是否是群同构呢？由第三条，我们知道 <span
+class="math inline">\((\gamma^{-1})_\star\)</span> 是 <span
+class="math inline">\(\gamma_\star\)</span>
+的逆，因此正反映射都是群同态，<span
+class="math inline">\(\gamma_\star\)</span> 是群同构。</p>
+<ul>
+<li><h5 id="连续映射诱导基本群群同态">连续映射诱导基本群群同态</h5>
+<p>思考： 拓扑空间 <span class="math inline">\(X\)</span>对应了一个
+<span class="math inline">\(\pi_1\)</span> 群，若 <span
+class="math inline">\(f:X\to Y\)</span> 连续映射，该映射是否诱导 <span
+class="math inline">\(\pi_1\)</span> 群之间的同态呢？</p>
+<p>事实上，令 <span class="math inline">\(p\in X\)</span>，<span
+class="math inline">\(f(p)=q\in Y\)</span>，<span
+class="math inline">\(\alpha:[0,1]\to X\)</span> 是一个环路，考虑 <span
+class="math inline">\(f\circ \alpha\)</span>，则这得到了 <span
+class="math inline">\(Y\)</span> 中一个基本点为 <span
+class="math inline">\(q\)</span> 的环路。</p>
+<p>如果 <span class="math inline">\(\alpha\simeq\alpha_1\text{ rel
+}\set{0,1}\)</span>，自然有 <span
+class="math inline">\(f\circ\alpha\simeq f\circ\alpha_1\text{ rel
+}\set{0,1}\)</span>.</p>
+<p>因此我们得到映射，记作 <span
+class="math inline">\(f_\star:\pi_1(X,p)\to\pi_1(Y,q)\)</span>，<span
+class="math inline">\(&lt;\alpha&gt;\to&lt;f\circ\alpha&gt;\)</span>.</p>
+<p>我们验证它是群同态：</p>
+<p><span
+class="math inline">\(f_\star(&lt;\alpha&gt;&lt;\beta&gt;)=f_\star(&lt;\alpha\cdot\beta&gt;)=&lt;(f\circ\alpha)(f\circ\beta)&gt;=f_\star(&lt;\alpha&gt;)f_\star(&lt;\beta&gt;)\)</span>.</p>
+<p>其自然是一个群同态。</p></li>
+</ul></li>
+<li><h4
+id="连续映射诱导群同态映射的基本性质">连续映射诱导群同态映射的基本性质</h4>
+<p>令 <span class="math inline">\(f:X\to Y\)</span>，<span
+class="math inline">\(g:Y\to Z\)</span> 是两个连续映射，则 <span
+class="math inline">\((g\circ f)_\star=g_\star\circ
+f_\star\)</span>，<span
+class="math inline">\((id_X)_\star=id_{\pi_1(X)}\)</span>。</p>
+<p>证明：</p>
+<p><span class="math inline">\((g\circ
+f)_\star(&lt;\alpha&gt;)=&lt;g\circ f\circ\alpha&gt;=g_\star(&lt;f\circ
+\alpha&gt;)=g_\star\circ f_\star(\alpha)\)</span>.</p>
+<p><span
+class="math inline">\((id_{X})_\star(&lt;\alpha&gt;)=&lt;id_X\circ\alpha&gt;=&lt;\alpha&gt;\)</span>.</p></li>
+<li><h4
+id="同胚映射诱导基本群的同构映射">同胚映射诱导基本群的同构映射</h4>
+<p>若 <span class="math inline">\(f:X\to Y\)</span> 是一个同胚映射，则
+<span class="math inline">\(f_\star\)</span> 是一个群同构。</p>
+<p>证明：考虑 <span class="math inline">\(X\xrightarrow{f}
+Y\xrightarrow{f^{-1}} X\)</span>，<span
+class="math inline">\(Y\xrightarrow{f^{-1}}X\xrightarrow{f}Y\)</span>.</p>
+<p>于是 <span class="math inline">\((f^{-1})_\star\circ
+f_\star=(f^{-1}\circ f)_\star=(id_X)_\star=id_{\pi_1(X)}\)</span>, <span
+class="math inline">\(f_\star\circ (f^{-1})_\star=(f\circ
+f^{-1})_\star=(id_Y)_\star=id_{\pi_1(Y)}\)</span>.</p>
+<p>自然，<span class="math inline">\(f_\star\)</span>
+是一个同构。</p></li>
+<li><h4 id="基本群是拓扑不变量">基本群是拓扑不变量</h4>
+<p>根据上面的定理，我们可以看出 <span
+class="math inline">\(\pi_1(X)\)</span>
+确实是一个拓扑不变量。（由于同胚映射保持基本群同构）</p>
+<ul>
+<li><h5 id="注基本群定义出的函子-functor">注：基本群定义出的函子
+(Functor)</h5>
+<p>事实上，在先前的构造中，我们构造了一个叫做<strong>函子
+(Functor)</strong> 的结构 <span
+class="math inline">\(\pi_1\)</span>，它给出了一个从所有带有基本点(base
+point)的拓扑空间到群范畴的对应。</p>
+<p>如果给定一个拓扑空间 <span class="math inline">\(X\)</span> 以及一个
+base point <span class="math inline">\(p\)</span>，我们得到了一个 <span
+class="math inline">\(\pi_1(X,p)\)</span> 的对应。</p>
+<p>若给出 <span class="math inline">\(f:(X,p)\to
+(Y,q)\)</span>，则这被对应到了 <span
+class="math inline">\(f_\star:\pi_1(X,p)\to \pi_1(Y,q)\)</span>.</p>
+<p>并且该对应满足 <span class="math inline">\((g\circ
+f)_\star=g_\star\circ f_\star\)</span>，<span
+class="math inline">\((id_X)_\star=id_{\pi_1(X,p)}\)</span>.</p>
+<p>（回忆：拓扑学范畴研究的是<strong>对象</strong>与<strong>态射</strong>）</p></li>
+</ul></li>
+<li><h4 id="基本群的例子">基本群的例子</h4>
+<ul>
+<li><h5 id="mathbbrn-中凸集的基本群"><span
+class="math inline">\(\mathbb{R}^n\)</span> 中凸集的基本群</h5>
+<p>设 <span class="math inline">\(C\subset \mathbb{R}^n\)</span>，则
+<span class="math inline">\(\pi_1(C)=\set{e}\)</span>.
+（任意给一条环路，环路可以通过直线同伦达到恒等映射）</p>
+<p>我们也称这种情况为<strong>单连通
+(simply-connected)</strong>，即称拓扑空间 <span
+class="math inline">\(X\)</span> 为<strong>单连通</strong>的，若 <span
+class="math inline">\(X\)</span> 中的基本群为平凡群 <span
+class="math inline">\(\set{e}\)</span>。</p></li>
+<li><h5 id="圆周-s1-的基本群">圆周 <span
+class="math inline">\(S^1\)</span> 的基本群</h5>
+<p>令 <span class="math inline">\(S^1=\set{e^{2\pi i\theta}\mid 0\leq
+\theta&lt;1}\)</span>.</p>
+<figure>
+<img src="\12-2.png" alt="image-20231102103319564" />
+<figcaption aria-hidden="true">image-20231102103319564</figcaption>
+</figure>
+<p>若道路不转圈，则其跟恒等道路同伦；</p>
+<p>还可以注意到顺时针转 <span class="math inline">\(k\)</span>
+圈的道路彼此同伦。</p>
+<p>我们猜想：<span
+class="math inline">\(\pi_1(S^1)=\mathbb{Z}\)</span>.</p>
+<p>令 <span class="math inline">\(\pi:\mathbb{R}\to S^1\)</span>，<span
+class="math inline">\(x\to e^{2\pi ix}\)</span>.</p>
+<p><span class="math inline">\(\forall
+n\in\mathbb{Z}\)</span>，考虑道路：<span
+class="math inline">\(\gamma_n(s)=ns\)</span>，<span
+class="math inline">\(s\in [0,1]\)</span>.</p>
+<p>考虑 <span
+class="math inline">\(\pi\circ\gamma_n\)</span>，则它是一个 <span
+class="math inline">\(S^1\)</span> 上的环路，基本点为 <span
+class="math inline">\(1\in
+S^1\)</span>。形象地看，这是一个这样的映射：</p>
+<figure>
+<img src="\12-3.png" alt="image-20231102104237549" />
+<figcaption aria-hidden="true">image-20231102104237549</figcaption>
+</figure>
+<p>那么 <span class="math inline">\(\pi\circ\gamma_n\)</span> 就是沿着
+<span class="math inline">\(S^1\)</span> 转 <span
+class="math inline">\(n\)</span> 圈的道路。</p>
+<p>我们期望证明下面的定理：令 <span
+class="math inline">\(\phi:\mathbb{Z}\to \pi_1(S^1,1)\)</span>，<span
+class="math inline">\(\phi(n):=&lt;\pi\circ\gamma_n&gt;\)</span>，则
+<span class="math inline">\(\phi\)</span> 是一个群同构。</p>
+<ul>
+<li><h6 id="一个基本的观察">一个基本的观察</h6>
+因为 <span class="math inline">\(\mathbb{R}\)</span> 是一个凸集，令
+<span class="math inline">\(\gamma:[0,1]\to\mathbb{R}\)</span>，使得
+<span class="math inline">\(\gamma(0)=0,\gamma(1)=n\)</span>，则 <span
+class="math inline">\(\gamma\simeq \gamma_n\text{ rel
+}\set{0,1}\)</span>，由直线同伦给出。</li>
+</ul>
+<p>我们首先证明下面的引理：</p>
+<ul>
+<li><h6 id="phi-是一个群同态"><span class="math inline">\(\phi\)</span>
+是一个群同态</h6>
+<p><span class="math inline">\(\phi\)</span> 是一个群同态。</p>
+<p>证明：</p>
+<p>我们想要证明 <span class="math inline">\(\phi(m+n)=\phi(m)\cdot
+\phi(n),\forall m,n\in \mathbb{Z}\)</span>.</p>
+<p>令 <span
+class="math inline">\(\sigma:[0,1]\to\mathbb{R}\)</span>，<span
+class="math inline">\(\sigma(s)=\gamma_n(s)+m\)</span>. 我们有 <span
+class="math inline">\(\pi\circ\sigma=\pi\circ\gamma_n\)</span>.</p>
+<p>并且，<span
+class="math inline">\((\gamma_m\cdot\sigma)(0)=0\)</span>，<span
+class="math inline">\((\gamma_m\cdot\sigma)(1)=m+n\)</span>.</p>
+<p>因此 ，<span class="math inline">\(\phi(m+n)=&lt;\pi\circ
+\gamma_{m+n}&gt;=&lt;\pi\circ(\gamma_m\cdot\sigma)&gt;\)</span>，最后一个等号由上面的观察给出。</p>
+<p>于是这又可以写成 <span
+class="math inline">\(&lt;(\pi\circ\gamma_m)\cdot(\pi\circ\sigma)&gt;=&lt;(\pi\circ\gamma_m)\cdot(\pi\circ\gamma_n)&gt;=\phi(m)\cdot\phi(n)\)</span>.</p>
+<p>因此这是一个群同态。</p></li>
+<li><h6 id="道路提升引理-path-lifting-lemma">道路提升引理 (Path-lifting
+Lemma)</h6>
+<p>考虑道路 <span class="math inline">\(\sigma:[0,1]\to
+S^1\)</span>，使得 <span
+class="math inline">\(\sigma(0)=1\)</span>。那么 <span
+class="math inline">\(\exists!\tilde\sigma:[0,1]\to
+\mathbb{R}\)</span>（存在且唯一），使得 <span
+class="math inline">\(\tilde\sigma(0)=0\)</span> 且 <span
+class="math inline">\(\pi\circ\tilde\sigma=\sigma\)</span>.</p>
+<p>此时我们将 <span class="math inline">\(\tilde\sigma\)</span> 称为
+<span class="math inline">\(\sigma\)</span> 的一个<strong>提升
+(Lift)</strong>。</p>
+<p>直观来看，这就是在说</p>
+<figure>
+<img src="\12-4.png" alt="image-20231102105452748" />
+<figcaption aria-hidden="true">image-20231102105452748</figcaption>
+</figure>
+<p>如图所示的道路对应是唯一的。（这也能从直观上解释为什么引理是正确的）</p>
+<p>证明：</p>
+<p>令 <span class="math inline">\(U=S^1\setminus\set{-1}\)</span>，<span
+class="math inline">\(V=S^1\setminus\set{1}\)</span>.</p>
+<p>有 <span class="math inline">\(\set{U,V}\)</span> 是 <span
+class="math inline">\(S^1\)</span> 的开覆盖，并且 <span
+class="math inline">\(\pi|_{(n-1/2,n+1/2)}:(n-1/2,n+1/2)\to U\)</span>
+同胚；<span class="math inline">\(\pi|_{(n,n+1)}:(n,n+1)\to V\)</span>
+同胚（<span class="math inline">\(\forall n\in
+\mathbb{Z}\)</span>）。</p>
+<p>由于 <span class="math inline">\([0,1]\)</span>
+是一个紧度量空间，根据 Lebesgue 引理，<span
+class="math inline">\(\exists
+0=t_0&lt;t_1&lt;\cdots&lt;t_n=1\)</span>，有 <span
+class="math inline">\([t_i,t_{i+1}]\subset \sigma^{-1}(U)\)</span> 或
+<span class="math inline">\(\sigma^{-1}(V)\)</span>.</p>
+<p>（</p>
+<p>回忆：</p>
+<p><strong>Lebesgue 引理 (Lebesgue's Lemma)</strong></p>
+<p>令 <span class="math inline">\(X\)</span> 是一个紧的度量空间，令
+<span class="math inline">\(X=\bigcup_\alpha U_\alpha\)</span> 是 <span
+class="math inline">\(X\)</span> 的开覆盖。则 <span
+class="math inline">\(\exists \delta&gt;0\)</span>，将 <span
+class="math inline">\(\delta\)</span> 称作关于 <span
+class="math inline">\(X\)</span> 的开覆盖 <span
+class="math inline">\(\set{U_\alpha}\)</span> 的 <strong>Lebesgue 数
+(Lebesgue Number)</strong>，使得 <span class="math inline">\(\forall
+X\)</span> 的子集，若其直径小于 <span
+class="math inline">\(\delta\)</span>，则其一定被包含在某一个 <span
+class="math inline">\(U_\alpha\)</span> 里。</p>
+<p>）</p>
+<p>因为 <span class="math inline">\(\sigma(0)=1\not\in V\)</span>，有
+<span class="math inline">\(\sigma([0,t_1])\subset U\)</span>. 令 <span
+class="math inline">\(f=(\pi|_{(-1/2,1/2)})^{-1}\)</span>，令 <span
+class="math inline">\(\tilde\sigma(s)=f\circ \sigma(s),0\leq s\leq
+t_1\)</span>，于是 <span
+class="math inline">\(\pi\circ\tilde\sigma(s)=\sigma(s)\)</span>.</p>
+<p>假设我们已经在 <span class="math inline">\([0,t_k]\)</span>
+上定义好了 <span
+class="math inline">\(\tilde\sigma\)</span>，我们将其延拓到 <span
+class="math inline">\([0,t_{k+1}]\)</span> 上。</p>
+<p>若 <span class="math inline">\(\sigma([t_k,t_{k+1}])\subset
+U\)</span>，假设 <span
+class="math inline">\(\sigma([t_k,t_{k+1}])\subset(n-1/2,n+1/2),n\in
+\mathbb{Z}\)</span>.</p>
+<p>那么令 <span
+class="math inline">\(g:=(\pi|_{(n-1/2,n+1/2)})^{-1}\)</span>，令 <span
+class="math inline">\(\tilde\sigma(s)=g\circ\sigma(s),t_k\leq s\leq
+t_{k+1}\)</span>，于是 <span
+class="math inline">\(\pi\circ\tilde\sigma=\sigma,0\leq s\leq
+t_{k+1}\)</span>.</p>
+<p>若 <span class="math inline">\(\sigma([t_k,t_{k+1}])\subset
+V\)</span>，假设 <span
+class="math inline">\(\sigma([t_k,t_{k+1}])\subset (n,n+1),n\in
+\mathbb{Z}\)</span>，于是令 <span
+class="math inline">\(h:=(\pi|_{n,n+1})^{-1}\)</span>，令 <span
+class="math inline">\(\tilde\sigma(s)=h\circ\sigma(s),t_k\leq s\leq
+t_{k+1}\)</span>，于是 <span
+class="math inline">\(\pi\circ\tilde\sigma=\sigma,0\leq s\leq
+t_{k+1}\)</span>.</p>
+<p>由归纳法，我们总可以将 <span class="math inline">\(\sigma\)</span>
+提升为 <span class="math inline">\(\tilde\sigma\)</span>.</p>
+<p>唯一性由每一步提升的唯一性即得。</p></li>
+<li><h6 id="同伦提升引理-homotopy-lifting-lemma">同伦提升引理
+(Homotopy-lifting Lemma)</h6>
+<p>若考虑同伦 <span class="math inline">\(F:I\times I\to S^1\)</span>
+连续映射，使得 <span class="math inline">\(F(0,t)=F(1,t)=1,\forall 0\leq
+t\leq 1\)</span>，即该同伦保持 <span
+class="math inline">\(\set{0,1}\)</span> 不动。</p>
+<p>则 <span class="math inline">\(\exists! \tilde F:I\times I\to
+\mathbb{R}\)</span>，使得 <span class="math inline">\(\pi\circ \tilde F=
+F\)</span>（提升条件），<span class="math inline">\(\tilde F(0,t)=0,
+\forall 0\leq t\leq 1\)</span>（初始条件）。</p>
+<p>证明：</p>
+<p>证明的思路与道路提升引理类似。</p>
+<p>由于 <span class="math inline">\(I\times I\)</span>
+也是一个紧的度量空间，由于 Lebesgue 引理，<span
+class="math inline">\(\exists
+0=s_0&lt;s_1&lt;\cdots&lt;s_m=1,0=t_1&lt;t_2&lt;\cdots&lt;t_k=1\)</span>，使得
+<span class="math inline">\([s_i,s_{i+1}]\times[t_j,t_{j+1}]\subset
+F^{-1}(U)\)</span> 或 <span
+class="math inline">\(F^{-1}(V)\)</span>，其中 <span
+class="math inline">\(U=S^1\setminus\set{-1}\)</span>，<span
+class="math inline">\(V\in S^1\setminus\set{1}\)</span>.</p>
+<p>由于 <span class="math inline">\(F(\set{0}\times [0,t_1])=1\not\in
+V\)</span>，则令 <span
+class="math inline">\(f=(\pi|_{(-1/2,1/2)})^{-1}\)</span>，令 <span
+class="math inline">\(\tilde F(s,t)=f\circ F(s,t), \forall s,t\in
+[0,s_1]\times [0,t_1]\)</span>.</p>
+<p>之后的证明，可以对两个指标做归纳法，于是 <span
+class="math inline">\(\exists!\tilde F\)</span> 使得 <span
+class="math inline">\(\pi\circ\tilde F=F\)</span>，且 <span
+class="math inline">\(\tilde F(0,t)=0,\forall 0\leq t\leq
+1\)</span>.</p></li>
+</ul>
+<p>在有了上述两个引理后，我们现在可以证明 <span
+class="math inline">\(\pi_1(S^1,1)\cong \mathbb{Z}\)</span> 了，即 <span
+class="math inline">\(\phi:\mathbb{Z}\to
+\pi_1(S^1,1),\phi(n)=&lt;\pi\circ\gamma_n&gt;\)</span>
+是一个群同构。</p>
+<p>证明：</p>
+<p>根据我们的引理，这是一个群同态。我们只需要证明单、满射。</p>
+<p>满射：由道路提升引理，我们可以看出 <span
+class="math inline">\(\phi\)</span> 是一个满射。</p>
+<p>单射：假设 <span class="math inline">\(\phi(n)=e\in
+\pi_1(S^1,1)\)</span>，则由定义 <span class="math inline">\(\exists
+F:I\times I\to S^1\)</span>，使得 <span
+class="math inline">\(F(s,0)\)</span> 是常数道路，<span
+class="math inline">\(F(s,1)=\pi\circ\gamma_n(s)\)</span>，其中 <span
+class="math inline">\(F(0,t)=F(1,t)=1\in S^1,\forall t\)</span>.</p>
+<p>由同伦提升引理，<span class="math inline">\(\exists\tilde F:I\times
+I\to \mathbb{R}\)</span>，由 <span class="math inline">\(\pi\circ \tilde
+F=F,\tilde F(0,t)=0\)</span>.</p>
+<p>考虑子空间 <span class="math inline">\(A=I\times \set{0}\cup
+\set{0}\times I\cup \set{1}\times I\)</span>，<span
+class="math inline">\(A\)</span> 形如：</p>
+<figure>
+<img src="\12-5.png" alt="image-20231102112133116" />
+<figcaption aria-hidden="true">image-20231102112133116</figcaption>
+</figure>
+<p>根据定义，我们有 <span class="math inline">\(F(A)=\set{1}\subseteq
+S^1\)</span>.</p>
+<p>由于 <span class="math inline">\(\pi\circ \tilde F=F\)</span>，于是
+<span class="math inline">\(\tilde
+F(A)\subseteq\mathbb{Z}\)</span>。</p>
+<p>由于 <span class="math inline">\(A\)</span> 是连通的，有 <span
+class="math inline">\(\tilde F(A)=\set{m}\)</span>，对于某个整数 <span
+class="math inline">\(m\)</span>.</p>
+<p>由于 <span class="math inline">\(\tilde F(0,t)=0\)</span>，有 <span
+class="math inline">\(\tilde F(A)=\set{0}\)</span>.</p>
+<p>由于 <span class="math inline">\(\tilde F(s,1)\)</span> 是 <span
+class="math inline">\(\pi\circ\gamma_n\)</span>
+的提升，根据道路提升的唯一性，有 <span class="math inline">\(\tilde
+F(s,1)=\gamma_n\)</span>，于是 <span
+class="math inline">\(n=\gamma_n(1)=\tilde F(1,1)=0\)</span>.</p>
+<p>于是 <span class="math inline">\(\phi\)</span> 是单射。</p></li>
+</ul></li>
 </ul>
 ]]></content>
       <categories>
