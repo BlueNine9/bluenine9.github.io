@@ -261,7 +261,7 @@ class="math inline">\(t\)</span>为超级源点汇点 <figure class="highlight c
   <entry>
     <title>拓扑学笔记</title>
     <url>/2023/09/21/%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/jPH4y2GbQW/</p>
+    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/2wQjXghwfx/</p>
 <p>分节次的笔记（清华云盘）：https://cloud.tsinghua.edu.cn/d/2c4efaca588a4326958d/</p>
 <h2 id="lecture-info">00. Lecture Info</h2>
 <h3 id="考核">1. 考核</h3>
@@ -3457,7 +3457,7 @@ class="math inline">\(\mathbb{Z}/2\mathbb{Z}=\set{-1,1}\)</span>，其中
 class="math inline">\(1\)</span>
 是恒等元，群运算定义为恒等运算。定义二元群作用在 <span
 class="math inline">\(S^n\)</span> 上，其中 <span
-class="math inline">\((-1)\cdot x:=-1\)</span>.</p>
+class="math inline">\((-1)\cdot x:=-x\)</span>.</p>
 <p>则 <span
 class="math inline">\(S^n/(\mathbb{Z}/2\mathbb{Z})=\mathbb{R}P^n\)</span>
 得到了实射影空间。</p>
@@ -4359,6 +4359,364 @@ class="math inline">\(\pi\circ\gamma_n\)</span>
 F(s,1)=\gamma_n\)</span>，于是 <span
 class="math inline">\(n=\gamma_n(1)=\tilde F(1,1)=0\)</span>.</p>
 <p>于是 <span class="math inline">\(\phi\)</span> 是单射。</p></li>
+</ul></li>
+</ul>
+<h2 id="基本群与同伦等价">13. 基本群与同伦等价</h2>
+<h3 id="圆周的基本群">圆周的基本群</h3>
+<ul>
+<li><h4 id="回忆圆周的基本群">回忆：圆周的基本群</h4>
+<p><span class="math inline">\(\pi_1(S^1)\cong
+\mathbb{Z}\)</span>.</p></li>
+<li><h4
+id="应用brouwer-不动点定理-brouwer-fixed-point-theorem">应用：Brouwer
+不动点定理 (Brouwer Fixed-Point Theorem)</h4>
+<p>考虑单位球 <span
+class="math inline">\(B\)</span>，其维数为任意，考虑一个连续映射 <span
+class="math inline">\(f:B\to B\)</span>，那么一定 <span
+class="math inline">\(\exists x\in B\)</span> 使得 <span
+class="math inline">\(f(x)=x\)</span>.</p>
+<p>证明：</p>
+<p>我们这里只证明 <span class="math inline">\(\text{dim}\leq 2\)</span>
+的情形，通常情况以后会学到。</p>
+<p>首先看 <span class="math inline">\(\text{dim}=1\)</span> 的情形。</p>
+<p><span class="math inline">\(B=[-1,1]\subset \mathbb{R}\)</span>.
+这就是在说 <span class="math inline">\(f:[-1,1]\to[-1,1]\)</span>
+连续，该映射有不动点。</p>
+<p>考虑下图，</p>
+<figure>
+<img src="\13-1.png" alt="image-20231107152556826" />
+<figcaption aria-hidden="true">image-20231107152556826</figcaption>
+</figure>
+<p>这就是在说橙色的函数图像与绿色对角线有交点。</p>
+<p>假设 <span class="math inline">\(f(x)\neq x\)</span>, <span
+class="math inline">\(\forall x\in I\)</span>，那么令 <span
+class="math inline">\(A=\set{x\in I\mid f(x)&lt;x}\)</span>，<span
+class="math inline">\(B=\set{x\in I\mid f(x)&gt;x}\)</span>，那么有
+<span class="math inline">\(I=A\sqcup B\)</span>.</p>
+<p>由于 <span class="math inline">\(f(-1)\neq -1\)</span>，有 <span
+class="math inline">\(f(-1)&gt;-1\)</span>，且 <span
+class="math inline">\(f(1)\neq 1\)</span>，有 <span
+class="math inline">\(f(1)&lt;1\)</span>.</p>
+<p>因此 <span class="math inline">\(A\neq \varnothing, B\neq
+\varnothing\)</span>.</p>
+<p>我们考察 <span class="math inline">\(A,B\)</span> 集合的开闭性。令
+<span class="math inline">\(g(x)=f(x)-x\)</span>，有 <span
+class="math inline">\(g:[-1,1]\to \mathbb{R}\)</span> 且 <span
+class="math inline">\(g\)</span> 是连续映射。</p>
+<p>于是 <span class="math inline">\(A=g^{-1}(-\infty,0),
+B=g^{-1}(0,+\infty)\)</span>. 从而 <span
+class="math inline">\(A,B\)</span> 均为开集，这将连通的 <span
+class="math inline">\([-1,1]\)</span>
+区间分解为了两个非空开集的不交并，矛盾！</p>
+<p>接着考察 <span class="math inline">\(\text{dim}=2\)</span>
+的情形。</p>
+<p>令 <span class="math inline">\(D=\set{(x,y)\mid x^2+y^2\leq
+1}\)</span>，这是一个二维的球。假设 <span class="math inline">\(\exists
+f:D\to D\)</span> 连续且 <span class="math inline">\(\forall x\in
+D,f(x)\neq x\)</span>.</p>
+<p>那么 <span class="math inline">\(\forall x\in D\)</span>，考虑射线
+<span class="math inline">\((f(x),x)\)</span>，延长直到射线与圆周 <span
+class="math inline">\(S^1\subseteq D\)</span> 相交。将与圆周的交点记作
+<span class="math inline">\(g(x)\)</span>.</p>
+<p>那么 <span class="math inline">\(g(x):D\to S^1\)</span>
+映射，如图所示：</p>
+<figure>
+<img src="\13-2.png" alt="image-20231107153403741" />
+<figcaption aria-hidden="true">image-20231107153403741</figcaption>
+</figure>
+<p>由于 <span class="math inline">\(f\)</span> 是连续的，并且 <span
+class="math inline">\(f(x)\neq x\)</span>，因此 <span
+class="math inline">\(g\)</span> 也是连续的。</p>
+<p>并且若将 <span class="math inline">\(g\)</span> 限制在 <span
+class="math inline">\(S^1\)</span> 上，有 <span
+class="math inline">\(g\)</span> 是一个恒等映射，即 <span
+class="math inline">\(g|_{S^1}=id|_{S^1}\)</span>。</p>
+<p>如果我们考虑嵌入映射：<span class="math inline">\(i:S^1\to
+D\)</span>，那么 <span class="math inline">\(g\circ i:S^1\to D\to
+S^1\)</span> 是恒等映射。</p>
+<p>那么 <span class="math inline">\((g\circ
+i)_\star\)</span>（连续映射诱导的群同态）<span
+class="math inline">\(=g_\star\circ
+i_\star=(id|_{S^1})_\star=id_{\pi_1(S^1)}\)</span>.</p>
+<p>那么定有 <span class="math inline">\(g_\star\)</span> 是满射，但由于
+<span class="math inline">\(\pi_1(S^1)\cong\mathbb{Z}\)</span>，<span
+class="math inline">\(D\subseteq \mathbb{R}^2\)</span>
+是一个凸集，这意味着 <span class="math inline">\(\pi_1(D)\)</span>
+是一个平凡群 <span class="math inline">\(\set{e}\)</span>，因此 <span
+class="math inline">\(g_\star:\pi_1(D)\to \pi_1(S^1)\)</span>
+不可能是一个满射，矛盾。</p></li>
+</ul>
+<h3 id="基本群-2">基本群</h3>
+<ul>
+<li><h4 id="单连通空间的判别">单连通空间的判别</h4>
+<p>考虑 <span class="math inline">\(X\)</span> 中两个开集 <span
+class="math inline">\(U,V\)</span>，使得 <span
+class="math inline">\(X=U\cup V\)</span>. 如果 <span
+class="math inline">\(U, V\)</span> 都是单连通的（<span
+class="math inline">\(\pi_1(U)=\pi_1(V)=\set{e}\)</span>，事实上，<span
+class="math inline">\(U,V\)</span> 此时是道路连通的），并假设 <span
+class="math inline">\(U\cap V\)</span> 是道路连通的，那么 <span
+class="math inline">\(X\)</span> 是单连通的，也就是 <span
+class="math inline">\(\pi_1(X)=\set{e}\)</span>。</p>
+<p>证明：</p>
+<p>固定 <span class="math inline">\(p\in U\cap V\)</span>，考虑环路
+<span class="math inline">\(\alpha:I=[0,1]\to X\)</span> 拥有基础点
+<span class="math inline">\(p\)</span>.</p>
+<p>那么 <span class="math inline">\(I=[0,1]\)</span>
+也有一个开覆盖：<span class="math inline">\(\alpha^{-1}(U)\cup
+\alpha^{-1}(V)\)</span>，由于 <span class="math inline">\(I\)</span>
+是一个紧的度量空间，由 Lebesgue 引理，<span
+class="math inline">\(\exists
+0=t_0&lt;t_1&lt;\cdots&lt;t_n=1\)</span>，使得 <span
+class="math inline">\([t_k,t_{k+1}]\subset\alpha^{-1}(U)\)</span> 或
+<span class="math inline">\(\alpha^{-1}(V)\)</span>.</p>
+<p>令 <span class="math inline">\(\alpha_k(s)=\alpha((t_k-t_{k-1})\cdot
+s+t_{k-1}),s\in [0,1]\)</span> （<span
+class="math inline">\(\alpha\)</span> 限制在 <span
+class="math inline">\([t_{k-1},t_{k}]\)</span> 上），则 <span
+class="math inline">\(\alpha_k(0)=\alpha(t_{k-1}),\alpha_k(1)=\alpha(t_k)\)</span>.</p>
+<p>如果 <span class="math inline">\(\alpha(t_k)\in U\)</span>，我们连接
+<span class="math inline">\(p\)</span> 与 <span
+class="math inline">\(\alpha(t_k)\)</span>，得到道路 <span
+class="math inline">\(\gamma_k\subset U\)</span>.</p>
+<p>同理，若 <span class="math inline">\(\alpha(t_k)\in
+V\)</span>，我们连接 <span class="math inline">\(p\)</span> 与 <span
+class="math inline">\(\alpha(t_k)\)</span>，得到道路 <span
+class="math inline">\(\gamma_k\subset V\)</span>.</p>
+<p>若 <span class="math inline">\(\alpha(t_k)\in U\cap
+V\)</span>，我们连接 <span class="math inline">\(p\)</span> 与 <span
+class="math inline">\(\alpha(t_k)\)</span>，得到道路 <span
+class="math inline">\(\gamma_k\subset U\cap V\)</span>（由于 <span
+class="math inline">\(U\cap V\)</span> 道路连通，这可以做到）。</p>
+<p>于是有 <span
+class="math inline">\(\alpha\simeq(\alpha_1\gamma_1^{-1})(\gamma_1\alpha_2\gamma_2^{-1})\cdots(\gamma_{n-1}\alpha_n)\text{
+rel}\set{0, 1}\)</span>.</p>
+<figure>
+<img src="\13-3.png" alt="image-20231107155631257" />
+<figcaption aria-hidden="true">image-20231107155631257</figcaption>
+</figure>
+<p>如图所示，我们事实上是做了一个环路的分解。</p>
+<p>括号中的每个环路都是 <span class="math inline">\(U\)</span> 或 <span
+class="math inline">\(V\)</span> 中的环路。由于 <span
+class="math inline">\(U\)</span> 与 <span
+class="math inline">\(V\)</span> 都是单连通区间，我们有 <span
+class="math inline">\(\gamma_k\alpha_{k+1}\gamma_{k+1}^{-1}\simeq
+e\text{ rel}\set{0,1}\)</span>.</p>
+<p>因此 <span class="math inline">\(\alpha\simeq e\text{
+rel}\set{0,1}\)</span>.</p>
+<p>因此 <span class="math inline">\(X\)</span> 确实是单连通区域，<span
+class="math inline">\(\pi_1(X)\cong \set{e}\)</span>。</p></li>
+<li><h4 id="高位球面的基本群是平凡群">高位球面的基本群是平凡群</h4>
+<p>高维球面 <span class="math inline">\(S^n\)</span>
+的基本群是平凡群，即 <span
+class="math inline">\(\pi_1(S^n)=\set{e}\)</span> 若 <span
+class="math inline">\(n\geq 2\)</span>。</p>
+<p>证明：</p>
+<p>令 <span
+class="math inline">\(U=S^n\setminus\set{(1,0,0,\cdots,0)}\)</span>，<span
+class="math inline">\(V=S^n\setminus\set{(-1,0,0,\cdots,0)}\)</span>.</p>
+<p>我们有 <span class="math inline">\(U,V\)</span> 都是开集，且 <span
+class="math inline">\(S^n=U\cup V\)</span>，有 <span
+class="math inline">\(U, V\)</span> 同胚于 <span
+class="math inline">\(\mathbb{R}^n\)</span>，因此 <span
+class="math inline">\(\pi_1(U)=\pi_1(V)=\set{e}\)</span>.</p>
+<p>考察集合 <span class="math inline">\(U\cap V\)</span>，它同胚于 <span
+class="math inline">\(\mathbb{R}^n\setminus\set{0}\)</span>，当 <span
+class="math inline">\(n\geq 2\)</span> 时这是道路连通的空间。</p>
+<p>因此 <span class="math inline">\(\pi_1(S^n)\)</span>
+确实是平凡群。</p>
+<p>（这个定理也解释了 <span class="math inline">\(U\cap V\)</span>
+道路连通的必要性，因为当 <span class="math inline">\(n=1\)</span>
+其他条件依然成立，但 <span
+class="math inline">\(\mathbb{R}^1\setminus\set{0}\)</span>
+不是道路连通）</p></li>
+<li><h4
+id="乘积空间的基本群同构于基本群的乘积">乘积空间的基本群同构于基本群的乘积</h4>
+<p><span class="math inline">\(\pi_1(X\times Y)\cong \pi_1(X)\times
+\pi_1(Y)\)</span>.</p>
+<p>证明：</p>
+<p>选择 <span class="math inline">\(x_0\in X,y_0\in Y\)</span>，选 <span
+class="math inline">\((x_0,y_0)\)</span> 作为基本点。考察 <span
+class="math inline">\(p_1,p_2\)</span> 为两个投影映射。</p>
+<p>接下来我们构造一个群同态：令映射 <span
+class="math inline">\(\phi:\pi_1(X\times Y)\to \pi_1(X)\times
+\pi_1(Y)\)</span>.</p>
+<p>其中 <span
+class="math inline">\(&lt;\alpha&gt;\to((p_1)_\star(&lt;\alpha&gt;),(p_2)_\star(&lt;\alpha&gt;))\)</span>，<span
+class="math inline">\(\alpha\)</span> 是 <span
+class="math inline">\((x_0,y_0)\)</span> 处的环路。</p>
+<p>我们想要验证这是一个同构。我们知道 <span
+class="math inline">\(\phi\)</span>
+是一个群同态，只需验证其为单射、满射。</p>
+<p>记 <span class="math inline">\(e\in \pi_1(X\times Y), e_1\in
+\pi_1(X), e_2\in \pi_1(Y)\)</span> 恒等元。</p>
+<p>单射：</p>
+<p>如果 <span class="math inline">\(p_1\circ\alpha \underset{F}{\simeq}
+e_1\text{ rel}\set{0,1}, p_2\circ\alpha\underset{G}{\simeq} e_2\text{
+rel}\set{0,1}\)</span></p>
+<p>那么 <span class="math inline">\(\alpha\underset{(F,G)}{\simeq}
+e\text{ rel}\set{0,1}\)</span>，于是 <span
+class="math inline">\(\phi\)</span> 是一个单射。</p>
+<p>满射：</p>
+<p>令 <span class="math inline">\(\alpha\)</span> 是 <span
+class="math inline">\(X\)</span> 中环路，令 <span
+class="math inline">\(\beta\)</span> 是 <span
+class="math inline">\(Y\)</span> 中环路。</p>
+<p>令 <span
+class="math inline">\(\gamma(s)=(\alpha(s),\beta(s))\)</span>，那么有
+<span class="math inline">\(\gamma\)</span> 是乘积空间中的环路，并且
+<span
+class="math inline">\(p_1\circ\gamma=\alpha,p_2\circ\gamma=\beta\)</span>.</p>
+<p>根据定义，<span
+class="math inline">\(\phi(&lt;\gamma&gt;)=(&lt;\alpha&gt;,&lt;\beta&gt;)\)</span>.
+因此 <span class="math inline">\(\phi\)</span> 是一个满射。</p>
+<ul>
+<li><h5 id="例子环面的基本群">例子：环面的基本群</h5>
+<p>令 <span class="math inline">\(T\)</span> 是环面，我们知道 <span
+class="math inline">\(T=S^1\times S^1\)</span>.</p>
+<p>从而 <span
+class="math inline">\(\pi_1(T)=\mathbb{Z}^2\)</span>.</p></li>
+</ul></li>
+</ul>
+<h3 id="同伦等价-homotopy-equivalence">同伦等价 (Homotopy
+Equivalence)</h3>
+<ul>
+<li><h4 id="回忆同胚的概念">回忆：同胚的概念</h4>
+<p><span class="math inline">\(X,Y\)</span> 被称为是同胚的，如果 <span
+class="math inline">\(\exists f:X\to Y,g:Y\to X\)</span> 连续映射，且
+<span class="math inline">\(f\circ g=id_Y,g\circ f=id_X\)</span>。</p>
+<p>注意到同胚的限制非常强，我们可否对这个限制进行放松？</p></li>
+<li><h4 id="定义同伦等价-homotopy-equivalence">定义：同伦等价 (Homotopy
+Equivalence)</h4>
+<p>我们将 <span class="math inline">\(X,Y\)</span>
+称作是<strong>同伦等价 (Homotopy Equivalent)</strong>的，若 <span
+class="math inline">\(\exists f:X\to Y,g:Y\to X\)</span> 连续映射，且
+<span class="math inline">\(g\circ f\simeq id_X,f\circ g\simeq
+id_Y\)</span>.</p>
+<p>此时 <span class="math inline">\(f,g\)</span>
+被称为是<strong>同伦等价 (Homotopy Equivalence)</strong>，将 <span
+class="math inline">\(f,g\)</span> 称为是对方的<strong>同伦逆 (Homotopy
+Inverse)</strong>.</p>
+<p>此时也记作 <span class="math inline">\(X\simeq Y\)</span>。</p>
+<p>易知，<span class="math inline">\(X\cong Y\Rightarrow X\simeq
+Y\)</span>.</p></li>
+<li><h4 id="同伦等价的基本性质">同伦等价的基本性质</h4>
+<ul>
+<li><h5 id="同伦等价是一个等价关系">同伦等价是一个等价关系</h5>
+<p>同伦等价是等价关系。</p>
+<p>证明：</p>
+<p>自反性：<span class="math inline">\(id_X:X\to X\)</span>
+是一个同伦等价（这事实上是同胚），因此 <span
+class="math inline">\(X\simeq X\)</span>.</p>
+<p>对称性：由定义这自然是对称的。</p>
+<p>传递性：若 <span class="math inline">\(X\simeq Y,Y\simeq
+Z\)</span>，则 <span class="math inline">\(\exists\)</span>
+下面的图表：</p>
+<figure>
+<img src="\13-4.png" alt="image-20231107162558406" />
+<figcaption aria-hidden="true">image-20231107162558406</figcaption>
+</figure>
+<p>其中 <span class="math inline">\(g\circ f\simeq id_X,f\circ g\simeq
+id_Y\)</span>, <span class="math inline">\(\phi\psi\simeq
+id_Z,\psi\phi\simeq id_Y\)</span>.</p>
+<p>于是 <span class="math inline">\(g\circ \psi\circ \phi\circ f\simeq
+g\circ id_Y\circ f=g\circ f\simeq id_X\)</span>.</p>
+<p><span class="math inline">\(\phi\circ f\circ g\circ\psi\simeq
+\phi\circ id_Y\circ\psi=\phi\circ\psi\simeq id_Z\)</span></p>
+<p>从而这是一个等价关系。</p></li>
+<li><h5
+id="构造同伦等价的一个基本例子形变收缩-deformation-retraction">构造同伦等价的一个基本例子：形变收缩
+(Deformation Retraction)</h5>
+<p><span class="math inline">\(A\subset X\)</span>，假设 <span
+class="math inline">\(\exists F:X\times I\to X\)</span>，有 <span
+class="math inline">\(F(x,0)=x,F(x,1)\in A\)</span>，且 <span
+class="math inline">\(F(x,t)=x\)</span> 若 <span
+class="math inline">\(x\in A\)</span>. 这意味着 <span
+class="math inline">\(A\)</span> 中的点对 <span
+class="math inline">\(F\)</span> 是不动点。则我们将 <span
+class="math inline">\(F\)</span> 称作是一个从 <span
+class="math inline">\(X\)</span> 到 <span
+class="math inline">\(A\)</span> 的<strong>形变收缩 (Deformation
+Retraction)</strong>.</p>
+<p>直观上看，将 <span class="math inline">\(F\)</span> 看作一族从 <span
+class="math inline">\(X\)</span> 到 <span
+class="math inline">\(X\)</span> 的映射，这族映射从 <span
+class="math inline">\(X\)</span> 逐渐收缩到 <span
+class="math inline">\(A\)</span> 并保持 <span
+class="math inline">\(A\)</span> 中点不动。</p>
+<p>事实上，我们会有：<span class="math inline">\(X\simeq A\)</span>.</p>
+<p>证明：</p>
+<p>考虑 <span class="math inline">\(i:A\to X\)</span> 是嵌入映射以及映射
+<span class="math inline">\(f(x)=F(x,1): X\to A\)</span>。</p>
+<p>一方面，我们有 <span class="math inline">\(f\circ
+i=id_A\)</span>。</p>
+<p>另一方面，我们有 <span class="math inline">\(i\circ
+f\underset{F}{\simeq} id_X\)</span>. 这是由于左侧为 <span
+class="math inline">\(F(x,1)\)</span>，右侧为 <span
+class="math inline">\(F(x,0)\)</span>，这直接给出了同伦。</p></li>
+<li><h5 id="可缩空间-contractable-space">可缩空间 (Contractable
+Space)</h5>
+<p>我们称 <span class="math inline">\(X\)</span> 是<strong>可缩的
+(Contractable)</strong>，若 <span class="math inline">\(id_X\)</span>
+与某个常数映射 <span class="math inline">\(p\in X\)</span>
+是同伦的。</p>
+<p>令 <span class="math inline">\(i:p\to X\)</span> 是嵌入映射，令 <span
+class="math inline">\(f=c_p:x\to p\)</span>，那么 <span
+class="math inline">\(f\circ i=id_p\)</span>，<span
+class="math inline">\(i\circ f\simeq id_X\)</span>，因此 <span
+class="math inline">\(X\simeq\set{p}\)</span>.</p>
+<p>换言之，可缩意味着空间在同伦意义上是平凡的。</p>
+<p><strong>注</strong>：可缩并不意味着存在一个到单点的形变收缩，我们会在将来举例说明这一点。</p></li>
+</ul></li>
+<li><h4 id="同伦等价的例子">同伦等价的例子</h4>
+<ul>
+<li><h5 id="凸集是可缩的">凸集是可缩的</h5>
+<p>令 <span class="math inline">\(X\)</span> 是欧氏空间 <span
+class="math inline">\(\mathbb{R}^n\)</span> 中的凸集，则 <span
+class="math inline">\(X\)</span>
+是可缩的。更进一步地，它可以形变收缩到一个点。</p>
+<p>证明：令 <span class="math inline">\(x_0=X\)</span>，令 <span
+class="math inline">\(F(x,t)=(1-t)x+tx_0\)</span>，则 <span
+class="math inline">\(F(x,0)=x,F(x,1)=x_0\)</span>，这给出了一个 <span
+class="math inline">\(X\)</span> 上的形变收缩（直线收缩）。</p>
+<figure>
+<img src="\13-5.png" alt="image-20231107164246549" />
+<figcaption aria-hidden="true">image-20231107164246549</figcaption>
+</figure></li>
+<li><h5 id="mathbbrnsetminusset0-可以形变收缩到-sn-1"><span
+class="math inline">\(\mathbb{R}^n\setminus\set{0}\)</span>
+可以形变收缩到 <span class="math inline">\(S^{n-1}\)</span></h5>
+<p><span class="math inline">\(\mathbb{R}^n\setminus\set{0}\)</span>
+可以形变收缩到 <span class="math inline">\(S^{n-1}\)</span>.</p>
+<p>证明：</p>
+<p>令 <span
+class="math inline">\(F(x,t)=(1-t)x+t\cfrac{x}{|x|}\)</span>，则由于
+<span class="math inline">\(x\in \mathbb{R}\setminus\set{0}\)</span>，有
+<span class="math inline">\(|x|\neq 0\)</span>，故 <span
+class="math inline">\(F\)</span> 是良定义的。</p>
+<p>并且 <span class="math inline">\(F(x,0)=x,F(x,1)=\cfrac{x}{|x|}\in
+S^{n-1}\)</span>，且有 <span class="math inline">\(F(x,t)=x,\forall x\in
+S^{n-1}\)</span>.</p>
+<p>故这给出了一个形变收缩。</p>
+<figure>
+<img src="\13-6.png" alt="image-20231107164633236" />
+<figcaption aria-hidden="true">image-20231107164633236</figcaption>
+</figure></li>
+<li><h5 id="对圆柱进行形变收缩">对圆柱进行形变收缩</h5>
+<figure>
+<img src="\13-7.png" alt="image-20231107164851507" />
+<figcaption aria-hidden="true">image-20231107164851507</figcaption>
+</figure>
+<p>如图所示，可以将圆柱“压缩”成一个圆形。</p>
+<p>我们也可以用粘合映射来考察这一点：</p>
+<figure>
+<img src="\13-8.png" alt="image-20231107165059582" />
+<figcaption aria-hidden="true">image-20231107165059582</figcaption>
+</figure>
+<p>注：什么时候粘合与形变压缩可以交换？只要在压缩前后，本来应该粘合在一起的点仍然粘合在一起，本来没有粘合在一起的点仍然没有粘合在一起，那么这两个操作就是可以交换的。需要具体例子具体分析。</p></li>
+<li><h5 id="莫比乌斯带的同伦等价">莫比乌斯带的同伦等价</h5>
+<p>留作作业：我们将在作业中证明莫比乌斯带是 <span
+class="math inline">\(\simeq S^1\)</span> 的。</p></li>
 </ul></li>
 </ul>
 ]]></content>
