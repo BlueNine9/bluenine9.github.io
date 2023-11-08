@@ -3941,7 +3941,7 @@ class="math inline">\(&lt;e&gt;\cdot&lt;\alpha&gt;=&lt;\alpha&gt;\)</span>.</p>
 <p>类似地 <span
 class="math inline">\(&lt;\alpha&gt;\cdot&lt;e&gt;=&lt;\alpha&gt;\)</span>.</p>
 <p>逆元：</p>
-<p>令 <span class="math inline">\(\alpha^{-1}(x)=\alpha(1-s),0\leq s\leq
+<p>令 <span class="math inline">\(\alpha^{-1}(s)=\alpha(1-s),0\leq s\leq
 1\)</span>.</p>
 <p>首先验证良定义：若 <span
 class="math inline">\(\alpha\underset{F}\simeq \beta\)</span>，则 <span
