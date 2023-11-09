@@ -261,7 +261,7 @@ class="math inline">\(t\)</span>为超级源点汇点 <figure class="highlight c
   <entry>
     <title>拓扑学笔记</title>
     <url>/2023/09/21/%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/xTtHQYwSYx/</p>
+    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/hZSTNRm7jc/</p>
 <p>分节次的笔记（清华云盘）：https://cloud.tsinghua.edu.cn/d/2c4efaca588a4326958d/</p>
 <h2 id="lecture-info">00. Lecture Info</h2>
 <h3 id="考核">1. 考核</h3>
@@ -1114,7 +1114,7 @@ B=\varnothing\)</span>，则 <span class="math inline">\(\exists f:X\to
 \mathbb R\)</span> 是连续函数且 <span
 class="math inline">\(f|_A=1,f|_B=-1\)</span>，<span
 class="math inline">\(f|_{X\setminus (A\cup
-A)}\subset(-1,1)\)</span>.</p>
+B)}\subset(-1,1)\)</span>.</p>
 <p>证明：对任意的 <span class="math inline">\(x\in X\)</span>，假设
 <span class="math inline">\(d(x,A)=0\)</span> 且 <span
 class="math inline">\(x\not \in A\)</span>，根据距离的定义，存在序列
@@ -1805,7 +1805,7 @@ class="math inline">\(\beta\)</span> 不为空，假设 <span
 class="math inline">\(\bigcup_{B\in\beta}B=X\)</span> 且 <span
 class="math inline">\(\forall B_1,B_2\in \beta\)</span>，<span
 class="math inline">\(\forall x\in B_1\cap B_2\)</span>，<span
-class="math inline">\(\exists B_{3x}\in \beta\)</span>，使得 <span
+class="math inline">\(\exists B_{3}^{x}\in \beta\)</span>，使得 <span
 class="math inline">\(x\in B_{3}^x\)</span> 且 <span
 class="math inline">\(B_{3}^x\subset B_1\cap
 B_2\)</span>，则我们可以定义 <span class="math inline">\(X\)</span>
@@ -1859,7 +1859,7 @@ class="math inline">\(p_1,p_2\)</span> 称为投影映射。</p>
 （今后若不做特殊说明，则默认 <span class="math inline">\(X\times
 Y\)</span> 装备乘积拓扑），映射是连续映射当且仅当 <span
 class="math inline">\(p_1\circ f\)</span> 与 <span
-class="math inline">\(p2\circ f\)</span> 都是连续映射。</p>
+class="math inline">\(p_2\circ f\)</span> 都是连续映射。</p>
 <p>证明：</p>
 <p><span class="math inline">\((\Rightarrow)\)</span>: 由于 <span
 class="math inline">\(p_1,p_2,f\)</span>
@@ -1950,7 +1950,7 @@ x\times Y\)</span> 是一个紧空间。</p>
 <p>于是 <span class="math inline">\(\exists U_1^x\times
 V_1^x,\cdots,U_{n_x}^x\times V_{n_x}^x\in \set{U_\alpha\times
 V_\alpha}\)</span>，使得 <span class="math inline">\(\set x\times
-Y=\bigcup_{i=1}^{n_x} U_i^x\times V_i^x\)</span>.</p>
+Y\subseteq\bigcup_{i=1}^{n_x} U_i^x\times V_i^x\)</span>.</p>
 <p>令 <span class="math inline">\(U^x=\bigcap_{i=1}^n
 U_i^x\)</span>，于是 <span class="math inline">\(U^x\times Y\subseteq
 \bigcup_{i=1}^{n_x} U_i^x\times V_i^x\)</span>.</p>
@@ -2348,8 +2348,9 @@ class="math inline">\(X=p_1(X\times
 Y)\)</span>，根据连续映射保持连通性，有 <span
 class="math inline">\(X\)</span> 连通；类似有 <span
 class="math inline">\(Y\)</span> 连通。</p>
-<p>$(): $ <span class="math inline">\(\forall x\in X\)</span>，根据
-<span class="math inline">\(\set{x}\times Y\)</span> 与 <span
+<p><span class="math inline">\((\Leftarrow):\)</span> <span
+class="math inline">\(\forall x\in X\)</span>，根据 <span
+class="math inline">\(\set{x}\times Y\)</span> 与 <span
 class="math inline">\(Y\)</span> 同胚，<span
 class="math inline">\(Y\)</span> 是连通的，故有 <span
 class="math inline">\(\set{x}\times Y\)</span> 是连通的。</p>
@@ -2539,7 +2540,7 @@ class="math inline">\(\mathbb{R}^n\)</span> 中连通开集为道路连通</h4>
 <span class="math inline">\(A=\set{y\in X\mid y\text{ 与 }x\text{
 间可以被连接道路}}\)</span>；<span class="math inline">\(B=\set{y\in
 X\mid y\text{ 与 }x\text{ 间不能被连接道路}}\)</span>。</p>
-<p>因此 <span class="math inline">\(A\cup B=\varnothing\)</span>，且
+<p>因此 <span class="math inline">\(A\cap B=\varnothing\)</span>，且
 <span class="math inline">\(X=A\cup B\)</span>，且 <span
 class="math inline">\(A\neq\varnothing\)</span>。</p>
 <p>我们接下来证明 <span class="math inline">\(A,B\)</span> 是开集。<span
@@ -3106,10 +3107,10 @@ class="math inline">\(SO(n)\)</span> (行列式为 1 的正交矩阵群)
 <li><h4
 id="拓扑群的对称性左平移映射与右平移映射">拓扑群的对称性：左平移映射与右平移映射</h4>
 <p>令 <span class="math inline">\(G\)</span> 是一个拓扑群，选取任意
-<span class="math inline">\(x\in G\)</span>，定义左平移映射 <span
+<span class="math inline">\(x\in G\)</span>，定义映射 <span
 class="math inline">\(L_x:G\to G\)</span> 为 <span
 class="math inline">\(L_x(g)=x\cdot g\)</span>.
-我们将这个映射定义为左平移映射。</p>
+我们将这个映射称为左平移映射。</p>
 <p>我们容易发现 <span class="math inline">\(L_x\)</span> 是一个双射，且
 <span class="math inline">\(L_x\)</span>
 需要是一个连续映射（这是连续映射的复合：<span class="math inline">\(G\to
@@ -3165,7 +3166,7 @@ class="math inline">\(G\)</span> 的正规子群。</p></li>
 id="连通拓扑群中包含单位元的邻域形成生成元">连通拓扑群中包含单位元的邻域形成生成元</h4>
 <p>考虑一个连通的拓扑群 <span class="math inline">\(G\)</span>
 与任意一个恒等元 <span class="math inline">\(e\)</span>
-的邻域，则该邻域包含的元素形成了一个 <span
+的邻域，则该邻域包含的元素形成了一组 <span
 class="math inline">\(G\)</span> 的生成元。</p>
 <p>证明：</p>
 <p>令 <span class="math inline">\(e\in U\subseteq G\)</span>，其中 <span
@@ -3333,7 +3334,7 @@ x\in G,\forall g,h\in G\)</span>.</p>
 <p><strong>商群</strong></p>
 <p><span class="math inline">\(X/G=\set{\text{所有 }G\text{
 轨道}}\)</span>，轨道的定义为 <span class="math inline">\(x,y\in
-X\)</span>，若 <span class="math inline">\(x,y\)</span> 落在同一轨道上若
+X\)</span>，称 <span class="math inline">\(x,y\)</span> 落在同一轨道上若
 <span class="math inline">\(\exists g\in G\)</span> 使得 <span
 class="math inline">\(x=gy\)</span>.</p></li>
 <li><h4 id="拓扑群的群作用-group-action">拓扑群的群作用 (Group
@@ -3386,7 +3387,7 @@ Space)</strong>.</p></li>
 <p>回忆：曾经我们通过矩形对边粘合构成了环面。</p>
 <p>现在我们来看如何用商空间观点构造环面。我们固定 <span
 class="math inline">\(v_1,v_2\in \mathbb{R}^2\)</span>，使得 <span
-class="math inline">\(v1\not\parallel v_2\)</span>.</p>
+class="math inline">\(v_1\not\parallel v_2\)</span>.</p>
 <p>令 <span class="math inline">\(\Lambda=\mathbb{Z}\cdot v_1 \oplus
 \mathbb{Z}\cdot v_2\cong \mathbb{Z}^2\)</span>，<span
 class="math inline">\(\Lambda\subseteq
