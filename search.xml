@@ -261,7 +261,7 @@ class="math inline">\(t\)</span>为超级源点汇点 <figure class="highlight c
   <entry>
     <title>拓扑学笔记</title>
     <url>/2023/09/21/%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/VDc6XMYQbb/</p>
+    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/6N4BmY4yJP/</p>
 <p>分节次的笔记（清华云盘）：https://cloud.tsinghua.edu.cn/d/2c4efaca588a4326958d/</p>
 <h2 id="lecture-info">00. Lecture Info</h2>
 <h3 id="考核">1. 考核</h3>
@@ -5490,6 +5490,309 @@ class="math inline">\((i_{21})_\star(&lt;\gamma&gt;)=aba^{-1}b\)</span>.</p>
 <p>于是 <span class="math inline">\(\pi_1(X)=&lt;a,b\mid
 aba^{-1}b&gt;\)</span>.</p></li>
 </ul>
+<h2 id="覆叠空间">16. 覆叠空间</h2>
+<h3 id="van-kampen-定理计算基本群">Van-Kampen 定理计算基本群</h3>
+<ul>
+<li><h4 id="例实射影平面的基本群">例：实射影平面的基本群</h4>
+<p>令 <span class="math inline">\(X=\mathbb{R}P^2\)</span>。</p>
+<figure>
+<img src="\16-1.png" alt="image-20231121152225809" />
+<figcaption aria-hidden="true">image-20231121152225809</figcaption>
+</figure>
+<p>如图，类似之前地，我们有 <span
+class="math inline">\(\pi_1(A_1)=\set{e}\)</span>.</p>
+<p>对于 <span
+class="math inline">\(A_2\)</span>，我们可以将其形变收缩至边界，这就是将圆周的对径点粘在一起，所得仍然是圆周，因此
+<span class="math inline">\(A_2\simeq S^1\)</span>，即 <span
+class="math inline">\(\pi_1(A_2)=\mathbb{Z}\cdot a\)</span>. （<span
+class="math inline">\(a\)</span> 为 <span
+class="math inline">\(\pi_1(A_2)\)</span> 中生成元）</p>
+<p>即如图：</p>
+<figure>
+<img src="\16-2.png" alt="image-20231121152720219" />
+<figcaption aria-hidden="true">image-20231121152720219</figcaption>
+</figure>
+<p>同时，我们有 <span class="math inline">\(\pi_1(A_1\cap
+A_2)=\mathbb{Z}\cdot &lt;\gamma&gt;\)</span>.</p>
+<p>我们有 <span class="math inline">\((i_{12})_\star(\gamma)=e\in
+\pi_1(A_1)\)</span>，<span
+class="math inline">\((i_{21})_\star(\gamma)=a^2\)</span>.</p>
+<p>从而 <span class="math inline">\(\pi_1(X)=&lt;a\mid a^2&gt;\cong
+\mathbb{Z}/2\mathbb{Z}\)</span>.</p></li>
+<li><h4 id="例亏格为-g-可定向闭曲面">例：亏格为 <span
+class="math inline">\(g\)</span> 可定向闭曲面</h4>
+<p>令 <span class="math inline">\(X=\Sigma_g\)</span>，即亏格为 <span
+class="math inline">\(g\)</span> 且可定向的闭曲面。这是在说下图：</p>
+<figure>
+<img src="\16-3.png" alt="image-20231121153008992" />
+<figcaption aria-hidden="true">image-20231121153008992</figcaption>
+</figure>
+<p>我们应该怎么粘合出这样一个曲面呢？先看 <span
+class="math inline">\(g=2\)</span> 的情形：</p>
+<p>取一个固定点 <span
+class="math inline">\(p\)</span>，我们可以取出如下圆周：</p>
+<figure>
+<img src="\16-4.png" alt="image-20231121153320899" />
+<figcaption aria-hidden="true">image-20231121153320899</figcaption>
+</figure>
+<p>形式上讲，<span class="math inline">\(A_i\)</span> 是绕着第 <span
+class="math inline">\(i\)</span> 个洞“竖着”转一圈，<span
+class="math inline">\(B_i\)</span> 表示“横着”转一圈。</p>
+<p>这可以怎么写成粘合形式呢？我们看八边形：</p>
+<figure>
+<img src="\16-5.png" alt="image-20231121153541290" />
+<figcaption aria-hidden="true">image-20231121153541290</figcaption>
+</figure>
+<p>将该八边形粘合后即可得到上面的“两个洞的环面”。</p>
+<p>我们可以做推广，对于亏格为 <span class="math inline">\(g\)</span>
+的曲面，我们可以得到一个 <span class="math inline">\(4g\)</span>
+边形形如：</p>
+<figure>
+<img src="\16-6.png" alt="image-20231121153733260" />
+<figcaption aria-hidden="true">image-20231121153733260</figcaption>
+</figure>
+<p>粘合后，这个 <span class="math inline">\(4g\)</span>
+边形的所有顶点即为我们此前固定的 <span class="math inline">\(p\)</span>
+点。</p>
+<p>由于我们得到了粘合之前的图，我们可以用类似挖洞的方法去计算基本群。</p>
+<figure>
+<img src="\16-7.png" alt="image-20231121154000577" />
+<figcaption aria-hidden="true">image-20231121154000577</figcaption>
+</figure>
+<p>我们有：<span
+class="math inline">\(\pi_1(X_1)=\set{e}\)</span>，<span
+class="math inline">\(X_2\simeq\bigvee_{i=1}^{2g}S^1\)</span>，其中
+<span class="math inline">\(2g\)</span> 个圆周即为 <span
+class="math inline">\(A_i,B_i\)</span>，它们的粘合点就是先前固定的 <span
+class="math inline">\(p\)</span>.</p>
+<p>不妨记第 <span class="math inline">\(i\)</span> 组圆周为 <span
+class="math inline">\(a_i,b_i\)</span>，从而 <span
+class="math inline">\(\pi_1(X_2)=&lt;a_1,b_1,\cdots,a_g,b_g\mid
+\varnothing&gt;\cong \large{\star}_{i=1}^{2g}\mathbb{Z}\)</span>.</p>
+<p>设 <span class="math inline">\(\pi_1(X_1\cap
+X_2)=\mathbb{Z}\cdot&lt;\gamma&gt;\)</span>，有 <span
+class="math inline">\((i_{12})_\star(&lt;\gamma&gt;)=e\in
+\pi_1(X_1)\)</span>，<span
+class="math inline">\((i_{21})_\star(&lt;\gamma&gt;)=\prod_{i=1}^{g}a_ib_ia^{-1}_ib^{-1}_i\)</span>.</p>
+<p>根据 Van-Kampen，有 <span
+class="math inline">\(\pi_1(X)=&lt;a_1,b_1,\cdots,a_b,b_g\mid
+\prod_{i=1}^{g}a_ib_ia^{-1}_ib^{-1}_i&gt;\)</span>.</p>
+<p>因此，当 <span class="math inline">\(g_1\neq g_2\)</span>，有 <span
+class="math inline">\(\pi_1(\Sigma_{g_1})\neq
+\pi_1(\Sigma_{g_2})\)</span>.</p>
+<p>因此，<span class="math inline">\(\Sigma_{g_1}\)</span> 与 <span
+class="math inline">\(\Sigma_{g_2}\)</span> 不是同胚.
+这是著名的<strong>曲面分类定理</strong>。</p></li>
+<li><h4 id="例平凡纽结补集的基本群">例：平凡纽结补集的基本群</h4>
+<p><span class="math inline">\(S^1=\set{(x,y,0)\in\mathbb{R}^3\mid
+x^2+y^2=1}\)</span>，考察 <span
+class="math inline">\(X=\mathbb{R}^3\setminus S^1\)</span>.</p>
+<p>首先有 <span class="math inline">\(X\simeq B\setminus
+S^1\)</span>，其中 <span class="math inline">\(B\)</span>
+是一个三维空间里包含了 <span class="math inline">\(S^1\)</span>
+的球。</p>
+<figure>
+<img src="\16-8.png" alt="image-20231121155403075" />
+<figcaption aria-hidden="true">image-20231121155403075</figcaption>
+</figure>
+<figure>
+<img src="\16-9.png" alt="image-20231121155506815" />
+<figcaption aria-hidden="true">image-20231121155506815</figcaption>
+</figure>
+<p>可以注意到，按如图所示方式画圈（想象球形空间里形如磁感线的曲线），只有穿过
+<span class="math inline">\(S^1\)</span> 中心的竖线是不闭合的。</p>
+<p>我们将这些圈“向外”收缩，收缩完成后就只剩下了球中间的直径以及单位球面。</p>
+<figure>
+<img src="\16-10.png" alt="image-20231121155702753" />
+<figcaption aria-hidden="true">image-20231121155702753</figcaption>
+</figure>
+<p>进一步收缩直径的两个端点，如图所示，我们最终有 <span
+class="math inline">\(X\simeq S^1\vee S^2\)</span>.</p>
+<figure>
+<img src="\16-11.png" alt="image-20231121155851024" />
+<figcaption aria-hidden="true">image-20231121155851024</figcaption>
+</figure>
+<p>因此，<span class="math inline">\(\pi_1(X)=\pi_1(S^2\vee
+S^1)=\pi_1(S^1)\star \pi_1(S^2)=\mathbb{Z}\star
+\set{e}=\mathbb{Z}\)</span>.</p></li>
+</ul>
+<h3 id="覆叠空间-covering-space">覆叠空间 (Covering Space)</h3>
+<ul>
+<li><h4 id="回忆计算圆周的基本群">回忆：计算圆周的基本群</h4>
+<p>我们在计算圆周的基本群时，我们构造了映射 <span
+class="math inline">\(\pi:\mathbb{R}^1\to S^1\)</span>，<span
+class="math inline">\(\pi(x)=e^{2\pi ix}\)</span>.</p>
+<p>令 <span class="math inline">\(U=S^1\setminus\set{-1}\)</span>，<span
+class="math inline">\(V=S^1\setminus\set{1}\)</span>，有 <span
+class="math inline">\(\set{U,V}\)</span> 是 <span
+class="math inline">\(S^1\)</span> 的开覆盖。</p>
+<p>我们有 <span class="math inline">\(\pi^{-1}(U)=\bigsqcup_{n\in
+\mathbb{Z}} (n-1/2,n+1/2)\)</span>，<span
+class="math inline">\(\pi^{-1}(V)=\bigsqcup_{n\in\mathbb{Z}}
+(n,n+1)\)</span> 并且 <span
+class="math inline">\(\pi|_{(n-1/2,n+1/2)}\)</span> 诱导了一个 <span
+class="math inline">\((n-1/2,n+1/2)\)</span> 与 <span
+class="math inline">\(U\)</span> 的同胚，<span
+class="math inline">\(\pi|_{(n,n+1)}\)</span> 诱导了一个 <span
+class="math inline">\((n,n+1)\)</span> 与 <span
+class="math inline">\(V\)</span> 的同胚。</p>
+<p>我们用这样形式的开覆盖去计算出了圆周的基本群，接下来我们扩展这个概念。</p></li>
+<li><h4 id="覆叠空间-covering-space-1">覆叠空间 (Covering Space)</h4>
+<p>底空间 <span class="math inline">\(X\)</span> 的<strong>覆叠空间
+(Covering Space)</strong> 是一个空间 <span class="math inline">\(\tilde
+X\)</span> 以及一个连续映射 <span class="math inline">\(p:\tilde X\to
+X\)</span> 满足：</p>
+<p><span class="math inline">\(\exists\)</span> 底空间 <span
+class="math inline">\(X\)</span> 的开覆盖 <span
+class="math inline">\(\bigcup_\alpha U_\alpha\)</span>，使得 <span
+class="math inline">\(\forall \alpha\)</span>，<span
+class="math inline">\(p^{-1}(U_\alpha)\)</span> 可以表示为开集的不交并
+<span
+class="math inline">\(\bigsqcup_{\beta}V_{\alpha\beta}\)</span>，<span
+class="math inline">\(V_{\alpha\beta}\subseteq \tilde X\)</span>
+开集且使得 <span class="math inline">\(p|_{V_{\alpha\beta}}\)</span>
+给出了一个 <span class="math inline">\(V_{\alpha\beta}\)</span> 与 <span
+class="math inline">\(U_\alpha\)</span> 的同胚 <span
+class="math inline">\(\forall \beta\)</span>。</p>
+<p>此时我们称 <span class="math inline">\(\tilde X\)</span>
+称作是<strong>覆叠空间</strong>，称 <span
+class="math inline">\(p\)</span> 是<strong>覆叠映射</strong>。</p></li>
+<li><h4 id="例去心复数域的覆叠空间">例：去心复数域的覆叠空间</h4>
+<p>令 <span
+class="math inline">\(p:\mathbb{C}\to\mathbb{C}^\star(\mathbb{C}^\star=\mathbb{C}\setminus
+\set{0})\)</span>， <span class="math inline">\(p(z)=e^z\)</span>。</p>
+<p>令 <span class="math inline">\(U=\mathbb{C}^\star\setminus
+\mathbb{R}_{&lt;0}\)</span>，<span
+class="math inline">\(V=\mathbb{C}^\star\setminus\mathbb{R}_{&gt;0}\)</span>.
+那么有 <span class="math inline">\(U\cup V\)</span> 构成了 <span
+class="math inline">\(\mathbb{C}^\star\)</span> 的开覆盖，并且：</p>
+<p><span class="math inline">\(p^{-1}(U)=\bigsqcup_n
+V_{1n}\)</span>，其中 <span
+class="math inline">\(V_{1n}=\set{z\in\mathbb{C}\mid(2n+1)\pi&lt;
+\text{Im} z&lt;(2n+3)\pi}\)</span>.</p>
+<p>$p^{-1}(V)=<em>n V</em>{2n} $，其中 <span
+class="math inline">\(V_{2n}=\set{z\in\mathbb{C}\mid 2n\pi&lt;\text{Im}
+z&lt;2(n+1)\pi}\)</span>.</p>
+<p>且 <span class="math inline">\(p|_{V_{1n}}:V_{1n}\to U\)</span>
+同胚，<span class="math inline">\(p|_{V_{2n}}:V_{2n}\to V\)</span>
+同胚。</p>
+<p>于是 <span class="math inline">\(p\)</span> 是覆叠映射。</p></li>
+<li><h4 id="例另一个-s1-的覆叠空间">例：另一个 <span
+class="math inline">\(S^1\)</span> 的覆叠空间</h4>
+<p>令 <span class="math inline">\(p:S^1\to S^1\)</span>，<span
+class="math inline">\(p(z)=z^n (n\geq 1)\)</span>，那么有 <span
+class="math inline">\(p\)</span> 是一个覆叠映射。</p>
+<p>证明：</p>
+<p>令 <span
+class="math inline">\(U=S^1\setminus\set{-1},V=S^1\setminus\set{1}\)</span>.</p>
+<p>则 <span class="math inline">\(p^{-1}(U)=\set{e^{i\theta}\mid
+-\pi/n+(2k\pi)/n&lt;\theta&lt;\pi/n+(2k\pi)/n, 0\leq k\leq
+n-1}=\bigsqcup_{k=0}^{n-1}V_{1k}\)</span></p>
+<p><span class="math inline">\(p^{-1}(V)=\set{e^{i\theta}\mid
+(2k\pi)/n&lt;\theta&lt;(2\pi)/n+(2k\pi)/n,0\leq k\leq
+n-1}=\bigsqcup_{k=0}^{n-1}V_{2k}\)</span>.</p>
+<p>同时也有 <span class="math inline">\(p|_{V_{1k}}:V_{1k}\to U\)</span>
+同胚，<span class="math inline">\(p|_{V_{2k}}:V_{2k}\to V\)</span>
+同胚。</p>
+<p>因此 <span class="math inline">\(p\)</span> 是覆叠映射。</p>
+<p>今后我们将会说明，以 <span class="math inline">\(S^1\)</span>
+作为底空间，其覆叠空间只能长成 <span class="math inline">\(S^1\)</span>
+或 <span class="math inline">\(\mathbb{R}^1\)</span> 的形式。</p></li>
+<li><h4 id="例s1vee-s1-的覆叠空间">例：<span
+class="math inline">\(S^1\vee S^1\)</span> 的覆叠空间</h4>
+<figure>
+<img src="\16-12.png" alt="image-20231121163209300" />
+<figcaption aria-hidden="true">image-20231121163209300</figcaption>
+</figure>
+<p>令 <span class="math inline">\(X=S^1\vee
+S^1\)</span>，那么它的覆叠空间可以长成如下形式：</p>
+<figure>
+<img src="\16-13.png" alt="image-20231121163317804" />
+<figcaption aria-hidden="true">image-20231121163317804</figcaption>
+</figure>
+<p>如图为 <span class="math inline">\(\tilde
+X\)</span>，这是一张有向图。令 <span class="math inline">\(p:\tilde X\to
+X\)</span>，<span class="math inline">\(p\)</span>
+将所有的有向图顶点映射至 <span class="math inline">\(x_0\)</span>，将
+<span class="math inline">\(a\)</span> 映射至 <span
+class="math inline">\(a\)</span>，<span class="math inline">\(b\)</span>
+映射至 <span class="math inline">\(b\)</span>。</p>
+<p>可以验证，<span class="math inline">\(p\)</span>
+确实是一个覆叠空间。</p>
+<p>不仅仅是如此，<span class="math inline">\(\tilde X\)</span>
+还可以长成这样：</p>
+<figure>
+<img src="\16-14.png" alt="image-20231121163535127" />
+<figcaption aria-hidden="true">image-20231121163535127</figcaption>
+</figure>
+<p>更一般性地，如果一张有向图满足每个点度数为 <span
+class="math inline">\(4\)</span>，且恰有一个 <span
+class="math inline">\(a\)</span> 出度、一个 <span
+class="math inline">\(a\)</span> 入度、一个 <span
+class="math inline">\(b\)</span> 出度、一个 <span
+class="math inline">\(b\)</span> 入度，则该图可以看成是一个 <span
+class="math inline">\(X\)</span> 的覆叠空间。</p>
+<p>我们描述一个叫做“万有覆叠空间”的概念，即它是一个 <span
+class="math inline">\(X\)</span> 的覆叠空间但没有环路，最终该空间 <span
+class="math inline">\(X\)</span> 的万有覆叠空间为：</p>
+<figure>
+<img src="\16-15.png" alt="image-20231121164044712" />
+<figcaption aria-hidden="true">image-20231121164044712</figcaption>
+</figure>
+<p>这在形状上看是一个无限网格，并且它没有环路，有 <span
+class="math inline">\(\pi_1(\tilde X)=\set{e}\)</span>.</p></li>
+<li><h4 id="道路提升引理-path-lifting-lemma-1">道路提升引理
+(Path-Lifting Lemma)</h4>
+<p>令 <span class="math inline">\(p:\tilde X\to X\)</span>，<span
+class="math inline">\(\tilde X\)</span> 是覆叠空间，道路 <span
+class="math inline">\(\gamma:I\to X\)</span> 有 <span
+class="math inline">\(\gamma(0)=x_0\in X\)</span>，令 <span
+class="math inline">\(\tilde x_0\in \tilde X\)</span> 有 <span
+class="math inline">\(p(\tilde x_0)=x_0\)</span>，则 <span
+class="math inline">\(\exists!\tilde\gamma:I\to\tilde X\)</span>，有
+<span class="math inline">\(\tilde\gamma(0)=\tilde x_0\)</span>，且
+<span class="math inline">\(p\circ\tilde\gamma=\gamma\)</span>.</p>
+<p>证明：</p>
+<p>令 <span class="math inline">\(X=\bigcup_{\alpha}U_\alpha\)</span>
+是一个开覆盖，使得 <span
+class="math inline">\(p^{-1}(U_\alpha)=\bigsqcup_{\beta}
+V_{\alpha\beta}\)</span>，且 <span
+class="math inline">\(p|_{V_{\alpha\beta}}:V_{\alpha\beta}\to
+U_\alpha\)</span> 同胚。</p>
+<p>由于 <span class="math inline">\(I\)</span> 是一个紧的度量空间，由
+Lebesgue Lemma，<span class="math inline">\(\exists
+0=s_0&lt;s_1&lt;\cdots&lt;s_n=1\)</span>，使得 <span
+class="math inline">\([s_i,s_{i+1}]\)</span> 都落在某一个 <span
+class="math inline">\(\gamma^{-1}(U_{\alpha})\)</span> 中。</p>
+<p>令 <span class="math inline">\(x_0\in U_{\alpha_0}\)</span>，令 <span
+class="math inline">\(\tilde x_0\in V_{\alpha_0\beta_0}\)</span>，令
+<span class="math inline">\(\tilde
+\gamma(s)=(p|_{V_{\alpha_0\beta_0}})^{-1}\circ \gamma(s)\)</span>.
+可以说明这是这一段小区间唯一的提升。</p>
+<p>对指标做归纳法，有每一段小区间都存在唯一的提升，因此整体上有唯一提升。</p>
+<p>由此证明了道路提升引理。</p></li>
+<li><h4 id="同伦提升引理-homotomy-lifting-lemma">同伦提升引理 (Homotomy
+Lifting Lemma)</h4>
+<p>考虑映射 <span class="math inline">\(p:\tilde X\to X\)</span>
+是一个覆叠映射，考虑 <span class="math inline">\(F:Y\times I\to
+X\)</span> 同伦映射，令 <span class="math inline">\(\tilde f:Y\to \tilde
+X\)</span> 满足 <span class="math inline">\(p\circ \tilde
+f(Y)=F(y,0),\forall y\in Y\)</span>. 那么 <span
+class="math inline">\(\exists! \tilde F:Y\times I\to\tilde
+X\)</span>，使得 <span class="math inline">\(\tilde
+F(y,0)=F(y,0)\)</span>，且 <span class="math inline">\(p\circ \tilde
+F=F\)</span>.</p>
+<p>证明：</p>
+<p>与此前的同伦提升引理不同，这一次我们失去了紧空间的性质。我们只说明证明的开头。</p>
+<p>我们考虑 <span class="math inline">\(\set{y_0}\times
+I\)</span>，这是一个紧的度量空间，因此 <span
+class="math inline">\(\forall t\in I\)</span>，<span
+class="math inline">\(\exists t\in(a_t,b_t)\subseteq
+[0,1]\)</span>，<span class="math inline">\(\exists N_t\subseteq
+Y\)</span> 为 <span class="math inline">\(y_0\)</span> 邻域，且 <span
+class="math inline">\(F(N_t\times (a_t,b_t))\subseteq U_\alpha\)</span>
+对某个 <span class="math inline">\(U_\alpha\)</span>.</p></li>
+</ul>
 ]]></content>
       <categories>
         <category>数学</category>
@@ -9479,7 +9782,7 @@ class="math inline">\(n\)</span> 次代数方程没有求根公式。</p>
     <title>拓扑学半期考试试题及答案</title>
     <url>/2023/11/14/Mid-term%20Exam/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="bb7e2bf22e2f35faf35c3b5c31f34bae91d9d0d514a811d68bfe536504090a1a">50d587fd195ba3e2fcf7fcd8dbdf856b9a680a370d09bf6ce814edf9fd0923179252f328ef7618dee66403d0c6a02047cac54c83a9c8f2bf05c4ef7c09cf883b2e564fb9de9cf220ef8093c46c5a73327c542db3fb2f1ae7cc2a20e22dc2159d72c6d2c1e90137e1bda70212fd04b4bab07a45c0e6b80b0183729b6429e25c24facc7b482aad9178693f201a809ab5ec720afb48d5408f9518edbfcdad13ea565ba93847fa0de1eef1207cecaf173a27dea375b91cc4c1c6eab35b03e6d84a5d592c67849c1ac8107e8afce0150e4eae81531b01c909e3c6fa96d7c2a6968a42abf62e9ec00ecfd7f27968147f3287e86d41d90d6137fea2dd4c059a4cf9694840580696b84ecb1c15c339ac08d391fd7113c8c4628b526a3823e400ed549db7a2a64a75c119f4e695a9ebb7e66cfc7d33cf4cfd7b1e46036646f7d4b8bfbd3c8f94941af79a63a47351814b8cd4df476e5394baa63522d4a10beab57bdcba5f2e704c59e67c4079133ace0037c228d00ababaf7ae93b37fdfb1915fa285a943ca165f913bda90cf4a707f7ef81db58b1235f21178123c2968ca0d3e13cbd31783dc00fd7ca907d0eb5d1552c957b12e1d29ad780fb021de60e9cd91cfb67df60a12ecbf51c769a4fa34d8d28cde0ef50855356158df936a1fb2dba5513c5086ecb2e45eb613a059b99d0cdc4e5fb5731b0f45155252d451f6df57e3bbd86a864549b20a204e8c7c043b370244788314006850b06af4f8362c1d6172e4e7d5014783253f1d474cf6e4919dd13d7f17f9322fd137231fc8eb487be2ee1790b2c978940e79281bd3fe790d061ec9136b162b1d61148ac423f5d26c02c45c8d9d14e20cfa69b047edfafd064fd442f9fe0717d6cf402c1fa631149e4a94dc78681ab7937e0152ec012ea9d7232ed0512180d7eefead9285d20342e38db474276f15e86182433660f0586c5a34adf09ac50a3d291abb34f5ce6e9f4160757ca23f4b5c20f8f83a11ebba8fc43a215f0d66db725bed889de2490670c153d65413acbf37285e7e56b7f45677515663c93d80fc221753c3ed03afb950a4cdc3bbdd992a3b478a99ecb99a18882ec2a791d9e5c853c6a56a4f2e4d65ba3d171234cf9e2114e6d860fcda1892b70c47a049caf03cb5346a90be3a927aa726a66da712ec32db8b368950369edbe1aefade295537b325f4ebd4c5c2f191336ceb1ff6d97daae913656f4305eefdac11302f809876a01ec159d08b2bb2e2310a735d283c9f0065e2498895408c4f77d86fea1deac85970488f8d0a10ccd5c7d1266a3be37d4ca205905b7a08c19918fd6a8bc203279ce5c3fe3e4e234014a104e70c028504eaf149ac8b36e1652ffbe8c28a927177b1a61053c800f33010212e7a83f1d6e654d7f147cc8aec78f7f8613e79b50a416d1b7d8b62f300b8386d144d617969dc52ab7dd61fb3a8b9e827153853e21a1996326a6bedb2c4f16319f6273391685dde611481000c1710e1641db73d3115e8827704ee5912e430ca1ba365a25376434e74e8dccb7576974c62c09d33389ceac7706d92cc057a97a0081b8e63b5b4931b59657b8b8513fa5851abbd1f07b7e1dd186e7dd236923269201244a1e0a7dbb6458e29460605d3c55e6f8672d17aa2d61a7425b436ba7132dc6fc09d281d6a8cc1a32d877fdbb11c20b73eb29da365e9ba4dda8042b5db069296e20a1692a28b6534809687496805c0d3f4c6b1487355cd52949ea38ee24cca0f41219de269a2c1a518c9f392198c8cd7cdc5ae698af0ff3de13a6489f593790415f1321196c567cb0ce247c9730b5ae7309d956fa4b653d43745ea3f47fe4507a042cbbe5a379efc2da19e10b2e1f0e322fdbf5beb331c7149c095c0ed24bd5730886a3b3f5ffeb53a44e0c873f0c6fff25e973bb0d16b48b35aec7cece23ff607f8fe25a9266840e896903a01bc1a3d88ca0e25c4f8bfc728adddcf1b5bce4df66a8e3a1a53b41b8240943f8d6a312aecfd38582ec8ec7e16ee51924b84f71d046ab316bea6e388d4bec46acc3aa2e03b1cac6e0954c65448525b428c739f11dcf26f79b1eb5d21ab49df598e6b6b5848a8190f602db53b86d06a9de756d7e576656863de65f3527e6faf4374a39411f605278afafa77494e6b9dc791bbb14ccd97b67db308e7997819b3fb5a6ef8d1d0d707390bc1084fd4ef8807c18d9f59a11e6fbea2af105ae282917c2eb1f4bd23d7ec157b4a32d99d50944d3e43dd0040ad073fc8de739a37548ebc8c6314e0201ff5229492522544bf20e2cd6029966d48d71ea031f95f1770f4a03d8a7620079e702c891eebf2fb707c7ff9fff7dfa516adfd2bd60d33c6c93704f685b32c9df8592d2217835a3d51aeec250758f02d021002ee6aa3cee5938717615703a54b02f7c012dfde11f52a697eab4efd66939beeb57005c4e2b683891e88033ba74bc09aa283dc476a2ab8956a645d29a7c68f9d5a2d49d79c54d7f29ff68e3e48b2bf0983449590ddd28cec877795eccdd06529982927109a88494bf69e1b67f2afc7a0145489f5ecffa81c586c00ed05963766b02fefcf35569b3236ff1edd8f443a8457835ed0c5824e481235d89fb3cc797ec01291c67224072f78ab75abc2361ef3c1ceaf130efda4497cc7e49ef37cf0050773678639857f9439c359d79d2fa208a6113c9b22993bed47a77a2dc8a09c0f78c01e8d6bd307204ef4711adb2b42838968baa0b55bdc451b3b1cea71a385e991550214e1dadbadbf96e35c3af72ddbdebcc15697b13b750a55f9258fd066b90351a892068177de8b3288ddecb81125a91b26cb10e3f619af7548e74f3c96d5758ea096981446c36b55015c87165cfe6b5858c233effc0cd1166f6c9334b9ac5c0f3f39fe05c3235fe8c158467b10e2932f9d7e4ce51615a83217a104980efed829dc518e019aa1872715cd5fcdfb212295aecb64e2f185f15c7cea7ea113b195adaf04818c717b091fa301c08a59e50449ecc69ce9cb2cf56fe7af67f56f25ba8d50b9c61ce00386173d20b7c4abe7b60b494e3383160e7ab263ca1f39b40f38ebf0937c96e1eee94ef1c905c3f69536fb432f0b3dddb68f76bb842fa6936a786ebfe1ea83f290f8f44b484c7713aba6b8dfb7f74bea4d5f9db6e6ac952393606e6fac411830ba21649c4f12c0d01a22fcb204bb4ea924ef353573cba3071f2e5ae809c9c50a01896eda29ecd31b20ae4b8d7bf73fa659dbbec18565276e500c58c80d161db86db033bf10268917acc93b6fdd8f143d309dc937e4730c2edd2da769b4b26ec9c228c5c86cefbd56189e9d0afb196f733d48c4b6fdbf8a6cc176d4c2e5427b6cd6cdcacc100d31a58f92182a608c4a3939e3d9638391b3e25c103fc26ec53c3e4491db92e75fd8173e8de2c4c4e51b37d8da433ecf53ae5846a95e18dcac9bb027d564f033496a8d2be0c03ae723e5491c7da69dad3485751d99f28ddd7e11ea36aa2b90a08e552da0a7b050e619225ade1aece071759acc0735b190d763095b3b1cb93f1faf930716389de793f899a23964374149a1f1ffe68e21249010873ba89820d0bfdf20d51c54ef736594110e266e101a3a2ddf71db92a6af076b719bd05b95f806d62791a072ce87c599379f982e383ebc2b33d4bcac8fbcbabbe014abf4914e914cd1041de61650ba104c94573bd5f68d3e85458eff0cbafc3cce9dd1ff064e0d8f94aa144176782dc02d7a0592aaff7c89ea134ae9c26a639d5f6ecf6644607fdbbbdf45e36130a6e51bbb8992426324a049cf2b72e3d831d8f001914676ddaede4ff90c22d75cbf13be5589066f679412f3b3257b66fa7622c3bba34262ba8504c8ff93647534a1d5b11c3ff17731ea7b428010c11f5306ae3722af2fb6b547b23701d7e3e3800218021fed7602aa3cd7398eff853e3053517ff8ccb950f5302f6ea1746cda72d29e80e554afcda71d6e4ddebe658f9970429bd91efd6e4aaeaa2c71a1735ba4c09ab9a7fe0b60ec8fc9d80454e4e8b498c1d9759cda0fdd90fbadaf1c9a32d7e199253ae09780fb82ae68a15be2b036a2308e31d9cc769c01653812491fc0fd6fba3bf97aaf295612dd355582d53d23884938229c134763613a48c100f8dfa7446eb23a3c98cd5e6539ca5aff3e97f2895a4cf8a6619b41ee7685e2f459bce9d46f74ce7b887ed2e22c78de49f67007b570dfedc97f4090b9c400d2d2b6594cb8773a4e0e90bcac530498148f6d9861e523bdc0a832d808c7f0b94496bf2c8f1deaf7b3ff193594f66569054e987a4cc738d469e6820d893f299c83f588afcaabbc5664ae9a588b28b0227808fb39dda4c14ce8d4c76f257239cd4e5eafe8b3846e0c8514b216db0602314d0c9fa7ce42d315d566280ca4f64e5617e8106f71c49fdeab8acadea6c92f91e55346abc539e124e45c45fc595e7baeaded45f759915732ea3887536594d7ebc5252a7a1cfa3ff3388da70a916ddd4c8fc4687b51e1fcf861acc50b00e3d45b16b15b2a2ed48d460a6fe3b36bc54b2bcc82d65d99722522775eb334d3900aa4c5962ac2b314735eca77a613d1b3539bda5c59b0e3b98f65be0d741f915507dab6612d3f92bfbc1fca8926efab88192791721315492df0df9f8ebd8214e4e04d40001c2e63f00f5d3de67baf8369427b3e1f8a809812be8c7839534dbb6c7d824da554b47e1ad4e4c71ec1077815384999c6743e965e4ff3c1dd235b9429c0e8d966f8464719239ace1b025b6006f93557f23fe797dc1f10af513b618fee31e92175c0b15c8ccf6e06d2a7267f2817396932b697028f451c6a369cc5600eda0cd141d9047a4602719921a057b67970acbab4df16c2d95954e18c84e88591d74b199527f054e64461154e0816777136de7571c1fd6bc7ac7f5de67d7794106f3db4042c0a8224b7f72ba2fc14a06574810085a3b2ab3ec804ca8ef2d499595b470d3f7116ccc870b4c30a56bf5d858986e1138fff9d8eaa29a42e1971eca0f5752afe301883df964131f088f85bfbaca4171f3b616ca859cfededafb2ff526d6ef7d97e96539ab172854da2f59012923d1d91b769877990116bc35b8002e1b6b88d1e2043945eeb113b0086e23554b9d58cb1ab3b01f6ab7d6d2f055dcf736c10b1644085e62372aa3c137074644e541e223199b4b24f88a1df2a84512c0a7a9a26009fc9fc08af0dd7fa9a4de1521f0e823d24a8b976da5c8654e7af44cbec22fab3e8701e84c7b18ee2015b32a44361839c5c4b211c20f215275a2ef13051c368ede0c096875cc86ed74c2951f34b3b68829651e8a8b388b13a72d0f78efdbaef3873dc05a6a0a5f6af06017229fd6a34a50e6a618f6984d4052799288840afef337df0c6f936147c2110f65b76ebfcabc4c889fd667aa93eb0ab125a657754d5eb0a6082093361a0f20715688f1c15d5abf6571afeb5f783eccf30f7a6b4262f4e6120c02a9084ef605ecc6962c4331342a5c4fcea611a033981da11052a23777302e4a44634c1fc4d428558dbbe08d8d430bbf2d3a781d33666f53eccae61f90a2cf549435e84a8642d9bfaf0e89f7d3eb1eb07ee5a0ec8337661267101c344c8865a393d4be75d932e6c0df7dc85b332ca3efbb03043b9a3dcb2aa67ab37cf8caad85c4ce53ff53d01b8e14b0abb08fb425357599f8ae24d2583455e94c6fa11304f83e128c9b8939d4882356e572a9b45a711082cf2f71a2fa404bfd25f310b27c8ca5b2580dfa015becb200041012743e87e444701ad4ffc31cfd24162cef927b5d9cbbfb2e7b8edafc798d5ba8fc83534155719821a224b9eeee706f5d11aa83ecc5edd8e9452f26a99d78818d9154b1034a26df47a747b74a88c9aaea3690a32b11fc242e77abf20c2976b93ee272d8e568a8d836434efa9e5d6750bb3754960d2d265cdfc1714e4d2f864f5bbf7a610e998ea518c5588e75cc9a6fa703548b2b253db4213183f636202b36e5a414c72eef4c517470b82b2cc50fcbadb364b7bb9556ffd9e9e1cd45540f2ef1a2163b2bc9b08b4285e7d6455aaf0e6ee69629fe14a03685ce809c109db66d5eae50a6a88ead3df7fd243cc1e04e49bcd113020e5fa59bcdca146b6823aac73591198381f7a7c5ca3f9fe0f69d95daf9e151847c878850b11f14e9ce9e71ba8570abc71dc47f8bdc823c4b5c7b577ae54587775a100ddf0689c446a86430966db171124086e0e41c6a7704d4e4d986d39ad8374577a71b4edf8f3021217190421ea33b4f7ecd4d70a42cae65d034420b1b609686e83e6a61aa89788b78bd636cc8842abb3ba4ae1b3161fc84457b624ac959b2ded91866abc9133a67eee4aa933a45009ab76b03192e3667eca3a6b2ce0f3820a7d11ae16fdd301b84051322cafd7eaac5878d439c4681331a508bb2daeb06df948ea9590d5ee33edb7dc8273256003f4baddd7bfb3c3643cfa3821477b1b299fa9d208f694fae0446edf0ef7ee2bb397b0cbfa2437fc704df5f4fd96d1f4b0aa5d5b4e3286288335be981afa5b3eb192082e146deec11905c70d22ec97cf765b94e33d65b139544ea2ac6721dd27dd26334a4c92b0e8406a410f93fd64a70d2da778c126f1ab227addd57ffb17c78b9c6c960103e88bef4cd6d29b2dbb5a86b097765da93eea3248853f5aaf36854908deabe94bb62e7e4352949c8e87331df296ccc27b30fd8f65d72adb997c1e47197ad2060d48f57e49ba55b20dee56da83dda652df5bdb315d3d39aa0158b1d2ad83135576de4fafad3f33a10805589c8af3c0e2405f0ad3c6da443255efbc618cbe79310114e127f3379ba4c16a6cfc3c3c7049e66ae587c6c15498602ab216d0acde1964120a008e471976b8e8fc02802c855d55cf1a525abf2903664aca2775a1535203c6f5184f0cbe2351854945915aa840a864bfedc88c2597f4a0be9141ef5c3a78248ed1586553fc8899e474c7e79214786f4b353201c3698af0a533f38c2055eead66758056e749020d49344babfe390d68d15dfe81eec855002498e400508fdf8044d84ce241d441e04ec30f3d1c55adccf902334728f25f9debe5f084ef1c8eb08962033da99f17f32de5aea431562110eaf0efca0cc8873705acb998dd9c42da959d451afcca5c19b109a2be2ad050ce36f616633424fcddf13fe97a7d121b1ada3063b132266120e9877ef2e59f399189459c10192ec48b49bcebb7ba8853bcfd2851937ecc4d15e50d9e055179044effc91904546583181c3b491b4ff79dd5b17981ba41fce0e09bbe7d4bf51c86d6535914f5d6ffadcfd8c4d023e6c2735727a9c2352fb9caff0a8ac940fcead8bb77228d2d1d62f525e967bb83d8b637a85c174fb9438df0c58f9f233052fc0ddda599978a66ffe5ff0cced3d6abd11b791279d394d80aa26fbe36971463953b9571419e04061c2145c17b96a1b07260a279ce8ecc5131e930e56a6a19ca64caab64f340c87f4e59915a69bc8778e479d221472194b63f192b703447cb5ffb9b3b41774b33001b09624810a04ff2c32c36ddcaf9c3cc0fb8cd921857df28f168fa5c297f486b75eb2553c115230c0b5c7aa907bbfd22a6d79c502a04887d62285ae4f889f8cae305ed8ef53bd15591d526630d5c3f8691adf2a99bbff35a46e1b9f0edba8ebab5c6aebd7be8b63701ba5431f2bc55abd54642f7b74e5a5e72c425fdeb26e930d5d7959cbf504c6dc68980976023fb6c182f5a0eb7ba9b60758bbbad6914aa1d1d0a3a81eac2a98d96bccc6a7ac2ab4bee174876ed79685cdecbbee2aea046c6f05f950f76ebb41053c2c948134337f2bd85c136184e14e7a3fde0bf3605221e5f0fcb3babc4c9c34b0d4bf1ac6f86ba487b6824c704ab1d2b7cfdfbad9f39a03e4d6c973291b0ba95bef651497ec4429be2b736815b6b2d2e71fba29ed92e60da05402c7b808fc3df45b1397a1085a4b593fe5dadb846a79531e196a32e2eb82a79d170468da74474d7225a6d81a5ce9ecac8c5ffa1cc52c41ed2e9e08e31834d27dfbfefc30f00f46bb59c7d6670564040c5a602948718171df668d1dad1521f84fa8a86a1b09771fd1ad65becf958d2e184073509245af0cce1f61427baf7707f05f3bb6057c3c16128778bff88564bee6f544e2dccd4eb82ece01e0ff6ad611838dbc877b31e64c71f1bbc7b91db86cef87ad662a67a41b8bc869c7124131c3732efd99e52de58787a700277a7c244d971adb768e9df1a647890314e5c6250750123f6b11a81a73c76806a1503f3dfc30c66ac0069815ff6350642327f027e15b698f0820b97375acef7a66114face850f61d52ef17199ba8346dae318d1df2d31276f5bbdf58f67b7480f4c7968fee331d4690dfbfa3eb97136253be633437d6a1503a3bb5ff49b7f3b326cd0983906f87b1760a34ae6a1ce8423af09e31fa75f5cfe365b3d02cf1a3e47166bc264300aef788e60618fb5b29a09b4279873caa10a91d95fd7534543e8ee297d5da06b03587e6a210ab5a898d682333c562314afc1682ff781cbaa91505dcf5c939bcbc8ebc34c2ece36c696541b640bc8e8e315b57873dfb1aa6d7fd9c838ff8430c1304c273f511756170df45cbdc8bf07aad466663faee1e1f083b7d8db9508925911f462f9ff97640f1b2028d62f7b73547de21815683b3c2adfab6ec3c4f9e1057572ef0eaf43db863547bb32f15f93e6bb5e2b51b30f09920bc83a1a548056e5582e0a180b4a57404e1ab008f7edfaef98c06e513bb451c13a9a84331137ac34a6893787b975728ea00c169d9d847e0d2144bc54c543115a06234eccf68ba713b7177b7279ad682767dbde7dc6cd62d35df0c3a8fd0885a81e48e352bbdc7f53c332bc06ae3d9127b97ebacd889638cf3c80069202d1235cc0b4c9ebee2c2dc9983b2c1f989a43f89cb45e73a7a844d0840fee45a327b04f74e6b0c29f10f1cffb13a018df32a644d0e1753035d0adcb4b4a88bc8175a2a61f3c33d518293334d017cf1eb17d3099c6701cedf701aae8966b352c19623f2a6d97a2a4b4ddf54e001819d5a6ed7afffb70742870390533b99a46ca47227d19aa4fa071191f4bb9b954766d4a74492ea18e78e58db80cad1ebf8b1f6a6b00cb9407c941ce697260c891e0839717ab9a404b51f61cc3c022bbec5a8a9ff31781b6144f1e1356e29a41dadc9921076045eee0117f8d1e7d4d136ea1838752c8bd0616aab92f88d047516ae7edd709870e845baa06087fad62f2d8a69595227cbd2f142bada6b88ae9a64e78a7dddf1be340491b2afe10ca9de37e842f36468f626cf84d41f1e45e26be39b1bc7323fb784218bc64d59820c88062c897d61bcf28ef2f25c072dd6074b998a1cf5b192b4058b61aa8b9dff1f145a4cd80767501618285caba267ace120aade72effc967e1ea1d6a94b788308787acb8403d6da6410fda0178d6e800d20d2efc13875ad95ed26fb1d9257dc84a493a74b01ddf444462229cdabbf0d13c0fbcdd539a3c7ce5eff7ed00381022613665cb64941aa4282a994d201fd71d3d2b7bf394b2a82906e76391de9f23df696bb07f529aa8015f2d92b5aaa7ba11358d1449a7b8fbd05cab22a79fddf1d16e01ade2fe4d31f2011c4fa2e34cfe7444d0f3116e082c8e9d76d7125edcacc8524828107dbc0834ca19919b4b8bb6fd67f030c883fa26af87279bf5072f2ba287e7fa06867f0572296aebff2e042227c8955e4798e8d08ee16d99ec795deb6641b03f0796096eb4a3316cf1cd6c211551bc23fb1d423d81ec3d40a97ecd5f4b6cf1951b5bb9b308a64fe049a5127a51892e14d9b13e95ffc7f505de846ae5fb00dc941fbed2e7a2fa3fef9618396fd4ad85b3d207a43c0ec8cee75638068280cab3434e4e7d308062a0f9ed164c4c2b83fbe7f09992acba1c6dc05b8f48bc0f64d275f4ccd8620b7f14b02dae6902b65a1cd20982a5ad704ab7aa3fc28adceaac1f2357154a9b47610a62059b15a31eef4c5252362a38ee47da922a9dd59c93a0d9f9691925866939f02a304c6fd8e768748821dd21e5495b0168d99e78cb78deceb5d6ae40ad0572e704f46e6ad66e3fc482f159ff4818d08cc07d1d24496c03633506191fc40143f0d67ecb4cc064f8c7482c0f320244cbb9323f5c3365faa6246eed1be620f4b890910738d46f66b25dbdb7ce419f780fb3065c3038a379134d548aaa280878b81a0345da802ff2c851f6a5fa3449060647493aeff900039576108c1b88baae3bc840854c76cc0c26f55223ed11e18e85e1ad527642fc268dd3040325a82ba6e6ead088081d7f318deea3ef0c81</script>
+  <script id="hbeData" type="hbeData" data-hmacdigest="a4e23f5541a717016081f94ad634555c438d456b20b8446965cc235d0e1a2f89">50d587fd195ba3e2fcf7fcd8dbdf856b9a680a370d09bf6ce814edf9fd0923179252f328ef7618dee66403d0c6a02047cac54c83a9c8f2bf05c4ef7c09cf883b2e564fb9de9cf220ef8093c46c5a73327c542db3fb2f1ae7cc2a20e22dc2159d72c6d2c1e90137e1bda70212fd04b4bab07a45c0e6b80b0183729b6429e25c24facc7b482aad9178693f201a809ab5ec720afb48d5408f9518edbfcdad13ea565ba93847fa0de1eef1207cecaf173a27dea375b91cc4c1c6eab35b03e6d84a5d592c67849c1ac8107e8afce0150e4eae81531b01c909e3c6fa96d7c2a6968a42abf62e9ec00ecfd7f27968147f3287e86d41d90d6137fea2dd4c059a4cf9694840580696b84ecb1c15c339ac08d391fd7113c8c4628b526a3823e400ed549db7a2a64a75c119f4e695a9ebb7e66cfc7d33cf4cfd7b1e46036646f7d4b8bfbd3c8f94941af79a63a47351814b8cd4df476e5394baa63522d4a10beab57bdcba5f2e704c59e67c4079133ace0037c228d00ababaf7ae93b37fdfb1915fa285a943ca165f913bda90cf4a707f7ef81db58b1235f21178123c2968ca0d3e13cbd31783dc00fd7ca907d0eb5d1552c957b12e1d29ad780fb021de60e9cd91cfb67df60a12ecbf51c769a4fa34d8d28cde0ef50855356158df936a1fb2dba5513c5086ecb2e45eb613a059b99d0cdc4e5fb5731b0f45155252d451f6df57e3bbd86a864549b20a204e8c7c043b370244788314006850b06af4f8362c1d6172e4e7d5014783253f1d474cf6e4919dd13d7f17f9322fd137231fc8eb487be2ee1790b2c978940e79281bd3fe790d061ec9136b162b1d61148ac423f5d26c02c45c8d9d14e20cfa69b047edfafd064fd442f9fe0717d6cf402c1fa631149e4a94dc78681ab7937e0152ec012ea9d7232ed0512180d7eefead9285d20342e38db474276f15e86182433660f0586c5a34adf09ac50a3d291abb34f5ce6e9f4160757ca23f4b5c20f8f83a11ebba8fc43a215f0d66db725bed889de2490670c153d65413acbf37285e7e56b7f45677515663c93d80fc221753c3ed03afb950a4cdc3bbdd992a3b478a99ecb99a18882ec2a791d9e5c853c6a56a4f2e4d65ba3d171234cf9e2114e6d860fcda1892b70c47a049caf03cb5346a90be3a927aa726a66da712ec32db8b368950369edbe1aefade295537b325f4ebd4c5c2f191336ceb1ff6d97daae913656f4305eefdac11302f809876a01ec159d08b2bb2e2310a735d283c9f0065e2498895408c4f77d86fea1deac85970488f8d0a10ccd5c7d1266a3be37d4ca205905b7a08c19918fd6a8bc203279ce5c3fe3e4e234014a104e70c028504eaf149ac8b36e1652ffbe8c28a927177b1a61053c800f33010212e7a83f1d6e654d7f147cc8aec78f7f8613e79b50a416d1b7d8b62f300b8386d144d617969dc52ab7dd61fb3a8b9e827153853e21a1996326a6bedb2c4f16319f6273391685dde611481000c1710e1641db73d3115e8827704ee5912e430ca1ba365a25376434e74e8dccb7576974c62c09d33389ceac7706d92cc057a97a0081b8e63b5b4931b59657b8b8513fa5851abbd1f07b7e1dd186e7dd236923269201244a1e0a7dbb6458e29460605d3c55e6f8672d17aa2d61a7425b436ba7132dc6fc09d281d6a8cc1a32d877fdbb11c20b73eb29da365e9ba4dda8042b5db069296e20a1692a28b6534809687496805c0d3f4c6b1487355cd52949ea38ee24cca0f41219de269a2c1a518c9f392198c8cd7cdc5ae698af0ff3de13a6489f593790415f1321196c567cb0ce247c9730b5ae7309d956fa4b653d43745ea3f47fe4507a042cbbe5a379efc2da19e10b2e1f0e322fdbf5beb331c7149c095c0ed24bd5730886a3b3f5ffeb53a44e0c873f0c6fff25e973bb0d16b48b35aec7cece23ff607f8fe25a9266840e896903a01bc1a3d88ca0e25c4f8bfc728adddcf1b5bce4df66a8e3a1a53b41b8240943f8d6a312aecfd38582ec8ec7e16ee51924b84f71d046ab316bea6e388d4bec46acc3aa2e03b1cac6e0954c65448525b428c739f11dcf26f79b1eb5d21ab49df598e6b6b5848a8190f602db53b86d06a9de756d7e576656863de65f3527e6faf4374a39411f605278afafa77494e6b9dc791bbb14ccd97b67db308e7997819b3fb5a6ef8d1d0d707390bc1084fd4ef8807c18d9f59a11e6fbea2af105ae282917c2eb1f4bd23d7ec157b4a32d99d50944d3e43dd0040ad073fc8de739a37548ebc8c6314e0201ff5229492522544bf20e2cd6029966d48d71ea031f95f1770f4a03d8a7620079e702c891eebf2fb707c7ff9fff7dfa516adfd2bd60d33c6c93704f685b32c9df8592d2217835a3d51aeec250758f02d021002ee6aa3cee5938717615703a54b02f7c012dfde11f52a697eab4efd66939beeb57005c4e2b683891e88033ba74bc09aa283dc476a2ab8956a645d29a7c68f9d5a2d49d79c54d7f29ff68e3e48b2bf0983449590ddd28cec877795eccdd06529982927109a88494bf69e1b67f2afc7a0145489f5ecffa81c586c00ed05963766b02fefcf35569b3236ff1edd8f443a8457835ed0c5824e481235d89fb3cc797ec01291c67224072f78ab75abc2361ef3c1ceaf130efda4497cc7e49ef37cf0050773678639857f9439c359d79d2fa208a6113c9b22993bed47a77a2dc8a09c0f78c01e8d6bd307204ef4711adb2b42838968baa0b55bdc451b3b1cea71a385e991550214e1dadbadbf96e35c3af72ddbdebcc15697b13b750a55f9258fd066b90351a892068177de8b3288ddecb81125a91b26cb10e3f619af7548e74f3c96d5758ea096981446c36b55015c87165cfe6b5858c233effc0cd1166f6c9334b9ac5c0f3f39fe05c3235fe8c158467b10e2932f9d7e4ce51615a83217a104980efed829dc518e019aa1872715cd5fcdfb212295aecb64e2f185f15c7cea7ea113b195adaf04818c717b091fa301c08a59e50449ecc69ce9cb2cf56fe7af67f56f25ba8d50b9c61ce00386173d20b7c4abe7b60b494e3383160e7ab263ca1f39b40f38ebf0937c96e1eee94ef1c905c3f69536fb432f0b3dddb68f76bb842fa6936a786ebfe1ea83f290f8f44b484c7713aba6b8dfb7f74bea4d5f9db6e6ac952393606e6fac411830ba21649c4f12c0d01a22fcb204bb4ea924ef353573cba3071f2e5ae809c9c50a01896eda29ecd31b20ae4b8d7bf73fa659dbbec18565276e500c58c80d161db86db033bf10268917acc93b6fdd8f143d309dc937e4730c2edd2da769b4b26ec9c228c5c86cefbd56189e9d0afb196f733d48c4b6fdbf8a6cc176d4c2e5427b6cd6cdcacc100d31a58f92182a608c4a3939e3d9638391b3e25c103fc26ec53c3e4491db92e75fd8173e8de2c4c4e51b37d8da433ecf53ae5846a95e18dcac9bb027d564f033496a8d2be0c03ae723e5491c7da69dad3485751d99f28ddd7e11ea36aa2b90a08e552da0a7b050e619225ade1aece071759acc0735b190d763095b3b1cb93f1faf930716389de793f899a23964374149a1f1ffe68e21249010873ba89820d0bfdf20d51c54ef736594110e266e101a3a2ddf71db92a6af076b719bd05b95f806d62791a072ce87c599379f982e383ebc2b33d4bcac8fbcbabbe014abf4914e914cd1041de61650ba104c94573bd5f68d3e85458eff0cbafc3cce9dd1ff064e0d8f94aa144176782dc02d7a0592aaff7c89ea134ae9c26a639d5f6ecf6644607fdbbbdf45e36130a6e51bbb8992426324a049cf2b72e3d831d8f001914676ddaede4ff90c22d75cbf13be5589066f679412f3b3257b66fa7622c3bba34262ba8504c8ff93647534a1d5b11c3ff17731ea7b428010c11f5306ae3722af2fb6b547b23701d7e3e3800218021fed7602aa3cd7398eff853e3053517ff8ccb950f5302f6ea1746cda72d29e80e554afcda71d6e4ddebe658f9970429bd91efd6e4aaeaa2c71a1735ba4c09ab9a7fe0b60ec8fc9d80454e4e8b498c1d9759cda0fdd90fbadaf1c9a32d7e199253ae09780fb82ae68a15be2b036a2308e31d9cc769c01653812491fc0fd6fba3bf97aaf295612dd355582d53d23884938229c134763613a48c100f8dfa7446eb23a3c98cd5e6539ca5aff3e97f2895a4cf8a6619b41ee7685e2f459bce9d46f74ce7b887ed2e22c78de49f67007b570dfedc97f4090b9c400d2d2b6594cb8773a4e0e90bcac530498148f6d9861e523bdc0a832d808c7f0b94496bf2c8f1deaf7b3ff193594f66569054e987a4cc738d469e6820d893f299c83f588afcaabbc5664ae9a588b28b0227808fb39dda4c14ce8d4c76f257239cd4e5eafe8b3846e0c8514b216db0602314d0c9fa7ce42d315d566280ca4f64e5617e8106f71c49fdeab8acadea6c92f91e55346abc539e124e45c45fc595e7baeaded45f759915732ea3887536594d7ebc5252a7a1cfa3ff3388da70a916ddd4c8fc4687b51e1fcf861acc50b00e3d45b16b15b2a2ed48d460a6fe3b36bc54b2bcc82d65d99722522775eb334d3900aa4c5962ac2b314735eca77a613d1b3539bda5c59b0e3b98f65be0d741f915507dab6612d3f92bfbc1fca8926efab88192791721315492df0df9f8ebd8214e4e04d40001c2e63f00f5d3de67baf8369427b3e1f8a809812be8c7839534dbb6c7d824da554b47e1ad4e4c71ec1077815384999c6743e965e4ff3c1dd235b9429c0e8d966f8464719239ace1b025b6006f93557f23fe797dc1f10af513b618fee31e92175c0b15c8ccf6e06d2a7267f2817396932b697028f451c6a369cc5600eda0cd141d9047a4602719921a057b67970acbab4df16c2d95954e18c84e88591d74b199527f054e64461154e0816777136de7571c1fd6bc7ac7f5de67d7794106f3db4042c0a8224b7f72ba2fc14a06574810085a3b2ab3ec804ca8ef2d499595b470d3f7116ccc870b4c30a56bf5d858986e1138fff9d8eaa29a42e1971eca0f5752afe301883df964131f088f85bfbaca4171f3b616ca859cfededafb2ff526d6ef7d97e96539ab172854da2f59012923d1d91b769877990116bc35b8002e1b6b88d1e2043945eeb113b0086e23554b9d58cb1ab3b01f6ab7d6d2f055dcf736c10b1644085e62372aa3c137074644e541e223199b4b24f88a1df2a84512c0a7a9a26009fc9fc08af0dd7fa9a4de1521f0e823d24a8b976da5c8654e7af44cbec22fab3e8701e84c7b18ee2015b32a44361839c5c4b211c20f215275a2ef13051c368ede0c096875cc86ed74c2951f34b3b68829651e8a8b388b13a72d0f78efdbaef3873dc05a6a0a5f6af06017229fd6a34a50e6a618f6984d4052799288840afef337df0c6f936147c2110f65b76ebfcabc4c889fd667aa93eb0ab125a657754d5eb0a6082093361a0f20715688f1c15d5abf6571afeb5f783eccf30f7a6b4262f4e6120c02a9084ef605ecc6962c4331342a5c4fcea611a033981da11052a23777302e4a44634c1fc4d428558dbbe08d8d430bbf2d3a781d33666f53eccae61f90a2cf549435e84a8642d9bfaf0e89f7d3eb1eb07ee5a0ec8337661267101c344c8865a393d4be75d932e6c0df7dc85b332ca3efbb03043b9a3dcb2aa67ab37cf8caad85c4ce53ff53d01b8e14b0abb08fb425357599f8ae24d2583455e94c6fa11304f83e128c9b8939d4882356e572a9b45a711082cf2f71a2fa404bfd25f310b27c8ca5b2580dfa015becb200041012743e87e444701ad4ffc31cfd24162cef927b5d9cbbfb2e7b8edafc798d5ba8fc83534155719821a224b9eeee706f5d11aa83ecc5edd8e9452f26a99d78818d9154b1034a26df47a747b74a88c9aaea3690a32b11fc242e77abf20c2976b93ee272d8e568a8d836434efa9e5d6750bb3754960d2d265cdfc1714e4d2f864f5bbf7a610e998ea518c5588e75cc9a6fa703548b2b253db4213183f636202b36e5a414c72eef4c517470b82b2cc50fcbadb364b7bb9556ffd9e9e1cd45540f2ef1a2163b2bc9b08b4285e7d6455aaf0e6ee69629fe14a03685ce809c109db66d5eae50a6a88ead3df7fd243cc1e04e49bcd113020e5fa59bcdca146b6823aac73591198381f7a7c5ca3f9fe0f69d95daf9e151847c878850b11f14e9ce9e71ba8570abc71dc47f8bdc823c4b5c7b577ae54587775a100ddf0689c446a86430966db171124086e0e41c6a7704d4e4d986d39ad8374577a71b4edf8f3021217190421ea33b4f7ecd4d70a42cae65d034420b1b609686e83e6a61aa89788b78bd636cc8842abb3ba4ae1b3161fc84457b624ac959b2ded91866abc9133a67eee4aa933a45009ab76b03192e3667eca3a6b2ce0f3820a7d11ae16fdd301b84051322cafd7eaac5878d439c4681331a508bb2daeb06df948ea9590d5ee33edb7dc8273256003f4baddd7bfb3c3643cfa3821477b1b299fa9d208f694fae0446edf0ef7ee2bb397b0cbfa2437fc704df5f4fd96d1f4b0aa5d5b4e3286288335be981afa5b3eb192082e146deec11905c70d22ec97cf765b94e33d65b139544ea2ac6721dd27dd26334a4c92b0e8406a410f93fd64a70d2da778c126f1ab227addd57ffb17c78b9c6c960103e88bef4cd6d29b2dbb5a86b097765da93eea3248853f5aaf36854908deabe94bb62e7e4352949c8e87331df296ccc27b30fd8f65d72adb997c1e47197ad2060d48f57e49ba55b20dee56da83dda652df5bdb315d3d39aa0158b1d2ad83135576de4fafad3f33a10805589c8af3c0e2405f0ad3c6da443255efbc618cbe79310114e127f3379ba4c16a6cfc3c3c7049e66ae587c6c15498602ab216d0acde1964120a008e471976b8e8fc02802c855d55cf1a525abf2903664aca2775a1535203c6f5184f0cbe2351854945915aa840a864bfedc88c2597f4a0be9141ef5c3a78248ed1586553fc8899e474c7e79214786f4b353201c3698af0a533f38c2055eead66758056e749020d49344babfe390d68d15dfe81eec855002498e400508fdf8044d84ce241d441e04ec30f3d1c55adccf902334728f25f9debe5f084ef1c8eb08962033da99f17f32de5aea431562110eaf0efca0cc8873705acb998dd9c42da959d451afcca5c19b109a2be2ad050ce36f616633424fcddf13fe97a7d121b1ada3063b132266120e9877ef2e59f399189459c10192ec48b49bcebb7ba8853bcfd2851937ecc4d15e50d9e055179044effc91904546583181c3b491b4ff79dd5b17981ba41fce0e09bbe7d4bf51c86d6535914f5d6ffadcfd8c4d023e6c2735727a9c2352fb9caff0a8ac9401d234924aa0f24cfdaf3d3eecdba760eb042ed0420773ee64be288fcffd38904</script>
   <div class="hbe hbe-content">
     <div class="hbe hbe-input hbe-input-default">
       <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
