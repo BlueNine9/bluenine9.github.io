@@ -261,7 +261,7 @@ class="math inline">\(t\)</span>为超级源点汇点 <figure class="highlight c
   <entry>
     <title>拓扑学笔记</title>
     <url>/2023/09/21/%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/6N4BmY4yJP/</p>
+    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/tBXzNGNscm/</p>
 <p>分节次的笔记（清华云盘）：https://cloud.tsinghua.edu.cn/d/2c4efaca588a4326958d/</p>
 <h2 id="lecture-info">00. Lecture Info</h2>
 <h3 id="考核">1. 考核</h3>
@@ -5792,6 +5792,320 @@ class="math inline">\(\exists t\in(a_t,b_t)\subseteq
 Y\)</span> 为 <span class="math inline">\(y_0\)</span> 邻域，且 <span
 class="math inline">\(F(N_t\times (a_t,b_t))\subseteq U_\alpha\)</span>
 对某个 <span class="math inline">\(U_\alpha\)</span>.</p></li>
+</ul>
+<h2 id="覆叠空间-1">17. 覆叠空间</h2>
+<h3 id="覆叠空间-covering-space-2">覆叠空间 (Covering Space)</h3>
+<ul>
+<li><h4 id="同伦提升引理-homotopy-lifting-lemma-1">同伦提升引理
+(Homotopy Lifting Lemma)</h4>
+<p>考虑映射 <span class="math inline">\(p:\tilde X\to X\)</span>
+是一个覆叠映射，考虑 <span class="math inline">\(F:Y\times I\to
+X\)</span> 同伦映射，令 <span class="math inline">\(\tilde f:Y\to \tilde
+X\)</span> 满足 <span class="math inline">\(p\circ \tilde
+f(Y)=F(y,0),\forall y\in Y\)</span>. 那么 <span
+class="math inline">\(\exists! \tilde F:Y\times I\to\tilde
+X\)</span>，使得 <span class="math inline">\(\tilde
+F(y,0)=F(y,0)\)</span>，且 <span class="math inline">\(p\circ \tilde
+F=F\)</span>.</p>
+<p>证明：</p>
+<p>固定 <span class="math inline">\(y_0\in Y\)</span>，考虑 <span
+class="math inline">\(\set{y_0}\times
+I\)</span>，有这是一个紧的度量空间。</p>
+<p><span class="math inline">\(\forall t\in [0,1]\)</span>，<span
+class="math inline">\(\exists (a_t,b_t)\)</span> 有 <span
+class="math inline">\(t\in (a_t,b_t)\)</span>，且 <span
+class="math inline">\(\exists N_t\subseteq Y\)</span>，有 <span
+class="math inline">\(y_0\in N_t\)</span> 邻域，使得 <span
+class="math inline">\(F(N_t\times (a_t,b_t))\subseteq U_\alpha\)</span>
+对某 <span class="math inline">\(\alpha\)</span>. (连续性)</p>
+<p>由于 <span class="math inline">\(\set{y_0}\times I\subset
+\bigcup_{t\in [0,1]}N_t\times (a_t,b_t)\)</span>，这是一个开覆盖，<span
+class="math inline">\(\exists
+0=t_0&lt;t_1&lt;\cdots&lt;t_m=1\)</span>，有 <span
+class="math inline">\(\set{y_0}\times I\subset \bigcup_{i=0}^m
+N_{t_i}\times (a_{t_i},b_{t_i})\)</span>. (紧性)</p>
+<p>令 <span
+class="math inline">\(N_{y_0}=\bigcap_{i=0}^mN_{t_i}\)</span>，它是一个开集。（这里，取开集的意义是根据曾经学过的连续性判别方法，取开集可以保证给出一个开覆盖，使得二维映射整体是连续的）</p>
+<p>于是 <span class="math inline">\(\exists \set{s_j}\)</span>
+分划，使得 <span class="math inline">\(F(N_{y_0}\times
+[s_j,s_{j+1}])\subseteq U_\alpha\)</span>，对于某 <span
+class="math inline">\(\alpha\)</span>.</p>
+<p>于是可以对 <span class="math inline">\(j\)</span> 做归纳法，<span
+class="math inline">\(\exists !\tilde F:N_{y_0}\times I\to \tilde
+X\)</span>，使得 <span class="math inline">\(p\circ \tilde
+F=F\)</span>，并且 <span class="math inline">\(\tilde F|_{N_{y_0}\times
+\set{0}}=\tilde f|_{N_{y_0}}\)</span>.</p>
+<p><span class="math inline">\(\forall y_1\in Y\)</span>，也有 <span
+class="math inline">\(\exists !\tilde F:N_{y_1}\times I\to \tilde
+X\)</span>，使得 <span class="math inline">\(p\circ \tilde
+F=F\)</span>，且 <span class="math inline">\(\tilde
+F|_{N_{y_1}\times\set{0}}=\tilde f|_{N_{y_1}}\)</span>.</p>
+<p>当 <span class="math inline">\(N_{y_1}\cap N_{y_0}\neq
+\varnothing\)</span>，由道路提升的唯一性，我们也可以知道它们诱导出的提升在交集中是一致的。这就是说
+<span class="math inline">\(\forall y\in N_{y_0}\cap
+N_{y_1}\)</span>，两个 <span class="math inline">\(\tilde F\)</span> 在
+<span class="math inline">\(\set{y}\times [0,1]\)</span> 是一致的。</p>
+<p>因此 <span class="math inline">\(\exists !\tilde F:Y\times I\to
+\tilde X\)</span>.</p></li>
+<li><h4
+id="覆叠空间基本群跟底空间基本群的关系">覆叠空间基本群跟底空间基本群的关系</h4>
+<p>令 <span class="math inline">\(p:\tilde X\to X\)</span>
+是一个覆叠映射，<span class="math inline">\(p(\tilde
+x_0)=x_0\)</span>，则 <span class="math inline">\(p_\star:\pi_1(\tilde
+X,\tilde x_0)\to \pi_1(X,x_0)\)</span> 是一个单射。令 <span
+class="math inline">\(&lt;\alpha&gt;\in \pi_1(X,x_0)\)</span>，则 <span
+class="math inline">\(&lt;\alpha&gt;\in p_\star(\pi_1(\tilde X,\tilde
+x_0))\)</span> 当且仅当 <span class="math inline">\(\alpha\)</span>
+提升后是环路。</p>
+<p>证明：</p>
+<p>选取 <span class="math inline">\(\tilde f:I\to \tilde X\)</span>
+使得它是一个基本点为 <span class="math inline">\(\tilde x_0\)</span>
+的环路，且 <span class="math inline">\(p_\star(&lt;\tilde
+f&gt;)=e\)</span>.</p>
+<p>令 <span class="math inline">\(f=p\circ\tilde f\)</span>，则 <span
+class="math inline">\(\exists F:I\times I\to X\)</span>，使得 <span
+class="math inline">\(F(s,0)=f(s)\)</span>，<span
+class="math inline">\(F(s,1)=x_0\)</span>，<span
+class="math inline">\(\forall s\in I\)</span>.</p>
+<p>并且 <span class="math inline">\(F(0,t)=F(1,t)=x_0,\forall t\in
+I\)</span>.</p>
+<p>根据同伦提升引理，<span class="math inline">\(\exists !\tilde
+F:I\times I\to \tilde X\)</span>，使得 <span
+class="math inline">\(p\circ \tilde F=F\)</span>，<span
+class="math inline">\(\tilde F(s,0)=\tilde f(s)\)</span>.</p>
+<p>注意到 <span class="math inline">\(\tilde F(0,t)\)</span> 与 <span
+class="math inline">\(\tilde F(1,t)\)</span> 是 <span
+class="math inline">\(F(0,t)\)</span> 以及 <span
+class="math inline">\(F(1,t)\)</span> 的提升，<span
+class="math inline">\(F(0,t)=F(1,t)=x_0\)</span>.</p>
+<p>由道路提升的唯一性，<span class="math inline">\(\tilde F(0,t)=\tilde
+F(1,t)=\tilde x_0\)</span>.</p>
+<p>观察 <span class="math inline">\(\tilde F(s,1)\)</span>，它是 <span
+class="math inline">\(F(s,1)=x_0\)</span>
+的提升，仍然根据道路提升的唯一性，有 <span class="math inline">\(\tilde
+F(s,1)=\tilde x_0\)</span>.</p>
+<p>于是，<span class="math inline">\(\tilde f\underset{\tilde F}\simeq
+\text{constant loop at } x_0\text{ rel}\set{0,1}\)</span>. 于是 <span
+class="math inline">\(&lt;\tilde f&gt;=e\)</span>.</p>
+<p>于是 <span class="math inline">\(p_\star\)</span> 是单射。</p>
+<p>如果 <span class="math inline">\(\tilde f\)</span> 是一个 <span
+class="math inline">\(f\)</span> 的提升且 <span
+class="math inline">\(\tilde f\)</span> 是一个环路，则 <span
+class="math inline">\(p_\star&lt;\tilde f&gt;=&lt;p\circ
+f&gt;\)</span>，因此 <span class="math inline">\(&lt;f&gt;\in
+p_\star(\pi_1(\tilde X,\tilde x_0))\)</span>.</p>
+<p>如果 <span class="math inline">\(&lt;f&gt;\in p_\star(\pi_1(\tilde
+X,\tilde x_0))\)</span>，则 <span class="math inline">\(p\circ \tilde
+f\underset{F}\simeq f\text{ rel}\set{0,1}\)</span>. 对某一 <span
+class="math inline">\(\tilde f\)</span>. 根据同伦提升引理，<span
+class="math inline">\(\exists \tilde F:I\times I\to \tilde
+X\)</span>，使得 <span class="math inline">\(p\circ\tilde
+F=F\)</span>，且 <span class="math inline">\(\tilde F(0,t)=\tilde
+F(1,t)=\tilde x_0\)</span>. （道路提升的唯一性）</p>
+<p>因此 <span class="math inline">\(p\circ \tilde F(s,1)=f\)</span>，而
+<span class="math inline">\(\tilde F(s,1)\)</span> 是在 <span
+class="math inline">\(\tilde x_0\)</span> 处的环路，从而得证。</p></li>
+<li><h4 id="覆叠映射是局部常数">覆叠映射是局部常数</h4>
+<p>考虑一个覆叠映射 <span class="math inline">\(p:\tilde X\to
+X\)</span>，记 <span class="math inline">\(|p^{-1}(X)|\)</span> 表示集合
+<span class="math inline">\(p^{-1}(X)\)</span> 的<strong>势
+(Cardinality)</strong>，我们有 <span class="math inline">\(p\)</span> 在
+<span class="math inline">\(X\)</span> 上是局部常数，这是说 <span
+class="math inline">\(\forall x_0\in X\)</span>，<span
+class="math inline">\(\exists U\)</span> 是 <span
+class="math inline">\(x_0\)</span> 的邻域，使得 <span
+class="math inline">\(|p^{-1}(x)|=|p^{-1}(x_0)|\)</span>，<span
+class="math inline">\(\forall x\in U\)</span> (令 <span
+class="math inline">\(U\)</span> 使得 <span
+class="math inline">\(p^{-1}(U)=\bigsqcup_{\beta}V_\beta\)</span>，<span
+class="math inline">\(p|_{V_\beta}:V_\beta\to U\)</span> 同胚)。</p>
+<p>如果我们假设底空间 <span class="math inline">\(X\)</span>
+是连通的，则 <span class="math inline">\(|p^{-1}(x)|\)</span>
+是一个整体常数 <span class="math inline">\(\forall x\in
+X\)</span>，我们称 <span class="math inline">\(|p^{-1}(x)|\)</span>
+为覆叠映射 <span class="math inline">\(p\)</span> 的<strong>层数 (Number
+of Sheets)</strong>。</p></li>
+<li><h4 id="覆叠映射的层数">覆叠映射的层数</h4>
+<p>令 <span class="math inline">\(p:\tilde X\to X\)</span>
+是一个覆叠映射，假设 <span class="math inline">\(X,\tilde X\)</span>
+是道路连通的。则 <span class="math inline">\(p\)</span> 的层数等于 <span
+class="math inline">\(H=p_\star(\pi_1(\tilde X,\tilde x_0))\)</span> 在
+<span class="math inline">\(\pi_1(X,x_0)\)</span> 的<strong>指标
+(Index)</strong>. （指标就是在大群中陪集的个数）</p>
+<p>证明：</p>
+<p>考虑两个环路 <span class="math inline">\(g,h\)</span> 基本点为 <span
+class="math inline">\(x_0\)</span>，<span
+class="math inline">\(&lt;h&gt;\in H\)</span>.</p>
+<p>令 <span class="math inline">\(\tilde g\)</span> 和 <span
+class="math inline">\(\tilde h\)</span> 是 <span
+class="math inline">\(g,h\)</span> 的提升。由于 <span
+class="math inline">\(&lt;h&gt;\in H\)</span>，有 <span
+class="math inline">\(\tilde h\)</span> 是环路。我们有 <span
+class="math inline">\((\tilde h\cdot\tilde g)(1)=\tilde
+g(1)\)</span>。</p>
+<p>令 <span class="math inline">\(\varphi:\set{\text{陪集}
+H&lt;g&gt;\mid &lt;g&gt;\in \pi_1(X,x_0)}\to p^{-1}(x_0)\)</span>，其中
+<span class="math inline">\(\varphi(H&lt;g&gt;):=\tilde g(1)\)</span>.
+这是良好定义的。</p>
+<p>由于 <span class="math inline">\(\tilde X\)</span>
+是道路连通的，<span class="math inline">\(\forall x\in
+p^{-1}(x_0)\)</span>，<span class="math inline">\(\exists \tilde g:I\to
+\tilde X\)</span>，有 <span class="math inline">\(\tilde g(0)=\tilde
+x_0,\tilde g(1)=x\)</span>. 令 <span class="math inline">\(g=p\circ
+\tilde g\)</span>，有 <span
+class="math inline">\(\varphi(H&lt;g&gt;)=\tilde g(1)=x\)</span>，因此
+<span class="math inline">\(\varphi\)</span> 是满射。</p>
+<p>如果 <span
+class="math inline">\(\varphi(H&lt;g_1&gt;)=\varphi(H&lt;g_2&gt;)\)</span>，则
+<span class="math inline">\(\tilde g_1(1)=\tilde g_2(1)\)</span>，有
+<span class="math inline">\(\tilde g_1\cdot\tilde g_2^{-1}\)</span>
+是一个 <span class="math inline">\(\tilde x_0\)</span> 处的环路，且它是
+<span class="math inline">\(g_1g_2^{-1}\)</span> 的提升。这意味着 <span
+class="math inline">\(&lt;g_1&gt;&lt;g_2&gt;^{-1}\in H\)</span>，因此
+<span class="math inline">\(H&lt;g_1&gt;=H&lt;g_2&gt;\)</span>. 因此
+<span class="math inline">\(\varphi\)</span> 是单射。</p></li>
+<li><h4 id="提升判别法-lifting-criterion">提升判别法 (Lifting
+Criterion)</h4>
+<p>给定一个覆叠映射 <span class="math inline">\(p:(\tilde X,\tilde
+x_0)\to (X,x_0)\)</span> （记号表示 <span class="math inline">\(p(\tilde
+x_0)=x_0\)</span>），令 <span class="math inline">\(Y\)</span>
+是一个<strong>道路连通</strong>且<strong>局部道路连通</strong>的空间。令
+<span class="math inline">\(f:(Y,y_0)\to (X,x_0)\)</span> 连续映射，则
+<span class="math inline">\(\exists f\)</span> 的提升 <span
+class="math inline">\(\tilde f\)</span> 当且仅当 <span
+class="math inline">\(f_\star(\pi_1(Y,y_0))\subset p_\star(\pi_1(\tilde
+X,\tilde x_0))\)</span>.</p>
+<figure>
+<img src="\17-1.png" alt="image-20231123105442096" />
+<figcaption aria-hidden="true">image-20231123105442096</figcaption>
+</figure>
+<p>形式上看，这是图上的交换图表。</p>
+<ul>
+<li><h5 id="局部道路连通-locally-path-connected">局部道路连通 (Locally
+Path-Connected)</h5>
+称一个集合 <span class="math inline">\(Y\)</span> 是局部道路连通，若
+<span class="math inline">\(\forall y\in Y\)</span> 以及 <span
+class="math inline">\(\forall y\)</span> 的邻域 <span
+class="math inline">\(U\)</span>，$$道路连通邻域 <span
+class="math inline">\(V\)</span> 使得 <span class="math inline">\(y\in
+V,V\subseteq U\)</span>.</li>
+</ul>
+<p>证明：</p>
+<p><span class="math inline">\((\Rightarrow):\)</span> 这是平凡的。若
+<span class="math inline">\(\exists \tilde f\)</span>，则 <span
+class="math inline">\(f=p\circ\tilde f\)</span>，这就是说 <span
+class="math inline">\(f_\star=p_\star\circ \tilde f_\star\)</span>，于是
+<span class="math inline">\(f_\star(\pi_1(Y,y_0))\subseteq
+p_\star(\pi_1(\tilde X,\tilde x_0))\)</span>.</p>
+<p><span class="math inline">\((\Leftarrow):\)</span> <span
+class="math inline">\(\forall y\in Y\)</span>，选择一条道路 <span
+class="math inline">\(\gamma:I\to Y\)</span> 有 <span
+class="math inline">\(\gamma(0)=y_0\)</span>，<span
+class="math inline">\(\gamma(1)=y\)</span>。</p>
+<p>此时有 <span class="math inline">\(f\circ
+\gamma(0)=x_0\)</span>，于是 <span class="math inline">\(\exists!
+\tilde{f\circ \gamma}\)</span> 使得 <span
+class="math inline">\(\tilde{f\circ\gamma}(0)=\tilde
+x_0\)</span>，我们定义 <span class="math inline">\(\tilde
+f(y):=\tilde{f\circ\gamma}(1)\)</span>.</p>
+<p>我们现在验证 <span class="math inline">\(\tilde f\)</span>
+定义的合理性：</p>
+<p>考察 <span class="math inline">\(\gamma&#39;\)</span> 是另一条连接了
+<span class="math inline">\(y_0\)</span> 与 <span
+class="math inline">\(y\)</span> 的道路，我们有 <span
+class="math inline">\(h:=(f\circ
+\gamma&#39;)\cdot(f\circ\gamma)^{-1}\)</span> 是一条在 <span
+class="math inline">\(x_0\)</span> 处的环路，并且 <span
+class="math inline">\(&lt;h&gt;\in f_\star(\pi_1(Y,y_0))\subset
+p_\star(\pi_1(\tilde X,\tilde x_0))\)</span>.</p>
+<p>因此 <span class="math inline">\(h\)</span> 的提升 <span
+class="math inline">\(\tilde h\)</span> 有 <span
+class="math inline">\(\tilde h\)</span> 是一条 <span
+class="math inline">\(\tilde x_0\)</span> 处的环路. 根据道路提升引理，有
+<span class="math inline">\(\tilde
+h(s/2)=\tilde{f\circ\gamma&#39;}(s)\)</span>, <span
+class="math inline">\(\tilde
+h((s+1)/2)=\tilde{(f\circ\gamma)}^{-1}(s)\)</span>, <span
+class="math inline">\(\forall s\in I\)</span>.</p>
+<p>因此 <span class="math inline">\(h(1/2)=\tilde{f\circ
+\gamma&#39;}(1)=\tilde{f\circ\gamma}(1)\)</span>，因此 <span
+class="math inline">\(\tilde f\)</span> 是良定义的。</p>
+<p>令 <span class="math inline">\(U\)</span> 是一个 <span
+class="math inline">\(f(y)\)</span> 的邻域，令 <span
+class="math inline">\(\tilde U\)</span> 是 <span
+class="math inline">\(\tilde f(y)\)</span> 的邻域，使得 <span
+class="math inline">\(p|_{\tilde U}\)</span> 诱导了 <span
+class="math inline">\(\tilde U\)</span> 与 <span
+class="math inline">\(U\)</span> 的同胚。选取道路连通邻域 <span
+class="math inline">\(V\)</span> 是 <span
+class="math inline">\(y\)</span> 的邻域使得 <span
+class="math inline">\(V\subset f^{-1}(U)\)</span>.</p>
+<p><span class="math inline">\(\forall y&#39;\in V\)</span>，选择道路
+<span class="math inline">\(\beta\)</span> 连接 <span
+class="math inline">\(y\)</span> 与 <span
+class="math inline">\(y&#39;\)</span>，固定道路 <span
+class="math inline">\(\gamma\)</span> 从 <span
+class="math inline">\(y_0\)</span> 至 <span
+class="math inline">\(y\)</span>.</p>
+<p>我们复合道路，有 <span class="math inline">\((\tilde
+{f\circ\gamma})(\tilde {f\circ \beta})(1)=\tilde f(y&#39;)\)</span>，而
+<span class="math inline">\(\tilde{f\circ\beta}=(p|_{\tilde
+U})^{-1}\circ f\circ\beta\)</span>，于是 <span
+class="math inline">\(\tilde f(y&#39;)=(p|_{\tilde U})^{-1}\circ
+f(y&#39;)\)</span>，这是说 <span class="math inline">\(\tilde
+f|_V=(p|_{\tilde U})^{-1}\circ f\)</span>，于是 <span
+class="math inline">\(\tilde f\)</span> 是连续映射。</p>
+<figure>
+<img src="\17-2.png" alt="image-20231123111555519" />
+<figcaption aria-hidden="true">image-20231123111555519</figcaption>
+</figure>
+<figure>
+<img src="\17-3.png" alt="image-20231123111708525" />
+<figcaption aria-hidden="true">image-20231123111708525</figcaption>
+</figure></li>
+<li><h4 id="提升的唯一性">提升的唯一性</h4>
+<p>令 <span class="math inline">\(p:\tilde X\to X\)</span>
+是一个覆叠映射，令 <span class="math inline">\(f:Y\to X\)</span>
+连续映射，<span class="math inline">\(Y\)</span> 是连通的。令 <span
+class="math inline">\(\tilde f_1 \tilde f_2:Y\to\tilde X\)</span> 是两个
+<span class="math inline">\(f\)</span> 的提升且 <span
+class="math inline">\(\exists y_0\in Y\)</span>，有 <span
+class="math inline">\(\tilde f_1(y_0)=\tilde f_2(y_0)\)</span>，则 <span
+class="math inline">\(\tilde f_1=\tilde f_2\)</span>.</p>
+<p>证明：</p>
+<p>令 <span class="math inline">\(A=\set{y\in Y\mid \tilde f_1(y)=\tilde
+f_2(y)}\)</span>，令 <span class="math inline">\(B=\set{y\in Y\mid
+\tilde f_1(y)\neq \tilde f_2(y)}\)</span>.</p>
+<p>我们知道 <span class="math inline">\(Y=A\sqcup B\)</span> 且 <span
+class="math inline">\(A\neq \varnothing\)</span>.</p>
+<p><span class="math inline">\(\forall y\in A\)</span>，选取 <span
+class="math inline">\(U\)</span> 是一个 <span
+class="math inline">\(y\)</span> 的邻域，使得 <span
+class="math inline">\(p^{-1}(U)=\bigsqcup_{\beta} V_\beta\)</span> 且
+<span class="math inline">\(p|_{V_\beta}\)</span> 是 <span
+class="math inline">\(V_\beta\)</span> 与 <span
+class="math inline">\(U\)</span> 的同胚。</p>
+<p>根据 <span class="math inline">\(\tilde f_1(y)=\tilde f_2(y)\in
+V_{\beta_0}\)</span>，<span class="math inline">\(\exists y\)</span>
+的邻域 <span class="math inline">\(N\)</span> 使得 <span
+class="math inline">\(\tilde f_1(N)\subset V_{\beta_0}\)</span>，<span
+class="math inline">\(\tilde f_2(N)\subset V_{\beta_0}\)</span>. 由于
+<span class="math inline">\(p\circ \tilde f_1|_{N}=p\circ \tilde
+f_2|_N\)</span>，有 <span class="math inline">\(\tilde
+f_1|_N=p^{-1}\circ f|_N=\tilde f_2|_N\)</span>，因此 <span
+class="math inline">\(A\)</span> 是开集。</p>
+<p>对于 <span class="math inline">\(y\in B\)</span>，则 <span
+class="math inline">\(\tilde f_1(y)\in V_{\beta_1}\)</span>，<span
+class="math inline">\(\tilde f_2(y)\in V_{\beta_2}\)</span>，则 <span
+class="math inline">\(\exists y\)</span> 的邻域 <span
+class="math inline">\(N\)</span> 使得 <span class="math inline">\(\tilde
+f_1(N)\subset V_{\beta_1}\)</span>, <span class="math inline">\(\tilde
+f_2(N)\subset V_{\beta_2}\)</span>，于是 <span
+class="math inline">\(\tilde f_1|_N\neq \tilde f_2|_N\)</span>，于是
+<span class="math inline">\(B\)</span> 是开集。</p>
+<p>由于 <span class="math inline">\(Y\)</span> 是连通的，有 <span
+class="math inline">\(A=Y,B=\varnothing\)</span>.
+于是得出结论。</p></li>
 </ul>
 ]]></content>
       <categories>
