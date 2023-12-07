@@ -261,7 +261,7 @@ class="math inline">\(t\)</span>为超级源点汇点 <figure class="highlight c
   <entry>
     <title>拓扑学笔记</title>
     <url>/2023/09/21/%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/hjXnvswSff/</p>
+    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/34GGxvSfHb/</p>
 <p>分节次的笔记（清华云盘）：https://cloud.tsinghua.edu.cn/d/2c4efaca588a4326958d/</p>
 <h2 id="lecture-info">00. Lecture Info</h2>
 <h3 id="考核">1. 考核</h3>
@@ -7130,6 +7130,346 @@ class="math inline">\(\cdots\to\mathbb{Z}\xrightarrow{\sim}\mathbb{Z}\xrightarro
 \partial_{n+1}\)</span>，<span class="math inline">\(\forall n\geq
 1\)</span>，因此 <span
 class="math inline">\(H_n(\text{point})=0,n&gt;0\)</span>.</p></li>
+</ul>
+<h2 id="同调群">21. 同调群</h2>
+<h3 id="同调理论-homology-theorem-1">同调理论 (Homology Theorem)</h3>
+<ul>
+<li><h4 id="回忆奇异同调群-singular-homology">回忆：奇异同调群 (Singular
+Homology)</h4>
+<p>同调群 <span class="math inline">\(H_n = \text{ker} \partial_n /
+\text{Im} \partial_{n + 1}\)</span>，其中 <span
+class="math inline">\(\cdots \to C_{n + 1}(X) \xrightarrow{\partial_{n +
+1}} C_n(X) \xrightarrow{\partial_{n}} C_{n - 1}(X) \to
+\cdots\)</span></p>
+<p>有时候我们也将 <span class="math inline">\(\ker \partial_n\)</span>
+和 <span class="math inline">\(\text{Im} \partial_{n + 1}\)</span>
+分别记作 <span class="math inline">\(Z_n(x)\)</span> 和 <span
+class="math inline">\(B_n(x)\)</span></p>
+<p>对于单点的同调群，有 <span class="math inline">\(H_n(\text{point}) =
+\begin{cases} \mathbb{Z} &amp; n = 0 \\ 0 &amp; n &gt; 0
+\end{cases}\)</span></p></li>
+<li><h4 id="同调群的基本性质">同调群的基本性质</h4>
+<ol type="1">
+<li>令 <span class="math inline">\(\set{X_{\alpha}}_{\alpha \in
+I}\)</span> 是 <span class="math inline">\(X\)</span> 的道路连通分支，则
+<span class="math inline">\(X\)</span> 的同调群 <span
+class="math inline">\(H_n(X) = \bigoplus_{\alpha \in I}
+H_n(X_\alpha)\)</span></li>
+<li>如果 <span class="math inline">\(X \neq \varnothing\)</span>
+道路连通，则 <span class="math inline">\(H_0(X) =
+\mathbb{Z}\)</span>。进一步的，对一般的 <span
+class="math inline">\(X\)</span>，有 <span class="math inline">\(H_0(X)
+= \bigoplus_{\alpha \in I} \mathbb{Z}\)</span></li>
+</ol>
+<p>证明：</p>
+<ol type="1">
+<li></li>
+</ol>
+<p>令 <span class="math inline">\(\sigma: \Delta^n \to
+X\)</span>，则存在某个 <span class="math inline">\(\alpha \in I\)</span>
+使得 <span class="math inline">\(\sigma(\Delta^n) \subseteq
+X_\alpha\)</span>.</p>
+<p>那么就有 <span class="math inline">\(C_n(X) = \bigoplus_{\alpha \in
+I} C_n(X_\alpha)\)</span>.</p>
+<p>更进一步，对于取边界映射有 <span
+class="math inline">\(\partial_n(C_n(X_\alpha)) \subseteq C_{n -
+1}(X_\alpha)\)</span>.</p>
+<p>则 <span class="math inline">\(\ker \partial_n = \bigoplus_{\alpha
+\in I} \ker (\partial_n|_{C_{n}(X_\alpha)})\)</span>，<span
+class="math inline">\(\text{Im} \partial_{n + 1} = \bigoplus_{\alpha \in
+I} \text{Im} (\partial_{n + 1}|_{C_{n + 1}(X_\alpha)})\)</span></p>
+<p>于是 <span class="math inline">\(H_n(X) = \bigoplus_{\alpha \in I}
+H_n(X_\alpha)\)</span>.</p>
+<ol start="2" type="1">
+<li></li>
+</ol>
+<p>可以发现 <span class="math inline">\(H_0(X) = C_0(X) / \text{Im}
+\partial_1\)</span>.</p>
+<p>定义映射 <span class="math inline">\(\varepsilon: C_0(X) \to
+\mathbb{Z}\)</span>，其中 <span class="math inline">\(\varepsilon(\sum_i
+n_i \sigma_i) = \sum_i n_i\)</span>，故 <span
+class="math inline">\(\varepsilon\)</span> 是一个满射。</p>
+<p>只要证明 <span class="math inline">\(\ker \varepsilon = \text{Im}
+\partial_1\)</span>.</p>
+<p>任取 <span class="math inline">\(\sigma: \Delta^1 \to X\)</span>，有
+<span class="math inline">\(\varepsilon(\partial_1(\sigma)) =
+\varepsilon(\sigma|_{[v_1]} - \sigma|_{[v_0]}) = 1 - 1 = 0\)</span>，故
+<span class="math inline">\(\text{Im} \partial_1 \subset \ker
+\varepsilon\)</span>.</p>
+<p>反过来，如果存在 <span class="math inline">\(\varepsilon(\sum_i n_i
+\sigma_i) = 0\)</span>，根据 <span
+class="math inline">\(\varepsilon\)</span> 定义这也就意味着 <span
+class="math inline">\(\sum_i n_0 = 0\)</span>，<span
+class="math inline">\(\sigma_i(\Delta^0)\)</span> 是 <span
+class="math inline">\(X\)</span> 中的一个点.</p>
+<p>固定一个点 <span class="math inline">\(x_0 \in X\)</span>，令 <span
+class="math inline">\(\gamma_i: \Delta^1 \to X\)</span>（因为 <span
+class="math inline">\(\Delta^1\)</span> 就是一个线段，可以理解为 <span
+class="math inline">\(\Delta^1 = I = [0, 1]\)</span>，所以 <span
+class="math inline">\(\gamma_i\)</span> 本质上就是一个道路），且有 <span
+class="math inline">\(\gamma_i(0) = x_0\)</span>，<span
+class="math inline">\(\gamma_i(1) = \sigma(\Delta^0)\)</span> （<span
+class="math inline">\(X\)</span> 道路连通）。</p>
+<p>令 <span class="math inline">\(\sigma_0(\Delta^0) = x_0\)</span>，则
+<span class="math inline">\(\partial_1 \gamma_i = \sigma_i -
+\sigma_0\)</span>，进一步可以推出 <span
+class="math inline">\(\partial_i(\sum_i n_i \gamma_i) = \sum_i n_i
+\sigma_i - \sum_i n_i \sigma_0 = \sum_i n_i \sigma_i - (\sum_i n_i)
+\sigma_0 = \sum_i n_i \sigma_i\)</span> （<span
+class="math inline">\(\sum_i n_i = 0\)</span>）</p>
+<p>所以 <span class="math inline">\(\sum_i n_i \sigma_i \in \text{Im}
+\partial_1\)</span>，故 <span class="math inline">\(\ker \varepsilon
+\subset \text{Im} \partial_1\)</span>。</p>
+<p>因此 <span class="math inline">\(\ker \varepsilon = \text{Im}
+\partial_1\)</span>，进一步有 <span class="math inline">\(C_0(X) / \ker
+\varepsilon = \mathbb{Z} = C_0(x) / \text{Im} \partial_1 =
+H_0(X)\)</span>.</p></li>
+<li><h4 id="定义约化同调群-reduced-homology">定义：约化同调群 (Reduced
+Homology)</h4>
+<p>考虑链复形 <span class="math inline">\(\cdots \to C_2(X)
+\xrightarrow{\partial_2} C_1(X) \xrightarrow{\partial_1} C_0(X)
+\xrightarrow{\varepsilon} \mathbb{Z} \to 0\)</span>，我们已经说明过
+<span class="math inline">\(\varepsilon\)</span> 为满射。</p>
+<p>令 <span class="math inline">\(\tilde H_n\)</span>
+是这个链复形的同调，称为 <span class="math inline">\(X\)</span>
+的<strong>约化同调群 (Reduced Homology)</strong>。</p>
+<p>其中 <span class="math inline">\(H_n(X) = \begin{cases} \tilde H_n(X)
+&amp; n \geqslant 1 \\ \tilde H_n(X) \oplus \mathbb{Z} &amp; n = 0
+\end{cases}\)</span></p></li>
+<li><h4
+id="连续映射诱导同调群上的群同态">连续映射诱导同调群上的群同态</h4>
+<p>对连续映射 <span class="math inline">\(f: X \to
+Y\)</span>，我们想要定义一个群同态 <span
+class="math inline">\(f_{\star}: H_n(X) \to H_n(Y)\)</span>.</p>
+<p>对于 <span class="math inline">\(X\)</span> 中的一个 <span
+class="math inline">\(n\)</span>-单形 <span
+class="math inline">\(\sigma: \Delta^n \to X\)</span>，定义 <span
+class="math inline">\(f_\#(\sigma): \Delta^n \to Y\)</span> 是 <span
+class="math inline">\(Y\)</span> 中的一个 <span
+class="math inline">\(n\)</span>-单形，其中 <span
+class="math inline">\(f_\#:= f \circ \sigma: \Delta^n \to
+Y\)</span>.</p>
+<p>则我们可以线性延拓 <span class="math inline">\(f_\#\)</span> 得到
+<span class="math inline">\(f_\#(\sum_i n_i \sigma_i) := \sum_i n_i
+f_\#(\sigma_i)\)</span>.</p>
+<p>那么我们就得到了一个同态 <span class="math inline">\(f_\#: C_n(X) \to
+C_n(Y)\)</span>.</p>
+<p>目前我们得到了一个自由 Abel
+群上的群同态，我们接下来将说明这个群同态同时也是同调群上的：</p>
+<ul>
+<li><h5 id="引理f_-与取边界可交换">引理：<span
+class="math inline">\(f_\#\)</span> 与取边界可交换</h5>
+<p><span class="math inline">\(f_\#\partial = \partial f_\#\)</span></p>
+<p>这就是说，对 <span class="math inline">\(X\)</span>
+中的单形取边界，再映射到 <span class="math inline">\(Y\)</span>，和先从
+<span class="math inline">\(X\)</span> 映射到 <span
+class="math inline">\(Y\)</span>
+再取边界，结果相同。换句话就是，取边界和映射是可交换的，如下面的交换图表：</p>
+<figure>
+<img src="\21-1.png" alt="image-20231207102805648" />
+<figcaption aria-hidden="true">image-20231207102805648</figcaption>
+</figure>
+<p>图表中的每一个正方形都是可以交换的。</p>
+<p>证明：</p>
+<p><span class="math inline">\(\begin{aligned} f_\#\partial (\sigma)
+&amp;= f_\#(\sum_i (-1)^i \sigma|_{[v_0, \cdots, \hat v_i, \cdots,
+v_n]}) \\ &amp;= \sum_i (-1)^i f_\#(\sigma|_{[v_0, \cdots, \hat v_i,
+\cdots, v_n]}) \\ &amp;= \sum_i (-1)^i f\circ \sigma|_{[v_0, \cdots,
+\hat v_i, \cdots, v_n]} \\ &amp;= \partial (f_\#(\sigma))
+\end{aligned}\)</span></p></li>
+</ul>
+<p>应用引理，我们接下来构造 <span
+class="math inline">\(f_\star\)</span>.</p>
+<p>令 <span class="math inline">\(\alpha \in Z_n(X) = \ker
+\partial_n\)</span>，则 <span class="math inline">\(\partial
+(f_\#(\alpha)) = f_\#(\partial(\alpha)) = 0\)</span>，这说明 <span
+class="math inline">\(f_\#(\text{cycles}) = \text{cycles}\)</span></p>
+<p>同时，由于 <span class="math inline">\(f_\#(\partial \beta) =
+\partial(f_\#(\beta))\)</span>，这说明 <span
+class="math inline">\(f_\#(\text{boundaries}) =
+\text{boundaries}\)</span></p>
+<p>因此，因为 <span class="math inline">\(H_n(X) = Z_n(X) / B_n(X),
+H_n(Y) = Z_n(Y) / B_n(Y)\)</span>，所以 <span
+class="math inline">\(f_\#\)</span> 诱导了一个商群的同态 <span
+class="math inline">\(f_\star: H_n(X) \to H_n(Y)\)</span>。</p>
+<p>令 <span class="math inline">\(\alpha \in Z_n(X)\)</span>，令 <span
+class="math inline">\([\alpha]\)</span> 是 <span
+class="math inline">\(\alpha\)</span> 在 <span
+class="math inline">\(H_n(X) = Z_n(X) / B_n(X)\)</span>
+中的像（商群中的等价类）</p>
+<p>则根据之前的构造，我们可以得到 <span
+class="math inline">\(f_\star([\alpha]) = [f_\# (\alpha)] \in
+H_n(Y)\)</span>（因为 <span class="math inline">\(f_\# (\alpha) \in
+Z_n(Y)\)</span>）</p>
+<ul>
+<li><h5 id="注链映射代数层面上-f_star-的推广">注：链映射——代数层面上
+<span class="math inline">\(f_\star\)</span> 的推广</h5>
+<p>令 <span class="math inline">\(C_\cdot = (\cdots \to C_{n + 1}
+\xrightarrow{\partial_{n + 1}} C_n \xrightarrow{\partial_{n}} C_{n - 1}
+\to \cdots)\)</span>，<span class="math inline">\(D_\cdot = \cdots \to
+D_{n + 1} \xrightarrow{\partial_{n + 1}} D_n \xrightarrow{\partial_{n}}
+D_{n - 1} \to \cdots\)</span> 是两个链复形。</p>
+<p>定义<strong>链映射(chain map)</strong> <span class="math inline">\(f:
+C_\cdot \to D_\cdot\)</span> 包含这些群同态：<span
+class="math inline">\(f_n: C_n \to D_n\)</span> 满足 <span
+class="math inline">\(\partial f_n = f_{n - 1} \partial\)</span>.</p>
+<p>也就是如下的交换图表：</p>
+<figure>
+<img src="\21-2.png" alt="image-20231207104525280" />
+<figcaption aria-hidden="true">image-20231207104525280</figcaption>
+</figure>
+<p>形式上讲，链映射就是一条链到另一条链的映射，并且满足上面图表是可以交换的。</p>
+<p>链映射 <span class="math inline">\(f\)</span> 可以诱导一个群同态
+<span class="math inline">\(f_\star = H_n(C_\cdot) \to
+H_n(D_\cdot)\)</span>，<span class="math inline">\(\forall
+n\)</span>.</p></li>
+</ul></li>
+<li><h4
+id="总结连续映射诱导同调群同态的性质">总结：连续映射诱导同调群同态的性质</h4>
+<ol type="1">
+<li><p>如果 <span class="math inline">\(X \xrightarrow{g} Y
+\xrightarrow{f} Z\)</span>，则 <span class="math inline">\((f\circ
+g)_\star = f_\star \circ g_{\star}\)</span>.</p></li>
+<li><p>对 <span class="math inline">\(X \xrightarrow{id_X}
+X\)</span>，有 <span class="math inline">\((id_X)_{\star} =
+id_{H_n(X)}\)</span>，<span class="math inline">\(\forall
+n\)</span>.</p></li>
+</ol>
+<p>证明：</p>
+<ol type="1">
+<li><p>带入定义，有 <span class="math inline">\((f \circ g)_\star = [(f
+\circ g)_\#(\alpha)] = [f \circ g \circ \alpha] = [f_\# g_\# (\alpha)] =
+f_\star g_\star ([\alpha])\)</span>.</p></li>
+<li><p><span class="math inline">\((id_X)_\star([\alpha]) = [(id_X)_\#
+(\alpha)] = [id_X \circ \alpha] = [\alpha]\)</span>.</p></li>
+</ol>
+<ul>
+<li><h5 id="注拓扑空间到-abel-群范畴的函子">注：拓扑空间到 Abel
+群范畴的函子</h5>
+<p>我们实际上构造了一个函子 <span
+class="math inline">\(H_n\)</span>，它从拓扑空间的范畴映射到了 Abel
+群的范畴：</p>
+<p><span class="math inline">\(X\)</span> 拓扑空间 <span
+class="math inline">\(\longmapsto\)</span> <span
+class="math inline">\(H_n(X)\)</span></p>
+<p>连续映射 <span class="math inline">\(f: X \to Y\)</span> <span
+class="math inline">\(\longmapsto\)</span> 连续映射 <span
+class="math inline">\(f_\star: H_n(X) \to H_n(Y)\)</span></p>
+<p>使得 <span class="math inline">\((fg)_{\star} = f_\star
+g_\star\)</span> 且 <span class="math inline">\((id_{X})_\star =
+id_{H_n(X)}\)</span>.</p></li>
+</ul></li>
+<li><h4
+id="定理同伦的映射对应相同的同调群同态">定理：同伦的映射对应相同的同调群同态</h4>
+<p>对于两个同伦映射 <span class="math inline">\(f, g: X \to
+Y\)</span>，有 <span class="math inline">\(f_\star = g_\star: H_n(X) \to
+H_n(Y)\)</span>。</p>
+<p>证明：</p>
+<p>构造 <span class="math inline">\(F: X \times I \to Y\)</span>，使得
+<span class="math inline">\(f \underset{F}\simeq g\)</span></p>
+<p>此时我们想要的是高一维的 <span class="math inline">\(\Delta^n \times
+I\)</span> 取边界，但是 <span class="math inline">\(\Delta^n \times
+I\)</span> 本身不是单形，因此，我们首先想要将 <span
+class="math inline">\(\Delta^n \times I\)</span> 划分为数个 <span
+class="math inline">\((n+1)\)</span> -单形。</p>
+<p>我们先来看一个二维情形的例子，下图中橙色三角面与蓝色三角面将三棱柱剖分成了若干个三棱锥，即三维单形：</p>
+<figure>
+<img src="\21-3.png" alt="image-20231207110015286" />
+<figcaption aria-hidden="true">image-20231207110015286</figcaption>
+</figure>
+<p>一般性地，令 <span class="math inline">\(\Delta^n \times \set{0} =
+[v_0, \cdots, v_n]\)</span>，<span class="math inline">\(\Delta^n \times
+\set{1} = [w_0, \cdots, w_n]\)</span>（图中棱柱的上下底面），使得 <span
+class="math inline">\(v_i\)</span> 和 <span
+class="math inline">\(w_i\)</span> 落在同一个投影映射 <span
+class="math inline">\(\Delta^n \times I \to \Delta^n\)</span>
+的像中。</p>
+<p>考虑一个 <span class="math inline">\(n\)</span>-单形 <span
+class="math inline">\([v_0, \cdots, v_i, w_{i + 1} \cdots
+w_n]\)</span>，它是线性函数 <span class="math inline">\(\varphi_i:
+\Delta^n \to I; \varphi_i(t_0, \cdots, t_n) = t_{i+1} + \cdots +
+t_n\)</span>，其中 <span class="math inline">\(t_0, \cdots, t_n\)</span>
+是重心坐标（<span class="math inline">\(\sum_{i = 0}^n t_i =
+1\)</span>） 的图像。</p>
+<p>我们可以发现 <span class="math inline">\(0 = \varphi_n \leqslant
+\varphi_{n - 1} \leqslant \varphi_{n - 2} \leqslant \cdots \leqslant
+\varphi_0 \leqslant \varphi_{-1} = 1\)</span>.</p>
+<p>考虑 <span class="math inline">\(\varphi_i\)</span> 和 <span
+class="math inline">\(\varphi_{i - 1}\)</span>
+之间的区域，这个区域就是一个 <span
+class="math inline">\((n+1)\)</span>-单形 <span
+class="math inline">\([v_0, \cdots, v_i, w_i, \cdots, w_n]\)</span>.</p>
+<p>通过这些 <span class="math inline">\(\varphi_i\)</span>，我们就把
+<span class="math inline">\(\Delta^n \times I\)</span> 切分成了数个
+<span class="math inline">\((n+1)\)</span>-单形 <span
+class="math inline">\([v_0, \cdots, v_i, w_i, \cdots, w_n]\)</span>
+（其中 <span class="math inline">\(0 \leqslant i \leqslant
+n\)</span>）的并。</p>
+<ul>
+<li><h5 id="定义棱柱映射-prism-map">定义：棱柱映射 (Prism Map)</h5>
+<p>定义<strong>棱柱映射 (Prism Map)</strong> <span
+class="math inline">\(P: C_n(X) \to C_{n + 1}(Y)\)</span>，<span
+class="math inline">\(P(\sigma) := \sum_i (-1)^i F \circ (\sigma \times
+id_I)|_{[v_0, \cdots, v_i, w_i, \cdots, w_n]}\)</span>.</p>
+<p>其中 <span class="math inline">\(\sigma: \Delta^n \to X\)</span></p>
+<p>事实上，考察 <span class="math inline">\(\Delta^n \times I
+\xrightarrow{\sigma\ \times id_I} X \times I \xrightarrow{F} Y\)</span>
+，也就是说某种意义上 <span class="math inline">\(P\)</span> 给出了一个
+<span class="math inline">\(\Delta^n(X)\to\Delta^{n+1}(X\times I)\to
+Y\)</span> 的关系。</p></li>
+<li><h5 id="棱柱映射的性质">棱柱映射的性质</h5>
+<p><span class="math inline">\(\partial P = g_\# - f_\# - P
+\partial\)</span> <span class="math inline">\((\star)\)</span></p>
+<p>下图表述了这种关系：</p>
+<figure>
+<img src="\21-4.png" alt="image-20231207111450268" />
+<figcaption aria-hidden="true">image-20231207111450268</figcaption>
+</figure>
+<p>其中 <span class="math inline">\(\partial P\)</span>
+是棱柱边界，<span class="math inline">\(g_\#\)</span>
+是上底面的边界，<span class="math inline">\(f_\#\)</span>
+是下底面的边界，<span class="math inline">\(P\partial\)</span>
+是棱柱侧面的边界。</p>
+<p>证明：</p>
+<p><span class="math inline">\(\begin{aligned}\partial P(\sigma) =
+&amp;\sum_{j \leqslant i} (-1)^i (-1)^j F \circ (\sigma \times
+id_I)|_{[v_0, \cdots, \hat v_j \cdots, v_i, w_i, \cdots, w_n]} +\\
+&amp;\sum_{j \geqslant i} (-1)^{i} (-1)^{j + 1} F \circ (\sigma \times
+id_I)|_{[v_0, \cdots, v_i, w_i, \cdots, \hat w_j, \cdots,
+w_n]}\end{aligned}\)</span>.</p>
+<p>可以发现第一个求和中的 <span class="math inline">\(i = j = k\)</span>
+项会和第二个求和中的 <span class="math inline">\(i = j = k - 1\)</span>
+消掉。</p>
+<p>剩余的 <span class="math inline">\(i = j\)</span> 的项就是 <span
+class="math inline">\(F \circ (\sigma \times id_I)|_{[\hat v_0, w_0,
+\cdots, w_n]} - F \circ (\sigma \times id_I)|_{[v_0, \cdots, v_n, \hat
+w_n]}\)</span>，其中第一项是上底面的边界，第二项是下底面的边界。</p>
+<p>由于</p>
+<p><span class="math inline">\(\begin{aligned}P \partial(\sigma) =
+&amp;\sum_{i &lt; j} (-1)^i (-1)^j F \circ (\sigma \times id_I)|_{[v_0,
+\cdots, \hat v_j \cdots, v_i, w_i, \cdots, w_n]} +\\&amp;\sum_{j &gt; i}
+(-1)^{i} (-1)^{j + 1} F \circ (\sigma \times id_I)|_{[v_0, \cdots, v_i,
+w_i, \cdots, \hat w_j, \cdots, w_n]}\end{aligned}\)</span></p>
+<p>，于是所有的 <span class="math inline">\(i \neq j\)</span>
+的项正好就等于 <span class="math inline">\(-P
+\partial(\sigma)\)</span>.</p>
+<p>这证明了式子 <span class="math inline">\((\star)\)</span>.</p></li>
+</ul>
+<p>令 <span class="math inline">\(\alpha \in Z_n(X)\)</span>，由 <span
+class="math inline">\((\star)\)</span> 可以得到 <span
+class="math inline">\(g_\#(\alpha) - f_\#(\alpha) = \partial P(\alpha) +
+P \partial(\alpha) = \partial P(\alpha)\)</span>，它是一个边界。</p>
+<p>故 <span class="math inline">\(g_\#(\alpha)\)</span> 和 <span
+class="math inline">\(f_\#(\alpha)\)</span> 是同调的。</p>
+<p>进一步的，于是有 <span class="math inline">\(f_\star([\alpha]) =
+[f_\#(\alpha)] = [g_\#(\alpha)] = g_\star([\alpha])\)</span>.</p></li>
+<li><h4
+id="推论同伦等价诱导同调群同构">推论：同伦等价诱导同调群同构</h4>
+<p>如果 <span class="math inline">\(f: X \to Y\)</span>
+是一个同伦等价，那么 <span class="math inline">\(f_\star: H_n(X) \to
+H_n(Y)\)</span> 是一个同构。</p>
+<p>也就是说，同伦等价的区间有同构的同调群。</p>
+<p>我们将在下节课证明它。</p></li>
 </ul>
 ]]></content>
       <categories>
