@@ -261,7 +261,7 @@ class="math inline">\(t\)</span>为超级源点汇点 <figure class="highlight c
   <entry>
     <title>拓扑学笔记</title>
     <url>/2023/09/21/%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/34GGxvSfHb/</p>
+    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/3hSwq8GbdS/</p>
 <p>分节次的笔记（清华云盘）：https://cloud.tsinghua.edu.cn/d/2c4efaca588a4326958d/</p>
 <h2 id="lecture-info">00. Lecture Info</h2>
 <h3 id="考核">1. 考核</h3>
@@ -5202,7 +5202,7 @@ class="math inline">\(\phi\)</span> 是满射</h5>
 考虑区间 <span class="math inline">\([0,1]\)</span> 有一个开覆盖 <span
 class="math inline">\(\bigcup_\alpha f^{-1}(A_\alpha)\)</span>.</p>
 <p>由于 <span class="math inline">\([0,1]\)</span> 是紧的度量空间，根据
-Lebesgue 引理，$$ 分划 <span
+Lebesgue 引理，<span class="math inline">\(\exists\)</span> 分划 <span
 class="math inline">\(0=s_0&lt;s_1&lt;\cdots&lt;s_n=1\)</span>，使得对某一个
 <span class="math inline">\(\alpha\)</span> 有 <span
 class="math inline">\([s_i,s_{i+1}]\subseteq f^{-1}(A_\alpha), \forall
@@ -5986,7 +5986,8 @@ Path-Connected)</h5>
 称一个集合 <span class="math inline">\(Y\)</span> 是局部道路连通，若
 <span class="math inline">\(\forall y\in Y\)</span> 以及 <span
 class="math inline">\(\forall y\)</span> 的邻域 <span
-class="math inline">\(U\)</span>，$$道路连通邻域 <span
+class="math inline">\(U\)</span>，<span
+class="math inline">\(\exists\)</span> 道路连通邻域 <span
 class="math inline">\(V\)</span> 使得 <span class="math inline">\(y\in
 V,V\subseteq U\)</span>.</li>
 </ul>
@@ -6205,7 +6206,8 @@ class="math inline">\(i_\star(&lt;\gamma&gt;)=e\)</span>，因此 <span
 class="math inline">\(X\)</span> 是半局部单连通。</p></li>
 <li><h4 id="主定理万有覆叠空间的构造">主定理：万有覆叠空间的构造</h4>
 <p>设 <span class="math inline">\(X\)</span>
-是道路连通、局部道路连通、半局部单连通，则 $$ 万有覆叠空间 <span
+是道路连通、局部道路连通、半局部单连通，则 <span
+class="math inline">\(\exists\)</span> 万有覆叠空间 <span
 class="math inline">\(\tilde X\)</span>.</p>
 <p>证明：</p>
 <p>我们先给出整体的构造思路：</p>
@@ -6381,11 +6383,11 @@ id="定理任意子群覆叠空间的构造">定理：任意子群覆叠空间�
 <p>令 <span class="math inline">\(X\)</span>
 是道路连通，局部道路连通，半局部单连通，则 <span
 class="math inline">\(\forall\)</span> 子群 <span
-class="math inline">\(H\subset \pi_1(X,x_0)\)</span>，$$
-覆叠空间及覆叠映射 <span class="math inline">\(p:X_H\to X\)</span>，使得
-<span class="math inline">\(p_\star(\pi_1(X_H,\tilde
-x_0))=H\)</span>，其中 <span class="math inline">\(\tilde x_0\in
-p^{-1}(x_0)\)</span>.</p>
+class="math inline">\(H\subset \pi_1(X,x_0)\)</span>，<span
+class="math inline">\(\exists\)</span> 覆叠空间及覆叠映射 <span
+class="math inline">\(p:X_H\to X\)</span>，使得 <span
+class="math inline">\(p_\star(\pi_1(X_H,\tilde x_0))=H\)</span>，其中
+<span class="math inline">\(\tilde x_0\in p^{-1}(x_0)\)</span>.</p>
 <p>证明：</p>
 <p>令 <span class="math inline">\(\tilde X\)</span> 是 <span
 class="math inline">\(X\)</span>
@@ -6460,7 +6462,8 @@ id="定义覆叠映射空间的同构-isomorphism-of-covering-mapsspaces">定义
 (Isomorphism of Covering Maps/Spaces)</h4>
 <p>令 <span class="math inline">\(p_1:\tilde X_1\to X\)</span>，<span
 class="math inline">\(p_2:\tilde X_2\to X\)</span> 是两个覆叠映射，称
-<span class="math inline">\(p_1,p_2\)</span> 是同构的，若 $$ 同胚 <span
+<span class="math inline">\(p_1,p_2\)</span> 是同构的，若 <span
+class="math inline">\(\exists\)</span> 同胚 <span
 class="math inline">\(f:\tilde X_1\to\tilde X_2\)</span>，使得 <span
 class="math inline">\(p_1=p_2\circ f\)</span>.</p>
 <p>这就是在说下面的交换图表：</p>
@@ -6478,7 +6481,8 @@ class="math inline">\(p_1=p_2\circ f\)</span>.</p>
 <li><h4 id="定义覆叠空间的同构">定义：覆叠空间的同构</h4>
 <p>令 <span class="math inline">\(p_1:\tilde X_1\to X\)</span>，<span
 class="math inline">\(p_2:\tilde X_2\to X\)</span> 是两个覆叠映射，称
-<span class="math inline">\(p_1,p_2\)</span> 是同构的，若 $$ 同胚 <span
+<span class="math inline">\(p_1,p_2\)</span> 是同构的，若 <span
+class="math inline">\(\exists\)</span> 同胚 <span
 class="math inline">\(f:\tilde X_1\to\tilde X_2\)</span>，使得 <span
 class="math inline">\(p_1=p_2\circ f\)</span>.</p></li>
 <li><h4 id="唯一性定理">唯一性定理</h4>
@@ -7470,6 +7474,339 @@ id="推论同伦等价诱导同调群同构">推论：同伦等价诱导同调�
 H_n(Y)\)</span> 是一个同构。</p>
 <p>也就是说，同伦等价的区间有同构的同调群。</p>
 <p>我们将在下节课证明它。</p></li>
+</ul>
+<h2 id="正合-取边界映射">22. 正合 取边界映射</h2>
+<h3 id="同调群-1">同调群</h3>
+<ul>
+<li><h4
+id="回忆同伦等价诱导同调群同构">回忆：同伦等价诱导同调群同构</h4>
+<p>对于两个同伦映射 <span class="math inline">\(f, g: X \to
+Y\)</span>，有 <span class="math inline">\(f_\star = g_\star: H_n(X) \to
+H_n(Y)\)</span>。</p>
+<p>推论：如果 <span class="math inline">\(f: X \to Y\)</span>
+是一个同伦等价，那么 <span class="math inline">\(f_\star: H_n(X) \to
+H_n(Y)\)</span> 是一个同构。</p>
+<p>证明：</p>
+<p>令 <span class="math inline">\(g:Y\to X\)</span> 是 <span
+class="math inline">\(f\)</span> 的同伦逆，即 <span
+class="math inline">\(g\circ f\simeq id_X,f\circ g \simeq
+id_Y\)</span>.</p>
+<p>考虑 <span class="math inline">\(f_\star\circ
+g_\star\)</span>，它等于 <span class="math inline">\((f\circ
+g)_\star=(id_Y)_\star=id_{H_n(Y)}\)</span>.</p>
+<p>同理 <span class="math inline">\(g_\star\circ
+f_\star=id_{H_n(x)}\)</span>. 因此 <span
+class="math inline">\(f_\star\)</span> 是一个同构（<span
+class="math inline">\(f_\star\)</span> 与 <span
+class="math inline">\(g_\star\)</span> 是互逆的两个同构）。</p>
+<ul>
+<li><h5
+id="注将主定理的证明推广到代数层面">注：将主定理的证明推广到代数层面</h5>
+<p>考虑两个链复形 <span class="math inline">\(C_\cdot=(\cdots\to
+C_{n+1}\xrightarrow{\partial}
+C_n\xrightarrow{\partial}C_{n-1}\to\cdots)\)</span></p>
+<p>与 <span class="math inline">\(D_\cdot=(\cdots\to
+D_{n+1}\xrightarrow{\partial} D_n\xrightarrow{\partial}
+D_{n-1}\to\cdots)\)</span></p>
+<p>考虑两个链映射 <span class="math inline">\(f_\#\)</span> 与 <span
+class="math inline">\(g_\# :C_\cdot\to D_\cdot\)</span>（<span
+class="math inline">\(\partial f_\#=f_\#\partial,\partial g_\#=g_\#
+\partial\)</span>）.</p>
+<p>假设 <span class="math inline">\(\exists\)</span> 群同态 <span
+class="math inline">\(P:C_n\to D_{n+1},\forall n\)</span>，使得 <span
+class="math inline">\(\partial P+P\partial=g_\#-f_\#\)</span>，则 <span
+class="math inline">\(f_\star=g_\star (H_n(C_\cdot)\to
+H_n(D_\cdot)),\forall n\)</span>.</p>
+<p>我们将这个映射 <span class="math inline">\(P\)</span> 称为 <span
+class="math inline">\(f_\#\)</span> 到 <span
+class="math inline">\(g_\#\)</span> 的<strong>链同伦 (Chain
+Homotopy)</strong>。</p>
+<p>这就是下图：</p>
+<figure>
+<img src="\22-1.png" alt="image-20231212153421385" />
+<figcaption aria-hidden="true">image-20231212153421385</figcaption>
+</figure></li>
+<li><h5 id="注结论对约化同调群也成立">注：结论对约化同调群也成立</h5>
+<p>回忆：对 <span class="math inline">\(f:X\to Y\)</span>，我们有 <span
+class="math inline">\(f_\star:\tilde H_n(X)\to\tilde
+H_{n}(Y)\)</span>.</p>
+<p>上面的结论对约化同调群诱导出的 <span
+class="math inline">\(f_\star\)</span> 也成立。</p>
+<p>成立的原因：我们有如下图链映射：</p>
+<figure>
+<img src="\22-2.png" alt="image-20231212153755551" />
+<figcaption aria-hidden="true">image-20231212153755551</figcaption>
+</figure>
+<p>可以验证出它是交换的，因此上面的结论确实成立。</p>
+<p>因此若 <span class="math inline">\(f,g:X\to Y\)</span> 是同伦的，则
+<span class="math inline">\(f_\star=g_\star:\tilde H_n(X)\to\tilde
+H_n(y)\)</span>.</p></li>
+</ul></li>
+</ul>
+<h3 id="同调代数-homological-algebra">同调代数 (Homological
+Algebra)</h3>
+<ul>
+<li><h4 id="正合-exact">正合 (Exact)</h4>
+<p>考虑一个 Abel 群群同态的序列 <span
+class="math inline">\(A_\cdot=(\cdots\to A_{n+1}\xrightarrow{f_{n+1}}
+A_n\xrightarrow{f_n}A_{n-1}\to\cdots)\)</span></p>
+<p>我们称这个序列在 <span class="math inline">\(A_n\)</span>
+处是<strong>正合 (Exact)</strong> 的，若 <span
+class="math inline">\(\ker f_n=\text{Im} f_{n+1}\)</span>.</p>
+<p>我们称序列整体是正合的，若它对每一个 <span
+class="math inline">\(A_n\)</span> 都是正合的。</p></li>
+<li><h4 id="一些正合列的例子">一些正合列的例子</h4>
+<p><span class="math inline">\(0\to A\xrightarrow{f} B\)</span> 在 <span
+class="math inline">\(A\)</span> 处正合 <span
+class="math inline">\(\Leftrightarrow\)</span> <span
+class="math inline">\(f\)</span> 是一个单射。</p>
+<p><span class="math inline">\(A\xrightarrow{f}B\to 0\)</span> 在 <span
+class="math inline">\(B\)</span> 处正合 <span
+class="math inline">\(\Leftrightarrow\)</span> <span
+class="math inline">\(f\)</span> 是一个满射。</p>
+<p><span class="math inline">\(0\to A\xrightarrow{f}B\to0\)</span> 正合
+<span class="math inline">\(\Leftrightarrow\)</span> <span
+class="math inline">\(f\)</span> 是一个同构。</p>
+<p><span class="math inline">\(0\to A\xrightarrow{f}B\xrightarrow{g}C\to
+0\)</span> 正合 <span class="math inline">\(\Leftrightarrow\)</span>
+<span class="math inline">\(f\)</span> 是单射，<span
+class="math inline">\(g\)</span> 是满射，<span
+class="math inline">\(\ker g=\text{Im} f\)</span>.</p>
+<p>我们称最后一种情况为<strong>短正合列 (Short Exact
+Sequence)</strong>.</p>
+<p>在这种情况下，<span class="math inline">\(A\cong \ker g, C\cong
+B/f(A)\)</span>.</p>
+<p>考虑 <span class="math inline">\(A_\cdot,B_\cdot,C_\cdot\)</span>
+是三个链复形，考虑序列 <span class="math inline">\(0\to
+A_\cdot\xrightarrow{f_\cdot}B_\cdot\xrightarrow{g_\cdot} C_\cdot\to
+0\)</span></p>
+<p>其中 <span class="math inline">\(f_\cdot,g_\cdot\)</span>
+是链映射，即 <span
+class="math inline">\(f_\cdot=(f_n)_{n\in\mathbb{Z}},g_\cdot=(g_n)_{n\in
+\mathbb{Z}}\)</span></p>
+<p><span class="math inline">\(0\)</span> 代表 <span
+class="math inline">\(0\)</span> 复形，即 <span
+class="math inline">\(\cdots \to 0\to 0\to 0\to \cdots\)</span></p>
+<p><span class="math inline">\(f_n:A_n\to B_n,g_n:B_n\to C_n,
+f_n\partial = \partial f_{n+1}, g_n\partial = \partial
+g_{n+1}\)</span>.</p>
+<p>我们将刚才的序列称作是链复形的短正合列，若 <span
+class="math inline">\(\forall n\in \mathbb{Z}\)</span>，有 <span
+class="math inline">\(0\to A_n\xrightarrow{f_n} B_n\xrightarrow{g_n}
+C_n\to 0\)</span> 都是短正合列。</p>
+<figure>
+<img src="\22-3.png" alt="image-20231212155803746" />
+<figcaption aria-hidden="true">image-20231212155803746</figcaption>
+</figure>
+<p>因为 <span class="math inline">\(f_\cdot,g_\cdot\)</span>
+是链映射，因此它们诱导了同调群的群同态 <span
+class="math inline">\(f_\star:H_n(A_\cdot)\to H_n(B_\cdot)\)</span> 以及
+<span class="math inline">\(g_\star:H_n(B_\cdot)\to
+H_n(C_\cdot)\)</span>.</p>
+<p>问：将取 <span class="math inline">\(\star\)</span>
+操作作用在短正合列之后，所得到的还是短正合列吗？即 <span
+class="math inline">\(0\to H_n(A_\cdot)\xrightarrow{f_\star}
+H_n(B_\cdot)\xrightarrow{g_\star}H_n(C_\cdot)\to 0\)</span>
+是正合列吗？</p>
+<p>答案是否定的。</p>
+<p>我们还需要进行如下的关键构造：定义<strong>边界映射 (Boundary
+Map)，请注意不要与之前的定义混淆</strong> <span
+class="math inline">\(\bar\partial:H_n(C_\cdot)\to
+H_{n-1}(A_\cdot)\)</span>，这也就形如：</p>
+<figure>
+<img src="\22-4.png" alt="image-20231212160517492" />
+<figcaption aria-hidden="true">image-20231212160517492</figcaption>
+</figure>
+<p>任取圈(取边界为 <span class="math inline">\(0\)</span>) <span
+class="math inline">\(c\in C_n\)</span>，由于 <span
+class="math inline">\(g_n\)</span> 是一个满射，于是 <span
+class="math inline">\(\exists b\in B_n\)</span> 使得 <span
+class="math inline">\(g_n(b)=c\)</span>.</p>
+<p>由于 <span class="math inline">\(g_{n-1}\partial(b)=\partial
+g_n(b)=\partial(c)=0\)</span>，因此 <span
+class="math inline">\(\partial(b)\in\ker
+b_{n-1}=\text{Im}(f_{n-1})\)</span>，这就是说 <span
+class="math inline">\(\exists a\in A_{n-1}\)</span>，使得 <span
+class="math inline">\(f_{n-1}(a)=\partial(b)\)</span>.</p>
+<p><span class="math inline">\(f_{n-2}(\partial(a))=\partial
+f_{n-1}(a)=\partial(\partial(b))=0\)</span>，由于 <span
+class="math inline">\(f_{n-2}\)</span> 是一个单射，因此 <span
+class="math inline">\(\partial(a)=0\)</span>，也就是说 <span
+class="math inline">\(a\)</span> 是一个圈。</p>
+<p>因此我们可以定义取边界映射：<span
+class="math inline">\(\bar\partial:H_n(C_\cdot)\to
+H_{n-1}(A_\cdot)\)</span> 为 <span
+class="math inline">\(\bar\partial([c])=[a]\)</span>.</p></li>
+<li><h4
+id="另一个取边界映射请注意区分-partial-记号">另一个取边界映射（请注意区分
+<span class="math inline">\(\partial\)</span> 记号）</h4>
+<p><span class="math inline">\(\bar\partial :H_n(C_\cdot)\to
+H_{n-1}(A_\cdot)\)</span> 中 <span
+class="math inline">\(\bar\partial([c])=[a]\)</span>
+是良定义的群同态。</p>
+<p>证明：</p>
+<ol type="1">
+<li><p>由于 <span class="math inline">\(f_{n-1}\)</span> 是单射，因此
+<span class="math inline">\(a\)</span> 是被 <span
+class="math inline">\(\partial (b)\)</span> 唯一确定的；</p></li>
+<li><p>考虑 <span class="math inline">\(b\in B_n\)</span> 使得 <span
+class="math inline">\(g_n(b)=c\)</span>. 如果我们选择另一个 <span
+class="math inline">\(b&#39;\in B_n\)</span> 使得 <span
+class="math inline">\(g_n(b&#39;)=c\)</span>.</p></li>
+</ol>
+<p>从而 <span class="math inline">\(b&#39;-b\in \ker
+g_n\)</span>，根据正合性，<span class="math inline">\(\ker g_n=\text{Im}
+f_n\)</span>，也就是说 <span class="math inline">\(\exists a&#39;\in
+A_n\)</span> 使得 <span
+class="math inline">\(b&#39;-b=f_n(a&#39;)\)</span>.</p>
+<p>因此 <span class="math inline">\(f_{n-1}(a+\partial
+a&#39;)=f_{n-1}(a)+f_{n-1}(\partial a&#39;)=\partial b+\partial
+f_n(a&#39;)=\partial b&#39;\)</span>.</p>
+<p>因此如果我们把 <span class="math inline">\(b\)</span> 换成 <span
+class="math inline">\(b&#39;\)</span>，我们就将 <span
+class="math inline">\(a\)</span> 换成了 <span
+class="math inline">\(a+\partial a&#39;\)</span>，但是 <span
+class="math inline">\([a]=[a+\partial a&#39;]\)</span>.</p>
+<ol start="3" type="1">
+<li>考虑 <span class="math inline">\(c+\partial c&#39;\)</span>，其中
+<span class="math inline">\(c&#39;\in C_{n+1}\)</span>.（<span
+class="math inline">\([c]=[c+\partial c&#39;]\)</span>）</li>
+</ol>
+<p>由于 <span class="math inline">\(g_{n+1}\)</span> 是满射，<span
+class="math inline">\(\exists b&#39;\in B_{n+1}\)</span> 使得 <span
+class="math inline">\(g_{n+1}(b&#39;)=c&#39;\)</span>.</p>
+<p><span class="math inline">\(c+\partial
+c&#39;=c+\partial(g_{n+1}(b&#39;))=c+g_{n}\partial b&#39;=g_n(b+\partial
+b&#39;)\)</span>.</p>
+<p>然而 <span class="math inline">\(f_{n-1}(a)=\partial
+b=\partial(b+\partial b&#39;)\)</span>，于是 <span
+class="math inline">\(f_{n-1}(a)\)</span> 没有变化，于是 <span
+class="math inline">\(a\)</span> 也没有变化（单射）。</p>
+<p>根据 (1) (2) (3)，我们能知道 <span
+class="math inline">\(\bar\partial\)</span> 确实是良定义的。</p>
+<ul>
+<li><h5 id="注">注：</h5>
+<p>这里课上板书中 <span class="math inline">\(\bar\partial\)</span> 与
+<span class="math inline">\(\partial\)</span> 都写作 '<span
+class="math inline">\(\partial\)</span>'，笔者在记录时为了区分加了一个
+<span class="math inline">\(\text{bar}\)</span>.
+我不敢保证每个地方都做好了这个区分，因此阅读笔记时敬请甄别。</p>
+<p>实际上，<span class="math inline">\(\bar\partial\)</span>
+也是某种意义上的取边界映射。</p></li>
+</ul>
+<p>下面我们验证它是一个群同态。</p>
+<p>令 <span class="math inline">\(\bar\partial [c_1]=[a_1],\bar\partial
+[c_2]=[a_2]\)</span>，有 <span
+class="math inline">\(g_n(b_1)=c_1,g_n(b_2)=c_2\)</span>，<span
+class="math inline">\(f_{n-1}(a_1)=\partial b_1,f_{n-1}(a_2)=\partial
+b_2\)</span>.</p>
+<p>于是 <span class="math inline">\(g_n(b_1+b_2)=c_1+c_2\)</span>，<span
+class="math inline">\(f_{n-1}(a_1+a_2)=\partial b_1+\partial
+b_2=\partial(b_1+b_2)\)</span>.</p>
+<p>于是 <span class="math inline">\(\bar\partial
+([c_1]+[c_2])=([a_1]+[a_2])=\bar\partial [c_1]+\bar\partial
+[c_2]\)</span>.</p></li>
+<li><h4
+id="同调群的长正合列-long-exact-sequence-of-homology">同调群的长正合列
+(Long Exact Sequence of Homology)</h4>
+<p>在我们定义好 <span class="math inline">\(\bar\partial\)</span>
+后，我们得到了一个序列：<span class="math inline">\(\cdots \to
+H_n(C_\cdot)\xrightarrow{\bar\partial}
+H_{n-1}(A_\cdot)\xrightarrow{f_\star}
+H_{n-1}(B_\cdot)\xrightarrow{g_\star}\cdots\)</span>，这个序列是一个正合序列。</p>
+<p>将其称为<strong>同调群的长正合列 (Long Exact Sequence of
+Homology)</strong>。</p>
+<p>证明：</p>
+<ol type="1">
+<li>我们说明 <span class="math inline">\(f_\star\)</span> 与 <span
+class="math inline">\(g_\star\)</span> 有 <span
+class="math inline">\(\text{Im} f_\star=\ker g_\star\)</span></li>
+</ol>
+<p><span class="math inline">\(g_\cdot\circ f_\cdot=0\)</span>，因此
+<span class="math inline">\((g_\cdot\circ f_\cdot)_\star=(g_\star\circ
+f_\star)=0\)</span>.</p>
+<p>这告诉我们 <span class="math inline">\(\text{Im} f_\star\subset \ker
+g_\star\)</span>.</p>
+<p>取 <span class="math inline">\([b]\in \ker g_\star\)</span>，<span
+class="math inline">\(b\in B_n\)</span>，<span
+class="math inline">\(\partial b=0\)</span>，则 <span
+class="math inline">\(g_n(b)=\partial c&#39;\)</span> 对于某个 <span
+class="math inline">\(c&#39;\in C_{n+1}\)</span>.</p>
+<p>又由 <span class="math inline">\(g_{n+1}\)</span> 是满射，<span
+class="math inline">\(c&#39;=g_{n+1}(b&#39;)\)</span>，对于某个 <span
+class="math inline">\(b&#39;\in B_{n+1}\)</span>.</p>
+<p>因此 <span class="math inline">\(g_n(b-\partial
+b&#39;)=g_n(b)-g_n(\partial b&#39;)=g_n(b)-\partial
+g_{n+1}(b&#39;)=\partial c&#39;-\partial c&#39;=0\)</span>.</p>
+<p>这告诉我们 <span class="math inline">\(\exists a\in
+A_n\)</span>，使得 <span class="math inline">\(b-\partial b&#39;=
+f_n(a)\)</span>. (正合性)</p>
+<p><span class="math inline">\(f_{n-1}(\partial a)=\partial
+f_n(a)=\partial (b-\partial b&#39;)=\partial b=0\)</span>.</p>
+<p>由于 <span class="math inline">\(f_{n-1}\)</span> 是一个单射，因此
+<span class="math inline">\(\partial a=0,a\)</span> 是一个圈。</p>
+<p>因此 <span class="math inline">\(f_\star [a]=[b-\partial
+b&#39;]=[b]\)</span>，因此 <span class="math inline">\([b]\in \text{Im}
+f_\star\)</span>，<span class="math inline">\(\ker g_\star\subset
+\text{Im} f_\star\)</span>.</p>
+<p>因此 <span class="math inline">\(\ker g_\star=\text{Im}
+f_\star\)</span>。</p>
+<ol start="2" type="1">
+<li>我们说明 <span class="math inline">\(\text{Im}
+g_\star=\ker\bar\partial\)</span>.</li>
+</ol>
+<p>根据定义，<span class="math inline">\(\bar\partial [c]=[a]\)</span>
+有 <span class="math inline">\(f_{n-1}(a)=\partial b\)</span>，<span
+class="math inline">\(g_n(b)=c\)</span>.</p>
+<p>如果 <span class="math inline">\([c]=g_\star[b]=[g_n(b)]\)</span>
+对于某个 <span class="math inline">\(b\)</span>，我们选取代表元使得
+<span class="math inline">\(g_n(b)=c\)</span>，因此 <span
+class="math inline">\(f_{n-1}(a)=\partial b=0\)</span>，因此 <span
+class="math inline">\(a=0\)</span>.</p>
+<p>因此 <span class="math inline">\(\bar\partial
+g_\star=0\)</span>，这就是说 <span class="math inline">\(\text{Im}
+g_\star\subseteq \ker\bar\partial\)</span>.</p>
+<p>反过来，如果我们令 <span class="math inline">\(\bar\partial
+[c]=0=[a]\)</span>，则 <span class="math inline">\(a\)</span>
+是一个边界元，也就是说 <span class="math inline">\(a=\partial
+a&#39;\)</span> 对某个 <span class="math inline">\(a&#39;\in
+A_n\)</span>.</p>
+<p>因此 <span class="math inline">\(\partial (b-f_n(a&#39;))=\partial
+b-f_{n-1}(\partial a&#39;)=\partial b-f_{n-1}(a)=0\)</span>.</p>
+<p>因此 <span class="math inline">\(b-f_n(a&#39;)\)</span>
+确实是一个圈，我们将 <span class="math inline">\(g_n\)</span>
+作用在圈上就有 <span class="math inline">\(g_n(b)-g_n\circ
+f_n(a&#39;)=g_n(b)=c\)</span>.</p>
+<p>这就是说 <span
+class="math inline">\(g_\star([b-f_n(a&#39;)])=[c]\)</span>，因此 <span
+class="math inline">\(\ker\bar\partial\subset \text{Im}
+g_\star\)</span>.</p>
+<p>因此 <span class="math inline">\(\ker\bar\partial =\text{Im}
+g_\star\)</span>.</p>
+<ol start="3" type="1">
+<li>我们说明 <span class="math inline">\(\text{Im}\bar\partial=\ker
+f_\star\)</span>.</li>
+</ol>
+<p>若 <span class="math inline">\([c]=H_n(C_\cdot)\)</span>，则 <span
+class="math inline">\(f_\star\bar\partial [c]=f_\star
+[a]=[f_{n-1}(a)]=[\partial b]=0\)</span>. 因此 <span
+class="math inline">\(\text{Im} \bar\partial \subset\ker
+f_\star\)</span>.</p>
+<p>反过来，令 <span class="math inline">\(f_\star[a]=0\)</span>，其中
+<span class="math inline">\(a\in A_{n-1},\partial a=0\)</span>.</p>
+<p>这告诉我们 <span class="math inline">\(f_{n-1}(a)=\partial
+b\)</span>，对于某一个 <span class="math inline">\(b\in
+B_n\)</span>，因此 <span class="math inline">\(\partial
+g_n(b)=g_{n-1}(\partial b)=g_{n-1}\circ f_{n-1}(a)=0\)</span>.
+(正合性)</p>
+<p>这就是说 <span class="math inline">\(g_n(b)\)</span> 是一个圈，因此
+<span class="math inline">\(\bar\partial [g_n(b)]=[a]\in
+\text{Im}\bar\partial\)</span>，因此 <span class="math inline">\(\ker
+f_\star\subset \text{Im}\bar\partial\)</span>.</p>
+<p>因此 <span class="math inline">\(\text{Im}\bar\partial =\ker
+f_\star\)</span>.</p></li>
+<li><h4 id="下节课">下节课</h4>
+<p>我们将考虑 Commutative Diagram.</p></li>
 </ul>
 ]]></content>
       <categories>
