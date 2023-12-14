@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Markdown 源代码：https:&#x2F;&#x2F;pastebin.ubuntu.com&#x2F;p&#x2F;3hSwq8GbdS&#x2F; 分节次的笔记（清华云盘）：https:&#x2F;&#x2F;cloud.tsinghua.edu.cn&#x2F;d&#x2F;2c4efaca588a4326958d&#x2F; 00. Lecture Info 1. 考核 作业 20%、期中 30%、期末 50% 2. 作业 每周四上午 9：50 之前提交 3. 答疑">
+    <meta name="description" content="Markdown 源代码：https:&#x2F;&#x2F;pastebin.ubuntu.com&#x2F;p&#x2F;zDdkM3KsFk&#x2F; 分节次的笔记（清华云盘）：https:&#x2F;&#x2F;cloud.tsinghua.edu.cn&#x2F;d&#x2F;2c4efaca588a4326958d&#x2F; 00. Lecture Info 1. 考核 作业 20%、期中 30%、期末 50% 2. 作业 每周四上午 9：50 之前提交 3. 答疑">
 <meta property="og:type" content="article">
 <meta property="og:title" content="拓扑学笔记">
 <meta property="og:url" content="http://example.com/2023/09/21/%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="The Art of Coding">
-<meta property="og:description" content="Markdown 源代码：https:&#x2F;&#x2F;pastebin.ubuntu.com&#x2F;p&#x2F;3hSwq8GbdS&#x2F; 分节次的笔记（清华云盘）：https:&#x2F;&#x2F;cloud.tsinghua.edu.cn&#x2F;d&#x2F;2c4efaca588a4326958d&#x2F; 00. Lecture Info 1. 考核 作业 20%、期中 30%、期末 50% 2. 作业 每周四上午 9：50 之前提交 3. 答疑">
+<meta property="og:description" content="Markdown 源代码：https:&#x2F;&#x2F;pastebin.ubuntu.com&#x2F;p&#x2F;zDdkM3KsFk&#x2F; 分节次的笔记（清华云盘）：https:&#x2F;&#x2F;cloud.tsinghua.edu.cn&#x2F;d&#x2F;2c4efaca588a4326958d&#x2F; 00. Lecture Info 1. 考核 作业 20%、期中 30%、期末 50% 2. 作业 每周四上午 9：50 之前提交 3. 答疑">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/01-1.png">
 <meta property="og:image" content="http://example.com/01-2.png">
@@ -165,8 +165,14 @@
 <meta property="og:image" content="http://example.com/22-2.png">
 <meta property="og:image" content="http://example.com/22-3.png">
 <meta property="og:image" content="http://example.com/22-4.png">
+<meta property="og:image" content="http://example.com/23-1.png">
+<meta property="og:image" content="http://example.com/23-2.png">
+<meta property="og:image" content="http://example.com/23-3.png">
+<meta property="og:image" content="http://example.com/23-4.png">
+<meta property="og:image" content="http://example.com/23-5.png">
+<meta property="og:image" content="http://example.com/23-6.png">
 <meta property="article:published_time" content="2023-09-21T04:15:10.000Z">
-<meta property="article:modified_time" content="2023-12-13T03:10:31.154Z">
+<meta property="article:modified_time" content="2023-12-14T06:10:49.940Z">
 <meta property="article:author" content="Wen_kr">
 <meta property="article:tag" content="拓扑学">
 <meta name="twitter:card" content="summary">
@@ -339,7 +345,12 @@ Homology)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" hr
 群范畴的函子</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E7%90%86%E5%90%8C%E4%BC%A6%E7%9A%84%E6%98%A0%E5%B0%84%E5%AF%B9%E5%BA%94%E7%9B%B8%E5%90%8C%E7%9A%84%E5%90%8C%E8%B0%83%E7%BE%A4%E5%90%8C%E6%80%81"><span class="nav-number">22.1.6.</span> <span class="nav-text">定理：同伦的映射对应相同的同调群同态</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E6%A3%B1%E6%9F%B1%E6%98%A0%E5%B0%84-prism-map"><span class="nav-number">22.1.6.1.</span> <span class="nav-text">定义：棱柱映射 (Prism Map)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%A3%B1%E6%9F%B1%E6%98%A0%E5%B0%84%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">22.1.6.2.</span> <span class="nav-text">棱柱映射的性质</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A8%E8%AE%BA%E5%90%8C%E4%BC%A6%E7%AD%89%E4%BB%B7%E8%AF%B1%E5%AF%BC%E5%90%8C%E8%B0%83%E7%BE%A4%E5%90%8C%E6%9E%84"><span class="nav-number">22.1.7.</span> <span class="nav-text">推论：同伦等价诱导同调群同构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%90%88-%E5%8F%96%E8%BE%B9%E7%95%8C%E6%98%A0%E5%B0%84"><span class="nav-number">23.</span> <span class="nav-text">22. 正合 取边界映射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8C%E8%B0%83%E7%BE%A4-1"><span class="nav-number">23.1.</span> <span class="nav-text">同调群</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9E%E5%BF%86%E5%90%8C%E4%BC%A6%E7%AD%89%E4%BB%B7%E8%AF%B1%E5%AF%BC%E5%90%8C%E8%B0%83%E7%BE%A4%E5%90%8C%E6%9E%84"><span class="nav-number">23.1.1.</span> <span class="nav-text">回忆：同伦等价诱导同调群同构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B3%A8%E5%B0%86%E4%B8%BB%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E%E6%8E%A8%E5%B9%BF%E5%88%B0%E4%BB%A3%E6%95%B0%E5%B1%82%E9%9D%A2"><span class="nav-number">23.1.1.1.</span> <span class="nav-text">注：将主定理的证明推广到代数层面</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B3%A8%E7%BB%93%E8%AE%BA%E5%AF%B9%E7%BA%A6%E5%8C%96%E5%90%8C%E8%B0%83%E7%BE%A4%E4%B9%9F%E6%88%90%E7%AB%8B"><span class="nav-number">23.1.1.2.</span> <span class="nav-text">注：结论对约化同调群也成立</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8C%E8%B0%83%E4%BB%A3%E6%95%B0-homological-algebra"><span class="nav-number">23.2.</span> <span class="nav-text">同调代数 (Homological
 Algebra)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AD%A3%E5%90%88-exact"><span class="nav-number">23.2.1.</span> <span class="nav-text">正合 (Exact)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E6%AD%A3%E5%90%88%E5%88%97%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="nav-number">23.2.2.</span> <span class="nav-text">一些正合列的例子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%8F%96%E8%BE%B9%E7%95%8C%E6%98%A0%E5%B0%84%E8%AF%B7%E6%B3%A8%E6%84%8F%E5%8C%BA%E5%88%86-partial-%E8%AE%B0%E5%8F%B7"><span class="nav-number">23.2.3.</span> <span class="nav-text">另一个取边界映射（请注意区分
 \(\partial\) 记号）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B3%A8"><span class="nav-number">23.2.3.1.</span> <span class="nav-text">注：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8C%E8%B0%83%E7%BE%A4%E7%9A%84%E9%95%BF%E6%AD%A3%E5%90%88%E5%88%97-long-exact-sequence-of-homology"><span class="nav-number">23.2.4.</span> <span class="nav-text">同调群的长正合列
-(Long Exact Sequence of Homology)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%8A%82%E8%AF%BE"><span class="nav-number">23.2.5.</span> <span class="nav-text">下节课</span></a></li></ol></li></ol></li></ol></div>
+(Long Exact Sequence of Homology)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%8A%82%E8%AF%BE"><span class="nav-number">23.2.5.</span> <span class="nav-text">下节课</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%AF%B9%E5%90%8C%E8%B0%83%E7%BE%A4"><span class="nav-number">24.</span> <span class="nav-text">23. 相对同调群</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8C%E8%B0%83%E7%BE%A4%E7%9A%84%E8%87%AA%E7%84%B6%E6%80%A7%E5%AE%9A%E7%90%86"><span class="nav-number">24.1.</span> <span class="nav-text">同调群的自然性定理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9E%E5%BF%86-1"><span class="nav-number">24.1.1.</span> <span class="nav-text">回忆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%A4%E4%B8%AA%E9%93%BE%E6%98%A0%E5%B0%84%E7%9A%84%E4%BA%A4%E6%8D%A2%E6%80%A7"><span class="nav-number">24.1.2.</span> <span class="nav-text">两个链映射的交换性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%AA%E7%84%B6%E6%80%A7%E5%AE%9A%E7%90%86-normality-theorem"><span class="nav-number">24.1.3.</span> <span class="nav-text">自然性定理 (Normality
+Theorem)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E5%AF%B9%E5%90%8C%E8%B0%83%E7%BE%A4-relative-homology"><span class="nav-number">24.2.</span> <span class="nav-text">相对同调群 (Relative
+Homology)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%B8%E5%AF%B9%E5%90%8C%E8%B0%83%E7%BE%A4-relative-homology-1"><span class="nav-number">24.2.1.</span> <span class="nav-text">相对同调群 (Relative
+Homology)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%9B%B8%E5%AF%B9%E5%9C%88%E7%9B%B8%E5%AF%B9%E8%BE%B9%E7%95%8C%E4%B8%8E%E5%B9%B3%E5%87%A1%E5%85%83"><span class="nav-number">24.2.1.1.</span> <span class="nav-text">相对圈、相对边界与平凡元</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%B8%E5%AF%B9%E5%90%8C%E8%B0%83%E7%BE%A4%E7%9A%84%E6%AD%A3%E5%90%88%E5%88%97"><span class="nav-number">24.2.2.</span> <span class="nav-text">相对同调群的正合列</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B3%A8%E7%BA%A6%E5%8C%96%E7%89%88%E6%9C%AC%E7%9A%84%E6%AD%A3%E5%90%88%E5%88%97"><span class="nav-number">24.2.2.1.</span> <span class="nav-text">注：约化版本的正合列</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E5%8D%95%E7%82%B9%E5%AD%90%E7%BE%A4%E7%9A%84%E7%9B%B8%E5%AF%B9%E5%90%8C%E8%B0%83%E7%BE%A4%E5%88%97"><span class="nav-number">24.2.3.</span> <span class="nav-text">例：单点子群的相对同调群列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9E%E7%BB%AD%E6%98%A0%E5%B0%84%E8%AF%B1%E5%AF%BC%E7%9B%B8%E5%AF%B9%E5%90%8C%E8%B0%83%E7%BE%A4%E4%B8%AD%E7%BE%A4%E5%90%8C%E6%80%81"><span class="nav-number">24.2.4.</span> <span class="nav-text">连续映射诱导相对同调群中群同态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8C%E4%BC%A6%E7%9A%84%E6%98%A0%E5%B0%84%E8%AF%B1%E5%AF%BC%E7%9B%B8%E5%90%8C%E7%9A%84%E7%9B%B8%E5%AF%B9%E5%90%8C%E8%B0%83%E7%BE%A4%E5%90%8C%E6%80%81"><span class="nav-number">24.2.5.</span> <span class="nav-text">同伦的映射诱导相同的相对同调群同态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A8%E5%B9%BF%E7%9A%84%E9%95%BF%E6%AD%A3%E5%90%88%E5%88%97-generalization-of-long-exact-sequence"><span class="nav-number">24.2.6.</span> <span class="nav-text">推广的长正合列
+(Generalization of Long Exact Sequence)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%93%BE%E5%A4%8D%E5%BD%A2%E7%9A%84%E5%90%8C%E4%BC%A6%E7%AD%89%E4%BB%B7-homotopy-equivalences"><span class="nav-number">24.2.7.</span> <span class="nav-text">链复形的同伦等价
+(Homotopy Equivalences)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%87%E9%99%A4%E5%AE%9A%E7%90%86-excision-theorem"><span class="nav-number">24.2.8.</span> <span class="nav-text">切除定理 (Excision Theorem)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%95%E7%90%86"><span class="nav-number">24.2.8.1.</span> <span class="nav-text">引理</span></a></li></ol></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -426,7 +437,7 @@ Algebra)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a cla
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-12-13 11:10:31" itemprop="dateModified" datetime="2023-12-13T11:10:31+08:00">2023-12-13</time>
+      <time title="修改时间：2023-12-14 14:10:49" itemprop="dateModified" datetime="2023-12-14T14:10:49+08:00">2023-12-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -447,7 +458,7 @@ Algebra)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a cla
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>Markdown 源代码：https://pastebin.ubuntu.com/p/3hSwq8GbdS/</p>
+    <div class="post-body" itemprop="articleBody"><p>Markdown 源代码：https://pastebin.ubuntu.com/p/zDdkM3KsFk/</p>
 <p>分节次的笔记（清华云盘）：https://cloud.tsinghua.edu.cn/d/2c4efaca588a4326958d/</p>
 <h2 id="lecture-info">00. Lecture Info</h2>
 <h3 id="考核">1. 考核</h3>
@@ -7993,6 +8004,301 @@ f_\star\subset \text{Im}\bar\partial\)</span>.</p>
 f_\star\)</span>.</p></li>
 <li><h4 id="下节课">下节课</h4>
 <p>我们将考虑 Commutative Diagram.</p></li>
+</ul>
+<h2 id="相对同调群">23. 相对同调群</h2>
+<h3 id="同调群的自然性定理">同调群的自然性定理</h3>
+<ul>
+<li><h4 id="回忆-1">回忆</h4>
+<p><span class="math inline">\(0 \to A_\cdot
+\xrightarrow{f_\cdot}B_\cdot \xrightarrow{g_\cdot} C_\cdot \to
+0\)</span> 正合列可以导出</p>
+<p><span class="math inline">\(\cdots \to H_{n+1}(C_\cdot)
+\xrightarrow{\bar\partial} H_n(A_\cdot) \xrightarrow{f_\star}
+H_n(B_\cdot) \xrightarrow{g_\star} H_n(C_\cdot)
+\xrightarrow{\bar\partial} H_{n-1}(A_\cdot) \to \cdots\)</span></p></li>
+<li><h4 id="两个链映射的交换性">两个链映射的交换性</h4>
+<p>考虑下面链映射的交换图表：</p>
+<figure>
+<img src="\23-1.png" alt="image-20231214095421803" />
+<figcaption aria-hidden="true">image-20231214095421803</figcaption>
+</figure>
+<p>图表中的正方形是交换的。</p>
+<p>我们将来在拓扑中想要考察导出的两个长正合列之间的关系。</p>
+<p>在代数上讲，这就是说这是两行短正合列，我们接下来要考察两个长正合列：</p>
+<figure>
+<img src="\23-2.png" alt="image-20231214095714021" />
+<figcaption aria-hidden="true">image-20231214095714021</figcaption>
+</figure>
+<p>我们想要知道，这个长正合列图表是交换的吗？</p></li>
+<li><h4 id="自然性定理-normality-theorem">自然性定理 (Normality
+Theorem)</h4>
+<p>上面的长正合列图表确实是交换的。</p>
+<p>证明：</p>
+<figure>
+<img src="\23-3.png" alt="image-20231214095852974" />
+<figcaption aria-hidden="true">image-20231214095852974</figcaption>
+</figure>
+<p>两个红色的交换性是比较简单的：</p>
+<p>由于 <span class="math inline">\(\beta_\cdot\circ
+f_\cdot=f&#39;_\cdot\circ \alpha_\cdot\)</span>，因此 <span
+class="math inline">\(\beta_{\star\cdot}\circ f_{\star\cdot}=
+f&#39;_{\star\cdot}\circ \alpha_{\star\cdot}\)</span>.</p>
+<p>第二个红色类似。</p>
+<p>对于绿色正方形，令 <span class="math inline">\(c \in C_n\)</span>
+是一个圈，则 <span class="math inline">\(\bar \partial([c]) =
+[a]\)</span>，其中 <span class="math inline">\(a \in A_{n -
+1}\)</span>，满足 <span class="math inline">\(f_{n-1}(a) = \partial
+b\)</span>，<span class="math inline">\(c = g_n(b)\)</span></p>
+<p>那么就有 <span class="math inline">\(\gamma_n(c) = \gamma_n \circ
+g_n(b) = g_n&#39; \beta_n(b)\)</span></p>
+<p>而对于 <span class="math inline">\(f_{n-1}\)</span>，我们可以得到
+<span class="math inline">\(f&#39;_{n-1} \circ \alpha_{n-1}(a) =
+\beta_{n-1} f_{n-1} (a) = \bar \beta_{n-1} \bar\partial b = \partial
+\beta_n(b)\)</span></p>
+<p>由 <span class="math inline">\(\bar \partial\)</span> 的定义，<span
+class="math inline">\(\bar \partial [\gamma_n(c)] =
+[\alpha_{n-1}(a)]\)</span>，左边等于 <span
+class="math inline">\(\bar\partial \gamma_\star[c]\)</span>，右边等于
+<span class="math inline">\(\alpha_\star(a)\)</span>，因此我们就得到了
+<span class="math inline">\(\bar\partial \gamma_\star[c] = \alpha_\star
+\bar\partial[c]\)</span></p></li>
+</ul>
+<h3 id="相对同调群-relative-homology">相对同调群 (Relative
+Homology)</h3>
+<ul>
+<li><h4 id="相对同调群-relative-homology-1">相对同调群 (Relative
+Homology)</h4>
+<p>“相对性”：大空间 <span class="math inline">\(X\)</span> “相对于”
+子空间 <span class="math inline">\(A\)</span> 的同调群。</p>
+<p>令 <span class="math inline">\(X\)</span> 是一个拓扑空间，<span
+class="math inline">\(A \subset X\)</span>。</p>
+<p>令商群 <span class="math inline">\(C_n(X, A) := C_n(X) /
+C_n(A)\)</span>，考虑取边界映射 <span class="math inline">\(\partial:
+C_n(X) \to C_{n-1}(X)\)</span>。如果将取边界映射限制在子群 <span
+class="math inline">\(C_n(A)\)</span> 中，显然有 <span
+class="math inline">\(\partial(C_n(A)) \subset C_{n-1}(A)\)</span>。</p>
+<p>这就自然诱导出了一个商群的取边界映射 <span
+class="math inline">\(\partial: C_n(X, A) \to C_{n-1}(X,
+A)\)</span>，这是两个商群之间的同态。</p>
+<p>由于在链复形 <span class="math inline">\(C_\cdot(X) =
+\set{C_n(X)}_n\)</span> 中有 <span class="math inline">\(\partial^2 =
+0\)</span>，那么在 <span class="math inline">\(C_\cdot(X, A) =
+\set{C_n(X, A)}_n\)</span> 中自然也有 <span
+class="math inline">\(\partial^2 = 0\)</span>。</p>
+<p>因此 <span class="math inline">\(C_\cdot(X, A)\)</span>
+确实是一个链复形。</p>
+<p><span class="math inline">\(H_n(C_\cdot(X, A))\)</span>
+被叫做<strong>相对同调群 (Relative Homology)</strong>，记为 <span
+class="math inline">\(H_n(X, A)\)</span>。</p>
+<ul>
+<li><h5 id="相对圈相对边界与平凡元">相对圈、相对边界与平凡元</h5>
+<ul>
+<li><strong>相对圈 (relative cycle)</strong>：<span
+class="math inline">\(\alpha \in C_n(X)\)</span> 使得 <span
+class="math inline">\(\partial \alpha \in
+C_{n-1}(A)\)</span>，相当于取边界落到了商复形的 0 中。</li>
+<li><strong>相对边界 (relative boundary)</strong>：<span
+class="math inline">\(alpha = \partial \beta + \gamma\)</span>，其中
+<span class="math inline">\(\beta \in C_{n+1}(X)\)</span>，<span
+class="math inline">\(\gamma \in C_n(A)\)</span></li>
+<li>一个相对圈 <span class="math inline">\(\alpha\)</span> 在 <span
+class="math inline">\(H_n(X, A)\)</span> 中是 trivial 的当且仅当 <span
+class="math inline">\(\alpha\)</span> 是一个相对边界.</li>
+</ul></li>
+</ul></li>
+<li><h4 id="相对同调群的正合列">相对同调群的正合列</h4>
+<p>我们可以定义短正合列 <span class="math inline">\(0 \to C_\cdot (A)
+\xrightarrow{i_\cdot} C_\cdot (X) \xrightarrow{j_\cdot} C_\cdot(X, A)
+\to 0\)</span>，其中 <span class="math inline">\(i_\cdot\)</span>
+是嵌入映射，<span class="math inline">\(j_\cdot\)</span> 是商映射。</p>
+<p>我们也可以从这个短正合列导出长正合列：</p>
+<p><span class="math inline">\(\cdots \to H_{n}(A) \xrightarrow{i_\star}
+H_n(X) \xrightarrow{j_\star} H_n(X, A) \xrightarrow{\partial} H_{n-1}
+(A) \to \cdots\)</span></p>
+<p>在末尾是 <span class="math inline">\(\cdots \to H_0(A) \to H_0(X) \to
+H_0(X, A) \to 0\)</span></p>
+<p>如果对于 <span class="math inline">\(H_n(X, A) = 0, \forall
+n\)</span>，（回忆 <span class="math inline">\(0 \to A \xrightarrow{f} B
+\to 0\)</span> 正合，那么 <span class="math inline">\(f\)</span>
+是单射、满射，即 <span class="math inline">\(f\)</span> 是同构）</p>
+<p>那么 <span class="math inline">\(i_\star: H_n(A) \to H_n(X)\)</span>
+是一个同构 <span class="math inline">\(\forall n\)</span>.</p>
+<ul>
+<li><h5 id="注约化版本的正合列">注：约化版本的正合列</h5>
+<p>对于 <span class="math inline">\((X, A)\)</span> 其中 <span
+class="math inline">\(A \neq \varnothing\)</span>。</p>
+<p>考虑短正合列 <span class="math inline">\(0 \to \tilde C_\cdot (A)
+\xrightarrow{i_\cdot} \tilde C_\cdot (X) \xrightarrow{j_\cdot} C_\cdot
+(X, A) \to 0\)</span></p>
+<p>可以发现：</p>
+<figure>
+<img src="\23-4.png" alt="image-20231214103421383" />
+<figcaption aria-hidden="true">image-20231214103421383</figcaption>
+</figure>
+<p>因此，我们就得到了一个约化版本的长正合列：</p>
+<p><span class="math inline">\(\cdots \to \tilde H_n(A)
+\xrightarrow{i_\star} \tilde H_n(X) \xrightarrow{j_\star} H_n(X, A)
+\xrightarrow{\partial} \cdots \to \tilde H_0(A) \to \tilde H_0(X) \to
+H_0(X, A) \to 0\)</span></p>
+<p>这个约化版本的正合列和之前的长正合列只有 <span
+class="math inline">\(\tilde H_0(A)\)</span> 和 <span
+class="math inline">\(\tilde H_0(X)\)</span> 不同。</p></li>
+</ul></li>
+<li><h4 id="例单点子群的相对同调群列">例：单点子群的相对同调群列</h4>
+<p><span class="math inline">\(H_n(\text{point}) = \begin{cases}
+\mathbb{Z} &amp; n = 0 \\ 0 &amp; n &gt; 0 \end{cases}\)</span>，则
+<span class="math inline">\(\tilde H_n(\text{point}) = 0, \forall
+n\)</span></p>
+<p>取 <span class="math inline">\(A = \set{x_0} \subseteq
+X\)</span>，考虑对 <span class="math inline">\((X, x_0)\)</span> 其中
+<span class="math inline">\(x_0 \in X\)</span>。</p>
+<p>由上面的长正合列，因为中间夹的 <span class="math inline">\(\tilde
+H_n(x_0) = 0, \forall n &gt; 0\)</span>，我们就可以得到 <span
+class="math inline">\(H_n(X, x_0) \cong \tilde
+H_n(X)\)</span>。</p></li>
+<li><h4
+id="连续映射诱导相对同调群中群同态">连续映射诱导相对同调群中群同态</h4>
+<p>令 <span class="math inline">\(f: (X, A) \to (Y,
+B)\)</span>，这个记号意味着 <span class="math inline">\(A \subset X, B
+\subset Y, f(A) \subset B\)</span></p>
+<p><span class="math inline">\(f\)</span> 诱导出 <span
+class="math inline">\(f_\#: C_n(X) \to C_n(Y)\)</span>，那么就有 <span
+class="math inline">\(f_\# (C_n(A)) \subseteq C_n(B)\)</span>。</p>
+<p>所以它诱导了一个商映射 <span class="math inline">\(f_\#: C_n(X, A)
+\to C_n(Y, B)\)</span>。</p>
+<p>我们就得到了 <span class="math inline">\(f_\star: H_n(X, A) \to
+H_n(Y, B)\)</span>。</p></li>
+<li><h4
+id="同伦的映射诱导相同的相对同调群同态">同伦的映射诱导相同的相对同调群同态</h4>
+<p>令 <span class="math inline">\(f, g : (X, A) \to (Y,
+B)\)</span>，如果存在 <span class="math inline">\(F: X \times I \to
+Y\)</span> 是一个同伦，使得 <span class="math inline">\(f
+\underset{F}\simeq g\)</span> 且 <span class="math inline">\(F|_{X
+\times \set{t}} (A) \subseteq B, \forall t \in I\)</span>。</p>
+<p>那么就有 <span class="math inline">\(f_\star = g_\star: H_n(X, A) \to
+H_n(Y, B)\)</span>。</p>
+<p>证明：</p>
+<p>考虑棱柱映射 <span class="math inline">\(P: C_n(X) \to
+C_{n+1}(Y)\)</span>，那么棱柱映射也就将 <span
+class="math inline">\(C_n(A)\)</span> 映射到 <span
+class="math inline">\(C_{n+1}(B)\)</span> 中。</p>
+<p>这就诱导了一个棱柱映射 <span class="math inline">\(P: C_n(X, A) \to
+C_{n+1}(Y, B)\)</span>。</p>
+<p>由于 <span class="math inline">\(P\partial + \partial P = g_\# -
+f_\#\)</span> 在 <span class="math inline">\(C_n(X)\)</span>
+上成立，取商群后同样成立。</p>
+<p>因此 <span class="math inline">\(P\)</span>
+确实是商群上的一个链同伦。</p>
+<p>所以我们就得到了 <span class="math inline">\(f_\star = g_\star:
+H_n(X, A) \to H_n(Y, B)\)</span>。</p>
+<p>对连续映射 <span class="math inline">\(f: (X, A) \to (Y,
+B)\)</span>，对于它诱导的 <span
+class="math inline">\(f_\#\)</span>，我们可以得到如下交换图表：</p>
+<figure>
+<img src="\23-5.png" alt="image-20231214105625129" />
+<figcaption aria-hidden="true">image-20231214105625129</figcaption>
+</figure>
+<p>根据上面的自然性定理，对诱导出的 <span
+class="math inline">\(f_\star\)</span> 就可以得到下面这个交换图表：</p>
+<figure>
+<img src="\23-6.png" alt="image-20231214105837584" />
+<figcaption aria-hidden="true">image-20231214105837584</figcaption>
+</figure></li>
+<li><h4
+id="推广的长正合列-generalization-of-long-exact-sequence">推广的长正合列
+(Generalization of Long Exact Sequence)</h4>
+<p>令 <span class="math inline">\(B \subset A \subset
+X\)</span>，有短正合列 <span class="math inline">\(0 \to C_n(A, B) \to
+C_n(X, B) \to C_n(X, A) \to 0\)</span></p>
+<p>其中 <span class="math inline">\(C_n(A, B) = C_n(A) /
+C_n(B)\)</span>，<span class="math inline">\(C_n(X, B) = C_n(X) /
+C_n(B)\)</span>，<span class="math inline">\(C_n(X, A) = C_n(X) /
+C_n(A)\)</span>。</p>
+<p>看上去就跟将公共的分母 <span class="math inline">\(C_n(B)\)</span>
+约掉了。</p>
+<p>那么我们就得到了链复形的短正合列 <span class="math inline">\(0 \to
+C_\cdot (A, B) \to C_\cdot (X, B) \to C_\cdot (X, A) \to
+0\)</span>。</p>
+<p>同样也得到了链复形的长正合列 <span class="math inline">\(\cdots \to
+H_n(A, B) \to H_n(X, B) \to H_n(X, A) \to H_{n-1}(A, B) \to
+\cdots\)</span>。</p></li>
+<li><h4 id="链复形的同伦等价-homotopy-equivalences">链复形的同伦等价
+(Homotopy Equivalences)</h4>
+<p>令 <span class="math inline">\(f_\cdot: C_\cdot \to D_\cdot\)</span>
+是一个链映射，如果存在一个反向的链映射 <span
+class="math inline">\(g_\cdot: D_\cdot \to C_\cdot\)</span>，使得 <span
+class="math inline">\(f \circ g \simeq id_{D_\cdot}\)</span> 且 <span
+class="math inline">\(g \circ f \simeq id_{C_\cdot}\)</span>。</p>
+<p>则 <span class="math inline">\(f_\cdot\)</span>
+被称为<strong>链复形之间的同伦等价 (Homotopy Equivalences between Chain
+Complexes)</strong>。</p>
+<p>此时 <span class="math inline">\(C_\cdot, D_\cdot\)</span>
+称为同伦等价的两个复形。</p>
+<p>它诱导出的同调群之间的同态 <span class="math inline">\(f_\star:
+H_n(C_\cdot) \xrightarrow{\cong} H_n(D_\cdot)\)</span>
+就是一个同构。</p></li>
+<li><h4 id="切除定理-excision-theorem">切除定理 (Excision Theorem)</h4>
+<p>令 <span class="math inline">\(Z \subset A \subset X\)</span> 满足
+<span class="math inline">\(\bar{Z} \subset \mathring{A}\)</span>（<span
+class="math inline">\(Z\)</span> 的闭包在 <span
+class="math inline">\(A\)</span> 的内部）。</p>
+<p>考虑嵌入映射 <span class="math inline">\((X - Z, A - Z)
+\hookrightarrow (X,
+A)\)</span>，那么这个嵌入映射诱导了相对同调群之间的同构 <span
+class="math inline">\(H_n(X - Z, A - Z) \xrightarrow{\cong} H_n(X, A),
+\forall n\)</span>。</p>
+<p>这是在说，在 <span class="math inline">\(X\)</span> 和 <span
+class="math inline">\(A\)</span> 中同时切除了一个子空间 <span
+class="math inline">\(Z\)</span>，切前切后的同调群是同构的。</p>
+<p>等价形式：</p>
+<p>令 <span class="math inline">\(A, B \subset X\)</span> 满足 <span
+class="math inline">\(A\)</span> 和 <span
+class="math inline">\(B\)</span> 的内部能够覆盖 <span
+class="math inline">\(X\)</span>。</p>
+<p>考虑嵌入映射 <span class="math inline">\((B, A \cap B)
+\hookrightarrow (X, A)\)</span>，那么这个嵌入映射就诱导了一个群同构
+<span class="math inline">\(H_n(B, A \cap B) \xrightarrow{\cong} H_n(X,
+A), \forall n\)</span>。</p>
+<p>（考虑令 <span class="math inline">\(Z = A \setminus (A \cap
+B)\)</span>，两个说法等价）</p>
+<p>证明：</p>
+<p>考虑集族 <span class="math inline">\(\beta = \set{U_j}_{j \in
+J}\)</span> 是一族 <span class="math inline">\(X\)</span>
+中的子空间，满足他们的内部构成了 <span class="math inline">\(X\)</span>
+的开覆盖。</p>
+<p>令 <span class="math inline">\(C_n^\beta (X) \subset
+C_n(X)\)</span>，包含了链 <span class="math inline">\(\sum_i n_i
+\sigma_i\)</span> 使得对于每个 <span
+class="math inline">\(\sigma_i\)</span> 都满足 <span
+class="math inline">\(\text{Im} \sigma_i\)</span> 包含在某个 <span
+class="math inline">\(U_j \in \beta\)</span> 中。</p>
+<p>令 <span class="math inline">\(\partial: C_n(X) \to
+C_{n-1}(X)\)</span> 是取边界映射。</p>
+<p>那么就有 <span class="math inline">\(\partial (C_n^\beta(X)) \subset
+C_{n-1}^\beta(X)\)</span>。</p>
+<p>因此 <span class="math inline">\((C_\cdot^\beta(X),
+\partial)\)</span> 是一个链复形。</p>
+<p>将这个链复形的同调群 <span
+class="math inline">\(H_n(C_\cdot^\beta(X))\)</span> 记做 <span
+class="math inline">\(H_n^\beta(X)\)</span>。</p>
+<ul>
+<li><h5 id="引理">引理</h5>
+<p>令 <span class="math inline">\(i: C^\beta(X) \hookrightarrow C_\cdot
+(X)\)</span> 是一个嵌入映射。</p>
+<p>如果存在一个链同伦 <span class="math inline">\(\rho: C_\cdot(X) \to
+C^\beta(X)\)</span> 满足 <span class="math inline">\(\rho \circ i =
+id_{C^\beta(X)}\)</span> 且存在另一个链同伦 <span
+class="math inline">\(D: C_n(X) \to C_{n+1}(X)\)</span> 满足 <span
+class="math inline">\(\partial D + D \partial = id_{C_\cdot(X)} - i
+\circ \rho\)</span>。</p>
+<p>那么 <span class="math inline">\(i, \rho\)</span>
+是互逆的同伦等价，且 <span class="math inline">\(i_\star: H_n^\beta(X)
+\xrightarrow{\cong} H_n(X)\)</span>。进一步地，<span
+class="math inline">\(i, \rho, D\)</span> 都将 <span
+class="math inline">\(U_j\)</span> 的链映射到 <span
+class="math inline">\(U_j\)</span> 的链 <span
+class="math inline">\(\forall U_j \in \beta\)</span>。</p></li>
+</ul></li>
 </ul>
 
     </div>
