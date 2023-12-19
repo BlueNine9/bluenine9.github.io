@@ -261,7 +261,7 @@ class="math inline">\(t\)</span>为超级源点汇点 <figure class="highlight c
   <entry>
     <title>拓扑学笔记</title>
     <url>/2023/09/21/%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/zDdkM3KsFk/</p>
+    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/h2XNxsBZxZ/</p>
 <p>分节次的笔记（清华云盘）：https://cloud.tsinghua.edu.cn/d/2c4efaca588a4326958d/</p>
 <h2 id="lecture-info">00. Lecture Info</h2>
 <h3 id="考核">1. 考核</h3>
@@ -8101,6 +8101,299 @@ class="math inline">\(i, \rho, D\)</span> 都将 <span
 class="math inline">\(U_j\)</span> 的链映射到 <span
 class="math inline">\(U_j\)</span> 的链 <span
 class="math inline">\(\forall U_j \in \beta\)</span>。</p></li>
+</ul></li>
+</ul>
+<h2 id="切除定理及其应用">24. 切除定理及其应用</h2>
+<h3 id="切除定理">切除定理</h3>
+<ul>
+<li><h4 id="回忆切除定理">回忆：切除定理</h4>
+<p>令 <span class="math inline">\(Z\subset A\subset X\)</span>，<span
+class="math inline">\(\bar Z\subset \mathring A\)</span>，则 <span
+class="math inline">\(H_n(X-Z,A-Z)\cong H_n(X,A)\)</span>；等价地，若
+<span class="math inline">\(A,B\subset X\)</span> 满足 <span
+class="math inline">\(X=\mathring A\cup \mathring B\)</span>，则 <span
+class="math inline">\(H_n(B,A\cap B)\cong H_n(X,A)\)</span>.</p>
+<ul>
+<li><h5 id="引理-1">引理</h5>
+<p><span class="math inline">\(i:C^\beta(X)\hookrightarrow
+C_\cdot(X)\)</span> 嵌入映射，若 <span
+class="math inline">\(\exists\)</span> 链映射 <span
+class="math inline">\(\rho:C_\cdot(X)\to C^\beta(X)\)</span>，使得 <span
+class="math inline">\(\rho\circ i=id_{C^\beta(X)}\)</span> 并 <span
+class="math inline">\(\exists\)</span> 链同伦 <span
+class="math inline">\(D:C_n(X)\to C_{n+1}(X)\)</span> 使得 <span
+class="math inline">\(\partial D+D\partial = id_{C_\cdot (X)}-i\circ
+\rho\)</span>.</p>
+<p>更进一步地，<span class="math inline">\(i,\rho,D\)</span> 都将 <span
+class="math inline">\(U_j\)</span> 中的链映射到 <span
+class="math inline">\(U_j\)</span> 中的链。</p>
+<p>推荐文献：<a href="/Hatcher_2_21.pdf">Hatcher Prop.
+2.21</a>，我们只解释引理的直观含义。</p>
+<p>直观含义：我们用到了一个叫做“重心重分 (Barycentric
+Subdivision)”的思想：</p>
+<figure>
+<img src="\24-1.png" alt="image-20231219152934603" />
+<figcaption aria-hidden="true">image-20231219152934603</figcaption>
+</figure>
+<p>本来 <span class="math inline">\(\Delta\)</span> 的像不落在某个 <span
+class="math inline">\(U_j\)</span> 中，如果我们如图不断切割 <span
+class="math inline">\(\Delta\)</span>，引理证明了，我们进行有限次重心重分之后，小单形的像一定分别落在某些
+<span class="math inline">\(U_j\)</span> 中，<span
+class="math inline">\(\rho\)</span> 的构造就是小单形的和。</p></li>
+</ul></li>
+<li><h4 id="切除定理的证明">切除定理的证明</h4>
+<p>证明：</p>
+<p>我们来证明第二个等价叙述。</p>
+<p>令 <span class="math inline">\(\beta=\set{A,B}\)</span>，则 <span
+class="math inline">\(A,B\)</span> 的内部确实覆盖了 <span
+class="math inline">\(X\)</span>，满足引理条件。</p>
+<p>由上面的引理，<span class="math inline">\(\exists \rho:C_\cdot(X)\to
+C^\beta(X)\)</span>，<span class="math inline">\(D:C_n(X)\to
+C_{n+1}(X)\)</span>，使得 <span class="math inline">\(\partial
+D+D\partial =id_{C_\cdot(X)}-i\circ \rho\)</span>，<span
+class="math inline">\(\rho\circ i=id_{C_\cdot^\beta(X)}\)</span>.</p>
+<p>由于 <span class="math inline">\(\rho,D,i\)</span> 都把 <span
+class="math inline">\(A,B\)</span> 中的链映射到 <span
+class="math inline">\(A,B\)</span>，我们考虑嵌入映射 <span
+class="math inline">\(C_n^\beta(X)/C_n(A)\hookrightarrow
+C_n(X)/C_n(A)\)</span>，这个嵌入是一个链间的同伦等价。</p>
+<p>因此 <span class="math inline">\(H_n(C^\beta(X)/C_\cdot(A))\cong
+H_n(X,A)\)</span>.</p>
+<p>考虑映射 <span class="math inline">\(C_n(B)/C_n(A\cap
+B)\hookrightarrow C_n^\beta(X)/C_n(A)\)</span>
+嵌入，这在链复形层面已经是一个同构了。这是因为两边的群都是自由 Abel
+群，且它们的基都是 <span class="math inline">\(n\)</span>-单形，且基中
+<span class="math inline">\(n\)</span>-单形落在 <span
+class="math inline">\(B\)</span> 中并不落在 <span
+class="math inline">\(A\)</span> 中（这就是说，两边拥有相同的基）。</p>
+<p>因此 <span class="math inline">\(H_n(B,A\cap B)\cong
+H_n(C^\beta(X)/C_\cdot(A))\)</span>.</p>
+<p>同构具有传递性，因此 <span class="math inline">\(H_n(B,A\cap B)\cong
+H_n(X,A)\)</span>.</p></li>
+<li><h4 id="定义好对-good-pair">定义：好对 (Good Pair)</h4>
+<p>令 <span class="math inline">\(A\neq\varnothing\)</span>，并且 <span
+class="math inline">\(A\)</span> 是一个闭集。设 <span
+class="math inline">\(\exists\)</span> 开集 <span
+class="math inline">\(U\)</span> 使得 <span
+class="math inline">\(A\subset U\subset X\)</span>，且有 <span
+class="math inline">\(A\)</span> 是 <span
+class="math inline">\(U\)</span> 的形变收缩。那么称 <span
+class="math inline">\((X,A)\)</span> 是一个<strong>好对 (Good
+Pair)</strong>。太对了。</p></li>
+<li><h4 id="定理相对同调群的几何解释">定理：相对同调群的几何解释</h4>
+<p>令 <span class="math inline">\((X,A)\)</span>
+是一个好对，考虑粘合映射 <span class="math inline">\(q:(X,A)\to
+(X/A,A/A)\)</span>（这意味着将子空间 <span
+class="math inline">\(A\)</span>
+粘合为一个点），则这个粘合映射诱导了一个同构 <span
+class="math inline">\(q_\star:H_n(X,A)\to H_n(X/A,A/A)\cong \tilde
+H_n(X/A),\forall n\)</span>.</p>
+<p>证明：</p>
+<p>考虑 <span class="math inline">\(A\subset U\subset X\)</span>，其中
+<span class="math inline">\(U\)</span> 是开的且可以形变收缩到 <span
+class="math inline">\(A\)</span> 中。</p>
+<p>我们有嵌入映射 <span class="math inline">\(i_1:(X,A)\hookrightarrow
+(X,U), i_2:(X-A,U-A)\hookrightarrow(X,U)\)</span>.</p>
+<p>这诱导了粘合空间的嵌入映射 <span class="math inline">\(\bar
+i_1:(X/A,A/A)\hookrightarrow (X/A,U/A)\)</span>，<span
+class="math inline">\(\bar
+i_2:(X/A-A/A,U/A-A/A)\hookrightarrow(X/A,U/A).\)</span></p>
+<p>因此有交换图表：</p>
+<figure>
+<img src="\24-2.png" alt="image-20231219155546675" />
+<figcaption aria-hidden="true">image-20231219155546675</figcaption>
+</figure>
+<p>空间 <span class="math inline">\((X,U,A)\)</span> 的长正合列为 <span
+class="math inline">\(\cdots\to H_n(U,A)\to
+H_n(X,A)\xrightarrow{i_{1\star}} H_n(X,U)\to
+H_{n-1}(U,A)\to\cdots\)</span></p>
+<p>由于 <span class="math inline">\(U\)</span> 可以形变收缩到 <span
+class="math inline">\(A\)</span>，因此对正合列 <span
+class="math inline">\(H_{n+1}(U,A)\to H_n(A)\xrightarrow{\cong}H_n(U)\to
+H_n(U,A)\)</span>，中间的映射根据形变收缩因此是同构，因此左右两个元素都是
+<span class="math inline">\(0\)</span>，也就是说 <span
+class="math inline">\(H_n(U,A)=0=H_{n-1}(U,A)\)</span>. 因此 <span
+class="math inline">\(i_{1\star}\)</span> 是一个同构。</p>
+<p>类似地，我们也可以知道 <span class="math inline">\(\bar
+i_{1\star}\)</span> 是一个同构。</p>
+<p>由切除定理，我们发现 <span class="math inline">\(i_{2\star}\)</span>
+与 <span class="math inline">\(\bar i_{2\star}\)</span> 也是同构；</p>
+<p>由于 <span class="math inline">\(q&#39;&#39;:X-A\to X/A-A/A\)</span>
+以及 <span class="math inline">\(q&#39;&#39;:U-A\to U/A-A/A\)</span>
+实际上都是同胚（根据定义，左边和右边剪掉的都恰好是 <span
+class="math inline">\(A\)</span>），因此 <span
+class="math inline">\(q&#39;&#39;_\star\)</span> 还是一个同构 <span
+class="math inline">\(H_n(X-A,U-A)\to H_n(X/A-A/A,U/A-A/A)\)</span>.</p>
+<p>于是 <span class="math inline">\(q_\star=\bar i_{1\star}^{-1}\circ
+\bar i_{2\star} \circ q&#39;&#39;_\star\circ i_{2\star}^{-1}\circ
+i_{1\star}\)</span> 是同构，因此 <span
+class="math inline">\(H_n(X/A,A/A)\cong H_n(X,A)\)</span>.</p>
+<ul>
+<li><h5 id="注-1">注：</h5>
+如果 <span class="math inline">\((X,A)\)</span> 是好对，那么 <span
+class="math inline">\(\exists\)</span> 长正合列 <span
+class="math inline">\(\cdots\to \tilde H_n(A)\xrightarrow{i} \tilde
+H_n(X)\xrightarrow{j_\star} \tilde
+H_n(X/A)(H_n(X,A))\xrightarrow{\partial} \tilde
+H_{n-1}(A)\to\cdots\)</span>，这也就是说本来长正合列的相对同调群可以被约化同调群替代。</li>
+</ul></li>
+<li><h4
+id="定理的应用同调群的计算举例">定理的应用：同调群的计算（举例）</h4>
+<ul>
+<li><h5 id="wedge-sum-空间的同调群">Wedge Sum 空间的同调群</h5>
+<p>给出一族拓扑空间 <span class="math inline">\(X_\alpha\)</span>，其中
+<span class="math inline">\(\alpha\in I\)</span>. 我们取 <span
+class="math inline">\(x_\alpha\in X_\alpha\)</span> 使得 <span
+class="math inline">\((X_\alpha,\set{x_\alpha})\)</span> 是一个好对，
+<span class="math inline">\(\forall \alpha\)</span>.</p>
+<p>考虑嵌入映射 <span
+class="math inline">\(i_\alpha:X_\alpha\hookrightarrow
+\bigvee_{\alpha\in I} X_\alpha\)</span>，这诱导了同构 <span
+class="math inline">\(\displaystyle{\bigoplus_{\alpha\in I}
+i_{\alpha\star}:\bigoplus_{\alpha\in I}\tilde H_n(X_\alpha)\to \tilde
+H_n(\bigvee_{\alpha\in I} X_\alpha)}\)</span>.</p>
+<p>证明：</p>
+<p>考虑空间 <span class="math inline">\(X=\bigsqcup_{\alpha\in
+I}X_\alpha\)</span>，<span class="math inline">\(A=\bigsqcup_{\alpha\in
+I}\set{x_\alpha}\)</span>，考虑 <span
+class="math inline">\(X/A\)</span>，根据定义，它就是 <span
+class="math inline">\(\bigvee_{\alpha\in I} X_\alpha\)</span>.</p>
+<p>因此有</p>
+<p><span class="math inline">\(\bigoplus_{\alpha\in I}\tilde
+H_n(X_\alpha)\cong \bigoplus_{\alpha\in I}
+H_n(X_\alpha,\set{x_\alpha})\cong H_n(\bigsqcup_{\alpha\in I}
+X_\alpha,\bigsqcup_{\alpha\in I}\set{x_\alpha})\)</span></p>
+<p><span class="math inline">\(=H_n(X,A)\cong \tilde H(X/A)=\tilde
+H_n(\bigvee_{\alpha\in I}X_\alpha)\)</span>.</p></li>
+<li><h5 id="推论n-维球面的同调群">推论：<span
+class="math inline">\(n\)</span> 维球面的同调群</h5>
+<p><span
+class="math inline">\(H_i(S^n)=\begin{cases}\mathbb{Z}&amp;i=0,n\\0&amp;i\neq
+0,n\end{cases}\)</span></p>
+<p>证明：</p>
+<p>设 <span class="math inline">\(D^n\)</span> 是一个 <span
+class="math inline">\(n\)</span> 维实心球，令 <span
+class="math inline">\((X,A)=(D^n,\partial D^n=S^{n-1})\)</span>，于是
+<span class="math inline">\(X/A=S^n\)</span>.</p>
+<p>我们就有长正合列 <span class="math inline">\(\cdots\to \tilde
+H_i(S^{n-1})\to \tilde H_i(D^n)\to\tilde H_i(S^n)\xrightarrow{\partial}
+\tilde H_{i-1}(S^{n-1})\to\cdots\)</span></p>
+<p>因为 <span class="math inline">\(H_i(D^n)=0\)</span>（<span
+class="math inline">\(D^n\)</span> 是可缩空间），于是 <span
+class="math inline">\(\partial:\tilde H_i(S^n)\to\tilde
+H_{i-1}(S^{n-1})\)</span> 是一个同构。</p>
+<p>根据归纳，若 <span class="math inline">\(i\neq 0\)</span>，则 <span
+class="math inline">\(\tilde H_i(S^n)\cong \tilde
+H_{i-n}(S^0)=\begin{cases}\mathbb{Z}&amp;i=n\\0&amp;i\neq
+n\end{cases}\)</span></p>
+<p>此外，当 <span class="math inline">\(i=0\)</span>，<span
+class="math inline">\(H_0(S^n)=\mathbb{Z}\)</span>，从而得出结论。</p></li>
+<li><h5 id="推论任意维数的-brouwer-不动点定理">推论：任意维数的 Brouwer
+不动点定理</h5>
+<p>沿用之前的证明方法，假设 <span class="math inline">\(f(x)\neq
+x,\forall x\in D^n\)</span>，则可以构造出 <span
+class="math inline">\(g:D^n\to S^{n-1}\)</span>，使得 <span
+class="math inline">\(g|_{S^{n-1}}=id_{S^{n-1}}\)</span>. （射线法）</p>
+<p>考虑复合映射 <span class="math inline">\(S^{n-1}\hookrightarrow
+D^n\xrightarrow{g} S^{n-1}\)</span>，因此 <span
+class="math inline">\(g_\star\circ i_\star
+=id_{H_{n-1}(S^{n-1})}\)</span>，其中 <span
+class="math inline">\(i\)</span> 是嵌入映射。</p>
+<p>然而 <span class="math inline">\(H_{n-1}(S^{n-1})\cong \mathbb{Z},
+H_{n-1}(D^n)=0 (n\geq 2)\)</span>，这导出了矛盾。</p></li>
+<li><h5 id="推论同胚的开集维数相同">推论：同胚的开集维数相同</h5>
+<p>考虑 <span class="math inline">\(\varnothing\neq U\subset
+\mathbb{R}^m\)</span> 开集，<span class="math inline">\(\varnothing\neq
+V\subset \mathbb{R}^n\)</span> 开集，若 <span
+class="math inline">\(U\)</span> 与 <span
+class="math inline">\(V\)</span> 是同胚的，则 <span
+class="math inline">\(m=n\)</span>.</p>
+<p>证明：</p>
+<p>任取 <span class="math inline">\(x\in U\)</span>，由切除定理有 <span
+class="math inline">\(H_k(U,U-\set{x})\cong
+H_k(\mathbb{R}^m,\mathbb{R}^m-\set{x})\)</span>.</p>
+<p>考虑长正合列 <span class="math inline">\(\cdots\to \tilde
+H_k(\mathbb{R}^m-\set{x})\to \tilde H_k(\mathbb{R}^m)\to
+H_k(\mathbb{R}^m,\mathbb{R}^m-\set{x})\to \tilde
+H_{k-1}(\mathbb{R}^m-\set{x})\to\cdots\)</span></p>
+<p>由于 <span class="math inline">\(\tilde
+H^k(\mathbb{R}^m)=0\)</span>（可缩），有 <span
+class="math inline">\(H_k(\mathbb{R}^m,\mathbb{R}^m-\set{x})\cong \tilde
+H_{k-1}(\mathbb{R}^m-\set{x})\)</span>，且 <span
+class="math inline">\(\mathbb{R}^m-\set{X}\simeq S^{n-1}\)</span></p>
+<p>从而 <span
+class="math inline">\(H_k(\mathbb{R}^m,\mathbb{R}^m-\set{x})\cong \tilde
+H_{k-1}(S^{n-1})=\begin{cases}\mathbb{Z}&amp;k=m\\0&amp;k\neq
+m\end{cases}\)</span></p>
+<p>假设 <span class="math inline">\(\exists\)</span> 同胚 <span
+class="math inline">\(h:U\to V\)</span>，一定有 <span
+class="math inline">\(H_k(U,U-\set{x})\cong
+H_k(V,V-\set{h(x)})=H_k(\mathbb{R}^n,\mathbb{R}^n-\set{h(x)})\)</span>.</p>
+<p>比较上下两个结构，我们有 <span
+class="math inline">\(H_k(\mathbb{R}^m,\mathbb{R}^m-\set{x})=H_k(\mathbb{R}^n,\mathbb{R}^n-\set{h(x)})\)</span>.</p>
+<p>因此 <span class="math inline">\(m=n\)</span>.</p></li>
+<li><h5 id="注局部同调群-local-homology">注：局部同调群 (Local
+Homology)</h5>
+<p><span class="math inline">\(\forall x\in X\)</span>，我们将 <span
+class="math inline">\(H_n(X,X-\set{x})\)</span> 称为<strong>局部同调群
+(Local Homology)</strong>，如果 <span
+class="math inline">\(\set{x}\)</span> 在空间中是个闭集，由切除定理有
+<span class="math inline">\(\forall\)</span> 邻域 <span
+class="math inline">\(x\in U\)</span>，有 <span
+class="math inline">\(H_n(X,X-\set{x})=H_n(U,U-\set{x})\)</span>.</p></li>
+<li><h5
+id="例球与球面的相对同调群的生成元">例：球与球面的相对同调群的生成元</h5>
+<p><span class="math inline">\(H_n(D^n,\partial D^n)=\tilde
+H_n(S^n)=\mathbb{Z}\)</span>，我们希望具体描述这个群的生成元。</p>
+<p>我们将 <span class="math inline">\(D^n\)</span> 与 <span
+class="math inline">\(\partial D^n\)</span> 看成 <span
+class="math inline">\(n\)</span> 维单形 <span
+class="math inline">\(\Delta^n\)</span> 与它的边界 <span
+class="math inline">\(\partial \Delta^n\)</span>.</p>
+<p>考虑奇异单形 <span class="math inline">\(i_n:\Delta^n\to
+\Delta^n\)</span> 是恒等映射，则 <span class="math inline">\(\partial
+i_n\)</span> 是 <span class="math inline">\(\Delta^n\)</span>
+边界里面的链，因此 <span class="math inline">\(i_n\)</span> 在商复形
+<span class="math inline">\(C_n(\Delta^n)/C_n(\partial
+\Delta^n)\)</span> 中看是一个圈。</p>
+<p>结论：<span class="math inline">\([i_n]\)</span> 就是我们要取的 <span
+class="math inline">\(H_n(D^n,\partial D^n)\)</span> 的生成元。</p>
+<p>证明：</p>
+<p>归纳法。当 <span class="math inline">\(n=0\)</span>
+的时候是显然的；</p>
+<p>令 <span class="math inline">\(\Lambda\subset \Delta^n\)</span>
+是一个 <span class="math inline">\(\Delta^n\)</span> 除了其中一个 <span
+class="math inline">\(n-1\)</span> 维面以外的其他面并起来：</p>
+<figure>
+<img src="\24-3.png" alt="image-20231219170107016" />
+<figcaption aria-hidden="true">image-20231219170107016</figcaption>
+</figure>
+<p>考虑 <span class="math inline">\((\Delta^n,\partial
+\Delta^n,\Lambda)\)</span>，可以得到一个长正合列：</p>
+<p><span class="math inline">\(\cdots\to
+H_n(\partial\Delta^n,\Lambda)\to H_n(\Delta^n,\partial
+\Delta^n)\xrightarrow{\partial}H_{n-1}(\partial \Delta^n,\Lambda)\to
+H_{n-1}(\Delta^n,\Lambda)\to\cdots\)</span></p>
+<p>因为 <span class="math inline">\(\Delta^n\)</span> 可以形变收缩到
+<span class="math inline">\(\Lambda\)</span>，因此 <span
+class="math inline">\(H_n(\Delta^n,\Lambda)=0\)</span>.</p>
+<p>于是 <span class="math inline">\(\partial\)</span> 给出了 <span
+class="math inline">\(H_n(\Delta^n,\Lambda)\cong H_{n-1}(\partial
+\Delta^n,\partial \Delta^n)\)</span></p>
+<p>考虑嵌入映射 <span class="math inline">\((\Delta^{n-1},\partial
+\Delta^{n-1})\xrightarrow{\varphi}(\partial
+\Delta^n,\Lambda)\)</span>，它给出的同构是</p>
+<p><span class="math inline">\(\tilde
+H_{n-1}(\Delta_{n-1}/\partial\Delta^{n-1})=H_{n-1}(\Delta^n,\partial
+\Delta^{n-1})\xrightarrow{\cong}H_{n-1}(\partial\Delta^n,\Lambda)=
+\tilde H_{n-1}(\partial \Delta^n/\Lambda)\)</span></p>
+<p><span class="math inline">\(\varphi\)</span> 实际上给出的是一个 <span
+class="math inline">\(S^{n-1}\to S^{n-1}\)</span> 的映射；</p>
+<p>于是 <span class="math inline">\(\varphi_\star^{-1}\partial
+[i_n]=[i_{n-1}]\in H_{n-1}(\Delta^{n-1},\partial
+\Delta^{n-1})\)</span>，根据归纳根据前面两个映射是同构，若 <span
+class="math inline">\([i_{n-1}]\)</span> 是生成元，<span
+class="math inline">\([i_n]\)</span> 也需要是生成元。</p></li>
 </ul></li>
 </ul>
 ]]></content>
