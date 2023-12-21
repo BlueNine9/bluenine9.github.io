@@ -261,7 +261,7 @@ class="math inline">\(t\)</span>为超级源点汇点 <figure class="highlight c
   <entry>
     <title>拓扑学笔记</title>
     <url>/2023/09/21/%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/h2XNxsBZxZ/</p>
+    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/VXGpJSqPzf/</p>
 <p>分节次的笔记（清华云盘）：https://cloud.tsinghua.edu.cn/d/2c4efaca588a4326958d/</p>
 <h2 id="lecture-info">00. Lecture Info</h2>
 <h3 id="考核">1. 考核</h3>
@@ -8394,6 +8394,361 @@ class="math inline">\(S^{n-1}\to S^{n-1}\)</span> 的映射；</p>
 \Delta^{n-1})\)</span>，根据归纳根据前面两个映射是同构，若 <span
 class="math inline">\([i_{n-1}]\)</span> 是生成元，<span
 class="math inline">\([i_n]\)</span> 也需要是生成元。</p></li>
+</ul></li>
+</ul>
+<h2 id="胞腔复形">25. 胞腔复形</h2>
+<h3 id="同调群的计算">同调群的计算</h3>
+<ul>
+<li><h4 id="回忆球面同调群的生成元">回忆：球面同调群的生成元</h4>
+<p><span class="math inline">\(i_n: \Delta^n \to \Delta^n\)</span>
+是恒等映射</p>
+<p><span class="math inline">\([i_n] \in H_n(\Delta^n, \partial
+\Delta^n) = H_n(D^n, \partial D^n) \cong \mathbb{Z}\)</span>
+是它的生成元。</p>
+<p>给定两个 <span class="math inline">\(n\)</span>-单形 <span
+class="math inline">\(\Delta_1^n, \Delta_2^n\)</span>，沿着它们俩所有的
+<span class="math inline">\(n-1\)</span>
+维的面对应粘起来，粘的时候保持顶点的顺序。</p>
+<p>那么粘完后会得到一个球面 <span
+class="math inline">\(S^n\)</span>。</p>
+<figure>
+<img src="\25-1.png" alt="image-20231221095512495" />
+<figcaption aria-hidden="true">image-20231221095512495</figcaption>
+</figure>
+<p>那么 <span class="math inline">\(id_{\Delta^n_1} -
+id_{\Delta^n_2}\)</span> 是一个圈。</p>
+<p>我们想要证明 <span class="math inline">\(\tilde H_n(S_n) = \mathbb{Z}
+\cdot [id_{\Delta^n_1} - id_{\Delta^n_2}]\)</span></p>
+<p><span class="math inline">\(\tilde H_n(S^n) \xrightarrow{\cong}
+H_n(S^n, \Delta_2^n)\)</span>，这个同构源自于一个 <span
+class="math inline">\((S^n, \Delta^n_2)\)</span> 长正合列</p>
+<p><span class="math inline">\(H_n(\Delta_1^n, \partial \Delta^n_1)
+\xrightarrow{\cong} H_n(S^n, \Delta^n_2)\)</span></p>
+<p><span class="math inline">\(H_n(S^n, \Delta^n_2) = \tilde
+H_n(S^n/\Delta^n_2)\)</span>，<span
+class="math inline">\(H_n(\Delta^n_1, \partial \Delta^n_1) = \tilde
+H_n(\Delta^n_1/\partial \Delta^n_1)\)</span>，<span
+class="math inline">\(\Delta_1^n/\partial \Delta^n_1 =
+S^n\)</span>，<span class="math inline">\(S^n / \Delta^n_2 =
+S^n\)</span></p>
+<p>因此就有 <span class="math inline">\(\tilde H_n(S^n/\Delta^n_2) =
+\tilde H_n(\Delta^n_1/\partial \Delta^n_1)\)</span></p>
+<p>根据群同构 <span class="math inline">\(\tilde H_n(S^n)
+\xrightarrow{\cong} H_n(S^n, \Delta_2^n) \xleftarrow{\cong}
+H_n(\Delta_1^n, \partial
+\Delta^n_1)\)</span>，就有生成元映射到生成元：<span
+class="math inline">\([id_{\Delta^n_1} - id_{\Delta^n_2}] \to
+[id_{\Delta^n_1}] \leftarrow [id_{\Delta^n_1}]\)</span></p>
+<figure>
+<img src="\25-2.png" alt="image-20231221100800360" />
+<figcaption aria-hidden="true">image-20231221100800360</figcaption>
+</figure>
+<p>因此我们就证明了 <span class="math inline">\(\tilde H_n(S^n) \cong
+\mathbb{Z} \cdot [id_{\Delta^n_1} - id_{\Delta^n_2}]\)</span></p></li>
+</ul>
+<h3 id="映射度理论-degree">映射度理论 (Degree)</h3>
+<ul>
+<li><h4 id="定义-1">定义</h4>
+<p>令 <span class="math inline">\(f: S^n \to S^n\)</span>，<span
+class="math inline">\(H_n(S^n) = \mathbb{Z} \cdot \alpha\)</span></p>
+<p>就有一个诱导的群同态 <span class="math inline">\(f_\star : H_n(S^n)
+\to H_n(S^n)\)</span>，<span class="math inline">\(f_\star(\alpha) = d
+\cdot \alpha\)</span> 对某个 <span class="math inline">\(d \in
+\mathbb{Z}\)</span></p>
+<p>我们就把 <span class="math inline">\(d\)</span> 这个整数叫做映射
+<span class="math inline">\(f\)</span> 的 <strong>映射度
+(degree)</strong>，记作 <span class="math inline">\(\deg f =
+d\)</span></p></li>
+<li><h4 id="基本性质">基本性质</h4>
+<ul>
+<li><p><span class="math inline">\(\deg id_{S^n} = 1\)</span></p></li>
+<li><p>如果 <span class="math inline">\(f: S^n \to S^n\)</span>
+不是满射，那么 <span class="math inline">\(\deg f = 0\)</span>。</p>
+<p>证明：存在点 <span class="math inline">\(p \in S^n\)</span> 使得
+<span class="math inline">\(f(S^n) \subset
+S^n/\set{p}\)</span>。根据球极投影 <span class="math inline">\(S^n /
+\set{p} = \mathbb{R}^n\)</span>，因为 <span
+class="math inline">\(\mathbb{R}^n\)</span> 是凸集，所以 <span
+class="math inline">\(S^n/\set{p}\)</span> 是可缩的，那么就有 <span
+class="math inline">\(H_n(S^n / \set{p}) = 0\)</span>。我们将 <span
+class="math inline">\(f\)</span> 分解为 <span class="math inline">\(f:
+S^n \to S^n/\set{p} \hookrightarrow S^n\)</span>，那么也可以将 <span
+class="math inline">\(f_\star\)</span> 分解为 <span
+class="math inline">\(f_\star: H_n(S^n) = H_n(S^n/\set{p}) \to
+H_n(S^n)\)</span>。因为中间的 <span class="math inline">\(H_n(S^n
+/\set{p}) = 0\)</span>，就有 <span class="math inline">\(f_\star =
+0\)</span>。因此 <span class="math inline">\(\deg f =
+0\)</span>。</p></li>
+</ul>
+<figure>
+<img src="\25-3.png" alt="image-20231221101215921" />
+<figcaption aria-hidden="true">image-20231221101215921</figcaption>
+</figure>
+<ul>
+<li><p>如果 <span class="math inline">\(f \simeq g\)</span>，那么 <span
+class="math inline">\(f_\star = g_\star\)</span>，进一步的 <span
+class="math inline">\(\deg f = \deg g\)</span>。</p></li>
+<li><p><span class="math inline">\((fg)_\star = f_\star
+g_\star\)</span>，因此 <span class="math inline">\(\deg (f \circ g) =
+\deg f \cdot \deg g\)</span></p></li>
+<li><p>假设 <span class="math inline">\(f: S^n \to S^n\)</span>
+是一个同伦等价，那么存在 <span class="math inline">\(g: S^n \to
+S^n\)</span> 使得 <span class="math inline">\(f \circ g \simeq id_{S^n},
+g \circ f \simeq id_{S^n}\)</span>。根据上面的第 3、4 条，<span
+class="math inline">\(\deg f \deg g = \deg (f \circ g) = \deg id_{S^n} =
+1\)</span>。因此 <span class="math inline">\(\deg f = \pm
+1\)</span>。</p></li>
+</ul></li>
+<li><h4 id="镜面反射的映射度">镜面反射的映射度</h4>
+<p>令 <span class="math inline">\(S^n = \set{(x_1, x_2, \cdots, x_{n+1})
+\in \mathbb{R}^{n+1} \mid x_1^n + \cdots + x_{n+1}^2 = 1}\)</span>。</p>
+<p>考虑 <span class="math inline">\(f_i: S^n \to S^n\)</span> 是一个沿着
+<span class="math inline">\(i\)</span>-轴的镜面反射，<span
+class="math inline">\(f(x_1, \cdots, x_n) = (x_1, \cdots, x_{i-1}, -x_i,
+x_{i+1}, \cdots, x_{n+1})\)</span></p>
+<p>则 <span class="math inline">\(\deg f_i = -1\)</span>。</p>
+<p>证明 :</p>
+<p>把两个 <span class="math inline">\(n\)</span>-单形沿着它们所有 <span
+class="math inline">\(n-1\)</span>
+维的面对应粘起来，保持顶点的顺序，得到 <span
+class="math inline">\(S^n\)</span>。</p>
+<p>根据上面的例子 <span class="math inline">\([id_{\Delta^n_1} -
+id_{\Delta^n_2}]\)</span> 是 <span
+class="math inline">\(H_n(S^n)\)</span> 的生成元。</p>
+<figure>
+<img src="\25-4.png" alt="image-20231221102232001" />
+<figcaption aria-hidden="true">image-20231221102232001</figcaption>
+</figure>
+<p>如果让 <span class="math inline">\(i-\)</span>
+轴如图，那么镜面反射就有 <span
+class="math inline">\(f_{i\star}[id_{\Delta^n_1} - id_{\Delta^n_2}] =
+[id_{\Delta^n_2} - id_{\Delta^n_1}]\)</span>。</p>
+<p>因此 <span class="math inline">\(\deg f_i = -1\)</span>。</p></li>
+<li><h4 id="对径映射的映射度">对径映射的映射度</h4>
+<p>令 <span class="math inline">\(f: S^n \to S^n\)</span>，<span
+class="math inline">\(f(x) = -x\)</span>，则 <span
+class="math inline">\(\deg f = (-1)^{n+1}\)</span>。</p>
+<p>证明：</p>
+<p><span class="math inline">\(f = f_1 \circ f_2 \circ \cdots \circ
+f_{n+1}\)</span>，其中 <span class="math inline">\(f_i(x_1, \cdots,
+x_{n+1}) = (x_1, \cdots, x_{i-1}, -x_i, x_{i+1} \cdots
+x_{n+1})\)</span>。</p>
+<p>那么 <span class="math inline">\(\deg f = \deg f_1 \cdot \cdots \cdot
+\deg f_{n+1} = (-1)^{n+1}\)</span>。</p></li>
+<li><h4 id="没有不动点的映射的映射度">没有不动点的映射的映射度</h4>
+<p>令 <span class="math inline">\(f: S^n \to S^n\)</span> 没有不动点，即
+<span class="math inline">\(\forall x \in S^n, f(x) \neq
+x\)</span>。</p>
+<p>则 <span class="math inline">\(\deg f = (-1)^{n+1}\)</span>。</p>
+<p>证明：</p>
+<p>如果 <span class="math inline">\(f(x) \neq x\)</span>，考虑线段 <span
+class="math inline">\((1-t)f(x) -
+tx\)</span>，则这个线段不通过原点（球心）。</p>
+<figure>
+<img src="\25-5.png" alt="image-20231221102933035" />
+<figcaption aria-hidden="true">image-20231221102933035</figcaption>
+</figure>
+<p>则 <span class="math inline">\(|(1-t) f(x) - tx| \neq 0, \forall
+t\)</span>。</p>
+<p>因此可以构造 <span class="math inline">\(F: S^n \times I \to
+S^n\)</span>，<span class="math inline">\(F(x, t) = \frac{(1-t)f(x) -
+tx}{|(1-t)f(x) - tx|}\)</span> 良定义。其中 <span
+class="math inline">\(F(x, 0) = f(x)\)</span>，<span
+class="math inline">\(F(x, 1) = -x\)</span>。</p>
+<p>则 <span class="math inline">\(f \simeq
+-id_{S^n}\)</span>（对径映射）。</p>
+<p>因此 <span class="math inline">\(\deg f = \deg -id_{S^n} =
+(-1)^{n+1}\)</span>。</p></li>
+<li><h4
+id="唯一能自由作用于偶数维球面的群是二元群">唯一能自由作用于偶数维球面的群是二元群</h4>
+<p>令 <span class="math inline">\(n\)</span> 是偶数。二元群 <span
+class="math inline">\(\mathbb{Z}_2\)</span>
+是唯一的一个非平凡群使得这个群可以自由地作用在 <span
+class="math inline">\(S^n\)</span> 上。</p>
+<ul>
+<li><h5 id="回忆自由群作用">回忆：自由群作用</h5>
+<span class="math inline">\(G \curvearrowright S^n\)</span>，对任意
+<span class="math inline">\(e \neq g \in G\)</span>，都有 <span
+class="math inline">\(g \cdot x \neq x, \forall x \in
+S^n\)</span>（除了恒等元都不会作用出不动点）。</li>
+</ul>
+<p>证明：</p>
+<p>令 <span class="math inline">\(G \curvearrowright S^n\)</span>
+是一个自由的群作用，对 <span class="math inline">\(\forall g \in
+G\)</span>，<span class="math inline">\(g: S^n \to S^n\)</span>，<span
+class="math inline">\(x \to g \cdot x\)</span> 是一个同胚。则 <span
+class="math inline">\(\deg g = \pm 1\)</span></p>
+<p>定义 <span class="math inline">\(d: G \to \mathbb{Z}_2 = \set{\pm
+1}\)</span>，<span class="math inline">\(d(g) = \deg g\)</span>。</p>
+<p>因为 <span class="math inline">\(d(g_1 g_2) = \deg(g_1 g_2) = \deg
+g_1 \deg g_2 = d(g_1) d(g_2)\)</span>，所以 <span
+class="math inline">\(d\)</span> 是一个群同态。</p>
+<p>如果 <span class="math inline">\(g \neq e\)</span>，映射 <span
+class="math inline">\(g: S^n \to S^n\)</span> 没有不动点，因此 <span
+class="math inline">\(\deg g = (-1)^{n+1}\)</span>。因为 <span
+class="math inline">\(n\)</span> 是偶数，所以 <span
+class="math inline">\(\deg g = 1\)</span>。</p>
+<p>故 <span class="math inline">\(\ker d = \set{e}\)</span>，这就意味着
+<span class="math inline">\(d\)</span> 是一个单射。因此 <span
+class="math inline">\(G = \set{e} \text{ or }
+\mathbb{Z}_2\)</span>。</p></li>
+<li><h4
+id="只有奇数维球面才有连续切向量场">只有奇数维球面才有连续切向量场</h4>
+<p><span class="math inline">\(S^n\)</span>
+有一个连续的、处处非零的切向量场 <span
+class="math inline">\(\Leftrightarrow\)</span> <span
+class="math inline">\(n\)</span> 是奇数。</p>
+<figure>
+<img src="\25-6.png" alt="image-20231221104833904" />
+<figcaption aria-hidden="true">image-20231221104833904</figcaption>
+</figure>
+<p>证明：</p>
+<p>"<span class="math inline">\(\Leftarrow\)</span>":</p>
+<p>令 <span class="math inline">\(n = 2k - 1\)</span>，定义 <span
+class="math inline">\(v(x_1, x_2, \cdots, x_{2k-1}, x_{2k}) = (-x_2,
+x_1, \cdots, -x_{2k}, x_{2k-1})\)</span>，其中 <span
+class="math inline">\((x_1, \cdots, x_{2k}) \in S^n\)</span>，那么就有
+<span class="math inline">\(v(x) \bot x\)</span>（做点积等于 <span
+class="math inline">\(0\)</span>）。</p>
+<p>因此 <span class="math inline">\(v(x)\)</span>
+确实是一个连续的切向量场，且 <span class="math inline">\(|v(x)| = 1 \neq
+0\)</span>。</p>
+<p>"<span class="math inline">\(\Rightarrow\)</span>":</p>
+<p>令 <span class="math inline">\(v(x)\)</span> 是 <span
+class="math inline">\(S^n\)</span> 的一个切向量场，使得 <span
+class="math inline">\(v(x) \neq 0, \forall x \in S^n\)</span>。</p>
+<p>考虑变换 <span
+class="math inline">\(\frac{v(x)}{|v(x)|}\)</span>，则它也是一个连续的向量场，且
+<span class="math inline">\(|\frac{v(x)}{|v(x)|}| = 1\)</span>。</p>
+<p>因此，我们可以一开始就假设向量场 <span
+class="math inline">\(v(x)\)</span> 满足 <span
+class="math inline">\(|v(x)| = 1\)</span>。</p>
+<p>令 <span class="math inline">\(F: S^n \times I \to
+S^n\)</span>，<span class="math inline">\(F(x, t) = (\cos \pi t)x +
+(\sin \pi t) v(x)\)</span></p>
+<figure>
+<img src="\25-7.png" alt="image-20231221105642519" />
+<figcaption aria-hidden="true">image-20231221105642519</figcaption>
+</figure>
+<p>备注：<span class="math inline">\(x+v(x)\)</span>
+连接后构成一个平面，这个平面和 <span class="math inline">\(S^n\)</span>
+交成一个大圆，<span class="math inline">\(F(x, t)\)</span>
+就是在这个大圆里转圈，从 <span class="math inline">\(x\)</span> 出发沿着
+<span class="math inline">\(v(x)\)</span> 的方向转到 <span
+class="math inline">\(-x\)</span>）</p>
+<p>则 <span class="math inline">\(F(x, 0) = x\)</span>，<span
+class="math inline">\(F(x, 1) = -x\)</span>。故 <span
+class="math inline">\(F\)</span> 是 <span
+class="math inline">\(x\)</span> 到 <span
+class="math inline">\(-x\)</span> 的同伦。</p>
+<p>因此 <span class="math inline">\(\deg id_{S^n} = \deg
+(-id_{S^n})\)</span>，即 <span class="math inline">\(1 =
+(-1)^{n+1}\)</span>，因此 <span class="math inline">\(n\)</span>
+是奇数。</p></li>
+</ul>
+<h3 id="胞腔复形-cw-complex-cell-complex">胞腔复形 (CW Complex / Cell
+Complex)</h3>
+<p>Reference: <a href="/Hatcher_Appendix_A.pdf">Hatcher Appendix</a></p>
+<ul>
+<li><h4 id="定义胞腔复形-cw-complex-cell-complex">定义：胞腔复形 (CW
+Complex / Cell Complex)</h4>
+<p>一个拓扑空间 <span class="math inline">\(X\)</span> 被称为
+<strong>胞腔复形 (CW complex / cell
+complex)</strong>，如果它可以用如下的方式来构造：</p>
+<ol type="1">
+<li><p>令 <span class="math inline">\(X^0\)</span>
+是一些点的不交并。这些点被看作是 <strong><span
+class="math inline">\(0\)</span> 维的胞腔 (<span
+class="math inline">\(0\)</span>-cell)</strong>。</p></li>
+<li><p>假设我们已经构造好了 <span
+class="math inline">\(X^{n-1}\)</span>。我们用如下方式构造 <span
+class="math inline">\(X^n\)</span>：</p>
+<p>令 <span class="math inline">\(\set{D^n_\alpha}_{\alpha \in
+I}\)</span> 是一族 <span class="math inline">\(n\)</span> 维的球。令
+<span class="math inline">\(\varphi_\alpha: \partial
+D_\alpha^n(=S^{n-1}) \to X^{n-1}\)</span> 的连续映射。</p>
+<p>令 <span class="math inline">\(X^n\)</span> 是 <span
+class="math inline">\(X^{n-1} \bigsqcup (\bigsqcup_{\alpha \in I}
+D_\alpha^n)\)</span> 的粘合空间，通过粘合 <span
+class="math inline">\(x\)</span> 和 <span
+class="math inline">\(\varphi_\alpha(x)\)</span>，<span
+class="math inline">\(\forall x \in \partial D_\alpha^n\)</span>。</p>
+<p>将 <span class="math inline">\(X^n\)</span> 称为一个 <strong><span
+class="math inline">\(n\)</span> 维的骨架 (<span
+class="math inline">\(n\)</span>-skeleton)</strong>。</p>
+<p>作为一个集合，<span class="math inline">\(X^n = X^{n-1} \bigsqcup
+\left(\sqcup_{\alpha \in I} e_\alpha^n\right)\)</span>，其中 <span
+class="math inline">\(e_\alpha^n\)</span> 是一个 <span
+class="math inline">\(n\)</span> 维的开球，称为 <strong><span
+class="math inline">\(n\)</span> 维的胞腔 (<span
+class="math inline">\(n\)</span>-cell)</strong>。</p></li>
+<li><p>如果上述的构造过程在某一个有限的 <span
+class="math inline">\(n\)</span> 停止，就令 <span
+class="math inline">\(X = X^n\)</span>。将这个 <span
+class="math inline">\(X\)</span> 称为一个 <strong><span
+class="math inline">\(n\)</span> 维的胞腔复形 (<span
+class="math inline">\(n\)</span>-dimensional CW Complex)</strong>。</p>
+<p>另一种情况，如果没有在有限步停止，就令 <span class="math inline">\(X
+= \bigcup_{n = 0}^{\infin} X^n\)</span>，在这个 <span
+class="math inline">\(X\)</span>
+上装备一个拓扑（这个拓扑称为<strong>弱拓扑 (weak
+topology)</strong>）：<span class="math inline">\(A \subseteq X\)</span>
+是开的当且仅当对于 <span class="math inline">\(\forall n\)</span> 都有
+<span class="math inline">\(A \cap X^n\)</span> 是开的。</p></li>
+</ol>
+<ul>
+<li><h5 id="特征映射-characteristic-map">特征映射 (Characteristic
+Map)</h5>
+<p>令 <span class="math inline">\(e_\alpha^n\)</span> 是胞腔复形 <span
+class="math inline">\(X\)</span> 中的一个 <span
+class="math inline">\(n\)</span> 维的胞腔，则有一个<strong>特征映射
+(characteristic map)</strong> <span class="math inline">\(\Phi_\alpha:
+D_\alpha^n \to X\)</span>，<span
+class="math inline">\(\Phi_\alpha|_{\partial D_\alpha^n} =
+\varphi_\alpha\)</span>。</p>
+<p><span class="math inline">\(\Phi_\alpha\)</span>
+通过下面的复合映射定义：</p>
+<p><span class="math inline">\(\Phi_\alpha: D_\alpha^n \hookrightarrow
+X^{n-1} \bigsqcup \left(\sqcup_\alpha D_\alpha^n \right)
+\xrightarrow{\text{Identification map}} X^n \hookrightarrow
+X\)</span></p></li>
+<li><h5 id="子复形-subcomplex">子复形 (Subcomplex)</h5>
+<p>考虑子空间 <span class="math inline">\(A \subset X\)</span>，<span
+class="math inline">\(A\)</span> 被称为一个 <strong>子复形
+(subcomplex)</strong>，如果 <span class="math inline">\(A\)</span>
+是闭集，且 <span class="math inline">\(A\)</span> 是一些 <span
+class="math inline">\(X\)</span> 中胞腔的并。</p>
+<p>证明 <span class="math inline">\(A\)</span> 是一个胞腔复形：</p>
+<p>如果 <span class="math inline">\(e_\alpha^n \subset A\)</span>，则
+<span class="math inline">\(\Phi_\alpha(D_\alpha^n) \subset
+A\)</span>。因为 <span class="math inline">\(A\)</span> 是闭集，所以
+<span class="math inline">\(\Phi_\alpha(\partial D_\alpha^n) =
+\varphi_\alpha(\partial D_\alpha^n) \subset A\)</span>。</p>
+<p>则 <span class="math inline">\(A\)</span> 确实是一个胞腔复形。</p>
+<p>将 <span class="math inline">\((X, A)\)</span> 称为一个
+<strong>胞腔对 (CW pair)</strong>。</p></li>
+</ul></li>
+<li><h4 id="胞腔复形的性质">胞腔复形的性质</h4>
+<ul>
+<li><h5
+id="胞腔复形中的紧集只能与有限多个胞腔相交">胞腔复形中的紧集只能与有限多个胞腔相交</h5>
+<p>若 <span class="math inline">\(C \subset X\)</span> 是一个紧子集，则
+<span class="math inline">\(C\)</span> 只能和有限多个胞腔相交。</p>
+<p>(Hatcher prop. A.1)</p></li>
+<li><h5
+id="推论每个胞腔的闭包只能与有限多个胞腔相交">推论：每个胞腔的闭包只能与有限多个胞腔相交</h5>
+<p>每一个胞腔的闭包只能和有限多个胞腔相交。</p>
+<p>证明：</p>
+<p>对一个胞腔 <span class="math inline">\(e_\alpha^n\)</span>，<span
+class="math inline">\(\overline{e_\alpha^n} =
+\Phi_\alpha(D_\alpha^n)\)</span>，因为 <span
+class="math inline">\(D_\alpha^n\)</span> 是紧的，所以 <span
+class="math inline">\(\Phi_\alpha(D_\alpha^n)\)</span>
+也是紧的。</p></li>
+<li><h5 id="子复形是好对">子复形是好对</h5>
+<p>对子复形 <span class="math inline">\(A \subset X\)</span>，则 <span
+class="math inline">\((X, A)\)</span> 是一个好对 (Good Pair)。</p>
+<p>(Hatcher prop. A.5)</p></li>
 </ul></li>
 </ul>
 ]]></content>
