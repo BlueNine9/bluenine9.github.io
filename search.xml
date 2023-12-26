@@ -8893,7 +8893,7 @@ class="math inline">\(X\)</span> 是有限维）</li>
 是无限维，我们证明映射是满射且单射。</p>
 <p>满射：考察 <span class="math inline">\([z]\in H_k(X)\)</span>，<span
 class="math inline">\(z=\sum n_i \sigma_i\)</span>，一个有限和，结论为
-<span class="math inline">\(\bigcup_{i} \Im(\sigma_i)\in
+<span class="math inline">\(\bigcup_{i} \text{Im}(\sigma_i)\in
 X^m\)</span>，对于某 <span class="math inline">\(m&gt;n\)</span>. 由于
 <span class="math inline">\([z]\in H_k(X^m)\cong H_k(X^n)\)</span>，于是
 <span class="math inline">\(H_k(X_n)\to H_k(X)\)</span> 是满射。</p>
@@ -8958,18 +8958,18 @@ class="math inline">\(n\)</span> 个同调群。</p>
 <p><span class="math inline">\(H_n(X)\cong
 H_n(X^{n+1})\)</span>，这由先前的引理 (c) 给出.</p>
 <p>还有 <span class="math inline">\(H_n(X^{n+1})\cong
-H_n(X^n)/\Im\partial_{n+1}\)</span>.</p>
+H_n(X^n)/\text{Im}\partial_{n+1}\)</span>.</p>
 <p><span class="math inline">\(H_n^{CW}(X)\)</span> 由定义即为 <span
-class="math inline">\(\ker d_n/\Im d_{n+1}\)</span>，由于 <span
+class="math inline">\(\ker d_n/\text{Im} d_{n+1}\)</span>，由于 <span
 class="math inline">\(j_n\)</span> 嵌入是单射，于是 <span
-class="math inline">\(\Im \partial_{n+1}\cong \Im
+class="math inline">\(\text{Im} \partial_{n+1}\cong \text{Im}
 d_{n+1}\)</span>（<span class="math inline">\(d_{n+1}=j_n\circ
 \partial_{n+1}\)</span>）</p>
 <p>由 <span class="math inline">\(j_{n-1}\)</span> 嵌入是单射，于是
 <span class="math inline">\(\ker d_n=\ker \partial_n\)</span>.（<span
 class="math inline">\(d_n=j_{n-1}\circ \partial_n\)</span>）</p>
 <p>另一方面，还因为正合列，因此 <span class="math inline">\(\ker
-\partial_n= \Im j_n\cong H_n(X^n)\)</span>，因此原式等于 <span
+\partial_n= \text{Im} j_n\cong H_n(X^n)\)</span>，因此原式等于 <span
 class="math inline">\(H_n(X)\)</span>.</p>
 <ul>
 <li><h5 id="注-2">注</h5>
