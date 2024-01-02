@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Markdown 源代码：https:&#x2F;&#x2F;pastebin.ubuntu.com&#x2F;p&#x2F;t6rS6st3wQ&#x2F; 分节次的笔记（清华云盘）：https:&#x2F;&#x2F;cloud.tsinghua.edu.cn&#x2F;d&#x2F;2c4efaca588a4326958d&#x2F; 00. Lecture Info 1. 考核 作业 20%、期中 30%、期末 50% 2. 作业 每周四上午 9：50 之前提交 3. 答疑">
+    <meta name="description" content="Markdown 源代码：https:&#x2F;&#x2F;pastebin.ubuntu.com&#x2F;p&#x2F;3kg4TgHhC4&#x2F; 分节次的笔记（清华云盘）：https:&#x2F;&#x2F;cloud.tsinghua.edu.cn&#x2F;d&#x2F;2c4efaca588a4326958d&#x2F; 00. Lecture Info 1. 考核 作业 20%、期中 30%、期末 50% 2. 作业 每周四上午 9：50 之前提交 3. 答疑">
 <meta property="og:type" content="article">
 <meta property="og:title" content="拓扑学笔记">
 <meta property="og:url" content="http://example.com/2023/09/21/%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="The Art of Coding">
-<meta property="og:description" content="Markdown 源代码：https:&#x2F;&#x2F;pastebin.ubuntu.com&#x2F;p&#x2F;t6rS6st3wQ&#x2F; 分节次的笔记（清华云盘）：https:&#x2F;&#x2F;cloud.tsinghua.edu.cn&#x2F;d&#x2F;2c4efaca588a4326958d&#x2F; 00. Lecture Info 1. 考核 作业 20%、期中 30%、期末 50% 2. 作业 每周四上午 9：50 之前提交 3. 答疑">
+<meta property="og:description" content="Markdown 源代码：https:&#x2F;&#x2F;pastebin.ubuntu.com&#x2F;p&#x2F;3kg4TgHhC4&#x2F; 分节次的笔记（清华云盘）：https:&#x2F;&#x2F;cloud.tsinghua.edu.cn&#x2F;d&#x2F;2c4efaca588a4326958d&#x2F; 00. Lecture Info 1. 考核 作业 20%、期中 30%、期末 50% 2. 作业 每周四上午 9：50 之前提交 3. 答疑">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/01-1.png">
 <meta property="og:image" content="http://example.com/01-2.png">
@@ -189,8 +189,14 @@
 <meta property="og:image" content="http://example.com/26-6.png">
 <meta property="og:image" content="http://example.com/26-7.png">
 <meta property="og:image" content="http://example.com/26-8.png">
+<meta property="og:image" content="http://example.com/28-1.png">
+<meta property="og:image" content="http://example.com/28-2.png">
+<meta property="og:image" content="http://example.com/28-3.png">
+<meta property="og:image" content="http://example.com/28-4.png">
+<meta property="og:image" content="http://example.com/28-5.png">
+<meta property="og:image" content="http://example.com/28-6.png">
 <meta property="article:published_time" content="2023-09-21T04:15:10.000Z">
-<meta property="article:modified_time" content="2023-12-26T09:43:21.943Z">
+<meta property="article:modified_time" content="2024-01-02T10:19:47.480Z">
 <meta property="article:author" content="Wen_kr">
 <meta property="article:tag" content="拓扑学">
 <meta name="twitter:card" content="summary">
@@ -378,7 +384,9 @@ Map)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#
 维球面</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90torus"><span class="nav-number">27.1.2.2.</span> <span class="nav-text">例子：Torus</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90%E4%BA%8F%E6%A0%BC%E4%B8%BA-g-%E7%9A%84%E6%9B%B2%E9%9D%A2"><span class="nav-number">27.1.2.3.</span> <span class="nav-text">例子：亏格为 \(g\) 的曲面</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90n-%E7%BB%B4%E5%AE%9E%E5%B0%84%E5%BD%B1%E7%A9%BA%E9%97%B4"><span class="nav-number">27.1.2.4.</span> <span class="nav-text">例子：\(n\) 维实射影空间</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90n-%E7%BB%B4%E5%A4%8D%E5%B0%84%E5%BD%B1%E7%A9%BA%E9%97%B4"><span class="nav-number">27.1.2.5.</span> <span class="nav-text">例子：\(n\) 维复射影空间</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E7%90%86hatcher-2.3.4"><span class="nav-number">27.1.3.</span> <span class="nav-text">引理：Hatcher 2.3.4</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90%E7%BB%95-n-%E6%AC%A1%E5%9C%88%E7%9A%84%E6%98%A0%E5%B0%84%E7%9A%84%E6%98%A0%E5%B0%84%E5%BA%A6"><span class="nav-number">27.1.4.</span> <span class="nav-text">例子：”绕 \(n\) 次圈“的映射的映射度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90n-%E7%BB%B4%E7%90%83%E9%9D%A2-1"><span class="nav-number">27.1.5.</span> <span class="nav-text">例子：\(n\)
 维球面</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%83%9E%E8%85%94%E9%93%BE%E5%A4%8D%E5%BD%A2-cellular-chain-complex"><span class="nav-number">27.2.</span> <span class="nav-text">胞腔链复形 (Cellular Chain
 Complex)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E7%90%86"><span class="nav-number">27.2.1.</span> <span class="nav-text">定理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B3%A8-2"><span class="nav-number">27.2.1.1.</span> <span class="nav-text">注</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97-d_n"><span class="nav-number">27.2.2.</span> <span class="nav-text">问题：如何计算 \(d_n\)？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%9A%E7%90%86cellular-boundary-formula"><span class="nav-number">27.2.2.1.</span> <span class="nav-text">定理：Cellular Boundary
-Formula</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E5%85%8B%E8%8E%B1%E5%9B%A0%E7%93%B6"><span class="nav-number">27.2.3.</span> <span class="nav-text">例：克莱因瓶</span></a></li></ol></li></ol></li></ol></div>
+Formula</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E5%85%8B%E8%8E%B1%E5%9B%A0%E7%93%B6"><span class="nav-number">27.2.3.</span> <span class="nav-text">例：克莱因瓶</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#borsuk-ulam-%E5%AE%9A%E7%90%86"><span class="nav-number">28.</span> <span class="nav-text">28. Borsuk-Ulam 定理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AC%A7%E6%8B%89%E5%85%AC%E5%BC%8F-eulers-formula"><span class="nav-number">28.1.</span> <span class="nav-text">欧拉公式 (Euler&#39;s Formula)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9E%E5%BF%86-2"><span class="nav-number">28.1.1.</span> <span class="nav-text">回忆</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8borsuk-ulam-%E5%AE%9A%E7%90%86"><span class="nav-number">28.2.</span> <span class="nav-text">应用：Borsuk-Ulam 定理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C%E5%90%8C%E8%B0%83%E7%90%86%E8%AE%BA%E7%9A%84%E7%B3%BB%E6%95%B0%E5%8F%AF%E4%BB%A5%E6%8D%A2%E6%88%90%E4%BB%BB%E6%84%8F-abel-%E7%BE%A4"><span class="nav-number">28.2.1.</span> <span class="nav-text">准备工作：同调理论的系数可以换成任意
+Abel 群</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9B%9E%E5%BF%86%E5%90%8C%E8%B0%83%E7%90%86%E8%AE%BA%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">28.2.1.1.</span> <span class="nav-text">回忆：同调理论的定义</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2%E7%B3%BB%E6%95%B0%E5%B8%B8%E8%A7%81%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="nav-number">28.2.2.</span> <span class="nav-text">替换系数常见的例子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90%E5%8F%96%E4%BA%8C%E5%85%83%E7%BE%A4%E6%97%B6%E5%AE%9E%E5%B0%84%E5%BD%B1%E7%A9%BA%E9%97%B4%E7%9A%84%E5%90%8C%E8%B0%83%E7%BE%A4"><span class="nav-number">28.2.3.</span> <span class="nav-text">例子：取二元群时实射影空间的同调群</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#borsuk-ulam-%E5%AE%9A%E7%90%86-1"><span class="nav-number">28.2.4.</span> <span class="nav-text">Borsuk-Ulam 定理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%95%E7%90%86%E5%A5%87%E5%87%BD%E6%95%B0%E7%9A%84%E6%98%A0%E5%B0%84%E5%BA%A6%E4%B9%9F%E6%98%AF%E5%A5%87%E6%95%B0"><span class="nav-number">28.2.4.1.</span> <span class="nav-text">引理（奇函数的映射度也是奇数）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A8%E8%AE%BA"><span class="nav-number">28.2.5.</span> <span class="nav-text">推论</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8lefschetz-%E4%B8%8D%E5%8A%A8%E7%82%B9%E5%AE%9A%E7%90%86"><span class="nav-number">28.3.</span> <span class="nav-text">应用：Lefschetz 不动点定理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E6%9C%89%E9%99%90%E5%8D%95%E7%BA%AF%E5%A4%8D%E5%BD%A2finite-simplicial-complex"><span class="nav-number">28.3.1.</span> <span class="nav-text">定义：有限单纯复形（Finite
+Simplicial Complex）</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -465,7 +473,7 @@ Formula</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-12-26 17:43:21" itemprop="dateModified" datetime="2023-12-26T17:43:21+08:00">2023-12-26</time>
+      <time title="修改时间：2024-01-02 18:19:47" itemprop="dateModified" datetime="2024-01-02T18:19:47+08:00">2024-01-02</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -486,7 +494,7 @@ Formula</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>Markdown 源代码：https://pastebin.ubuntu.com/p/t6rS6st3wQ/</p>
+    <div class="post-body" itemprop="articleBody"><p>Markdown 源代码：https://pastebin.ubuntu.com/p/3kg4TgHhC4/</p>
 <p>分节次的笔记（清华云盘）：https://cloud.tsinghua.edu.cn/d/2c4efaca588a4326958d/</p>
 <h2 id="lecture-info">00. Lecture Info</h2>
 <h3 id="考核">1. 考核</h3>
@@ -9302,6 +9310,350 @@ S_1^1\)</span></p>
 <p>如图，因此 <span class="math inline">\(\deg
 \Delta_{11}=0\)</span>.</p></li>
 </ul>
+<h2 id="borsuk-ulam-定理">28. Borsuk-Ulam 定理</h2>
+<h3 id="欧拉公式-eulers-formula">欧拉公式 (Euler's Formula)</h3>
+<ul>
+<li><h4 id="回忆-2">回忆</h4>
+<p>令 <span class="math inline">\(X\)</span> 是多面体，它同胚于亏格为
+<span class="math inline">\(g\)</span> 的曲面，则 <span
+class="math inline">\(\chi(X)=\beta_0-\beta_1+\beta_2=1-2g+1=2-2g\)</span>
+（<span class="math inline">\(\beta\)</span> - Betti
+Number，同调群的秩）</p>
+<p>另一方面，根据 E-P 定理，这还可以写成 <span
+class="math inline">\(a_0(X)-a_1(X)+a_2(X)\)</span> （<span
+class="math inline">\(a_i\)</span>: <span
+class="math inline">\(i\)</span> 维胞腔的个数），也就是 <span
+class="math inline">\(v-e+f=2-2g\)</span>.</p>
+<p>如果它是凸多面体，或者它同胚于球面 <span
+class="math inline">\(S^2\)</span> ，那么就有 <span
+class="math inline">\(v-e+f=2\)</span>.</p>
+<p>这回答了我们在第一节课就提出的问题。</p>
+<p>（实际上，根据我们切割的方式不同，不同维度的胞腔数量也不同，然而不管我们怎么切割，交错和（欧拉示形数）是一个拓扑不变量）</p></li>
+</ul>
+<h3 id="应用borsuk-ulam-定理">应用：Borsuk-Ulam 定理</h3>
+<ul>
+<li><h4
+id="准备工作同调理论的系数可以换成任意-abel-群">准备工作：同调理论的系数可以换成任意
+Abel 群</h4>
+<ul>
+<li><h5 id="回忆同调理论的定义">回忆：同调理论的定义</h5>
+有一个链复形 <span
+class="math inline">\(C_n(X)\)</span>，群里的元素长成形式和 <span
+class="math inline">\(\sum_{i} n_i\sigma_i\)</span>，其中 <span
+class="math inline">\(n_i\)</span>
+为整数且只有有限个。（这有时也被叫做整系数的同调理论）</li>
+</ul>
+<p>我们推广这一定义。固定一个 Abel 群 <span
+class="math inline">\(G\)</span>，令 <span
+class="math inline">\(C_n(X;G)\)</span> 表示形式和 <span
+class="math inline">\(\sum_{i} n_i\sigma_i\)</span>，其中 <span
+class="math inline">\(n_i\in G\)</span>
+且是有限个（非零项只有有限个）。<span
+class="math inline">\(\sigma_i\)</span> 是 <span
+class="math inline">\(n\)</span> 维奇异单形 <span
+class="math inline">\(\Delta^n\to X\)</span>。</p>
+<p>事实上，我们曾经建立的所有理论都可以被推广到同调群里。例如取边界
+<span class="math inline">\(\partial(\sum_i
+n_i\sigma_i)=\sum_{i,j}(-1)^j n_i\sigma_i|_{[v_0,\cdots,\tilde
+v_j,\cdots,v_n]}\)</span></p>
+<p>进而我们得到 <span
+class="math inline">\(\set{C_n(X;G),\partial}_{n\in
+\mathbb{Z}}\)</span>，这是一个链复形。对其取同调群 <span
+class="math inline">\(H_n(X;G):=H_n(\set{C_n(X;G),\partial}_{n\in
+\mathbb{Z}})\)</span>，称其为<strong>系数是 <span
+class="math inline">\(G\)</span> 的同调群</strong>。</p>
+<p>我们也可以得到相对同调群 <span
+class="math inline">\(H_n(X,A;G)\)</span>，也可以推出相对同调理论。</p>
+<p>类似地，我们还可以得到约化同调理论：<span class="math inline">\(\to
+C_1(X;G)\xrightarrow{\partial} C_0(X;G)\xrightarrow{\varepsilon} G\to
+0\)</span>，其中 <span class="math inline">\(\varepsilon(\sum_i
+n_i\sigma_i)=\sum_i n_i\)</span>.</p>
+<p>进而可以定义约化同调群 <span class="math inline">\(\tilde
+H_n(X;G)\)</span>.</p>
+<p>同样地，对胞腔理论，令 <span class="math inline">\(X\)</span> 是一个
+<span class="math inline">\(CW\)</span> 复形，我们可以得到胞腔链复形
+<span class="math inline">\(\cdots\to
+H_n(X^n,X^{n-1};G)\xrightarrow{d_n}
+H_{n-1}(X^{n-1},X^{n-2};G)\xrightarrow{d_{n-1}}\cdots\)</span></p>
+<p>如此我们可以定义胞腔同调群 <span
+class="math inline">\(H_n^{CW}(X;G):=\)</span>
+上面胞腔链复形的同调群。</p>
+<p>与之前相同，我们仍然可以推出 <span
+class="math inline">\(H_n^{CW}(X;G)\cong H_n(X;G)\)</span>.</p></li>
+<li><h4 id="替换系数常见的例子">替换系数常见的例子</h4>
+<p>通常地，我们可以将 <span class="math inline">\(G\)</span> 取 <span
+class="math inline">\(\mathbb{Z},\mathbb{R},\mathbb{C},\mathbb{Z}_2\)</span>
+等等。</p>
+<p>练习：映射度的概念也可以推广到一般的群 <span
+class="math inline">\(G\)</span> 中，即 <span
+class="math inline">\(f:S^n\to S^n\)</span>，映射度为 <span
+class="math inline">\(d\)</span>，那么 <span
+class="math inline">\(f_\star:\tilde H_n(S^n;G)\to\tilde
+H_n(S^n;G)\)</span> 会有 <span class="math inline">\(\tilde
+H_n(S^n;G)\cong G\)</span>，且 <span
+class="math inline">\(f_\star\)</span> 的映射度是由下面的公式给出：
+<span class="math inline">\(f_\star(g)=dg\)</span>. （可以参考 Hatcher
+2.49）</p></li>
+<li><h4
+id="例子取二元群时实射影空间的同调群">例子：取二元群时实射影空间的同调群</h4>
+<p>令 <span
+class="math inline">\(G=\mathbb{Z}_2\)</span>，我们可以考虑实射影空间
+<span class="math inline">\(\mathbb{R}P^n\)</span> 的 CW 同调群。</p>
+<p>曾经我们验证过，对于整系数，其 CW 复形形如：</p>
+<p><span class="math inline">\(\cdots\xrightarrow{2} G \xrightarrow{0}
+G\xrightarrow{2} G\to\cdots\to G\xrightarrow{2} G\xrightarrow{0} G\to
+0\)</span></p>
+<p>我们令 <span class="math inline">\(G\)</span>
+是二元群，表达式就变成了</p>
+<p><span class="math inline">\(\cdots \xrightarrow{0}
+\mathbb{Z}_2\xrightarrow{0}
+\mathbb{Z}_2\xrightarrow{0}\cdots\xrightarrow{0} \mathbb{Z}_2\to
+0\)</span>.</p>
+<p>那么这个链复形的同调群就是 <span
+class="math inline">\(H_k(\mathbb{R}P^n;\mathbb{Z}_2)=\mathbb{Z}_2
+,\forall 0\leq k\leq n\)</span>.</p></li>
+<li><h4 id="borsuk-ulam-定理-1">Borsuk-Ulam 定理</h4>
+<p>考虑映射 <span class="math inline">\(g:S^n\to\mathbb{R}^n\)</span>
+是连续映射，那么 <span class="math inline">\(\exists x\in
+S^n\)</span>，使得 <span class="math inline">\(g(x)=g(-x)\)</span>.</p>
+<p>形象地理解，如果我们将球面映射到平面（将球面拍扁），那么一定会有一对对径点被映射到同一个点。</p>
+<p>证明：<span class="math inline">\(n=1\)</span>
+我们已经证明过了。这是因为，如果我们定义 <span
+class="math inline">\(f(x)=\cfrac{g(x)-g(-x)}{|g(x)-g(-x)|}\)</span>，它的像是
+<span class="math inline">\(\set{-1,1}\)</span>，这与 <span
+class="math inline">\(S^1\)</span> 连通矛盾。</p>
+<p>因此在证明这个定理时，我们总是假设 <span class="math inline">\(n\geq
+2\)</span>.</p>
+<ul>
+<li><h5
+id="引理奇函数的映射度也是奇数">引理（奇函数的映射度也是奇数）</h5>
+<p>考虑映射 <span class="math inline">\(f:S^n\to S^n\)</span>，<span
+class="math inline">\(f(-x)=-f(x)\)</span>，<span
+class="math inline">\(\forall x\in S^n\)</span>，那么 <span
+class="math inline">\(\deg f \text{ is odd}\)</span>.</p>
+<p>证明：</p>
+<p>考虑覆叠映射 <span class="math inline">\(p:S^n\to
+\mathbb{R}P^n\)</span>，这是一个两层的覆叠映射。考虑 <span
+class="math inline">\(\Delta^k\)</span> 是一个 <span
+class="math inline">\(k\)</span> 维单形，有 <span
+class="math inline">\(\Delta^k\xrightarrow{\sigma}
+\mathbb{R}P^n\)</span>.</p>
+<p>固定 <span class="math inline">\(x_0\)</span>，有 <span
+class="math inline">\(\sigma(x_0)\in
+\mathbb{R}P^n\)</span>，根据提升判别法，我们有 <span
+class="math inline">\(\sigma\)</span> 存在两个提升 <span
+class="math inline">\(\tilde \sigma_1\)</span> 与 <span
+class="math inline">\(\tilde \sigma_2\)</span>（这是因为 <span
+class="math inline">\(\pi_1(\Delta^k)=\set{e}\)</span>，且 <span
+class="math inline">\(|p^{-1}(\sigma(x_0))|=2\)</span>）</p>
+<p>考虑 <span class="math inline">\(p_\#: C_k(S^n;\mathbb{Z}_2)\to
+C_k(\mathbb{R}P^n;\mathbb{Z}_2)\)</span>，这个映射一定是满射（这根据提升可以得到）</p>
+<p>还可以定义 <span
+class="math inline">\(\tau:C_k(\mathbb{R}P^n;\mathbb{Z}_2)\to
+C_k(S^n;\mathbb{Z}_2)\)</span>，其中 <span
+class="math inline">\(\tau(\sigma):=\tilde \sigma_1+\tilde
+\sigma_2\)</span>.</p>
+<p>于是我们得到短正合列 <span class="math inline">\(0\to
+C_k(\mathbb{R}P^n;\mathbb{Z}_2)\xrightarrow{\tau}
+C_k(S^n;\mathbb{Z}_2)\xrightarrow p_\#
+C_k(\mathbb{R}P^n;\mathbb{Z}_2)\to 0\)</span>，这是易于验证的，例如对
+<span class="math inline">\(p_\# \circ \tau(\sigma)=p_\#(\tilde
+\sigma_1+\tilde\sigma_2)=2\sigma=0\)</span>.</p>
+<p>这可以诱导同调群的长正合列：</p>
+<p><span class="math inline">\(0(H_{n+1}(\mathbb{R}P^n;\mathbb{Z}_2))\to
+H_n(\mathbb{R}P^n;\mathbb{Z}_2)\xrightarrow{\tau_\star}H_n(S^n;\mathbb{Z}_2)\xrightarrow{p_\star}H_n(\mathbb{R}P^n;\mathbb{Z}_2)\xrightarrow{\partial}
+H_{n-1}(\mathbb{R}P^n;\mathbb{Z}_2)\to\cdots\)</span>.</p>
+<p>取中间的代表项：</p>
+<p><span class="math inline">\(0(H_{n-1}(S^n;\mathbb{Z}_2))\to\cdots\to
+0(H_k(S^n;\mathbb{Z}_2))\to
+H_k(\mathbb{R}P^n;\mathbb{Z}_2)\xrightarrow{\partial}
+H_{k-1}(\mathbb{R}P^n;\mathbb{Z}_2)\to
+0(H_{k-1}(S^n;\mathbb{Z}_2))\)</span></p>
+<p>这个正合列最后的项是</p>
+<p><span class="math inline">\(\to 0\to
+H_1(\mathbb{R}P^n;\mathbb{Z}_2)\xrightarrow{\partial}
+H_0(\mathbb{R}P^n;\mathbb{Z}_2)\to
+H_0(S^n;\mathbb{Z}_2)\xrightarrow{p_\star}
+H_0(\mathbb{R}P^n;\mathbb{Z}_2)\to 0\)</span></p>
+<p>我们注意到 <span
+class="math inline">\(H_n(S^n;\mathbb{Z}_2)=\mathbb{Z}_2\)</span>，且
+<span
+class="math inline">\(H_n(\mathbb{R}P^n;\mathbb{Z}_2)=\mathbb{Z}_2\)</span>，因此在最上面一行的代表中
+<span class="math inline">\(\tau_\star\)</span> 是一个同构；</p>
+<p>另一方面对于最上面一行，<span
+class="math inline">\(p_\star=0\)</span>，这意味着 <span
+class="math inline">\(\partial\)</span> 是单射，同时 <span
+class="math inline">\(\partial\)</span> 左右两侧集合都是 <span
+class="math inline">\(\mathbb{Z}_2\)</span>，这意味着 <span
+class="math inline">\(\partial\)</span> 是同构。</p>
+<p>类似地，对中间一行，由于 <span
+class="math inline">\(\partial\)</span> 左右两侧都是 <span
+class="math inline">\(0\)</span>，因此 <span
+class="math inline">\(\partial\)</span> 全都是同构。</p>
+<p>对于最下面一行，因为 <span
+class="math inline">\(H_0(\mathbb{R}P^n;\mathbb{Z}_2)\to
+H_0(S^n;\mathbb{Z}_2)\)</span> 映射是 <span
+class="math inline">\(0\)</span> 映射，<span
+class="math inline">\(\partial\)</span> 仍然是同构；同时也可以借由此导出
+<span class="math inline">\(p_\star\)</span> 也是一个同构。</p>
+<p>因此我们得到了下面三列：</p>
+<p><span class="math inline">\(0(H_{n+1}(\mathbb{R}P^n;\mathbb{Z}_2))\to
+H_n(\mathbb{R}P^n;\mathbb{Z}_2)\xrightarrow[\cong]{\tau_\star}H_n(S^n;\mathbb{Z}_2)\xrightarrow{p_\star=0}H_n(\mathbb{R}P^n;\mathbb{Z}_2)\xrightarrow[\cong]{\partial}
+H_{n-1}(\mathbb{R}P^n;\mathbb{Z}_2)\to\cdots\)</span></p>
+<p><span class="math inline">\(0(H_{n-1}(S^n;\mathbb{Z}_2))\to\cdots\to
+0(H_k(S^n;\mathbb{Z}_2))\to
+H_k(\mathbb{R}P^n;\mathbb{Z}_2)\xrightarrow[\cong]{\partial}
+H_{k-1}(\mathbb{R}P^n;\mathbb{Z}_2)\to
+0(H_{k-1}(S^n;\mathbb{Z}_2))\)</span></p>
+<p><span class="math inline">\(\to 0\to
+H_1(\mathbb{R}P^n;\mathbb{Z}_2)\xrightarrow[\cong]{\partial}
+H_0(\mathbb{R}P^n;\mathbb{Z}_2)\xrightarrow{0}
+H_0(S^n;\mathbb{Z}_2)\xrightarrow[\cong]{p_\star}
+H_0(\mathbb{R}P^n;\mathbb{Z}_2)\to 0\)</span></p>
+<p>考察映射 <span class="math inline">\(f:S^n\to S^n\)</span> 有 <span
+class="math inline">\(f(-x)=-f(x)\)</span>，它会诱导一个映射：<span
+class="math inline">\(\bar f:\mathbb{R}P^n\to\mathbb{R}P^n:\set{x,-x}\to
+\set{f(x),-f(x)}\)</span>，这是良定义的。</p>
+<p>于是我们得到下面的交换图表：</p>
+<figure>
+<img src="\28-1.png" alt="image-20240102161344400" />
+<figcaption aria-hidden="true">image-20240102161344400</figcaption>
+</figure>
+<p>“交换”的解释：</p>
+<p>右侧：<span class="math inline">\(pf=\bar
+fp\)</span>，因此交换性是自然的。</p>
+<p>左侧：</p>
+<figure>
+<img src="\28-2.png" alt="image-20240102161618131" />
+<figcaption aria-hidden="true">image-20240102161618131</figcaption>
+</figure>
+<p>我们有如上的交换图表，因此 <span class="math inline">\(f\circ \tilde
+\sigma_i\)</span> 是 <span class="math inline">\(f\circ \sigma\)</span>
+的提升，因此由 <span class="math inline">\(\tau\)</span>
+的定义，左侧的图表是交换的。</p>
+<p>根据自然性定理，我们进一步得到长正合列的交换图表：</p>
+<figure>
+<img src="\28-3.png" alt="image-20240102162023951" />
+<figcaption aria-hidden="true">image-20240102162023951</figcaption>
+</figure>
+<p>我们看左边的正方形，由于 <span
+class="math inline">\(H_0(\mathbb{R}P^n;\mathbb{Z}_2)\)</span>
+是道路连通的拓扑空间，右边的那个 <span class="math inline">\(\bar
+f_\star\)</span> 诱导了一个同构，进而 <span class="math inline">\(\bar
+f_\star\)</span> 在 <span class="math inline">\(H_1\)</span>
+上也是同构。</p>
+<p>更多地，我们考察上面的正合列，对 <span
+class="math inline">\(k\)</span> 做归纳法，我们可以进一步得到 <span
+class="math inline">\(\bar f_\star\)</span> 在 <span
+class="math inline">\(H_k(\mathbb{R}P^n;\mathbb{Z}_2)\xrightarrow{\bar
+f_\star} H_k(\mathbb{R}P^n;\mathbb{Z}_2)\)</span> 上全是同构（<span
+class="math inline">\(\partial\)</span> 都是同构）。</p>
+<p>考察一开始的长正合列：</p>
+<figure>
+<img src="\28-4.png" alt="image-20240102162630055" />
+<figcaption aria-hidden="true">image-20240102162630055</figcaption>
+</figure>
+<p>因此 <span class="math inline">\(f_\star:H_n(S^n;\mathbb{Z}_2)\to
+H_n(S^n;\mathbb{Z}_2)\)</span> 也诱导了同构。</p>
+<p>因此 <span class="math inline">\(f_\star(1)=1\)</span></p>
+<p>根据我们此前的练习，我们知道 <span
+class="math inline">\(f_\star(1)=\deg f\cdot 1\)</span>，因此 <span
+class="math inline">\(\deg f=1\in \mathbb{Z}_2\)</span>，这意味着 <span
+class="math inline">\(\deg f\)</span> 在 <span
+class="math inline">\(\mathbb{Z}\)</span> 中是奇数。</p></li>
+</ul>
+<p>进而，我们证明主定理：</p>
+<p><span class="math inline">\(g:S^n\to \mathbb{R}^n\)</span>
+是一个连续映射，令 <span class="math inline">\(f(x)=g(x)-
+g(-x)\)</span>，则 <span
+class="math inline">\(f(-x)=-f(x)\)</span>。如果 <span
+class="math inline">\(g(x)\neq g(-x),\forall x\in S^n\)</span>，这意味着
+<span class="math inline">\(f(x)\neq 0,\forall x\in S^n\)</span>。</p>
+<p>于是令 <span
+class="math inline">\(h(x)=\cfrac{f(x)}{|f(x)|}\)</span>，则 <span
+class="math inline">\(h(-x)=-h(x)\)</span> 且 <span
+class="math inline">\(h:S^n\to S^{n-1}\)</span>.</p>
+<figure>
+<img src="\28-5.png" alt="image-20240102163209605" />
+<figcaption aria-hidden="true">image-20240102163209605</figcaption>
+</figure>
+<p>考虑如图所示限制，有 <span
+class="math inline">\(h|_{S^{n-1}}:S^{n-1}\to
+S^{n-1}\)</span>，根据引理，有 <span
+class="math inline">\(\deg(h|_{S^{n-1}})\)</span> 是奇数。</p>
+<p>然而，考虑嵌入映射 <span class="math inline">\(S^{n-1}\hookrightarrow
+S^n\xrightarrow{h} S^{n-1}\)</span>，其中 <span
+class="math inline">\(h|_{S^{n-1}}= h\circ i\)</span>.</p>
+<p>考察嵌入映射诱导的同调群：<span
+class="math inline">\(H_{n-1}(S^{n-1})\xrightarrow{i_\star}
+H_{n-1}(S^n)\xrightarrow{h_\star} H_{n-1}(S^{n-1})\)</span>.</p>
+<p>由于 <span class="math inline">\(H_{n-1}(S^n)=0\)</span>，我们得到
+<span class="math inline">\(h|_{S^{n-1}\star}=0\)</span>，因此 <span
+class="math inline">\(\deg (h|_{S^{n-1}})=0\)</span>，矛盾。</p>
+<p>这意味着 <span class="math inline">\(\exists x\)</span>，使得 <span
+class="math inline">\(g(x)=g(-x)\)</span>.</p></li>
+<li><h4 id="推论">推论</h4>
+<p>考虑 <span class="math inline">\(A_1,\cdots,A_{n+1}\)</span> 是 <span
+class="math inline">\(S^n\)</span> 中的 <span
+class="math inline">\(n+1\)</span> 个闭集且 <span
+class="math inline">\(S^n\)</span> 可以被这 <span
+class="math inline">\(n+1\)</span> 个闭集覆盖，即 <span
+class="math inline">\(S=\cup_i A_i\)</span>.</p>
+<p>那么 <span class="math inline">\(\exists k\)</span> 以及 <span
+class="math inline">\(y\in S^n\)</span>，使得 <span
+class="math inline">\(A_k\)</span> 同时包含 <span
+class="math inline">\(y\)</span> 和 <span
+class="math inline">\(-y\)</span>.</p>
+<p>证明：</p>
+<p>定义映射 <span class="math inline">\(f:S^n\to
+\mathbb{R}^n\)</span>，其中 <span
+class="math inline">\(f(x):=(d(x,A_1),d(x,A_2),\cdots,d(x,A_n))\)</span>，那么
+<span class="math inline">\(f\)</span> 是一个连续函数。</p>
+<p>这意味着 <span class="math inline">\(\exists y\in S^n\)</span>，使得
+<span class="math inline">\(f(y)=f(-y)\)</span>. 这就是说 <span
+class="math inline">\(d(y,A_k)=d(-y,A_k),\forall 1\leq k\leq
+n\)</span>.</p>
+<p>如果 <span class="math inline">\(d(y,A_k)&gt;0\)</span>，这意味着
+<span class="math inline">\(y,-y\in A_{n+1}\)</span>；</p>
+<p>否则，<span class="math inline">\(\exists k\)</span>，使得 <span
+class="math inline">\(d(y,A_k)=d(-y,A_k)=0\)</span>，即 <span
+class="math inline">\(y,-y\in A_k\)</span> （<span
+class="math inline">\(A_k\)</span> 是闭集，因此包含了所有距离为 <span
+class="math inline">\(0\)</span> 的点）</p></li>
+</ul>
+<h3 id="应用lefschetz-不动点定理">应用：Lefschetz 不动点定理</h3>
+<ul>
+<li><h4
+id="定义有限单纯复形finite-simplicial-complex">定义：有限单纯复形（Finite
+Simplicial Complex）</h4>
+<p>一个集族 <span class="math inline">\(K\)</span> 包含有限多个落在
+<span class="math inline">\(\mathbb{R}^N\)</span>
+中的单形称之为<strong>有限单纯复形 (finite simplicial
+complex)</strong>如果：(1)
+若某一个单形落在了集族中，那么它的每一个面也都落在了集族中；(2)
+若两个单形相交，则它们相交的部分必须是它们的一个公共面。</p>
+<p>我们记 <span class="math inline">\(|K|\)</span>
+表示它里面所有的单形并起来，则 <span class="math inline">\(|K|\subset
+\mathbb{R}^N\)</span>.</p>
+<p>那么 <span class="math inline">\(\mathbb{R}^N\)</span> 上的度量诱导了
+<span class="math inline">\(|K|\)</span> 的度量，这使得 <span
+class="math inline">\(|K|\)</span> 成为 <span
+class="math inline">\(\mathbb{R}^N\)</span> 的子空间，并且 <span
+class="math inline">\(|K|\)</span> 是一个紧空间。</p>
+<p>由此我们定义<strong>三角剖分 (Triangulation)</strong>：</p>
+<p>给定一个拓扑空间 <span class="math inline">\(X\)</span>，<span
+class="math inline">\(X\)</span> 上的一个三角剖分说的是选择一个同胚
+<span class="math inline">\(h:|K|\xrightarrow{\cong} X\)</span>。</p>
+<p>例如：</p>
+<figure>
+<img src="\28-6.png" alt="image-20240102165349383" />
+<figcaption aria-hidden="true">image-20240102165349383</figcaption>
+</figure>
+<p><strong>注：</strong>有限单纯复形是 CW 复形的特殊情况，即 <span
+class="math inline">\(\set{\text{有限单纯复形}}\subset \set{\text{CW
+复形}}\)</span>.</p>
+<p>取单形的内部，其对应的概念就是 CW 复形的胞腔。</p></li>
+</ul>
 
     </div>
 
@@ -9345,7 +9697,7 @@ S_1^1\)</span></p>
 
   <div class="copyright">
     &copy; 
-    <span itemprop="copyrightYear">2023</span>
+    <span itemprop="copyrightYear">2024</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>
