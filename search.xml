@@ -261,7 +261,7 @@ class="math inline">\(t\)</span>为超级源点汇点 <figure class="highlight c
   <entry>
     <title>拓扑学笔记</title>
     <url>/2023/09/21/%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/3kg4TgHhC4/</p>
+    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/Jvm2f6jWhW/</p>
 <p>分节次的笔记（清华云盘）：https://cloud.tsinghua.edu.cn/d/2c4efaca588a4326958d/</p>
 <h2 id="lecture-info">00. Lecture Info</h2>
 <h3 id="考核">1. 考核</h3>
@@ -9077,6 +9077,10 @@ S_1^1\)</span></p>
 <p>如图，因此 <span class="math inline">\(\deg
 \Delta_{11}=0\)</span>.</p></li>
 </ul>
+<h2 id="胞腔同调群的计算与-euler-poincare-引理">27. 胞腔同调群的计算与
+Euler-Poincare 引理</h2>
+<p>本节涉及：胞腔同调计算的练习（请参考 Wk15 作业）、Mayer-Vietoris
+sequences 与 Euler-Poincare 引理（可以参考 29 节更强的引理）</p>
 <h2 id="borsuk-ulam-定理">28. Borsuk-Ulam 定理</h2>
 <h3 id="欧拉公式-eulers-formula">欧拉公式 (Euler's Formula)</h3>
 <ul>
@@ -9421,6 +9425,317 @@ class="math inline">\(\set{\text{有限单纯复形}}\subset \set{\text{CW
 复形}}\)</span>.</p>
 <p>取单形的内部，其对应的概念就是 CW 复形的胞腔。</p></li>
 </ul>
+<h2 id="lefschetz-不动点定理">29. Lefschetz 不动点定理</h2>
+<h3 id="应用lefschetz-不动点定理-1">应用：Lefschetz 不动点定理</h3>
+<ul>
+<li><h4 id="定理lefschetz-不动点定理">定理：Lefschetz 不动点定理</h4>
+<p>设 <span class="math inline">\(K\)</span> 是一个 <span
+class="math inline">\(n\)</span> 维的单纯复形，令 <span
+class="math inline">\(f: |K| \to |K|\)</span> 连续。则 <span
+class="math inline">\(f_\star: H_k(|K|, \mathbb{Q}) \to H_k(|K|,
+\mathbb{Q})\)</span> 是一个 <span
+class="math inline">\(\mathbb{Q}\)</span> 上的线性映射。</p>
+<p>令 <span class="math inline">\(\Lambda_f := \sum_{k = 0}^n (-1)^k
+\text{tr}(f_\star: H_k(|K|, \mathbb{Q}) \to H_k(|K|,
+\mathbb{Q}))\)</span>，其中 <span
+class="math inline">\(\text{tr}\)</span> 是迹 (trace)。<span
+class="math inline">\(\Lambda_f\)</span> 称为 <span
+class="math inline">\(f\)</span> 的 <strong>Lefschetz 数 (Lefschetz
+Number)</strong>。（trace 是取一个 <span
+class="math inline">\(|K|\)</span> 的基，然后计算映射后对角和）</p>
+<p><strong>Lefschetz 不动点定理</strong>：如果 <span
+class="math inline">\(\Lambda_f \neq 0\)</span>，则 <span
+class="math inline">\(f\)</span> 有不动点。</p>
+<p>令 <span class="math inline">\(A = [v_0, \cdots, v_k]\)</span> 是一个
+<span class="math inline">\(k\)</span>-单形，则 <span
+class="math inline">\(\hat A = \frac{1}{k+1}(v_0+\cdots+v_k)\)</span>
+称为 <span class="math inline">\(A\)</span> 的<strong>重心
+(barycenter)</strong>。</p>
+<p>令 <span class="math inline">\(K\)</span>
+是一个有限的单纯复形，且想要构造一个新的单纯复形 <span
+class="math inline">\(K^{(1)}\)</span> 通过<strong>重心重分 (barycenter
+subdivision)</strong></p>
+<p>操作方法：</p>
+<p><span class="math inline">\(K^{(1)}\)</span> 中的顶点是 <span
+class="math inline">\(K\)</span> 中所有单形的重心。</p>
+<p>其中的一些重心 <span class="math inline">\(\hat A_0, \cdots, \hat
+A_k\)</span> 形成了 <span class="math inline">\(K^{(1)}\)</span>
+中的某一个单形的顶点，当且仅当存在一个置换 <span
+class="math inline">\(\sigma\)</span> 使得 <span
+class="math inline">\(A_{\sigma(0)} \subsetneqq A_{\sigma(1)}
+\subsetneqq \cdots \subsetneqq A_{\sigma(k)}\)</span>，其中 <span
+class="math inline">\(\hat A_i\)</span> 是 <span
+class="math inline">\(A_i\)</span> 的重心。</p>
+<figure>
+<img src="\29-1.png" alt="29-1" />
+<figcaption aria-hidden="true">29-1</figcaption>
+</figure>
+<p>显然有 <span class="math inline">\(|K^{(1)}| = |K|\)</span>。</p>
+<p>令 <span class="math inline">\(K^{(m)} :=
+(K^{(m-1)})^{(1)}\)</span>，也就是上一次的结果再做一次重心重分，即 <span
+class="math inline">\(m\)</span> 次重心重分的结果。</p></li>
+<li><h4 id="单纯估计-simplicial-approximation">单纯估计 (Simplicial
+Approximation)</h4>
+<ul>
+<li><h5 id="单纯映射-simplicial-map">单纯映射 (Simplicial Map)</h5>
+<p>令 <span class="math inline">\(K\)</span> 和 <span
+class="math inline">\(L\)</span> 是两个有限的单纯复形。连续映射 <span
+class="math inline">\(s:|K| \to |L|\)</span> 被称为<strong>单纯的
+(simplicial)</strong>，当它将 <span class="math inline">\(K\)</span>
+中的单形线性映射到 <span class="math inline">\(L\)</span>
+中的单形，这就意味着如果 <span class="math inline">\(A = [v_0, \cdots,
+v_k]\)</span> 是 <span class="math inline">\(K\)</span> 中的单形，则
+<span class="math inline">\(s(A)\)</span> 也是 <span
+class="math inline">\(L\)</span> 中的单形，且对于 <span
+class="math inline">\(A\)</span> 中的一个点 <span
+class="math inline">\(\sum_i t_i v_i\)</span> 有 <span
+class="math inline">\(s(\sum_i t_i v_i) = \sum_i t_i
+s(v_i)\)</span>，其中 <span class="math inline">\(\set{t_i}\)</span>
+是重心坐标，也就是说 <span class="math inline">\(\sum_i t_i = 1, t_i
+\geqslant 0\)</span>。</p></li>
+<li><h5 id="承载子-carrier">承载子 (Carrier)</h5>
+<p>对于 <span class="math inline">\(f: |K| \to |L|\)</span>
+是连续映射，则对 <span class="math inline">\(\forall x \in
+|K|\)</span>，点 <span class="math inline">\(f(x)\)</span> 落在 <span
+class="math inline">\(L\)</span>
+中唯一的一个单形的内部。我们将这个唯一的单形称为 <span
+class="math inline">\(f(x)\)</span> 的<strong>承载子
+(Carrier)</strong>。</p></li>
+</ul>
+<p>一个单纯映射 <span class="math inline">\(s: |K| \to |L|\)</span>
+被称为一个连续映射 <span class="math inline">\(f: |K| \to |L|\)</span>
+的单纯估计 (simplicial approximation)，当对 <span
+class="math inline">\(\forall x \in |K|\)</span> 都有 <span
+class="math inline">\(s(x)\)</span> 落在 <span
+class="math inline">\(f(x)\)</span> 的承载子中。（也就是说 <span
+class="math inline">\(s\)</span> 和 <span
+class="math inline">\(f\)</span> 之间差的不远）</p>
+<ul>
+<li><h5 id="注单纯估计是同伦的">注：单纯估计是同伦的</h5>
+<span class="math inline">\(s \simeq f\)</span>：令 <span
+class="math inline">\(|L| \subset \mathbb{R}^N\)</span>，令 <span
+class="math inline">\(F(x, t) = (1-t) s(x) + t f(x)\)</span>，因为 <span
+class="math inline">\(s(x)\)</span> 和 <span
+class="math inline">\(f(x)\)</span> 落在了 <span
+class="math inline">\(L\)</span> 中同一个单形内，且 <span
+class="math inline">\(\mathbb{R}^N\)</span> 中的单形是凸集，所以 <span
+class="math inline">\(F(x, t) \in |L|\)</span>，因此 <span
+class="math inline">\(F\)</span> 良定义。</li>
+</ul></li>
+<li><h4
+id="单纯估计在充分多次重心重分后存在">单纯估计在充分多次重心重分后存在</h4>
+<p>任取一个 <span class="math inline">\(f:|K| \to |L|\)</span>
+是连续映射，如果 <span class="math inline">\(m\)</span>
+是一个足够大的数，则存在一个 <span class="math inline">\(s: |K^{(m)}|
+\to |L|\)</span> 它是 <span class="math inline">\(f: |K^{(m)}| \to
+|L|\)</span> 的单纯估计。</p>
+<p>对这个定理感兴趣，可以看 Armstrong: Section 6.3 的证明。</p></li>
+<li><h4 id="hopf-trace-theorem">Hopf Trace Theorem</h4>
+<p>设 <span class="math inline">\(f: |K| \to |K|\)</span> 满足 <span
+class="math inline">\(f(|K|^k) \subset |K|^k\)</span>，其中 <span
+class="math inline">\(|K|^k\)</span> 是 <span
+class="math inline">\(K\)</span> 的 <span
+class="math inline">\(k\)</span> 维骨架，即所有小于等于 <span
+class="math inline">\(k\)</span> 维单形的并。（将这个条件记为 <span
+class="math inline">\((\star)\)</span>）</p>
+<p>则我们可以推出下面这个交换图表：</p>
+<figure>
+<img src="\29-2.png" alt="image-20240104102308585" />
+<figcaption aria-hidden="true">image-20240104102308585</figcaption>
+</figure>
+<p>如果 <span class="math inline">\(K\)</span> 是一个有限的 <span
+class="math inline">\(n\)</span> 维单纯复形。设 <span
+class="math inline">\(f: |K| \to |K|\)</span> 满足 <span
+class="math inline">\((\star)\)</span> 条件。</p>
+<p>则 <span class="math inline">\(\sum_{k = 0}^n (-1)^k
+\text{tr}(f_\star: H_k(|K|^k, |K|^{k-1}; \mathbb{Q})) = \sum_{k = 0}^n
+(-1)^k \text{tr}(f_\star: H_k(|K|; \mathbb{Q}) \to H_k(|K|; \mathbb{Q}))
+= \Lambda_f\)</span></p>
+<p>（这里 <span class="math inline">\(f_\star: H_k(|K|^k, |K|^{k-1};
+\mathbb{Q})\)</span> 是 <span class="math inline">\(f_\star: H_k(|K|^k,
+|K|^{k-1}; \mathbb{Q}) \to H_k(|K|^k, |K|^{k-1}; \mathbb{Q})\)</span>
+的简写）</p>
+<ul>
+<li><h5 id="注f-是恒等映射时就是之前的-e-p-引理">注：<span
+class="math inline">\(f\)</span> 是恒等映射时就是之前的 E-P 引理</h5>
+<p>当 <span class="math inline">\(f = id_{|K|}\)</span> 时，<span
+class="math inline">\(LHS = \sum_{k=0}^n (-1)^ka_k(|K|)\)</span>，其中
+<span class="math inline">\(a_k\)</span> 是 <span
+class="math inline">\(|K|\)</span> 中 <span
+class="math inline">\(k\)</span> 维胞腔的个数；<span
+class="math inline">\(RHS = \chi(|K|)\)</span>。</p>
+<p>这就意味着 Hopf trace 定理可以推出 Euler-Poincare 定理。</p></li>
+<li><h5 id="引理-2">引理</h5>
+<p>令 <span class="math inline">\(V, V_1, V_2\)</span>
+是有限维的线性空间，有如下交换图表：</p>
+<figure>
+<img src="\29-3.png" alt="image-20240104103025081" />
+<figcaption aria-hidden="true">image-20240104103025081</figcaption>
+</figure>
+<p>其中 <span class="math inline">\(f, g, h\)</span>
+是线性映射，上下两行是正合列，则 <span
+class="math inline">\(\text{tr}(f) = \text{tr}(g) +
+\text{tr}(h)\)</span>。</p></li>
+</ul>
+<p>下面我们用引理完成对该定理的证明。我们有如下交换图表：</p>
+<figure>
+<img src="\29-4.png" alt="image-20240104103320053" />
+<figcaption aria-hidden="true">image-20240104103320053</figcaption>
+</figure>
+<p>根据上面的引理，有 <span class="math inline">\(\text{tr}(f_\star:
+H_k(|K|^k, |K|^{k-1}; \mathbb{Q})) = \text{tr} (f_\star: \ker d_k) +
+\text{tr} (f_\star: \text{Im} d_k)\)</span>。</p>
+<p>等式两边同时取交错和，则有 <span
+class="math inline">\(\sum_{k=0}^n(-1)^k \text{tr}(f_\star: H_k(|K|^k,
+|K|^{k-1}; \mathbb{Q})) = \sum_{k = 0}^n (-1)^k \text{tr}(f_\star: \ker
+d_k) + \sum_{k = 0}^n (-1)^k \text{tr}(f_\star: \text{Im} d_k) \ \
+(\star_1)\)</span></p>
+<p>因为 <span class="math inline">\(\text{Im} d_0 = 0\)</span>，所以
+<span class="math inline">\(\sum_{k = 0}^n (-1)^k \text{tr}(f_\star:
+\text{Im} d_k) = \sum_{k = 1}^n (-1)^k \text{tr}(f_\star: \text{Im}
+d_k)\)</span>。</p>
+<figure>
+<img src="\29-5.png" alt="image-20240104104302871" />
+<figcaption aria-hidden="true">image-20240104104302871</figcaption>
+</figure>
+<p>依然根据上面的引理，有 <span class="math inline">\(\text{tr}(f_\star:
+H_k(|K|; \mathbb{Q})) = \text{tr}(f_\star: \ker d_k) + \text{tr}(f_\star
+: \text{Im} d_{k+1})\)</span>。</p>
+<p>同样对等式两边取交错和，有 <span class="math inline">\(\sum_{k = 0}^n
+(-1)^k \text{tr}(f_\star: H_k(|K|; \mathbb{Q})) = \sum_{k = 0}^n (-1)^k
+\text{tr}(f_\star: \ker d_k) + \sum_{k = 0}^n (-1)^{k+1}
+\text{tr}(f_\star: \text{Im} d_{k+1}) \ \ (\star_2)\)</span>。</p>
+<p>因为 <span class="math inline">\(Im d_{n+1} = 0\)</span>，则 <span
+class="math inline">\(\sum_{k = 0}^n (-1)^{k+1} \text{tr}(f_\star:
+\text{Im} d_{k+1}) = \sum_{k = 0}^{n-1} (-1)^{k+1} \text{tr}(f_\star:
+\text{Im} d_{k+1}) = \sum_{k = 1}^n (-1)^k \text{tr}(f_\star: \text{Im}
+d_k)\)</span>。</p>
+<p>因此，我们发现 <span class="math inline">\((\star_1)\)</span> 和
+<span class="math inline">\((\star_2)\)</span>
+两个等式的右边相等，所以两个左边也相等，即 <span
+class="math inline">\(\sum_{k=0}^n(-1)^k \text{tr}(f_\star: H_k(|K|^k,
+|K|^{k-1}; \mathbb{Q})) = \sum_{k = 0}^n (-1)^k \text{tr}(f_\star:
+H_k(|K|; \mathbb{Q}))\)</span>。</p></li>
+<li><h4 id="证明-lefschetz-不动点定理">证明 Lefschetz 不动点定理</h4>
+<p>考虑一个连续映射 <span class="math inline">\(f:|K|\to
+|K|\)</span>，考虑原命题的逆否命题：假设 <span
+class="math inline">\(f\)</span> 没有不动点，则 <span
+class="math inline">\(\Lambda_f=0\)</span>.</p>
+<p>证明：</p>
+<p>将 <span class="math inline">\(|K|\)</span> 嵌入 <span
+class="math inline">\(\mathbb{R}^N\)</span>，令 <span
+class="math inline">\(d\)</span> 是由嵌入诱导出的 <span
+class="math inline">\(K\)</span> 上度量。</p>
+<p>令 <span class="math inline">\(g(x)=d(x,f(x))\)</span>，则因为 <span
+class="math inline">\(f(x) \neq x\)</span> <span
+class="math inline">\(g(x) &gt; 0\)</span>。并且因为 <span
+class="math inline">\(|K|\)</span> 是紧空间，所以 <span
+class="math inline">\(\exists \varepsilon\)</span> 使得 <span
+class="math inline">\(g(x) &gt; \varepsilon, \forall x \in
+|K|\)</span>。</p>
+<p>由重心重分，我们总可以假设 <span class="math inline">\(K\)</span>
+中单形的直径小于 <span
+class="math inline">\(\frac{\varepsilon}{3}\)</span>。</p>
+<p>考虑 <span class="math inline">\(s: |K^{(m)}| \to |K|\)</span> 是
+<span class="math inline">\(f: |K^{(m)}| \to |K|\)</span>
+的单纯估计，其中 <span class="math inline">\(m\)</span>
+是足够大的数。因此有 <span class="math inline">\(s \simeq f\)</span>，则
+<span class="math inline">\(\Lambda_s =
+\Lambda_f\)</span>。（同伦不变量）</p>
+<p>对 <span class="math inline">\(\forall \sigma\)</span> 是 <span
+class="math inline">\(K^{(m)}\)</span> 的一个单形，那么 <span
+class="math inline">\(s(\sigma)\)</span> 是 <span
+class="math inline">\(K\)</span> 中的单形。</p>
+<p>假设 <span class="math inline">\(\sigma \cap s(\sigma) \neq
+\varnothing\)</span>，令 <span class="math inline">\(x \in \sigma \cap
+s(\sigma)\)</span>，则 <span class="math inline">\(s(x) \in
+s(\sigma)\)</span>。同时，因为 <span class="math inline">\(s(x)\)</span>
+落在 <span class="math inline">\(f(x)\)</span> 的承载子 <span
+class="math inline">\(\tau\)</span> 中（<span
+class="math inline">\(\tau\)</span> 是单形）。</p>
+<p>根据三角不等式 <span class="math inline">\(d(x, f(x)) \leqslant d(x,
+s(x)) + d(s(x), f(x))\)</span>，因为 <span class="math inline">\(x, s(x)
+\in s(\sigma)\)</span>，<span class="math inline">\(s(x), f(x) \in
+\tau\)</span>。而 <span class="math inline">\(K\)</span> 中单形 <span
+class="math inline">\(s(\sigma), \tau\)</span> 的直径小于 <span
+class="math inline">\(\frac{\varepsilon}{3}\)</span>，所以 <span
+class="math inline">\(d(x, f(x)) \leqslant
+\frac{2\varepsilon}{3}\)</span>，这与 <span class="math inline">\(g(x)
+&gt; \varepsilon\)</span> 矛盾。</p>
+<p>因此 <span class="math inline">\(\forall \sigma \in
+K^{(m)}\)</span>，<span class="math inline">\(s(\sigma) \cap \sigma =
+\varnothing\)</span>。</p>
+<p>因为 <span class="math inline">\(s\)</span> 是单纯映射，<span
+class="math inline">\(s: (|K^{(m)}|^k, |K^{(m)}|^{k-1}) \to (|K|^k,
+|K|^{k-1}) \hookrightarrow (|K^{(m)}|^k,
+|K^{(m)}|^{k-1})\)</span>（<span class="math inline">\(s\)</span>
+是将单形线性映射到单形，单形的数量只会变少不会变多）</p>
+<p>可以参考下图这个例子：</p>
+<figure>
+<img src="\29-6.png" alt="image-20240104110408992" />
+<figcaption aria-hidden="true">image-20240104110408992</figcaption>
+</figure>
+<p><span class="math inline">\(s_\star: H_k(|K^{(m)}|^k,
+|K^{(m)}|^{k-1}; \mathbb{Q}) \to H_k(|K^{(m)}|^k, |K^{(m)}|^{k-1};
+\mathbb{Q})\)</span>。其中 <span class="math inline">\(H_k(|K^{(m)}|^k,
+|K^{(m)}|^{k-1}; \mathbb{Q}) = \bigoplus_{K^{(m)} \text{中所有} k
+\text{维单形} \sigma} \mathbb{Q}\sigma\)</span>。</p>
+<p>令 <span class="math inline">\(s_\star(\sigma) = \sum_i n_i
+\tau_i\)</span>，其中 <span class="math inline">\(\set{\tau_i\mid i\in
+I}\)</span> 是 <span class="math inline">\(K^{(m)}\)</span> 中所有 <span
+class="math inline">\(k\)</span> 维单形。</p>
+<p>如果 <span class="math inline">\(\dim s(\sigma) &lt; k\)</span>，则
+<span class="math inline">\(s_\star(\sigma) = 0\)</span>。</p>
+<p>如果 <span class="math inline">\(\dim s(\sigma) = k\)</span>，则
+<span class="math inline">\(n_i = \pm 1\)</span> 如果 <span
+class="math inline">\(\tau_i \subset s(\sigma)\)</span>；<span
+class="math inline">\(n_i = 0\)</span> 如果 <span
+class="math inline">\(\tau_i \not\subset s(\sigma)\)</span>。</p>
+<p>因为 <span class="math inline">\(\sigma \cap s(\sigma) = \varnothing,
+\forall \sigma\)</span>，即 <span class="math inline">\(\sigma
+\not\subset s(\sigma)\)</span>，所以 <span
+class="math inline">\(s(\sigma)\)</span> 中 <span
+class="math inline">\(\sigma\)</span> 前的系数永远是 <span
+class="math inline">\(0\)</span>。因此 <span
+class="math inline">\(\text{tr}(s_\star) = 0\)</span>。</p>
+<p>由 Hopf trace 定理，所以 <span class="math inline">\(\Lambda_s = 0 =
+\Lambda_f\)</span>。</p></li>
+<li><h4 id="推论-1">推论</h4>
+<p>复形 <span class="math inline">\(|K|\)</span> 如果满足 <span
+class="math inline">\(H_k(|K|; \mathbb{Q}) = \begin{cases} \mathbb{Q}
+&amp; k = 0 \\ 0 &amp; k \neq 0\end{cases}\)</span></p>
+<p>对 <span class="math inline">\(f: |K| \to |K|\)</span>，<span
+class="math inline">\(f_\star: H_k(|K|^k; \mathbb{Q})\)</span>
+是恒等映射，所以 <span class="math inline">\(\Lambda_f =
+1\)</span>。</p>
+<p>因此 <span class="math inline">\(f\)</span> 有不动点。</p></li>
+<li><h4 id="另一个推论">另一个推论</h4>
+<p>用上面的推论，当 <span class="math inline">\(|K| = D^n\)</span>
+是一个 <span class="math inline">\(n\)</span> 维的球。<span
+class="math inline">\(f: |K| \to |K|\)</span> 是连续映射，则 <span
+class="math inline">\(f\)</span> 有不动点。</p>
+<p>因此，Lefschetz 不动点定理 <span
+class="math inline">\(\Rightarrow\)</span> Brouwer 不动点定理。</p>
+<p>当 <span class="math inline">\(|K|\)</span> 是可缩的，则 <span
+class="math inline">\(f: |K| \to |K|\)</span> 有不动点。</p></li>
+<li><h4 id="例子环面的单纯复形">例子：环面的单纯复形</h4>
+<p>如下图：</p>
+<figure>
+<img src="\29-7.png" alt="image-20240104112112069" />
+<figcaption aria-hidden="true">image-20240104112112069</figcaption>
+</figure></li>
+</ul>
+<h3 id="考试范围">考试范围</h3>
+<p>省流：什么都考。</p>
+<p>期中之后的重点是同调理论。</p>
+<p>基本群和覆叠空间： + 分类定理。 + 要会算 <span
+class="math inline">\(\pi_1\)</span> 和 <span
+class="math inline">\(f_\star: \pi_1(X) \to \pi_1(Y)\)</span>。</p>
+<p>同调理论： + 具体空间计算同调群。 + Lefschetz 不动点定理，例如计算
+<span class="math inline">\(f_\star: H_n(X) \to H_n(X)\)</span>
+判断有没有不动点。 + Euler-Poincare 定理。</p>
+<p>剩下的没写的不是不考，是不想记了。</p>
+<p>完结撒花！</p>
 ]]></content>
       <categories>
         <category>数学</category>
