@@ -261,7 +261,13 @@ class="math inline">\(t\)</span>为超级源点汇点 <figure class="highlight c
   <entry>
     <title>拓扑学笔记</title>
     <url>/2023/09/21/%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>Markdown 源代码：https://pastebin.ubuntu.com/p/Jvm2f6jWhW/</p>
+    <content><![CDATA[<h2 id="prologue">-1. Prologue</h2>
+<blockquote>
+<p>致考试前挑灯夜战的你们：</p>
+<p>恭喜你们，你们胜利了。</p>
+<p>我不敢猜宗老师是怎么想的，但既然期末题出成了这样，那我得认。期末八道题，第一第二第六三题跟去年期末一模一样，第三题是第十五周作业原题，第四题的粘合在作业中出现过很多次，第五题简单，第七题更是简单的发指，生怕你想不出例子与证明。唯独只有一道与课上证明内容强相关的第八题，可它却只有区区十分，期末考试却有整整一百分。</p>
+</blockquote>
+<p>Markdown 源代码：https://pastebin.ubuntu.com/p/Jvm2f6jWhW/</p>
 <p>分节次的笔记（清华云盘）：https://cloud.tsinghua.edu.cn/d/2c4efaca588a4326958d/</p>
 <h2 id="lecture-info">00. Lecture Info</h2>
 <h3 id="考核">1. 考核</h3>
