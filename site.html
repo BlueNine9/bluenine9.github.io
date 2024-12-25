@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EEGEmoLib</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 页面容器，包含页面的内容 */
+        .container {
+            padding: 0 240px; /* 左右留出 20px 内边距 */
+        }
+
+        /* 顶部导航栏 */
+        header {
+            background-color: #3b3b3b;
+            color: white;
+            padding: 20px 0;
+            width: 100%;
+            position: relative;
+            z-index: 1; /* 确保导航栏在其他内容前面 */
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 120px; /* 内容内边距 */
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 16px;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        .hero {
+            background: linear-gradient(to right, #ff7e5f, #feb47b); /* 渐变色背景 */
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            justify-content: space-between; /* 使内容分布在两边 */
+            align-items: center; /* 垂直居中 */
+        }
+
+        .hero .container {
+            padding: 0 240px; /* 左右留出 20px 内边距 */
+            justify-content: space-between; /* 使内容分布在两边 */
+            align-items: center; /* 垂直居中 */
+        }
+
+        /* 主页部分 */
+        .hero .text {
+            max-width: 125%; /* 限制文字部分的宽度 */
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        /* 库描述文本 */
+        .library-description {
+            padding: 30px 0;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* 特性介绍栏 */
+        .features {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px 120px;
+            background-color: #f4f4f4;
+        }
+
+        .feature-card {
+            background-color: white;
+            padding: 20px;
+            width: 550px;
+            text-align: left; /* 默认文字左对齐 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+        }
+
+        .feature-card h3 {
+            text-align: center; /* 标题居中 */
+            margin-bottom: 15px; /* 标题与内容的间距 */
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .feature-card p {
+            margin: 0;
+            text-indent: 1.5em; /* 首行缩进 */
+            line-height: 1.6; /* 行高 */
+            font-size: 16px;
+            color: #555; /* 优化文字颜色 */
+        }
+
+        .learn-more {
+            text-align: right;
+            font-size: 14px;
+            color: #ff7e5f;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: auto; /* 保持 Learn More 按钮在底部 */
+        }
+
+        /* 添加 hover 效果 */
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .learn-more {
+            text-align: right;
+            font-size: 16px;
+            color: #ff7e5f;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* 安装方法部分 */
+        .installation {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        .installation pre {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 16px;
+            overflow-x: auto;
+        }
+
+        /* 论文链接部分 */
+        .paper {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .paper a {
+            font-size: 18px;
+            color: #ff7e5f;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* 底部 */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        .image-section {
+            text-align: center;
+            padding: 10px 20px;
+            background-color: #f4f4f4;
+        }
+
+        .image-section img {
+            max-width: 75%; /* 确保图像不超出屏幕宽度 */
+            height: auto; /* 保持图像的纵横比 */
+            border-radius: 25px; /* 圆角效果 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 增加阴影 */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部导航栏 -->
+    <header>
+        <div class="container">
+            <div class="logo">EEGEmoLib</div>
+            <div>
+                <a href="#home">Home</a>
+                <a href="https://eegemolib-docs.readthedocs.io/en/latest/index.html">Documentation</a>
+                <a href="https://github.com/Schmerle-Cki/EEGEmoLib/tree/main" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" style="width: 24px; vertical-align: middle; filter: invert(1);"></a>
+                <img src="images/logo180.png" alt="Tsinghua University Logo" class="logo" style="height: 35px; vertical-align: middle; padding-left: 30px;">
+            </div>
+        </div>
+    </header>
+
+    <!-- 主页 -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>EEGEmoLib</h1>
+            <p>A plug-and-play EEG toolkit that includes modules for EEG-based emotion analysis.</p>
+        </div>
+    </section>
+
+    <section class="image-section">
+        <h2>Explore the EEGEmoLib Features</h2>
+        <img src="images/eegemolib.png" alt="EEGEmoLib Overview">
+    </section>
+
+    <!-- 特性介绍 -->
+    <section class="features">
+        <div class="feature-card">
+            <h3>Datasets</h3>
+            <p> EEGEmoLib implements mainstream open source datasets, totally including 8 datasets. We use a single yaml file to set up the data loading from the dataset. Parameters such as the path, preprocessing procedure, split setting are all included in the yaml file.</p>
+            <a href="https://eegemolib-docs.readthedocs.io/en/latest/datasets.html" class="learn-more">Learn More</a>
+        </div>
+        <div class="feature-card">
+            <h3>Feature Extraction</h3>
+            <p>EEGEmoLib implements 16 most commonly used handcrafted features: mean, variance, skewness, peak-to-peak (pp), first-order difference, second-order difference, normalized first-order difference, normalized second-order difference, energy, power, HOC, nonlinear signal indicator (NSI), Hjorth parameters, DE, PSD, and Hilbert-Huang spectrum.</p>
+            <a href="https://eegemolib-docs.readthedocs.io/en/latest/featureextraction.html" class="learn-more">Learn More</a>
+        </div>
+    </section>
+    <section class="features">
+        <div class="feature-card">
+            <h3>Feature Selection</h3>
+            <p>EEGEmoLib implements 11 feature extraction methods within filter, wrapper and embedding. They include Univariate ANOVA, chi-square distribution, Principal Component Analysis (PCA), Kernel PCA, Non-negative Matrix Factorization (NMF), Locally Linear Embedding (LLE), Minimum-redundancy maximum relevance(mRMR), Linear Discriminant Analysis (LDA), Recursive feature elimination (RFE), SVM based wrapper and L1 regularization.</p>
+            <a href="https://eegemolib-docs.readthedocs.io/en/latest/featureselection.html" class="learn-more">Learn More</a>
+        </div>
+        <div class="feature-card">
+            <h3>Recognition Model</h3>
+            <p>EEGEmoLib integrates 15 representative EEG emotion recognition methods (detailed in Table 5), spanning sequential, convolutional, and graph-based models. This collection includes both foundational and state-of-the-art approaches for EEG-ER. These implementations follow a structured organization within the models directory, with a clear categorization based on the input data dimensionality. </p>
+            <a href="https://eegemolib-docs.readthedocs.io/en/latest/models.html" class="learn-more">Learn More</a>
+        </div>
+    </section>
+
+    <!-- 安装方法 -->
+    <section class="installation" id="install">
+        <div class="container">
+            <h2>Installation</h2>
+            <pre>pip install placeholder</pre>
+        </div>
+    </section>
+
+    <!-- 论文链接 -->
+    <section class="paper" id="paper">
+        <div class="container">
+            <h2>Related Paper</h2>
+            <p>Read more about this library in our paper: <a href="#placeholder" target="_blank">Click here</a></p>
+        </div>
+    </section>
+
+    <!-- 底部 -->
+    <footer>
+        <p></p>
+    </footer>
+
+</body>
+</html>
