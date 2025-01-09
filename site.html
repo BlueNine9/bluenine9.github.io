@@ -24,8 +24,11 @@
             color: white;
             padding: 20px 0;
             width: 100%;
-            position: relative;
-            z-index: 1; /* 确保导航栏在其他内容前面 */
+            position: relative; /* 固定在屏幕顶部 */
+            top: 80px; /* 贴近屏幕顶部 */
+            left: 0; /* 确保导航栏从左边开始 */
+            z-index: 1000; /* 确保导航栏在其他内容前面 */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 给导航栏添加阴影 */
         }
 
         header .container {
@@ -48,12 +51,25 @@
         }
 
         .hero {
-            background: linear-gradient(to right, #ff7e5f, #feb47b); /* 渐变色背景 */
+            height: 100vh; /* 占满整个页面高度 */
             color: white;
-            padding: 100px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            justify-content: space-between; /* 使内容分布在两边 */
-            align-items: center; /* 垂直居中 */
+            animation: colorChange 10s ease infinite; /* 设置动画名称为 colorChange，持续 10 秒，循环无限 */
+        }
+        
+        @keyframes colorChange {
+            0% {
+                background: #00c6ff; /* 橙色 */
+            }
+            50% {
+                background: #42aaff; /* 蓝色 */
+            }
+            100% {
+                background: #00c6ff; /* 橙色 */
+            }
         }
 
         .hero .container {
@@ -89,23 +105,33 @@
         /* 特性介绍栏 */
         .features {
             display: flex;
-            justify-content: space-around;
-            padding: 20px 120px;
-            background-color: #f4f4f4;
+            flex-wrap: wrap; /* 启用换行 */
+            justify-content: space-between; /* 保证每一行元素均匀分布 */
+            padding: 20px 180px;
+            background-color: white;
         }
 
+        .features-title {
+            width: 100%;
+            text-align: center; /* 将标题居中 */
+            font-size: 24px; /* 设置标题字体大小 */
+            margin-bottom: 30px; /* 增加标题与 feature-cards 之间的间距 */
+            font-weight: bold;
+        }
+        
         .feature-card {
             background-color: white;
             padding: 20px;
-            width: 550px;
+            width: 44%; /* 保证每个 feature-card 占据一半宽度 */
             text-align: left; /* 默认文字左对齐 */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             display: flex;
             flex-direction: column;
             justify-content: start;
+            margin-bottom: 20px; /* 增加底部间距 */
         }
-
+        
         .feature-card h3 {
             text-align: center; /* 标题居中 */
             margin-bottom: 15px; /* 标题与内容的间距 */
@@ -120,29 +146,20 @@
             font-size: 16px;
             color: #555; /* 优化文字颜色 */
         }
-
-        .learn-more {
-            text-align: right;
-            font-size: 14px;
-            color: #ff7e5f;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: auto; /* 保持 Learn More 按钮在底部 */
-        }
-
-        /* 添加 hover 效果 */
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-            transition: all 0.3s ease;
-        }
-
+        
         .learn-more {
             text-align: right;
             font-size: 16px;
             color: #ff7e5f;
             text-decoration: none;
             font-weight: bold;
+        }
+        
+        /* 添加 hover 效果 */
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
         }
 
         /* 安装方法部分 */
@@ -177,14 +194,14 @@
         /* 底部 */
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 1px;
             background-color: #333;
             color: white;
         }
 
         .image-section {
             text-align: center;
-            padding: 10px 20px;
+            padding: 30px 20px;
             background-color: #f4f4f4;
         }
 
@@ -220,15 +237,16 @@
     </section>
 
     <section class="image-section">
-        <h2>Explore the EEGEmoLib Features</h2>
+        <h2>⚙️  EEGEmoLib Pipeline  ⚙️</h2>
         <img src="images/eegemolib.png" alt="EEGEmoLib Overview">
     </section>
 
     <!-- 特性介绍 -->
     <section class="features">
+        <h2 class="features-title">🔥  Learn EEGEmoLib Features  🔥</h2>
         <div class="feature-card">
             <h3>Datasets</h3>
-            <p> EEGEmoLib implements mainstream open source datasets, totally including 8 datasets. We use a single yaml file to set up the data loading from the dataset. Parameters such as the path, preprocessing procedure, split setting are all included in the yaml file.</p>
+            <p>EEGEmoLib implements mainstream open source datasets, totally including 8 datasets. We use a single yaml file to set up the data loading from the dataset. Parameters such as the path, preprocessing procedure, split setting are all included in the yaml file.</p>
             <a href="https://eegemolib-docs.readthedocs.io/en/latest/datasets.html" class="learn-more">Learn More</a>
         </div>
         <div class="feature-card">
@@ -236,8 +254,6 @@
             <p>EEGEmoLib implements 16 most commonly used handcrafted features: mean, variance, skewness, peak-to-peak (pp), first-order difference, second-order difference, normalized first-order difference, normalized second-order difference, energy, power, HOC, nonlinear signal indicator (NSI), Hjorth parameters, DE, PSD, and Hilbert-Huang spectrum.</p>
             <a href="https://eegemolib-docs.readthedocs.io/en/latest/featureextraction.html" class="learn-more">Learn More</a>
         </div>
-    </section>
-    <section class="features">
         <div class="feature-card">
             <h3>Feature Selection</h3>
             <p>EEGEmoLib implements 11 feature extraction methods within filter, wrapper and embedding. They include Univariate ANOVA, chi-square distribution, Principal Component Analysis (PCA), Kernel PCA, Non-negative Matrix Factorization (NMF), Locally Linear Embedding (LLE), Minimum-redundancy maximum relevance(mRMR), Linear Discriminant Analysis (LDA), Recursive feature elimination (RFE), SVM based wrapper and L1 regularization.</p>
@@ -245,7 +261,7 @@
         </div>
         <div class="feature-card">
             <h3>Recognition Model</h3>
-            <p>EEGEmoLib integrates 15 representative EEG emotion recognition methods (detailed in Table 5), spanning sequential, convolutional, and graph-based models. This collection includes both foundational and state-of-the-art approaches for EEG-ER. These implementations follow a structured organization within the models directory, with a clear categorization based on the input data dimensionality. </p>
+            <p>EEGEmoLib integrates 15 representative EEG emotion recognition methods (detailed in Table 5), spanning sequential, convolutional, and graph-based models. This collection includes both foundational and state-of-the-art approaches for EEG-ER. These implementations follow a structured organization within the models directory, with a clear categorization based on the input data dimensionality.</p>
             <a href="https://eegemolib-docs.readthedocs.io/en/latest/models.html" class="learn-more">Learn More</a>
         </div>
     </section>
@@ -253,7 +269,7 @@
     <!-- 安装方法 -->
     <section class="installation" id="install">
         <div class="container">
-            <h2>Installation</h2>
+            <h2>🔧  Installation  🔧</h2>
             <pre>pip install placeholder</pre>
         </div>
     </section>
@@ -261,7 +277,7 @@
     <!-- 论文链接 -->
     <section class="paper" id="paper">
         <div class="container">
-            <h2>Related Paper</h2>
+            <h2>📄  Read our Paper  📄</h2>
             <p>Read more about this library in our paper: <a href="#placeholder" target="_blank">Click here</a></p>
         </div>
     </section>
@@ -272,4 +288,36 @@
     </footer>
 
 </body>
+<script>
+    let currentSection = 0; // 当前显示的section索引
+    const sections = document.querySelectorAll('section'); // 获取所有的section
+    const totalSections = sections.length; // 总的section数
+
+    // 监听滚轮事件
+    window.addEventListener('wheel', function (e) {
+        if (e.deltaY > 0) {
+            // 向下滚动
+            if (currentSection < totalSections - 1) {
+                currentSection++; // 向下滚动，更新当前section
+            }
+        } else {
+            // 向上滚动
+            if (currentSection > 0) {
+                currentSection--; // 向上滚动，更新当前section
+            }
+        }
+
+        // 滚动到对应的section
+        scrollToSection(currentSection);
+    });
+
+    // 滚动到指定section
+    function scrollToSection(index) {
+        const targetSection = sections[index];
+        window.scrollTo({
+            top: targetSection.offsetTop, // 滚动到目标section的位置
+            behavior: 'smooth' // 平滑滚动
+        });
+    }
+</script>
 </html>
